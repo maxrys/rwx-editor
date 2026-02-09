@@ -11,6 +11,16 @@
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
 		50B276B72F39C991005F7475 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276B62F39C991005F7475 /* FinderSync.swift */; };
 		50B276BB2F39C991005F7475 /* RWX Editor Finder Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50B276C32F39CB7C005F7475 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* const.swift */; };
+		50B276C42F39CB7C005F7475 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* const.swift */; };
+		50B276C62F39CBC9005F7475 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C52F39CBC3005F7475 /* Logger.swift */; };
+		50B276C72F39CBC9005F7475 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C52F39CBC3005F7475 /* Logger.swift */; };
+		50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C82F39CBD1005F7475 /* NSApplication.swift */; };
+		50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CB2F39CBF7005F7475 /* NSWindow.swift */; };
+		50B276CF2F39CC00005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
+		50B276D02F39CC05005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
+		50B276D22F39CC3E005F7475 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D12F39CC3E005F7475 /* MainView.swift */; };
+		50B276D42F39CC5E005F7475 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D32F39CC59005F7475 /* PopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,13 @@
 		50B276B62F39C991005F7475 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		50B276B82F39C991005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B276C12F39CA05005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B276C22F39CB73005F7475 /* const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
+		50B276C52F39CBC3005F7475 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		50B276C82F39CBD1005F7475 /* NSApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplication.swift; sourceTree = "<group>"; };
+		50B276CB2F39CBF7005F7475 /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
+		50B276CE2F39CC00005F7475 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		50B276D12F39CC3E005F7475 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		50B276D32F39CC59005F7475 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +106,7 @@
 		50B276AB2F3899C9005F7475 /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				50B276C22F39CB73005F7475 /* const.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -96,6 +114,10 @@
 		50B276AC2F3899D1005F7475 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				50B276C52F39CBC3005F7475 /* Logger.swift */,
+				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
+				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
+				50B276CE2F39CC00005F7475 /* String.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -104,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276A72F389886005F7475 /* App.swift */,
+				50B276D12F39CC3E005F7475 /* MainView.swift */,
 				50B276A52F389886005F7475 /* Assets.xcassets */,
 				50B276C12F39CA05005F7475 /* Info.plist */,
 			);
@@ -113,6 +136,7 @@
 		50B276AE2F3899E8005F7475 /* popup */ = {
 			isa = PBXGroup;
 			children = (
+				50B276D32F39CC59005F7475 /* PopupView.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
@@ -230,7 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
+				50B276D42F39CC5E005F7475 /* PopupView.swift in Sources */,
+				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
+				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
+				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
+				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
+				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
+				50B276C72F39CBC9005F7475 /* Logger.swift in Sources */,
+				50B276D02F39CC05005F7475 /* String.swift in Sources */,
+				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
