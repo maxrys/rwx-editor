@@ -34,6 +34,10 @@
 		50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F12F3A4709005F7475 /* PopupFoot.swift */; };
 		50B276F42F3A4991005F7475 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
 		50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
+		50B276F72F3A71B2005F7475 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F62F3A71B0005F7475 /* Date.swift */; };
+		50B276F82F3A71B2005F7475 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F62F3A71B0005F7475 /* Date.swift */; };
+		50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */; };
+		50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,8 @@
 		50B276EF2F3A46FA005F7475 /* PopupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupBody.swift; sourceTree = "<group>"; };
 		50B276F12F3A4709005F7475 /* PopupFoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFoot.swift; sourceTree = "<group>"; };
 		50B276F32F3A4990005F7475 /* FSEntityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSEntityInfo.swift; sourceTree = "<group>"; };
+		50B276F62F3A71B0005F7475 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteCountFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,8 @@
 		50B276AC2F3899D1005F7475 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */,
+				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
@@ -334,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
+				50B276F82F3A71B2005F7475 /* Date.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
@@ -346,6 +355,7 @@
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
+				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E32F39DC3F005F7475 /* UInt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +370,8 @@
 				50B276C72F39CBC9005F7475 /* Logger.swift in Sources */,
 				50B276D02F39CC05005F7475 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
+				50B276F72F3A71B2005F7475 /* Date.swift in Sources */,
+				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E62F39DC88005F7475 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

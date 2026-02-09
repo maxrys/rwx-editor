@@ -26,7 +26,7 @@ struct Popup: View {
             } else {
                 Text("UNSUPPORTED TYPE")
             }
-        }
+        }.frame(width: 300)
     }
 
 }
@@ -43,7 +43,5 @@ struct Popup: View {
         Popup(fullpath: "/unknown/")          /* non-existent */
         Popup(fullpath: "/private/etc/")      /* directory */
         Popup(fullpath: "/private/etc/hosts") /* file */
-    }
-    .padding(20)
-    .frame(width: 300)
+    }.padding(20)
 }
