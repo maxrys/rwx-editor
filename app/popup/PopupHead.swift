@@ -10,7 +10,19 @@ struct PopupHead: View {
     public let info: FSEntityInfo
 
     var body: some View {
-        Text(self.info.fullpath)
+        VStack(spacing: 0) {
+            Text("Full Path: \(self.info.fullpath)")
+            Text("Type: \(self.info.type)")
+            Text("Path: \(self.info.path)")
+            Text("Name: \(self.info.name)")
+            Text("Created: \(self.info.created)")
+            Text("Updated: \(self.info.updated)")
+            Text("Reference Count: \(self.info.references)")
+            Text("Rights: \(self.info.rights)")
+            Text("Owner: \(self.info.owner)")
+            Text("Group: \(self.info.group)")
+            Text("Size: \(self.info.size)")
+        }
     }
 
 }
@@ -23,8 +35,8 @@ struct PopupHead: View {
 
 #Preview {
     VStack(spacing: 20) {
-        PopupHead(info: FSEntityInfo("/private/etc/"))
-        PopupHead(info: FSEntityInfo("/private/etc/hosts"))
+        PopupHead(info: FSEntityInfo("/private/etc/")!)      /* directory */
+        PopupHead(info: FSEntityInfo("/private/etc/hosts")!) /* file */
     }
     .padding(20)
     .frame(width: 300)

@@ -8,7 +8,7 @@ import SwiftUI
 struct Popup: View {
 
     public let fullpath: String
-    public let info: FSEntityInfo
+    public let info: FSEntityInfo?
 
     init(fullpath: String) {
         self.fullpath = fullpath
@@ -19,9 +19,13 @@ struct Popup: View {
 
     var body: some View {
         VStack (spacing: 0) {
-            PopupHead(info: self.info)
-            PopupBody()
-            PopupFoot()
+            if let info = self.info {
+                PopupHead(info: info)
+                PopupBody()
+                PopupFoot()
+            } else {
+                Text("UNSUPPORTED TYPE")
+            }
         }
     }
 
@@ -35,7 +39,11 @@ struct Popup: View {
 
 #Preview {
     VStack(spacing: 20) {
-        Popup(fullpath: "/private/etc/")
-        Popup(fullpath: "/private/etc/hosts")
-    }.padding(20)
+        Popup(fullpath: "")                   /* empty */
+        Popup(fullpath: "/unknown/")          /* non-existent */
+        Popup(fullpath: "/private/etc/")      /* directory */
+        Popup(fullpath: "/private/etc/hosts") /* file */
+    }
+    .padding(20)
+    .frame(width: 300)
 }
