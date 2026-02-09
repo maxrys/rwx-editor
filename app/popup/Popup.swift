@@ -26,7 +26,9 @@ struct Popup: View {
             } else {
                 Text("UNSUPPORTED TYPE")
             }
-        }.frame(width: 300)
+        }
+        .environment(\.layoutDirection, .leftToRight)
+        .frame(width: 300)
     }
 
 }

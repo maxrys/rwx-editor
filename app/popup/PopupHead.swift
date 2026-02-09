@@ -51,7 +51,7 @@ struct PopupHead: View {
         }
     }
 
-    var formattedSize: String {
+    private var formattedSize: String {
         switch self.visibilityModeForSize {
             case  .bytes: ByteCountFormatter.format(self.info.size, unit: .useBytes)
             case .kbytes: ByteCountFormatter.format(self.info.size, unit: .useKB)
@@ -61,7 +61,7 @@ struct PopupHead: View {
         }
     }
 
-    var formattedReferences: String {
+    private var formattedReferences: String {
         String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
     }
 
@@ -73,28 +73,40 @@ struct PopupHead: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 0) {
 
-            Text("Type")
-            Text(self.formattedType)
+            self.title("Type")
+            self.value(self.formattedType)
 
-            Text("Name")
-            Text("\(self.formattedName)")
+            self.title("Name")
+            self.value(self.formattedName, isCanSelect: true)
 
-            Text("Path")
-            Text("\(self.formattedPath)")
+            self.title("Path")
+            self.value(self.formattedPath, isCanSelect: true)
 
-            Text("Created")
-            Text("\(self.formattedCreated)")
+            self.title("Created")
+            self.value(self.formattedCreated, isCanSelect: true)
 
-            Text("Updated")
-            Text("\(self.formattedUpdated)")
+            self.title("Updated")
+            self.value(self.formattedUpdated, isCanSelect: true)
 
-            Text("Reference Count").multilineTextAlignment(.trailing)
-            Text("\(self.formattedReferences)")
+            self.title("Reference Count")
+            self.value(self.formattedReferences)
 
-            Text("Size")
-            Text("\(self.formattedSize)")
+            self.title("Size")
+            self.value(self.formattedSize)
 
         }
+    }
+
+    @ViewBuilder func title(_ text: String) -> some View {
+        Text(NSLocalizedString(text, comment: ""))
+            .multilineTextAlignment(.trailing)
+            .padding(.vertical, 6)
+    }
+
+    @ViewBuilder func value(_ text: String, isCanSelect: Bool = false) -> some View {
+        Text(text)
+            .textSelectionPolyfill(isEnabled: isCanSelect)
+            .padding(.vertical, 6)
     }
 
 }

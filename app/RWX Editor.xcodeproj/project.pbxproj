@@ -38,6 +38,9 @@
 		50B276F82F3A71B2005F7475 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F62F3A71B0005F7475 /* Date.swift */; };
 		50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */; };
 		50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */; };
+		50B276FD2F3A8D34005F7475 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276FC2F3A8D32005F7475 /* View.swift */; };
+		50B276FE2F3A8D34005F7475 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276FC2F3A8D32005F7475 /* View.swift */; };
+		50B276FF2F3A8D34005F7475 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276FC2F3A8D32005F7475 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,7 @@
 		50B276F32F3A4990005F7475 /* FSEntityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSEntityInfo.swift; sourceTree = "<group>"; };
 		50B276F62F3A71B0005F7475 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteCountFormatter.swift; sourceTree = "<group>"; };
+		50B276FC2F3A8D32005F7475 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				50B276CE2F39CC00005F7475 /* String.swift */,
 				50B276E12F39DC3F005F7475 /* UInt.swift */,
 				50B276E52F39DC88005F7475 /* URL.swift */,
+				50B276FC2F3A8D32005F7475 /* View.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				50B276F82F3A71B2005F7475 /* Date.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
+				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
@@ -366,6 +372,7 @@
 			files = (
 				50B276E22F39DC3F005F7475 /* UInt.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
+				50B276FF2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276F42F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276C72F39CBC9005F7475 /* Logger.swift in Sources */,
 				50B276D02F39CC05005F7475 /* String.swift in Sources */,
@@ -382,6 +389,7 @@
 			files = (
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
 				50B276E42F39DC55005F7475 /* UInt.swift in Sources */,
+				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,
 				50B276E82F39DC92005F7475 /* URL.swift in Sources */,
 			);

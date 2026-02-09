@@ -8,8 +8,10 @@ import SwiftUI
 struct MainView: View {
 
     var body: some View {
-        Text("Settings")
-            .padding(20)
+        VStack {
+            Text("Settings")
+                .padding(20)
+        }.environment(\.layoutDirection, .leftToRight)
     }
 
 }
