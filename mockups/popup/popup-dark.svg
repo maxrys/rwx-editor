@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 1000 1300" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="drop-shadow-filter-1" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%" bx:preset="drop-shadow 1 0 0 10 0.4 #000000bf">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="0"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl" type="linear" slope="0.8"/>
+      </feComponentTransfer>
+      <feFlood flood-color="#000000bf"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <bx:export>
+      <bx:file format="png" path="popup-light.png"/>
+    </bx:export>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="623.617" y1="1020" x2="623.617" y2="1076" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 0, 31)">
+      <stop offset="0" style="stop-color: rgb(45, 159, 255);"/>
+      <stop offset="1" style="stop-color: rgb(2, 122, 255);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="375.117" y1="1019.9" x2="375.117" y2="1075.9" id="gradient-2" gradientTransform="matrix(1, 0, 0, 1, 0, 31)">
+      <stop offset="0" style="stop-color: rgb(45, 159, 255);"/>
+      <stop offset="1" style="stop-color: rgb(2, 122, 255);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="499.617" y1="374" x2="499.617" y2="394" id="gradient-0" gradientTransform="matrix(1, 0, 0, 0.5, -0.499999, 187)">
+      <stop offset="0" style="stop-color: rgb(28, 27, 27);"/>
+      <stop offset="1" style="stop-color: rgb(44, 43, 43);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="499.617" y1="374" x2="499.617" y2="394" id="gradient-3" gradientTransform="matrix(1, 0, 0, 0.5, -0.499999, -1189.000061)">
+      <stop offset="0" style="stop-color: rgb(28, 27, 27);"/>
+      <stop offset="1" style="stop-color: rgb(43, 43, 43);"/>
+    </linearGradient>
+    <filter id="drop-shadow-filter-0" bx:preset="drop-shadow 1 0 2 2 0.5 #000" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl-2" type="linear" slope="1"/>
+      </feComponentTransfer>
+      <feFlood flood-color="#000"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="drop-shadow-filter-2" bx:preset="drop-shadow 1 0 2 2 0.5 #000" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl-3" type="linear" slope="1"/>
+      </feComponentTransfer>
+      <feFlood flood-color="#000"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="1300" style="fill: rgb(84, 85, 84);"/>
+  <g style="filter: url('#drop-shadow-filter-1');" transform="matrix(1, 0, 0, 1, 0.882995, 25)">
+    <rect style="fill: rgb(60, 60, 60); stroke-width: 2px; stroke: rgb(101, 106, 109);" x="199.117" y="51" width="600" height="1106" rx="20" ry="20"/>
+    <path d="M 199.117 98 L 208.117 98 L 208.117 165 L 199.117 165 C 199.117 148.25 176.117 139.408 176.117 131.5 C 176.117 123.556 199.117 114.75 199.117 98 Z" style="stroke-width: 2px; filter: none; fill: rgb(60, 60, 60); stroke: rgb(101, 106, 109);"/>
+    <g>
+      <path style="stroke-width: 2; filter: none; fill: rgb(43, 43, 43);" d="M 219.117 51 H 779.117 A 20 20 0 0 1 799.117 71 V 374 H 199.117 V 71 A 20 20 0 0 1 219.117 51 Z" bx:shape="rect 199.117 51 600 323 20 20 0 0 1@de13d44a"/>
+      <g>
+        <rect x="199.117" y="105" width="200" height="54" style="stroke-width: 1; fill: rgb(34, 34, 34);"/>
+        <rect x="399.117" y="105" width="400" height="54" style="stroke-width: 1; fill: rgb(34, 34, 34);"/>
+        <rect x="199.117" y="213" width="200" height="54" style="stroke-width: 1; fill: rgb(34, 34, 34);"/>
+        <rect x="398.617" y="213" width="400" height="54" style="stroke-width: 1; fill: rgb(34, 34, 34);"/>
+        <rect x="199.117" y="320" width="200" height="54" style="stroke-width: 1; fill: rgb(34, 34, 34);"/>
+        <rect x="398.617" y="320" width="400" height="54" style="stroke-width: 1; fill: rgb(34, 34, 34);"/>
+      </g>
+      <g>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 120.953316, -624.145325)" x="206.863" y="710.918">Type</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 207.158966, -623.667725)" x="206.863" y="710.918">file</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 107.777084, -569.823303)" x="206.863" y="710.918">Name</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 24px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 207.158966, -570.246338)" x="206.863" y="710.918">Rwx Editor.icns</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 124.65274, -516.132324)" x="206.863" y="710.918">Path</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 24px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 207.158966, -516.705261)" x="206.863" y="710.918">/usr/local/bin/some/path/</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="309.79" y="248.733">Size</text>
+        <path d="M 372.117 244.549 C 372.117 242.629 373.466 241.067 375.464 240.431 L 375.464 241.918 C 374.254 242.409 373.471 243.371 373.471 244.549 C 373.471 246.309 375.2 247.649 377.491 247.649 C 379.781 247.649 381.502 246.309 381.502 244.549 C 381.502 243.359 380.72 242.389 379.485 241.885 L 379.485 240.415 C 381.49 241.046 382.856 242.62 382.856 244.549 C 382.856 247.069 380.539 249 377.491 249 C 374.442 249 372.117 247.069 372.117 244.549 Z M 376.526 244.741 L 376.526 237.009 C 374.735 236.588 373.391 234.984 373.391 233.042 C 373.391 230.829 375.225 229 377.462 229 C 379.692 229 381.513 230.812 381.513 233.042 C 381.513 234.96 380.201 236.571 378.423 237.003 L 378.423 244.741 C 378.423 245.089 377.996 245.347 377.462 245.347 C 376.94 245.347 376.526 245.089 376.526 244.741 Z" style="fill: rgb(42, 145, 255);"/>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 24px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, 0, 0, 1, 63.530949, 76.498878)"><tspan x="350.491" y="172.112">1 234 567 B</tspan><tspan x="350.491" dy="1em">​</tspan></text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="265.171" y="302.616">Created</text>
+        <path d="M 372.117 298.549 C 372.117 296.629 373.466 295.067 375.464 294.431 L 375.464 295.918 C 374.254 296.409 373.471 297.371 373.471 298.549 C 373.471 300.309 375.2 301.649 377.491 301.649 C 379.781 301.649 381.502 300.309 381.502 298.549 C 381.502 297.359 380.72 296.389 379.485 295.885 L 379.485 294.415 C 381.49 295.046 382.856 296.62 382.856 298.549 C 382.856 301.069 380.539 303 377.491 303 C 374.442 303 372.117 301.069 372.117 298.549 Z M 376.526 298.741 L 376.526 291.009 C 374.735 290.588 373.391 288.984 373.391 287.042 C 373.391 284.829 375.225 283 377.462 283 C 379.692 283 381.513 284.812 381.513 287.042 C 381.513 288.96 380.201 290.571 378.423 291.003 L 378.423 298.741 C 378.423 299.089 377.996 299.347 377.462 299.347 C 376.94 299.347 376.526 299.089 376.526 298.741 Z" style="fill: rgb(42, 145, 255);"/>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 24px; letter-spacing: 0.3px; white-space: pre;" x="414.022" y="302.323">1 Jan 2025 at 00:00:00</text>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="256.602" y="356.993">Updated</text>
+        <path d="M 372.117 352.549 C 372.117 350.629 373.466 349.067 375.464 348.431 L 375.464 349.918 C 374.254 350.409 373.471 351.371 373.471 352.549 C 373.471 354.309 375.2 355.649 377.491 355.649 C 379.781 355.649 381.502 354.309 381.502 352.549 C 381.502 351.359 380.72 350.389 379.485 349.885 L 379.485 348.415 C 381.49 349.046 382.856 350.62 382.856 352.549 C 382.856 355.069 380.539 357 377.491 357 C 374.442 357 372.117 355.069 372.117 352.549 Z M 376.526 352.741 L 376.526 345.009 C 374.735 344.588 373.391 342.984 373.391 341.042 C 373.391 338.829 375.225 337 377.462 337 C 379.692 337 381.513 338.812 381.513 341.042 C 381.513 342.96 380.201 344.571 378.423 345.003 L 378.423 352.741 C 378.423 353.089 377.996 353.347 377.462 353.347 C 376.94 353.347 376.526 353.089 376.526 352.741 Z" style="fill: rgb(42, 145, 255);"/>
+        <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 24px; letter-spacing: 0.3px; white-space: pre;" x="414.022" y="356.642">1 Jan 2025 at 00:00:00</text>
+      </g>
+    </g>
+    <g>
+      <rect style="stroke-width: 2; filter: none; fill: color(xyz-d65 0.023 0.024 0.026);" x="199.117" y="374" width="600" height="628"/>
+      <rect x="199.117" y="374" width="600" height="10" style="fill: url(&quot;#gradient-0&quot;);"/>
+      <g>
+        <g>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="409.31" y="450.675">Read</text>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, 0, 0, 1, -1061.322144, 182.882355)"><tspan x="1589.71" y="267.793">Write</tspan><tspan x="1589.71" dy="1em">​</tspan></text>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, 0, 0, 1, -956.534546, 182.882355)"><tspan x="1589.71" y="267.793">Execute</tspan><tspan x="1589.71" dy="1em">​</tspan></text>
+        </g>
+        <g>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="280.11" y="521.712">Owner</text>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="284.15" y="591.006">Group</text>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="286.79" y="660.884">Other</text>
+        </g>
+        <g>
+          <g>
+            <ellipse style="fill: color(display-p3 0.254 0.572 0.158);" cx="439.67" cy="510.133" rx="25" ry="25"/>
+            <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 429.9 510.992 L 437.1 519.441 L 449.05 500.825"/>
+          </g>
+          <g>
+            <ellipse style="fill: color(display-p3 0.254 0.572 0.158);" cx="559.6" cy="510.133" rx="25" ry="25"/>
+            <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 549.83 510.992 L 557.03 519.441 L 568.98 500.825"/>
+          </g>
+          <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.133 0.133 0.133);" cx="679.99" cy="510.133" rx="25" ry="25"/>
+          <g>
+            <ellipse style="fill: color(display-p3 0.837 0.461 0.047); stroke-width: 1;" cx="439.85" cy="580.321" rx="25" ry="25"/>
+            <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 430.08 581.18 L 437.28 589.629 L 449.23 571.013"/>
+          </g>
+          <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.133 0.133 0.133);" cx="559.6" cy="580.321" rx="25" ry="25"/>
+          <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.133 0.133 0.133);" cx="679.99" cy="580.321" rx="25" ry="25"/>
+          <g>
+            <ellipse style="fill: color(display-p3 0.765 0.201 0.057); stroke-width: 1;" cx="439.85" cy="650.771" rx="25" ry="25"/>
+            <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 430.08 651.63 L 437.28 660.079 L 449.23 641.463"/>
+          </g>
+          <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.133 0.133 0.133);" cx="559.6" cy="650.771" rx="25" ry="25"/>
+          <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.133 0.133 0.133);" cx="679.99" cy="650.771" rx="25" ry="25"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <rect style="stroke-width: 1; fill: rgb(46, 68, 93);" x="303.45" y="714.787" width="181" height="52" rx="10" ry="10"/>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;PT Mono&quot;; font-size: 29px; letter-spacing: -1.5px; white-space: pre;" x="321.04" y="749.198">rw-r--r--</text>
+        </g>
+        <g>
+          <g>
+            <rect style="stroke-width: 1; fill: rgb(64, 66, 66);" x="524.723" y="714.787" width="52" height="52" rx="18.307" ry="18.307"/>
+            <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="541.573" y="750.677">6</text>
+          </g>
+          <g>
+            <rect style="stroke-width: 1; fill: rgb(64, 66, 66);" x="583.723" y="714.787" width="52" height="52" rx="18" ry="18"/>
+            <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="600.813" y="751.354">4</text>
+          </g>
+          <g>
+            <rect style="stroke-width: 1; fill: rgb(64, 66, 66);" x="642.723" y="714.787" width="52" height="52" rx="18" ry="18"/>
+            <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="659.823" y="750.677">4</text>
+          </g>
+        </g>
+      </g>
+      <g>
+        <g>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="325.45" y="855.052">Owner</text>
+          <g>
+            <rect style="stroke-width: 1; fill: rgb(64, 66, 66);" x="1207.21" y="680.686" width="300" height="52" rx="18.307" ry="18.307" transform="matrix(0.999998, -0.001887, 0, 1.000002, -786.198669, 141.166092)"/>
+            <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="526.016" y="854.923">nobody</text>
+          </g>
+        </g>
+        <g>
+          <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="326.881" y="926.982">Group</text>
+          <g>
+            <rect style="stroke-width: 1; fill: rgb(64, 66, 66);" x="1207.22" y="680.686" width="300" height="52" rx="18.307" ry="18.307" transform="matrix(0.999998, -0.001887, 0, 1.000002, -786.128845, 213.096161)"/>
+            <text style="fill: rgb(221, 221, 221); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="544.212" y="926.854">staff</text>
+          </g>
+        </g>
+      </g>
+      <rect x="199.117" y="-1002" width="600" height="10" style="fill: url(&quot;#gradient-3&quot;);" transform="matrix(1, 0, 0, -1, 0, 0)"/>
+    </g>
+    <g>
+      <path style="stroke-width: 2; filter: none; fill: rgb(34, 34, 34);" d="M 199.117 1002 H 799.117 V 1136.3 A 20.7 20.7 0 0 1 778.417 1157 H 219.817 A 20.7 20.7 0 0 1 199.117 1136.3 V 1002 Z" bx:shape="rect 199.117 1002 600 155 0 0 20.7 20.7 1@e2b3b946"/>
+      <g style="opacity: 0.5; filter: url(&quot;#drop-shadow-filter-2&quot;);">
+        <rect x="261.117" y="1050.9" width="228" height="56" style="filter: none; stroke-width: 1; fill: url(&quot;#gradient-2&quot;);" rx="15.007" ry="15.007"/>
+        <text style="fill: rgb(255, 255, 255); font-family: &quot;SF Pro&quot;; font-size: 27px; white-space: pre;" x="336.924" y="1087.59">cancel</text>
+      </g>
+      <g style="filter: url(&quot;#drop-shadow-filter-0&quot;);">
+        <rect x="509.117" y="1051" width="229" height="56" style="filter: none; stroke-width: 1; fill: url(&quot;#gradient-1&quot;);" rx="14.968" ry="14.968"/>
+        <text style="fill: rgb(255, 255, 255); font-family: &quot;SF Pro&quot;; font-size: 27px; white-space: pre;" x="591.753" y="1087.69">apply</text>
+      </g>
+    </g>
+  </g>
+</svg>
