@@ -20,7 +20,7 @@
 		50B276CF2F39CC00005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
 		50B276D02F39CC05005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
 		50B276D22F39CC3E005F7475 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D12F39CC3E005F7475 /* MainView.swift */; };
-		50B276D42F39CC5E005F7475 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D32F39CC59005F7475 /* PopupView.swift */; };
+		50B276D42F39CC5E005F7475 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D32F39CC59005F7475 /* Popup.swift */; };
 		50B276DC2F39DB98005F7475 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276DB2F39DB98005F7475 /* Test.swift */; };
 		50B276E22F39DC3F005F7475 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* UInt.swift */; };
 		50B276E32F39DC3F005F7475 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* UInt.swift */; };
@@ -72,7 +72,7 @@
 		50B276CB2F39CBF7005F7475 /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
 		50B276CE2F39CC00005F7475 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		50B276D12F39CC3E005F7475 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		50B276D32F39CC59005F7475 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		50B276D32F39CC59005F7475 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		50B276D92F39DB98005F7475 /* RWX Editor Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RWX Editor Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276DB2F39DB98005F7475 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		50B276E12F39DC3F005F7475 /* UInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		50B276AE2F3899E8005F7475 /* popup */ = {
 			isa = PBXGroup;
 			children = (
-				50B276D32F39CC59005F7475 /* PopupView.swift */,
+				50B276D32F39CC59005F7475 /* Popup.swift */,
 				50B276ED2F3A466B005F7475 /* PopupHead.swift */,
 				50B276EF2F3A46FA005F7475 /* PopupBody.swift */,
 				50B276F12F3A4709005F7475 /* PopupFoot.swift */,
@@ -331,7 +331,7 @@
 			files = (
 				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
-				50B276D42F39CC5E005F7475 /* PopupView.swift in Sources */,
+				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
