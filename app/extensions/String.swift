@@ -11,4 +11,8 @@ extension String {
         self.hasPrefix(prefix) ? String(self.dropFirst(prefix.count)) : self
     }
 
+    func trimSuffix(_ suffix: String) -> String {
+        self.hasSuffix(suffix) ? String(self.dropLast(suffix.count)) : self
+    }
+
 }
