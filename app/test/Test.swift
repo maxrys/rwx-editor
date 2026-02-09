@@ -138,6 +138,7 @@ struct Test {
             "/directory/"            : (path: "/",           name: "directory"),
             "/directory/file"        : (path: "/directory/", name: "file"     ),
             "file:///"               : (path: "/",           name: ""         ),
+            "file:///file"           : (path: "/",           name: "file"     ),
             "file:///directory/"     : (path: "/",           name: "directory"),
             "file:///directory/file" : (path: "/directory/", name: "file"     ),
         ]
@@ -149,6 +150,5 @@ struct Test {
             #expect(received == expected)
         }
     }
-
 
 }
