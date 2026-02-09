@@ -5,22 +5,10 @@
 
 import SwiftUI
 
-struct Popup: View {
-
-    public let path: String
-    public let info: String
-
-    init(path: String) {
-        self.path = path
-        self.info = path
-    }
+struct PopupBody: View {
 
     var body: some View {
-        VStack (spacing: 0) {
-            PopupHead()
-            PopupBody()
-            PopupFoot()
-        }
+        Text("PopupBody")
     }
 
 }
@@ -32,8 +20,5 @@ struct Popup: View {
 /* ############################################################# */
 
 #Preview {
-    VStack(spacing: 10) {
-        Popup(path: "/private/etc/")
-        Popup(path: "/private/etc/hosts")
-    }.padding(20)
+    PopupBody()
 }

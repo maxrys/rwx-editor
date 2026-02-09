@@ -102,7 +102,7 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 styleMask: [.titled, .closable],
                 isVisible: true,
                 delegate: self,
-                view: PopupView(
+                view: Popup(
                     path: path
                 )
             )

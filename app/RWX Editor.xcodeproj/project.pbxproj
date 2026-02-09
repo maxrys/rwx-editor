@@ -29,6 +29,9 @@
 		50B276E72F39DC88005F7475 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
 		50B276E82F39DC92005F7475 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
 		50B276E92F39DCCA005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
+		50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276ED2F3A466B005F7475 /* PopupHead.swift */; };
+		50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276EF2F3A46FA005F7475 /* PopupBody.swift */; };
+		50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F12F3A4709005F7475 /* PopupFoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		50B276E52F39DC88005F7475 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		50B276EA2F3A40C9005F7475 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		50B276EB2F3A411D005F7475 /* FinderSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderSync.entitlements; sourceTree = "<group>"; };
+		50B276ED2F3A466B005F7475 /* PopupHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHead.swift; sourceTree = "<group>"; };
+		50B276EF2F3A46FA005F7475 /* PopupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupBody.swift; sourceTree = "<group>"; };
+		50B276F12F3A4709005F7475 /* PopupFoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				50B276D32F39CC59005F7475 /* PopupView.swift */,
+				50B276ED2F3A466B005F7475 /* PopupHead.swift */,
+				50B276EF2F3A46FA005F7475 /* PopupBody.swift */,
+				50B276F12F3A4709005F7475 /* PopupFoot.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
@@ -320,10 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* PopupView.swift in Sources */,
+				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
+				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				50B276E72F39DC88005F7475 /* URL.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
