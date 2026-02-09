@@ -32,6 +32,8 @@
 		50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276ED2F3A466B005F7475 /* PopupHead.swift */; };
 		50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276EF2F3A46FA005F7475 /* PopupBody.swift */; };
 		50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F12F3A4709005F7475 /* PopupFoot.swift */; };
+		50B276F42F3A4991005F7475 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
+		50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,7 @@
 		50B276ED2F3A466B005F7475 /* PopupHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHead.swift; sourceTree = "<group>"; };
 		50B276EF2F3A46FA005F7475 /* PopupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupBody.swift; sourceTree = "<group>"; };
 		50B276F12F3A4709005F7475 /* PopupFoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFoot.swift; sourceTree = "<group>"; };
+		50B276F32F3A4990005F7475 /* FSEntityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSEntityInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276C22F39CB73005F7475 /* const.swift */,
+				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -331,6 +335,7 @@
 			files = (
 				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
+				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
@@ -351,6 +356,7 @@
 			files = (
 				50B276E22F39DC3F005F7475 /* UInt.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
+				50B276F42F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276C72F39CBC9005F7475 /* Logger.swift in Sources */,
 				50B276D02F39CC05005F7475 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,

@@ -7,8 +7,10 @@ import SwiftUI
 
 struct PopupHead: View {
 
+    public let info: FSEntityInfo
+
     var body: some View {
-        Text("PopupHead")
+        Text(self.info.fullpath)
     }
 
 }
@@ -20,5 +22,10 @@ struct PopupHead: View {
 /* ############################################################# */
 
 #Preview {
-    PopupHead()
+    VStack(spacing: 20) {
+        PopupHead(info: FSEntityInfo("/private/etc/"))
+        PopupHead(info: FSEntityInfo("/private/etc/hosts"))
+    }
+    .padding(20)
+    .frame(width: 300)
 }

@@ -34,7 +34,7 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
         for url in urls {
             self.showWindowPopup(
-                path: url.absoluteString.trimPrefix(URL_PREFIX_THIS_APP)
+                fullpath: url.absoluteString.trimPrefix(URL_PREFIX_THIS_APP)
             )
         }
     }
@@ -91,19 +91,19 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSApplication.showAppsDock()
     }
 
-    func showWindowPopup(path: String) {
-        Logger.customLog("Popup Window will show | ID = \(path)")
-        if let windowPopup = NSWindow.customWindows[path] {
+    func showWindowPopup(fullpath: String) {
+        Logger.customLog("Popup Window will show | ID = \(fullpath)")
+        if let windowPopup = NSWindow.customWindows[fullpath] {
             windowPopup.show()
         } else {
             _ = NSWindow.makeAndShowFromSwiftUIView(
-                ID: path,
+                ID: fullpath,
                 title: WINDOW_POPUP_TITLE,
                 styleMask: [.titled, .closable],
                 isVisible: true,
                 delegate: self,
                 view: Popup(
-                    path: path
+                    fullpath: fullpath
                 )
             )
         }
