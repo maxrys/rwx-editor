@@ -14,7 +14,7 @@ struct PopupHead: View {
 
     @State private var rollerForCreated: Date.VisibilityMode = .convenient
     @State private var rollerForUpdated: Date.VisibilityMode = .convenient
-    @State private var rollerForSize: ByteCountFormatter.VisibilityMode = .bytes
+    @State private var rollerForSize: ByteCountFormatter.VisibilityMode = .useBytes
 
     public let info: FSEntityInfo
 
@@ -70,11 +70,11 @@ struct PopupHead: View {
 
     private var formattedSize: String {
         switch self.rollerForSize {
-            case  .bytes: ByteCountFormatter.format(self.info.size, unit: .useBytes)
-            case .kbytes: ByteCountFormatter.format(self.info.size, unit: .useKB)
-            case .mbytes: ByteCountFormatter.format(self.info.size, unit: .useMB)
-            case .gbytes: ByteCountFormatter.format(self.info.size, unit: .useGB)
-            case .tbytes: ByteCountFormatter.format(self.info.size, unit: .useTB)
+            case .useBytes: ByteCountFormatter.format(self.info.size, unit: .useBytes)
+            case .useKB   : ByteCountFormatter.format(self.info.size, unit: .useKB)
+            case .useMB   : ByteCountFormatter.format(self.info.size, unit: .useMB)
+            case .useGB   : ByteCountFormatter.format(self.info.size, unit: .useGB)
+            case .useTB   : ByteCountFormatter.format(self.info.size, unit: .useTB)
         }
     }
 
@@ -115,7 +115,7 @@ struct PopupHead: View {
             self.value(self.formattedUpdated, isSelectable: true)
 
             self.title(NSLocalizedString("Size", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForSize)))
-            self.value(self.formattedSize, isTinted: true)
+            self.value(self.formattedSize, isTinted: true, isSelectable: true)
 
         }
         .background(Color(Self.ColorNames.head.rawValue))
@@ -159,11 +159,11 @@ struct PopupHead: View {
 
 struct RollerStick<T: CaseIterable & Equatable>: View {
 
-    var value: Binding<T>
+    @Binding var value: T
 
     var body: some View {
         Button {
-            value.wrappedValue.roll()
+            value.roll()
         } label: {
             Image(systemName: "arcade.stick")
                 .foregroundPolyfill(Color.accentColor)
