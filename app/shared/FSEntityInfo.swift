@@ -18,16 +18,20 @@ public enum FSType {
 final class FSEntityInfo {
 
     public let fullpath: String
+
     public let type: FSType
-    public let path: String
     public let name: String
+    public let path: String
+    public var realName: String?
+    public var realPath: String?
+    public let references: UInt
     public let created: Date
     public let updated: Date
-    public let references: UInt
+    public let size: UInt
+
     public let rights: UInt
     public let owner: String
     public let group: String
-    public let size: UInt
 
     init?(_ fullpath: String) {
 
@@ -45,10 +49,12 @@ final class FSEntityInfo {
 
         /* MARK: type */
 
+        var typeResolved: FSType
+
         switch attributes[.type] as? FileAttributeType {
-            case .typeDirectory       : self.type = .directory
-            case .typeRegular         : self.type = .file
-            case .typeSymbolicLink    : self.type = .link
+            case .typeDirectory       : typeResolved = .directory
+            case .typeRegular         : typeResolved = .file
+            case .typeSymbolicLink    : typeResolved = .link
             case .typeBlockSpecial    : return nil
             case .typeCharacterSpecial: return nil
             case .typeSocket          : return nil
@@ -60,10 +66,10 @@ final class FSEntityInfo {
         /* MARK: path/name */
 
         let (path, name) = fullpathAsURL.pathAndName
-        self.path = path
         self.name = name
+        self.path = path
 
-        /* MARK: created/updated/referenceCount/rights/owner/group */
+        /* MARK: created/updated/references/rights/owner/group */
 
         if let created    = attributes[.creationDate]          as? Date   { self.created    = created    } else { return nil }
         if let updated    = attributes[.modificationDate]      as? Date   { self.updated    = updated    } else { return nil }
@@ -76,13 +82,32 @@ final class FSEntityInfo {
 
         var sizeResolved: UInt = 0
 
-        if (self.type == .file || self.type == .link) {
+        if (typeResolved == .file || typeResolved == .link) {
             if let size = attributes[.size] as? UInt {
                 sizeResolved = size
             }
         }
 
         self.size = sizeResolved
+
+        /* MARK: realPath/realName */
+
+        if let subtype = try? fullpathAsURL.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
+            switch (subtype.isRegularFile, subtype.isAliasFile, subtype.isSymbolicLink) {
+                case (true, true, false):
+                    typeResolved = .alias
+                case (false, true, true):
+                    typeResolved = .link
+                    let (realPath, realName) = fullpathAsURL.resolvingSymlinksInPath().pathAndName
+                    self.realName = realName
+                    self.realPath = realPath
+                default: break
+            }
+        }
+
+        /* MARK: type */
+
+        self.type = typeResolved
 
     }
 

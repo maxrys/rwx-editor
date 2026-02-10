@@ -35,6 +35,18 @@ struct PopupHead: View {
         self.info.path
     }
 
+    private var formattedRealName: String {
+        self.info.realName ?? ""
+    }
+
+    private var formattedRealPath: String {
+        self.info.realPath ?? ""
+    }
+
+    private var formattedReferences: String {
+        String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
+    }
+
     private var formattedCreated: String {
         switch self.rollerForCreated {
             case .convenient   : self.info.created.convenient
@@ -61,10 +73,6 @@ struct PopupHead: View {
         }
     }
 
-    private var formattedReferences: String {
-        String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
-    }
-
     private let columns = [
         GridItem(.fixed(100), spacing: 10, alignment: .trailing),
         GridItem(.flexible(), spacing: 10, alignment: .leading)
@@ -82,14 +90,24 @@ struct PopupHead: View {
             self.title("Path")
             self.value(self.formattedPath, isCanSelect: true)
 
+            if let realName = self.info.realName {
+                self.title("Real Name")
+                self.value(realName, isCanSelect: true)
+            }
+
+            if let realPath = self.info.realPath {
+                self.title("Real Path")
+                self.value(realPath, isCanSelect: true)
+            }
+
+            self.title("Reference Count")
+            self.value(self.formattedReferences)
+
             self.title("Created", controls: AnyView(RollerStick(value: self.$rollerForCreated)))
             self.value(self.formattedCreated, isCanSelect: true)
 
             self.title("Updated", controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
             self.value(self.formattedUpdated, isCanSelect: true)
-
-            self.title("Reference Count")
-            self.value(self.formattedReferences)
 
             self.title("Size", controls: AnyView(RollerStick(value: self.$rollerForSize)))
             self.value(self.formattedSize)
