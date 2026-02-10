@@ -21,7 +21,7 @@ struct Popup: View {
     var body: some View {
         VStack (spacing: 0) {
             PopupHead(info: self.info)
-            PopupBody()
+            PopupBody(info: self.info)
             PopupFoot()
         }
         .environment(\.layoutDirection, .leftToRight)

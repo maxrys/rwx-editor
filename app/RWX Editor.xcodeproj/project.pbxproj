@@ -47,6 +47,14 @@
 		50B277052F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277072F3B3BBB005F7475 /* Assets.xcassets */; };
+		50B2770B2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
+		50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
+		50B2770D2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
+		50B2770F2F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
+		50B277102F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
+		50B277112F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
+		50B277132F3BD0F2005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
+		50B277142F3BD0F2005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +112,9 @@
 		50B277002F3B2357005F7475 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
 		50B277042F3B2D93005F7475 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = "main app/Localizable.xcstrings"; sourceTree = SOURCE_ROOT; };
 		50B277072F3B3BBB005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxColored.swift; sourceTree = "<group>"; };
+		50B2770E2F3BD044005F7475 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		50B277122F3BD0F2005F7475 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +147,7 @@
 			children = (
 				50B276AB2F3899C9005F7475 /* shared */,
 				50B276AC2F3899D1005F7475 /* extensions */,
+				50B277092F3BCFC0005F7475 /* controls */,
 				50B276AD2F3899DD005F7475 /* main app */,
 				50B276AE2F3899E8005F7475 /* popup */,
 				50B276AF2F3899F7005F7475 /* finder extension */,
@@ -158,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276C22F39CB73005F7475 /* const.swift */,
+				50B277122F3BD0F2005F7475 /* enums.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
 			);
 			path = shared;
@@ -168,6 +181,7 @@
 			children = (
 				50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */,
 				50B277002F3B2357005F7475 /* CaseIterable.swift */,
+				50B2770E2F3BD044005F7475 /* Color.swift */,
 				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
@@ -221,6 +235,14 @@
 				50B276DB2F39DB98005F7475 /* Test.swift */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		50B277092F3BCFC0005F7475 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
+			);
+			path = controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +390,15 @@
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
+				50B277142F3BD0F2005F7475 /* enums.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				50B276E72F39DC88005F7475 /* URL.swift in Sources */,
+				50B277112F3BD044005F7475 /* Color.swift in Sources */,
+				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
@@ -386,9 +411,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B277132F3BD0F2005F7475 /* enums.swift in Sources */,
+				50B2770B2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276E22F39DC3F005F7475 /* UInt.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
+				50B2770F2F3BD044005F7475 /* Color.swift in Sources */,
 				50B276FF2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276F42F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276C72F39CBC9005F7475 /* Logger.swift in Sources */,
@@ -408,6 +436,8 @@
 				50B276E42F39DC55005F7475 /* UInt.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
 				50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */,
+				50B2770D2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
+				50B277102F3BD044005F7475 /* Color.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,
 				50B276E82F39DC92005F7475 /* URL.swift in Sources */,
 			);

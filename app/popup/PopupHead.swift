@@ -80,49 +80,49 @@ struct PopupHead: View {
 
     private let columns = [
         GridItem(.fixed(100), spacing: 0),
-        GridItem(.flexible(), spacing: 0)
+        GridItem(.flexible(), spacing: 0),
     ]
 
     var body: some View {
         LazyVGrid(columns: columns, spacing: 0) {
 
-            self.title(NSLocalizedString("Type", comment: ""), isTinted: true)
-            self.value(self.formattedType, isTinted: true)
+            self.Title(NSLocalizedString("Type", comment: ""), isTinted: true)
+            self.Value(self.formattedType, isTinted: true)
 
-            self.title(NSLocalizedString("Name", comment: ""))
-            self.value(self.formattedName, isSelectable: true)
+            self.Title(NSLocalizedString("Name", comment: ""))
+            self.Value(self.formattedName, isSelectable: true)
 
-            self.title(NSLocalizedString("Path", comment: ""), isTinted: true)
-            self.value(self.formattedPath, isTinted: true, isSelectable: true)
+            self.Title(NSLocalizedString("Path", comment: ""), isTinted: true)
+            self.Value(self.formattedPath, isTinted: true, isSelectable: true)
 
             if let realName = self.info.realName {
-                self.title(NSLocalizedString("Real Name", comment: ""))
-                self.value(realName, isSelectable: true)
+                self.Title(NSLocalizedString("Real Name", comment: ""))
+                self.Value(realName, isSelectable: true)
             }
 
             if let realPath = self.info.realPath {
-                self.title(NSLocalizedString("Real Path", comment: ""), isTinted: true)
-                self.value(realPath, isTinted: true, isSelectable: true)
+                self.Title(NSLocalizedString("Real Path", comment: ""), isTinted: true)
+                self.Value(realPath, isTinted: true, isSelectable: true)
             }
 
-            self.title(NSLocalizedString("Reference Count", comment: ""))
-            self.value(self.formattedReferences)
+            self.Title(NSLocalizedString("Reference Count", comment: ""))
+            self.Value(self.formattedReferences)
 
-            self.title(NSLocalizedString("Created", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForCreated)))
-            self.value(self.formattedCreated, isTinted: true, isSelectable: true)
+            self.Title(NSLocalizedString("Created", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForCreated)))
+            self.Value(self.formattedCreated, isTinted: true, isSelectable: true)
 
-            self.title(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
-            self.value(self.formattedUpdated, isSelectable: true)
+            self.Title(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
+            self.Value(self.formattedUpdated, isSelectable: true)
 
-            self.title(NSLocalizedString("Size", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForSize)))
-            self.value(self.formattedSize, isTinted: true, isSelectable: true)
+            self.Title(NSLocalizedString("Size", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForSize)))
+            self.Value(self.formattedSize, isTinted: true, isSelectable: true)
 
         }
         .background(Color(Self.ColorNames.head.rawValue))
         .font(.system(size: 12, weight: .regular))
     }
 
-    @ViewBuilder func title(_ text: String, isTinted: Bool = false, controls: AnyView? = nil) -> some View {
+    @ViewBuilder func Title(_ text: String, isTinted: Bool = false, controls: AnyView? = nil) -> some View {
         HStack(spacing: 4) {
             Text(text)
                 .multilineTextAlignment(.trailing)
@@ -132,7 +132,7 @@ struct PopupHead: View {
         }
         .padding(.horizontal, 7)
         .padding(.vertical  , 6)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .background(
             isTinted ?
                 Color(Self.ColorNames.gridTint.rawValue) :
@@ -140,14 +140,14 @@ struct PopupHead: View {
         )
     }
 
-    @ViewBuilder func value(_ text: String, isTinted: Bool = false, isSelectable: Bool = false) -> some View {
+    @ViewBuilder func Value(_ text: String, isTinted: Bool = false, isSelectable: Bool = false) -> some View {
         HStack(spacing: 0) {
             Text(text)
                 .textSelectionPolyfill(isEnabled: isSelectable)
         }
         .padding(.horizontal, 7)
         .padding(.vertical  , 6)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(
              isTinted ?
                  Color(Self.ColorNames.gridTint.rawValue) :
