@@ -18,3 +18,19 @@ public enum Permission: String {
     }
 
 }
+
+public enum Subject {
+
+    case owner
+    case group
+    case other
+
+    var offset: UInt {
+        switch self {
+            case .owner: return 6
+            case .group: return 3
+            case .other: return 0
+        }
+    }
+
+}

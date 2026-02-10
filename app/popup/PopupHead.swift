@@ -16,7 +16,7 @@ struct PopupHead: View {
     @State private var rollerForUpdated: Date.VisibilityMode = .convenient
     @State private var rollerForSize: ByteCountFormatter.VisibilityMode = .useBytes
 
-    public let info: FSEntityInfo
+    private let info: FSEntityInfo
 
     init(info: FSEntityInfo) {
         self.info = info
@@ -159,7 +159,11 @@ struct PopupHead: View {
 
 struct RollerStick<T: CaseIterable & Equatable>: View {
 
-    @Binding var value: T
+    @Binding private var value: T
+
+    init(value: Binding<T>) {
+        self._value = value
+    }
 
     var body: some View {
         Button {

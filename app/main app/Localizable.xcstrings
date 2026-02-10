@@ -27,6 +27,9 @@
         }
       }
     },
+    "Access" : {
+
+    },
     "alias" : {
       "localizations" : {
         "ru" : {
@@ -57,6 +60,9 @@
         }
       }
     },
+    "Execute" : {
+
+    },
     "file" : {
       "localizations" : {
         "ru" : {
@@ -66,6 +72,9 @@
           }
         }
       }
+    },
+    "Group" : {
+
     },
     "link" : {
       "localizations" : {
@@ -87,6 +96,12 @@
         }
       }
     },
+    "Other" : {
+
+    },
+    "Owner" : {
+
+    },
     "Path" : {
       "localizations" : {
         "ru" : {
@@ -97,11 +112,11 @@
         }
       }
     },
-    "PopupBody" : {
-      "shouldTranslate" : false
-    },
     "PopupFoot" : {
       "shouldTranslate" : false
+    },
+    "Read" : {
+
     },
     "Real Name" : {
       "localizations" : {
@@ -192,6 +207,9 @@
           }
         }
       }
+    },
+    "Write" : {
+
     }
   },
   "version" : "1.1"
