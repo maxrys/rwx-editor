@@ -79,7 +79,7 @@ struct PopupHead: View {
     }
 
     private let columns = [
-        GridItem(.flexible(), spacing: 0),
+        GridItem(.fixed(100), spacing: 0),
         GridItem(.flexible(), spacing: 0)
     ]
 
@@ -119,17 +119,19 @@ struct PopupHead: View {
 
         }
         .background(Color(Self.ColorNames.head.rawValue))
+        .font(.system(size: 12, weight: .regular))
     }
 
     @ViewBuilder func title(_ text: String, isTinted: Bool = false, controls: AnyView? = nil) -> some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 4) {
             Text(text)
+                .multilineTextAlignment(.trailing)
             if let controls {
                 controls
             }
         }
         .padding(.horizontal, 7)
-        .padding(.vertical  , 5)
+        .padding(.vertical  , 6)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
         .background(
             isTinted ?
@@ -144,7 +146,7 @@ struct PopupHead: View {
                 .textSelectionPolyfill(isEnabled: isSelectable)
         }
         .padding(.horizontal, 7)
-        .padding(.vertical  , 5)
+        .padding(.vertical  , 6)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .background(
              isTinted ?
