@@ -7,9 +7,9 @@ import SwiftUI
 
 struct PopupHead: View {
 
-    @State private var visibilityModeForCreated: Date.VisibilityMode = .convenient
-    @State private var visibilityModeForUpdated: Date.VisibilityMode = .convenient
-    @State private var visibilityModeForSize: ByteCountFormatter.VisibilityMode = .bytes
+    @State private var rollerForCreated: Date.VisibilityMode = .convenient
+    @State private var rollerForUpdated: Date.VisibilityMode = .convenient
+    @State private var rollerForSize: ByteCountFormatter.VisibilityMode = .bytes
 
     public let info: FSEntityInfo
 
@@ -36,7 +36,7 @@ struct PopupHead: View {
     }
 
     private var formattedCreated: String {
-        switch self.visibilityModeForCreated {
+        switch self.rollerForCreated {
             case .convenient   : self.info.created.convenient
             case .iso8601withTZ: self.info.created.ISO8601withTZ
             case .iso8601      : self.info.created.ISO8601
@@ -44,7 +44,7 @@ struct PopupHead: View {
     }
 
     private var formattedUpdated: String {
-        switch self.visibilityModeForUpdated {
+        switch self.rollerForUpdated {
             case .convenient   : self.info.updated.convenient
             case .iso8601withTZ: self.info.updated.ISO8601withTZ
             case .iso8601      : self.info.updated.ISO8601
@@ -52,7 +52,7 @@ struct PopupHead: View {
     }
 
     private var formattedSize: String {
-        switch self.visibilityModeForSize {
+        switch self.rollerForSize {
             case  .bytes: ByteCountFormatter.format(self.info.size, unit: .useBytes)
             case .kbytes: ByteCountFormatter.format(self.info.size, unit: .useKB)
             case .mbytes: ByteCountFormatter.format(self.info.size, unit: .useMB)
@@ -82,31 +82,54 @@ struct PopupHead: View {
             self.title("Path")
             self.value(self.formattedPath, isCanSelect: true)
 
-            self.title("Created")
+            self.title("Created", controls: AnyView(RollerStick(value: self.$rollerForCreated)))
             self.value(self.formattedCreated, isCanSelect: true)
 
-            self.title("Updated")
+            self.title("Updated", controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
             self.value(self.formattedUpdated, isCanSelect: true)
 
             self.title("Reference Count")
             self.value(self.formattedReferences)
 
-            self.title("Size")
+            self.title("Size", controls: AnyView(RollerStick(value: self.$rollerForSize)))
             self.value(self.formattedSize)
 
         }
     }
 
-    @ViewBuilder func title(_ text: String) -> some View {
-        Text(NSLocalizedString(text, comment: ""))
-            .multilineTextAlignment(.trailing)
-            .padding(.vertical, 6)
+    @ViewBuilder func title(_ text: String, controls: AnyView? = nil) -> some View {
+        HStack(spacing: 10) {
+            Text(NSLocalizedString(text, comment: ""))
+                .multilineTextAlignment(.trailing)
+                .padding(.vertical, 6)
+            if let controls {
+                controls
+            }
+        }
     }
 
     @ViewBuilder func value(_ text: String, isCanSelect: Bool = false) -> some View {
         Text(text)
             .textSelectionPolyfill(isEnabled: isCanSelect)
             .padding(.vertical, 6)
+    }
+
+}
+
+struct RollerStick<T: CaseIterable & Equatable>: View {
+
+    var value: Binding<T>
+
+    var body: some View {
+        Button {
+            value.wrappedValue.roll()
+        } label: {
+            Image(systemName: "arcade.stick")
+                .foregroundPolyfill(Color.accentColor)
+                .font(.system(size: 10, weight: .regular))
+        }
+        .buttonStyle(.plain)
+        .pointerStyleLinkPolyfill()
     }
 
 }

@@ -41,6 +41,9 @@
 		50B276FD2F3A8D34005F7475 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276FC2F3A8D32005F7475 /* View.swift */; };
 		50B276FE2F3A8D34005F7475 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276FC2F3A8D32005F7475 /* View.swift */; };
 		50B276FF2F3A8D34005F7475 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276FC2F3A8D32005F7475 /* View.swift */; };
+		50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277002F3B2357005F7475 /* CaseIterable.swift */; };
+		50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277002F3B2357005F7475 /* CaseIterable.swift */; };
+		50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277002F3B2357005F7475 /* CaseIterable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,7 @@
 		50B276F62F3A71B0005F7475 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteCountFormatter.swift; sourceTree = "<group>"; };
 		50B276FC2F3A8D32005F7475 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		50B277002F3B2357005F7475 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */,
+				50B277002F3B2357005F7475 /* CaseIterable.swift */,
 				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
@@ -349,6 +354,7 @@
 				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
 				50B276F82F3A71B2005F7475 /* Date.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
+				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
@@ -370,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276E22F39DC3F005F7475 /* UInt.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				50B276FF2F3A8D34005F7475 /* View.swift in Sources */,
@@ -390,6 +397,7 @@
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
 				50B276E42F39DC55005F7475 /* UInt.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
+				50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,
 				50B276E82F39DC92005F7475 /* URL.swift in Sources */,
 			);
