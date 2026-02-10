@@ -81,35 +81,35 @@ struct PopupHead: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 0) {
 
-            self.title("Type")
+            self.title(NSLocalizedString("Type", comment: ""))
             self.value(self.formattedType)
 
-            self.title("Name")
+            self.title(NSLocalizedString("Name", comment: ""))
             self.value(self.formattedName, isCanSelect: true)
 
-            self.title("Path")
+            self.title(NSLocalizedString("Path", comment: ""))
             self.value(self.formattedPath, isCanSelect: true)
 
             if let realName = self.info.realName {
-                self.title("Real Name")
+                self.title(NSLocalizedString("Real Name", comment: ""))
                 self.value(realName, isCanSelect: true)
             }
 
             if let realPath = self.info.realPath {
-                self.title("Real Path")
+                self.title(NSLocalizedString("Real Path", comment: ""))
                 self.value(realPath, isCanSelect: true)
             }
 
-            self.title("Reference Count")
+            self.title(NSLocalizedString("Reference Count", comment: ""))
             self.value(self.formattedReferences)
 
-            self.title("Created", controls: AnyView(RollerStick(value: self.$rollerForCreated)))
+            self.title(NSLocalizedString("Created", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForCreated)))
             self.value(self.formattedCreated, isCanSelect: true)
 
-            self.title("Updated", controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
+            self.title(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
             self.value(self.formattedUpdated, isCanSelect: true)
 
-            self.title("Size", controls: AnyView(RollerStick(value: self.$rollerForSize)))
+            self.title(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize)))
             self.value(self.formattedSize)
 
         }
@@ -117,7 +117,7 @@ struct PopupHead: View {
 
     @ViewBuilder func title(_ text: String, controls: AnyView? = nil) -> some View {
         HStack(spacing: 10) {
-            Text(NSLocalizedString(text, comment: ""))
+            Text(text)
                 .multilineTextAlignment(.trailing)
                 .padding(.vertical, 6)
             if let controls {

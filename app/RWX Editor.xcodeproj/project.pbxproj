@@ -44,6 +44,8 @@
 		50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277002F3B2357005F7475 /* CaseIterable.swift */; };
 		50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277002F3B2357005F7475 /* CaseIterable.swift */; };
 		50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277002F3B2357005F7475 /* CaseIterable.swift */; };
+		50B277052F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
+		50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,7 @@
 		50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteCountFormatter.swift; sourceTree = "<group>"; };
 		50B276FC2F3A8D32005F7475 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		50B277002F3B2357005F7475 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
+		50B277042F3B2D93005F7475 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = "main app/Localizable.xcstrings"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,7 @@
 				50B276A72F389886005F7475 /* App.swift */,
 				50B276D12F39CC3E005F7475 /* MainView.swift */,
 				50B276A52F389886005F7475 /* Assets.xcassets */,
+				50B277042F3B2D93005F7475 /* Localizable.xcstrings */,
 				50B276EA2F3A40C9005F7475 /* app.entitlements */,
 				50B276C12F39CA05005F7475 /* Info.plist */,
 			);
@@ -326,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B277052F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

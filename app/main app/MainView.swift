@@ -11,7 +11,9 @@ struct MainView: View {
         VStack {
             Text("Settings")
                 .padding(20)
-        }.environment(\.layoutDirection, .leftToRight)
+        }
+        .frame(width: 400, height: 200)
+        .environment(\.layoutDirection, .leftToRight)
     }
 
 }
