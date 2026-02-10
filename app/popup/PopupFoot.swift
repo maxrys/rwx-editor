@@ -7,8 +7,17 @@ import SwiftUI
 
 struct PopupFoot: View {
 
+    enum ColorNames: String {
+        case foot = "color Popup Foot Background"
+    }
+
     var body: some View {
-        Text("PopupFoot")
+        VStack(spacing: 0) {
+            Text("PopupFoot")
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity)
+        .background(Color(Self.ColorNames.foot.rawValue))
     }
 
 }

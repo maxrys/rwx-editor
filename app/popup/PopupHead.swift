@@ -7,6 +7,11 @@ import SwiftUI
 
 struct PopupHead: View {
 
+    enum ColorNames: String {
+        case head     = "color Popup Head Background"
+        case gridTint = "color Popup Head Row Tint"
+    }
+
     @State private var rollerForCreated: Date.VisibilityMode = .convenient
     @State private var rollerForUpdated: Date.VisibilityMode = .convenient
     @State private var rollerForSize: ByteCountFormatter.VisibilityMode = .bytes
@@ -74,62 +79,78 @@ struct PopupHead: View {
     }
 
     private let columns = [
-        GridItem(.fixed(100), spacing: 10, alignment: .trailing),
-        GridItem(.flexible(), spacing: 10, alignment: .leading)
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0)
     ]
 
     var body: some View {
         LazyVGrid(columns: columns, spacing: 0) {
 
-            self.title(NSLocalizedString("Type", comment: ""))
-            self.value(self.formattedType)
+            self.title(NSLocalizedString("Type", comment: ""), isTinted: true)
+            self.value(self.formattedType, isTinted: true)
 
             self.title(NSLocalizedString("Name", comment: ""))
-            self.value(self.formattedName, isCanSelect: true)
+            self.value(self.formattedName, isSelectable: true)
 
-            self.title(NSLocalizedString("Path", comment: ""))
-            self.value(self.formattedPath, isCanSelect: true)
+            self.title(NSLocalizedString("Path", comment: ""), isTinted: true)
+            self.value(self.formattedPath, isTinted: true, isSelectable: true)
 
             if let realName = self.info.realName {
                 self.title(NSLocalizedString("Real Name", comment: ""))
-                self.value(realName, isCanSelect: true)
+                self.value(realName, isSelectable: true)
             }
 
             if let realPath = self.info.realPath {
-                self.title(NSLocalizedString("Real Path", comment: ""))
-                self.value(realPath, isCanSelect: true)
+                self.title(NSLocalizedString("Real Path", comment: ""), isTinted: true)
+                self.value(realPath, isTinted: true, isSelectable: true)
             }
 
             self.title(NSLocalizedString("Reference Count", comment: ""))
             self.value(self.formattedReferences)
 
-            self.title(NSLocalizedString("Created", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForCreated)))
-            self.value(self.formattedCreated, isCanSelect: true)
+            self.title(NSLocalizedString("Created", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForCreated)))
+            self.value(self.formattedCreated, isTinted: true, isSelectable: true)
 
             self.title(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
-            self.value(self.formattedUpdated, isCanSelect: true)
+            self.value(self.formattedUpdated, isSelectable: true)
 
-            self.title(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize)))
-            self.value(self.formattedSize)
+            self.title(NSLocalizedString("Size", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForSize)))
+            self.value(self.formattedSize, isTinted: true)
 
         }
+        .background(Color(Self.ColorNames.head.rawValue))
     }
 
-    @ViewBuilder func title(_ text: String, controls: AnyView? = nil) -> some View {
+    @ViewBuilder func title(_ text: String, isTinted: Bool = false, controls: AnyView? = nil) -> some View {
         HStack(spacing: 10) {
             Text(text)
-                .multilineTextAlignment(.trailing)
-                .padding(.vertical, 6)
             if let controls {
                 controls
             }
         }
+        .padding(.horizontal, 7)
+        .padding(.vertical  , 5)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+        .background(
+            isTinted ?
+                Color(Self.ColorNames.gridTint.rawValue) :
+                Color.clear
+        )
     }
 
-    @ViewBuilder func value(_ text: String, isCanSelect: Bool = false) -> some View {
-        Text(text)
-            .textSelectionPolyfill(isEnabled: isCanSelect)
-            .padding(.vertical, 6)
+    @ViewBuilder func value(_ text: String, isTinted: Bool = false, isSelectable: Bool = false) -> some View {
+        HStack(spacing: 0) {
+            Text(text)
+                .textSelectionPolyfill(isEnabled: isSelectable)
+        }
+        .padding(.horizontal, 7)
+        .padding(.vertical  , 5)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .background(
+             isTinted ?
+                 Color(Self.ColorNames.gridTint.rawValue) :
+                 Color.clear
+        )
     }
 
 }
@@ -164,5 +185,6 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
         PopupHead(info: FSEntityInfo("/private/etc/hosts")!) /* file */
     }
     .padding(20)
+    .background(Color.black)
     .frame(width: 300)
 }

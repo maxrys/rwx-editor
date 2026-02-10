@@ -8,24 +8,21 @@ import SwiftUI
 struct Popup: View {
 
     public let fullpath: String
-    public let info: FSEntityInfo?
+    public let info: FSEntityInfo
 
-    init(fullpath: String) {
+    init?(fullpath: String) {
+        guard let info = FSEntityInfo(fullpath) else {
+            return nil
+        }
         self.fullpath = fullpath
-        self.info = FSEntityInfo(
-            fullpath
-        )
+        self.info = info
     }
 
     var body: some View {
         VStack (spacing: 0) {
-            if let info = self.info {
-                PopupHead(info: info)
-                PopupBody()
-                PopupFoot()
-            } else {
-                Text("UNSUPPORTED TYPE")
-            }
+            PopupHead(info: self.info)
+            PopupBody()
+            PopupFoot()
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: 300)
@@ -42,8 +39,9 @@ struct Popup: View {
 #Preview {
     VStack(spacing: 20) {
         Popup(fullpath: "")                   /* empty */
-        Popup(fullpath: "/unknown/")          /* non-existent */
         Popup(fullpath: "/private/etc/")      /* directory */
         Popup(fullpath: "/private/etc/hosts") /* file */
-    }.padding(20)
+    }
+    .padding(20)
+    .background(Color.black)
 }

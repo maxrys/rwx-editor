@@ -183,9 +183,6 @@
         }
       }
     },
-    "UNSUPPORTED TYPE" : {
-      "shouldTranslate" : false
-    },
     "Updated" : {
       "localizations" : {
         "ru" : {

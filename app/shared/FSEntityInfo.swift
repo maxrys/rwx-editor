@@ -5,29 +5,27 @@
 
 import Foundation
 
-public enum FSType {
-
-    case directory
-    case file
-    case link
-    case alias
-    case other
-
-}
-
 final class FSEntityInfo {
+
+    public enum FSType {
+        case directory
+        case file
+        case link
+        case alias
+        case other
+    }
 
     public let fullpath: String
 
-    public let type: FSType
-    public let name: String
-    public let path: String
-    public var realName: String?
-    public var realPath: String?
-    public let references: UInt
-    public let created: Date
-    public let updated: Date
-    public let size: UInt
+    public private(set) var type: FSType
+    public private(set) var name: String
+    public private(set) var path: String
+    public private(set) var realName: String?
+    public private(set) var realPath: String?
+    public private(set) var references: UInt
+    public private(set) var created: Date
+    public private(set) var updated: Date
+    public private(set) var size: UInt = 0
 
     public let rights: UInt
     public let owner: String
@@ -49,12 +47,10 @@ final class FSEntityInfo {
 
         /* MARK: type */
 
-        var typeResolved: FSType
-
         switch attributes[.type] as? FileAttributeType {
-            case .typeDirectory       : typeResolved = .directory
-            case .typeRegular         : typeResolved = .file
-            case .typeSymbolicLink    : typeResolved = .link
+            case .typeDirectory       : self.type = .directory
+            case .typeRegular         : self.type = .file
+            case .typeSymbolicLink    : self.type = .link
             case .typeBlockSpecial    : return nil
             case .typeCharacterSpecial: return nil
             case .typeSocket          : return nil
@@ -80,34 +76,26 @@ final class FSEntityInfo {
 
         /* MARK: size */
 
-        var sizeResolved: UInt = 0
-
-        if (typeResolved == .file || typeResolved == .link) {
+        if (self.type == .file || self.type == .link) {
             if let size = attributes[.size] as? UInt {
-                sizeResolved = size
+                self.size = size
             }
         }
-
-        self.size = sizeResolved
 
         /* MARK: realPath/realName */
 
         if let subtype = try? fullpathAsURL.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
             switch (subtype.isRegularFile, subtype.isAliasFile, subtype.isSymbolicLink) {
                 case (true, true, false):
-                    typeResolved = .alias
+                    self.type = .alias
                 case (false, true, true):
-                    typeResolved = .link
+                    self.type = .link
                     let (realPath, realName) = fullpathAsURL.resolvingSymlinksInPath().pathAndName
                     self.realName = realName
                     self.realPath = realPath
                 default: break
             }
         }
-
-        /* MARK: type */
-
-        self.type = typeResolved
 
     }
 
