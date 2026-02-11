@@ -28,7 +28,14 @@
       }
     },
     "Access" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступ"
+          }
+        }
+      }
     },
     "alias" : {
       "localizations" : {
@@ -61,7 +68,14 @@
       }
     },
     "Execute" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск"
+          }
+        }
+      }
     },
     "file" : {
       "localizations" : {
@@ -74,7 +88,14 @@
       }
     },
     "Group" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Группа"
+          }
+        }
+      }
     },
     "link" : {
       "localizations" : {
@@ -97,10 +118,24 @@
       }
     },
     "Other" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Другие"
+          }
+        }
+      }
     },
     "Owner" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Владелец"
+          }
+        }
+      }
     },
     "Path" : {
       "localizations" : {
@@ -116,7 +151,14 @@
       "shouldTranslate" : false
     },
     "Read" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чтение"
+          }
+        }
+      }
     },
     "Real Name" : {
       "localizations" : {
@@ -209,7 +251,14 @@
       }
     },
     "Write" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запись"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"
