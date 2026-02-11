@@ -18,20 +18,24 @@ struct PanelRwxText: View {
         self._rights = rights
     }
 
-    let isOn: (UInt, UInt) -> Bool = { rightsValue, bitPosition in
-        rightsValue[bitPosition]
+    static private let bitPosition: (Subject, Permission) -> UInt = { subject, permission in
+        subject.offset + permission.offset
+    }
+
+    static private let isOn: (UInt, Subject, Permission) -> Bool = { rights, subject, permission in
+        rights[
+            Self.bitPosition(subject, permission)
+        ]
     }
 
     var body: some View {
         let symbolR = Permission.r.rawValue
         let symbolW = Permission.w.rawValue
         let symbolX = Permission.x.rawValue
-        let symbolE = "-"
-        let text = String(
-            "\( self.isOn(self.rights, Subject.owner.offset + Permission.r.offset) ? symbolR : symbolE )\( self.isOn(self.rights, Subject.owner.offset + Permission.w.offset) ? symbolW : symbolE )\( self.isOn(self.rights, Subject.owner.offset + Permission.x.offset) ? symbolX : symbolE )" +
-            "\( self.isOn(self.rights, Subject.group.offset + Permission.r.offset) ? symbolR : symbolE )\( self.isOn(self.rights, Subject.group.offset + Permission.w.offset) ? symbolW : symbolE )\( self.isOn(self.rights, Subject.group.offset + Permission.x.offset) ? symbolX : symbolE )" +
-            "\( self.isOn(self.rights, Subject.other.offset + Permission.r.offset) ? symbolR : symbolE )\( self.isOn(self.rights, Subject.other.offset + Permission.w.offset) ? symbolW : symbolE )\( self.isOn(self.rights, Subject.other.offset + Permission.x.offset) ? symbolX : symbolE )"
-        )
+        let text =
+            "\(Self.isOn(self.rights, .owner, .r) ? symbolR : "-")\(Self.isOn(self.rights, .owner, .w) ? symbolW : "-")\(Self.isOn(self.rights, .owner, .x) ? symbolX : "-")" +
+            "\(Self.isOn(self.rights, .group, .r) ? symbolR : "-")\(Self.isOn(self.rights, .group, .w) ? symbolW : "-")\(Self.isOn(self.rights, .group, .x) ? symbolX : "-")" +
+            "\(Self.isOn(self.rights, .other, .r) ? symbolR : "-")\(Self.isOn(self.rights, .other, .w) ? symbolW : "-")\(Self.isOn(self.rights, .other, .x) ? symbolX : "-")"
         Text(text)
             .font(.system(size: 13, weight: .regular, design: .monospaced))
             .padding(.init(top: 4, leading: 9, bottom: 6, trailing: 9))
