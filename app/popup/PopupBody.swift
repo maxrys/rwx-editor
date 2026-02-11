@@ -72,7 +72,7 @@ struct PopupBody: View {
             /* MARK: rules via text/numeric */
 
             HStack(spacing: 20) {
-                //PanelRwxText(self.rights)
+                PanelRwxText(self.$rights)
                 //ToggleRwxNumeric(self.rights)
             }
 
