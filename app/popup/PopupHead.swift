@@ -18,7 +18,7 @@ struct PopupHead: View {
 
     private let info: FSEntityInfo
 
-    init(info: FSEntityInfo) {
+    init(_ info: FSEntityInfo) {
         self.info = info
     }
 
@@ -187,8 +187,8 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
 
 #Preview {
     VStack(spacing: 20) {
-        PopupHead(info: FSEntityInfo("/private/etc/")!)      /* directory */
-        PopupHead(info: FSEntityInfo("/private/etc/hosts")!) /* file */
+        PopupHead(FSEntityInfo("/private/etc/")!)      /* directory */
+        PopupHead(FSEntityInfo("/private/etc/hosts")!) /* file */
     }
     .padding(20)
     .background(Color.black)

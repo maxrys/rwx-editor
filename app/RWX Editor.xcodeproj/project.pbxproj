@@ -59,6 +59,9 @@
 		50B277182F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
 		50B277192F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
 		50B2771A2F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
+		50B2771C2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
+		50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
+		50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +124,7 @@
 		50B277122F3BD0F2005F7475 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		50B277152F3C765C005F7475 /* PanelRwxText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelRwxText.swift; sourceTree = "<group>"; };
 		50B277172F3C7744005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxNumeric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +252,7 @@
 			children = (
 				50B277152F3C765C005F7475 /* PanelRwxText.swift */,
 				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
+				50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */,
 				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = controls;
@@ -405,6 +410,7 @@
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
+				50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
@@ -435,6 +441,7 @@
 				50B276D02F39CC05005F7475 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
 				50B276F72F3A71B2005F7475 /* Date.swift in Sources */,
+				50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E62F39DC88005F7475 /* URL.swift in Sources */,
 			);
@@ -444,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B2771C2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
 				50B276E42F39DC55005F7475 /* UInt.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,

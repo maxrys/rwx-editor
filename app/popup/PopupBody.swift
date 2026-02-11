@@ -20,10 +20,10 @@ struct PopupBody: View {
     private let info: FSEntityInfo
 
     init(
-        info: FSEntityInfo,
-        rights: Binding<UInt>,
-        owner: Binding<String>,
-        group: Binding<String>
+        _ info: FSEntityInfo,
+        _ rights: Binding<UInt>,
+        _ owner: Binding<String>,
+        _ group: Binding<String>
     ) {
         self.info = info
         self._rights = rights
@@ -126,10 +126,10 @@ struct PopupBody: View {
     @Previewable @State var group: String      = FSEntityInfo("/private/etc/")!.group
     VStack(spacing: 20) {
         PopupBody(
-            info: info,
-            rights: $rights,
-            owner: $owner,
-            group: $group
+            info,
+            $rights,
+            $owner,
+            $group
         ).frame(width: 300)
     }
     .padding(20)

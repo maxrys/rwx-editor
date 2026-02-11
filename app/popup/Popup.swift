@@ -27,16 +27,26 @@ struct Popup: View {
 
     var body: some View {
         VStack (spacing: 0) {
+
+            /* MARK: head */
+
             PopupHead(
-                info: self.info
+                self.info
             )
+
+            /* MARK: body */
+
             PopupBody(
-                info  : self.info,
-                rights: self.$rights,
-                owner : self.$owner,
-                group : self.$group
+                self.info,
+                self.$rights,
+                self.$owner,
+                self.$group
             )
+
+            /* MARK: foot */
+
             PopupFoot()
+
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: 300)
