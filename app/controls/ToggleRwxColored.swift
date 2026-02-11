@@ -11,11 +11,16 @@ struct ToggleRwxColored: View {
         case empty = "color ToggleRwxColored Empty"
     }
 
+    static private let ICON_SIZE: CGFloat = 25
+
     @Binding private var rights: UInt
 
     private let subject: Subject
-    private let bitPosition: UInt
-    private let iconSize: CGFloat = 25
+    private let permission: Permission
+
+    private var bitPosition: UInt {
+        self.subject.offset + self.permission.offset
+    }
 
     private var isOn: Bool {
         self.rights[
@@ -23,10 +28,10 @@ struct ToggleRwxColored: View {
         ]
     }
 
-    init(_ subject: Subject, _ rights: Binding<UInt>, bitPosition: UInt) {
+    init(subject: Subject, permission: Permission, _ rights: Binding<UInt>) {
         self.subject     = subject
+        self.permission  = permission
         self._rights     = rights
-        self.bitPosition = bitPosition
     }
 
     var background: Color {
@@ -45,7 +50,7 @@ struct ToggleRwxColored: View {
                 ZStack {
                     Circle()
                         .fill(self.background)
-                        .frame(width: self.iconSize, height: self.iconSize)
+                        .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
                     Image(systemName: "checkmark")
                         .font(.system(size: 13, weight: .bold))
                         .foregroundPolyfill(Color.white)
@@ -53,7 +58,7 @@ struct ToggleRwxColored: View {
             } else {
                 Circle()
                     .fill(Color(Self.ColorNames.empty.rawValue))
-                    .frame(width: self.iconSize, height: self.iconSize)
+                    .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
             }
         }
         .buttonStyle(.plain)
@@ -69,10 +74,10 @@ struct ToggleRwxColored: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var rights: UInt = 0o7
+    @Previewable @State var rights: UInt = 0o777
     HStack(spacing: 10) {
-        ToggleRwxColored(.owner, $rights, bitPosition: Permission.r.offset)
-        ToggleRwxColored(.group, $rights, bitPosition: Permission.x.offset)
-        ToggleRwxColored(.other, $rights, bitPosition: Permission.w.offset)
+        ToggleRwxColored(subject: .owner, permission: .r, $rights)
+        ToggleRwxColored(subject: .group, permission: .x, $rights)
+        ToggleRwxColored(subject: .other, permission: .w, $rights)
     }.padding(20)
 }

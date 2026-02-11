@@ -45,19 +45,19 @@ struct PopupBody: View {
             Text(NSLocalizedString("Other", comment: ""))
 
             Text(NSLocalizedString("Read", comment: ""))
-            ToggleRwxColored(.owner, self.$rights, bitPosition: Subject.owner.offset + Permission.r.offset)
-            ToggleRwxColored(.group, self.$rights, bitPosition: Subject.group.offset + Permission.r.offset)
-            ToggleRwxColored(.other, self.$rights, bitPosition: Subject.other.offset + Permission.r.offset)
+            ToggleRwxColored(subject: .owner, permission: .r, self.$rights)
+            ToggleRwxColored(subject: .group, permission: .r, self.$rights)
+            ToggleRwxColored(subject: .other, permission: .r, self.$rights)
 
             Text(NSLocalizedString("Write", comment: ""))
-            ToggleRwxColored(.owner, self.$rights, bitPosition: Subject.owner.offset + Permission.w.offset)
-            ToggleRwxColored(.group, self.$rights, bitPosition: Subject.group.offset + Permission.w.offset)
-            ToggleRwxColored(.other, self.$rights, bitPosition: Subject.other.offset + Permission.w.offset)
+            ToggleRwxColored(subject: .owner, permission: .w, self.$rights)
+            ToggleRwxColored(subject: .group, permission: .w, self.$rights)
+            ToggleRwxColored(subject: .other, permission: .w, self.$rights)
 
             Text(self.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
-            ToggleRwxColored(.owner, self.$rights, bitPosition: Subject.owner.offset + Permission.x.offset);
-            ToggleRwxColored(.group, self.$rights, bitPosition: Subject.group.offset + Permission.x.offset);
-            ToggleRwxColored(.other, self.$rights, bitPosition: Subject.other.offset + Permission.x.offset);
+            ToggleRwxColored(subject: .owner, permission: .x, self.$rights)
+            ToggleRwxColored(subject: .group, permission: .x, self.$rights)
+            ToggleRwxColored(subject: .other, permission: .x, self.$rights)
 
         }
         .padding(20)
