@@ -18,13 +18,13 @@ struct PanelRwxText: View {
         self._rights = rights
     }
 
-    static private let bitPosition: (Subject, Permission) -> UInt = { subject, permission in
+    private let bitPosition: (Subject, Permission) -> UInt = { subject, permission in
         subject.offset + permission.offset
     }
 
-    static private let isOn: (UInt, Subject, Permission) -> Bool = { rights, subject, permission in
-        rights[
-            Self.bitPosition(subject, permission)
+    private func isOn(_ subject: Subject, _ permission: Permission) -> Bool {
+        self.rights[
+            self.bitPosition(subject, permission)
         ]
     }
 
@@ -33,9 +33,9 @@ struct PanelRwxText: View {
         let symbolW = Permission.w.rawValue
         let symbolX = Permission.x.rawValue
         let text =
-            "\(Self.isOn(self.rights, .owner, .r) ? symbolR : "-")\(Self.isOn(self.rights, .owner, .w) ? symbolW : "-")\(Self.isOn(self.rights, .owner, .x) ? symbolX : "-")" +
-            "\(Self.isOn(self.rights, .group, .r) ? symbolR : "-")\(Self.isOn(self.rights, .group, .w) ? symbolW : "-")\(Self.isOn(self.rights, .group, .x) ? symbolX : "-")" +
-            "\(Self.isOn(self.rights, .other, .r) ? symbolR : "-")\(Self.isOn(self.rights, .other, .w) ? symbolW : "-")\(Self.isOn(self.rights, .other, .x) ? symbolX : "-")"
+            "\(self.isOn(.owner, .r) ? symbolR : "-")\(self.isOn(.owner, .w) ? symbolW : "-")\(self.isOn(.owner, .x) ? symbolX : "-")" +
+            "\(self.isOn(.group, .r) ? symbolR : "-")\(self.isOn(.group, .w) ? symbolW : "-")\(self.isOn(.group, .x) ? symbolX : "-")" +
+            "\(self.isOn(.other, .r) ? symbolR : "-")\(self.isOn(.other, .w) ? symbolW : "-")\(self.isOn(.other, .x) ? symbolX : "-")"
         Text(text)
             .font(.system(size: 13, weight: .regular, design: .monospaced))
             .padding(.init(top: 4, leading: 9, bottom: 6, trailing: 9))
