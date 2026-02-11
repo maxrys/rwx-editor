@@ -55,6 +55,10 @@
 		50B277112F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
 		50B277132F3BD0F2005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
 		50B277142F3BD0F2005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
+		50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277152F3C765C005F7475 /* PanelRwxText.swift */; };
+		50B277182F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
+		50B277192F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
+		50B2771A2F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,8 @@
 		50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxColored.swift; sourceTree = "<group>"; };
 		50B2770E2F3BD044005F7475 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		50B277122F3BD0F2005F7475 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		50B277152F3C765C005F7475 /* PanelRwxText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelRwxText.swift; sourceTree = "<group>"; };
+		50B277172F3C7744005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +246,9 @@
 		50B277092F3BCFC0005F7475 /* controls */ = {
 			isa = PBXGroup;
 			children = (
+				50B277152F3C765C005F7475 /* PanelRwxText.swift */,
 				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
+				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = controls;
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 			files = (
 				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */,
+				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B2771A2F3C7744005F7475 /* Assets.xcassets in Resources */,
 				50B277052F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B277192F3C7744005F7475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +407,7 @@
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
+				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
 				50B276E72F39DC88005F7475 /* URL.swift in Sources */,
 				50B277112F3BD044005F7475 /* Color.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,

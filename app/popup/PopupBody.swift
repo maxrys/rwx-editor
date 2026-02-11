@@ -11,6 +11,8 @@ struct PopupBody: View {
         case body = "color Popup Body Background"
     }
 
+    @Environment(\.colorScheme) private var colorScheme
+
     @Binding private var rights: UInt
     @Binding private var owner: String
     @Binding private var group: String
@@ -37,32 +39,76 @@ struct PopupBody: View {
     ]
 
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 15) {
+        VStack(spacing: 20) {
 
-            Color.clear
-            Text(NSLocalizedString("Owner", comment: ""))
-            Text(NSLocalizedString("Group", comment: ""))
-            Text(NSLocalizedString("Other", comment: ""))
+            self.ShadowTop
 
-            Text(NSLocalizedString("Read", comment: ""))
-            ToggleRwxColored(subject: .owner, permission: .r, self.$rights)
-            ToggleRwxColored(subject: .group, permission: .r, self.$rights)
-            ToggleRwxColored(subject: .other, permission: .r, self.$rights)
+            /* MARK: rules via toggles */
 
-            Text(NSLocalizedString("Write", comment: ""))
-            ToggleRwxColored(subject: .owner, permission: .w, self.$rights)
-            ToggleRwxColored(subject: .group, permission: .w, self.$rights)
-            ToggleRwxColored(subject: .other, permission: .w, self.$rights)
+            LazyVGrid(columns: columns, spacing: 15) {
 
-            Text(self.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
-            ToggleRwxColored(subject: .owner, permission: .x, self.$rights)
-            ToggleRwxColored(subject: .group, permission: .x, self.$rights)
-            ToggleRwxColored(subject: .other, permission: .x, self.$rights)
+                Color.clear
+                Text(NSLocalizedString("Owner", comment: ""))
+                Text(NSLocalizedString("Group", comment: ""))
+                Text(NSLocalizedString("Other", comment: ""))
+
+                Text(NSLocalizedString("Read", comment: ""))
+                ToggleRwxColored(subject: .owner, permission: .r, self.$rights)
+                ToggleRwxColored(subject: .group, permission: .r, self.$rights)
+                ToggleRwxColored(subject: .other, permission: .r, self.$rights)
+
+                Text(NSLocalizedString("Write", comment: ""))
+                ToggleRwxColored(subject: .owner, permission: .w, self.$rights)
+                ToggleRwxColored(subject: .group, permission: .w, self.$rights)
+                ToggleRwxColored(subject: .other, permission: .w, self.$rights)
+
+                Text(self.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
+                ToggleRwxColored(subject: .owner, permission: .x, self.$rights)
+                ToggleRwxColored(subject: .group, permission: .x, self.$rights)
+                ToggleRwxColored(subject: .other, permission: .x, self.$rights)
+
+            }
+
+            /* MARK: rules via text/numeric */
+
+            HStack(spacing: 20) {
+                //PanelRwxText(self.rights)
+                //ToggleRwxNumeric(self.rights)
+            }
+
+            self.ShadowBottom
 
         }
-        .padding(20)
         .frame(maxWidth: .infinity)
         .background(Color(Self.ColorNames.body.rawValue))
+    }
+
+    @ViewBuilder var ShadowTop: some View {
+        Rectangle()
+            .fill(
+                LinearGradient(
+                    colors: [
+                        Color.black.opacity(self.colorScheme == .light ? 0.1 : 0.4),
+                        Color.clear ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            ).frame(height: 6)
+    }
+
+    @ViewBuilder var ShadowBottom: some View {
+        Rectangle()
+            .fill(
+                LinearGradient(
+                    colors: [
+                        Color.clear,
+                        Color.black.opacity(self.colorScheme == .light ? 0.1 : 0.4) ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .frame(height: 6)
+            .padding(.top, 6)
     }
 
 }

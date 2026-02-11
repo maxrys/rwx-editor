@@ -8,7 +8,7 @@ import SwiftUI
 struct ToggleRwxColored: View {
 
     enum ColorNames: String {
-        case empty = "color ToggleRwxColored Empty"
+        case empty = "color Toggle RWX Colored Empty"
     }
 
     static private let ICON_SIZE: CGFloat = 25
