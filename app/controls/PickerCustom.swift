@@ -7,30 +7,34 @@ import SwiftUI
 
 struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
-    @State private var isOpened: Bool
+    @Binding private var selected: Key
+    @State private var isOpened: Bool = false
     @State private var hovered: Key?
-           private var selected: Binding<Key>
 
-    private let values: [Key: String]
+    private let items: [Key: String]
     private let isPlainListStyle: Bool
     private let flexibility: Flexibility
 
-    init(selected: Binding<Key>, values: [Key: String], isPlainListStyle: Bool = false, flexibility: Flexibility = .none) {
-        self.selected         = selected
-        self.values           = values
+    init(
+        selected: Binding<Key>,
+        items: [Key: String],
+        isPlainListStyle: Bool = false,
+        flexibility: Flexibility = .none
+    ) {
+        self._selected        = selected
+        self.items            = items
         self.isPlainListStyle = isPlainListStyle
         self.flexibility      = flexibility
-        self.isOpened         = false
     }
 
     var body: some View {
-        if (self.values.isEmpty) {
+        if (self.items.isEmpty) {
             self.main
                 .disabled(true)
         } else {
             self.main
                 .popover(isPresented: self.$isOpened) {
-                    if (self.values.count <= 10) { self.list }
+                    if (self.items.count <= 10) { self.list }
                     else { ScrollView(.vertical) { self.list }.frame(maxHeight: 370) }
                 }
         }
@@ -40,7 +44,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         Button {
             self.isOpened = true
         } label: {
-            Text(self.values[self.selected.wrappedValue] ?? NA_SIGN)
+            Text(self.items[self.selected] ?? NA_SIGN)
                 .lineLimit(1)
                 .padding(.horizontal, 9)
                 .padding(.vertical  , 5)
@@ -56,14 +60,14 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
     @ViewBuilder var list: some View {
         VStack (alignment: .leading, spacing: 6) {
-            ForEach(self.values.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
+            ForEach(self.items.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
                 Button {
-                    self.selected.wrappedValue = key
+                    self.selected = key
                     self.isOpened = false
                 } label: {
                     var backgroundColor: Color {
-                        if (self.selected.wrappedValue == key) { return Color.accentColor.opacity(0.5) }
-                        if (self.hovered               == key) { return Color.accentColor.opacity(0.2) }
+                        if (self.selected == key) { return Color.accentColor.opacity(0.5) }
+                        if (self.hovered  == key) { return Color.accentColor.opacity(0.2) }
                         return self.isPlainListStyle ?
                             Color.clear :
                             Color.picker.itemBackground
@@ -96,29 +100,29 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
         /* no value */
 
-        let valuesV1: [UInt: String] = [:]
+        let itemsV1: [UInt: String] = [:]
 
         VStack {
             Text("No value:")
-            PickerCustom<UInt>(selected: $selectedV1, values: valuesV1, isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV1, values: valuesV1)
+            PickerCustom<UInt>(selected: $selectedV1, items: itemsV1, isPlainListStyle: true)
+            PickerCustom<UInt>(selected: $selectedV1, items: itemsV1)
         }
 
         /* single value */
 
-        let valuesV2: [UInt: String] = [
+        let itemsV2: [UInt: String] = [
             0: "Single value"
         ]
 
         VStack {
             Text("Single value:")
-            PickerCustom<UInt>(selected: $selectedV2, values: valuesV2, isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV2, values: valuesV2)
+            PickerCustom<UInt>(selected: $selectedV2, items: itemsV2, isPlainListStyle: true)
+            PickerCustom<UInt>(selected: $selectedV2, items: itemsV2)
         }
 
         /* multiple values */
 
-        let valuesV3 = {
+        let itemsV3 = {
             (0 ..< 100).reduce(into: [UInt: String]()) { result, i in
                 if (i == 5) { result[UInt(i)] = "Value \(i) long long long long long long" }
                 else        { result[UInt(i)] = "Value \(i)" }
@@ -127,8 +131,8 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
         VStack {
             Text("Multiple values:")
-            PickerCustom<UInt>(selected: $selectedV3, values: valuesV3, isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV3, values: valuesV3)
+            PickerCustom<UInt>(selected: $selectedV3, items: itemsV3, isPlainListStyle: true)
+            PickerCustom<UInt>(selected: $selectedV3, items: itemsV3)
         }
 
     }
@@ -140,7 +144,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 @available(macOS 14.0, *) #Preview {
     @Previewable @State var selected: UInt = 0
 
-    let values = {
+    let items = {
         (0 ..< 100).reduce(into: [UInt: String]()) { result, i in
             if (i == 5) { result[UInt(i)] = "Value \(i) long long long long long long" }
             else        { result[UInt(i)] = "Value \(i)" }
@@ -149,10 +153,10 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
     VStack {
         Text("Flexibility:")
-        PickerCustom<UInt>(selected: $selected, values: values)
-        PickerCustom<UInt>(selected: $selected, values: values, flexibility: .none)
-        PickerCustom<UInt>(selected: $selected, values: values, flexibility: .size(100))
-        PickerCustom<UInt>(selected: $selected, values: values, flexibility: .infinity)
+        PickerCustom<UInt>(selected: $selected, items: items)
+        PickerCustom<UInt>(selected: $selected, items: items, flexibility: .none)
+        PickerCustom<UInt>(selected: $selected, items: items, flexibility: .size(100))
+        PickerCustom<UInt>(selected: $selected, items: items, flexibility: .infinity)
     }
     .padding(20)
     .frame(width: 200)
