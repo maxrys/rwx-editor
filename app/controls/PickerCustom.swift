@@ -85,40 +85,40 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
     }
 
     public var body: some View {
-        self.list
+        if (self.rootView.items.count > 8)
+             { List   { self.list }.listStyle(.sidebar) }
+        else { VStack { self.list }.padding(10) }
     }
 
     private var list: some View {
-        VStack (alignment: .leading, spacing: 6) {
-            ForEach(Array(self.itemsOrdered.enumerated()), id: \.element.key) { index, item in
-                Button {
-                    self.rootView.selectedKey = item.key
-                    self.rootView.isOpened = false
-                } label: {
-                    var backgroundColor: Color {
-                        if (self.rootView.selectedKey      == item.key) { return self.rootView.colorSet.itemSelectedBackground }
-                        if (self.hoveredKey                == item.key) { return self.rootView.colorSet.itemHoveringBackground }
-                        if (self.rootView.isPlainListStyle == false   ) { return self.rootView.colorSet.itemBackground }
-                        return Color.clear
-                    }
-                    Text(item.value)
-                        .lineLimit(1)
-                        .padding(.horizontal, 9)
-                        .padding(.vertical  , 5)
-                        .frame(maxWidth: .infinity, alignment: self.rootView.isPlainListStyle ? .leading : .center)
-                        .foregroundPolyfill(self.rootView.colorSet.itemText)
-                        .background(backgroundColor)
-                        .clipShape(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
-                        .contentShapePolyfill(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
-                        .onHover { isHovering in
-                            self.hoveredKey = isHovering ? item.key : nil
-                        }
+        ForEach(Array(self.itemsOrdered.enumerated()), id: \.element.key) { index, item in
+            Button {
+                self.rootView.selectedKey = item.key
+                self.rootView.isOpened = false
+            } label: {
+                var backgroundColor: Color {
+                    if (self.rootView.selectedKey      == item.key) { return self.rootView.colorSet.itemSelectedBackground }
+                    if (self.hoveredKey                == item.key) { return self.rootView.colorSet.itemHoveringBackground }
+                    if (self.rootView.isPlainListStyle == false   ) { return self.rootView.colorSet.itemBackground }
+                    return Color.clear
                 }
-                .pointerStyleLinkPolyfill()
-                .buttonStyle(.plain)
-                .id(index)
+                Text(item.value)
+                    .lineLimit(1)
+                    .padding(.horizontal, 9)
+                    .padding(.vertical  , 5)
+                    .frame(maxWidth: .infinity, alignment: self.rootView.isPlainListStyle ? .leading : .center)
+                    .foregroundPolyfill(self.rootView.colorSet.itemText)
+                    .background(backgroundColor)
+                    .clipShape(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
+                    .contentShapePolyfill(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
+                    .onHover { isHovering in
+                        self.hoveredKey = isHovering ? item.key : nil
+                    }
             }
-        }.padding(10)
+            .pointerStyleLinkPolyfill()
+            .buttonStyle(.plain)
+            .id(index)
+        }
     }
 
 }
