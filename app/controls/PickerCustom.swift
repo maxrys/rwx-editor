@@ -7,32 +7,39 @@ import SwiftUI
 
 struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
-    @Binding private var selected: Key
-    @State private var isOpened: Bool = false
-    @State private var hovered: Key?
+    typealias ColorSet = Color.PickerColorSet
 
-    private let items: [Key: String]
-    private let isPlainListStyle: Bool
-    private let flexibility: Flexibility
+    @Binding fileprivate var selectedKey: Key
+    @State fileprivate var isOpened: Bool = false
+    @State fileprivate var hovered: Key?
+
+    fileprivate let items: [Key: String]
+    fileprivate let isPlainListStyle: Bool
+    fileprivate let flexibility: Flexibility
+    fileprivate let colorSet: ColorSet
+    fileprivate let cornerRadius: CGFloat = 10
+    fileprivate let borderWidth: CGFloat = 0
 
     init(
         selected: Binding<Key>,
         items: [Key: String],
         isPlainListStyle: Bool = false,
-        flexibility: Flexibility = .none
+        flexibility: Flexibility = .none,
+        colorSet: ColorSet = Color.picker
     ) {
-        self._selected        = selected
-        self.items            = items
+        self._selectedKey = selected
+        self.items = items
         self.isPlainListStyle = isPlainListStyle
-        self.flexibility      = flexibility
+        self.flexibility = flexibility
+        self.colorSet = colorSet
     }
 
     var body: some View {
         if (self.items.isEmpty) {
-            self.main
+            self.opener
                 .disabled(true)
         } else {
-            self.main
+            self.opener
                 .popover(isPresented: self.$isOpened) {
                     if (self.items.count <= 10) { self.list }
                     else { ScrollView(.vertical) { self.list }.frame(maxHeight: 370) }
@@ -40,17 +47,20 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         }
     }
 
-    @ViewBuilder var main: some View {
+    @ViewBuilder var opener: some View {
         Button {
             self.isOpened = true
         } label: {
-            Text(self.items[self.selected] ?? NA_SIGN)
+            Text(self.items[self.selectedKey] ?? NOT_APPLICABLE)
                 .lineLimit(1)
                 .padding(.horizontal, 9)
                 .padding(.vertical  , 5)
                 .flexibility(self.flexibility)
-                .foregroundPolyfill(Color.picker.text)
-                .background(Color.picker.background)
+                .foregroundPolyfill(self.colorSet.text)
+                .background(
+                    RoundedRectangle(cornerRadius: self.cornerRadius)
+                        .stroke(self.colorSet.border, lineWidth: self.borderWidth)
+                        .background(self.colorSet.background))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .contentShapePolyfill(RoundedRectangle(cornerRadius: 10))
         }
@@ -62,22 +72,22 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         VStack (alignment: .leading, spacing: 6) {
             ForEach(self.items.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
                 Button {
-                    self.selected = key
+                    self.selectedKey = key
                     self.isOpened = false
                 } label: {
                     var backgroundColor: Color {
-                        if (self.selected == key) { return Color.accentColor.opacity(0.5) }
-                        if (self.hovered  == key) { return Color.accentColor.opacity(0.2) }
+                        if (self.selectedKey == key) { return Color.accentColor.opacity(0.5) }
+                        if (self.hovered     == key) { return Color.accentColor.opacity(0.2) }
                         return self.isPlainListStyle ?
                             Color.clear :
-                            Color.picker.itemBackground
+                            self.colorSet.itemBackground
                     }
                     Text(value)
                         .lineLimit(1)
                         .padding(.horizontal, 9)
                         .padding(.vertical  , 5)
                         .frame(maxWidth: .infinity, alignment: self.isPlainListStyle ? .leading : .center)
-                        .foregroundPolyfill(Color.picker.itemText)
+                        .foregroundPolyfill(self.colorSet.itemText)
                         .background(backgroundColor)
                         .contentShapePolyfill(RoundedRectangle(cornerRadius: 10))
                         .cornerRadius(10)

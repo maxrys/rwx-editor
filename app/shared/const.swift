@@ -5,7 +5,7 @@
 
 import Foundation
 
-let NA_SIGN = "—"
+let NOT_APPLICABLE = "—"
 
 let WINDOW_MAIN_ID = "main"
 let WINDOW_MAIN_TITLE  = NSLocalizedString("RWX Editor Settings", comment: "")
