@@ -47,9 +47,7 @@
 		50B277052F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277072F3B3BBB005F7475 /* Assets.xcassets */; };
-		50B2770B2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
 		50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
-		50B2770D2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
 		50B2770F2F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
 		50B277102F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
 		50B277112F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
@@ -59,13 +57,12 @@
 		50B277182F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
 		50B277192F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
 		50B2771A2F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
-		50B2771C2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 		50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
-		50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 		50B2771F2F3DCDF0005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
 		50B277212F3DCEE9005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
 		50B277222F3DCEE9005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
 		50B277232F3DD167005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
+		50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277282F3DF227005F7475 /* PickerCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +127,7 @@
 		50B277172F3C7744005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxNumeric.swift; sourceTree = "<group>"; };
 		50B277202F3DCEE6005F7475 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
+		50B277282F3DF227005F7475 /* PickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				50B277152F3C765C005F7475 /* PanelRwxText.swift */,
+				50B277282F3DF227005F7475 /* PickerCustom.swift */,
 				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
 				50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */,
 				50B277172F3C7744005F7475 /* Assets.xcassets */,
@@ -410,6 +409,7 @@
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
 				50B277222F3DCEE9005F7475 /* types.swift in Sources */,
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
+				50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
@@ -437,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B277132F3BD0F2005F7475 /* enums.swift in Sources */,
-				50B2770B2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276E22F39DC3F005F7475 /* RightsValue.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
@@ -449,7 +448,6 @@
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
 				50B277212F3DCEE9005F7475 /* types.swift in Sources */,
 				50B276F72F3A71B2005F7475 /* Date.swift in Sources */,
-				50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E62F39DC88005F7475 /* URL.swift in Sources */,
 			);
@@ -459,12 +457,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B2771C2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
 				50B276E42F39DC55005F7475 /* RightsValue.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
 				50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */,
-				50B2770D2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50B2771F2F3DCDF0005F7475 /* enums.swift in Sources */,
 				50B277102F3BD044005F7475 /* Color.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,

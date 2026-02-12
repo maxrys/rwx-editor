@@ -87,6 +87,9 @@
         }
       }
     },
+    "Flexibility:" : {
+
+    },
     "Group" : {
       "localizations" : {
         "ru" : {
@@ -96,9 +99,6 @@
           }
         }
       }
-    },
-    "group %llu" : {
-
     },
     "link" : {
       "localizations" : {
@@ -110,6 +110,9 @@
         }
       }
     },
+    "Multiple values:" : {
+
+    },
     "Name" : {
       "localizations" : {
         "ru" : {
@@ -119,6 +122,9 @@
           }
         }
       }
+    },
+    "No value:" : {
+
     },
     "Other" : {
       "localizations" : {
@@ -130,9 +136,6 @@
         }
       }
     },
-    "other %llu" : {
-
-    },
     "Owner" : {
       "localizations" : {
         "ru" : {
@@ -142,9 +145,6 @@
           }
         }
       }
-    },
-    "owner %llu" : {
-
     },
     "Path" : {
       "localizations" : {
@@ -228,6 +228,9 @@
           }
         }
       }
+    },
+    "Single value:" : {
+
     },
     "Size" : {
       "localizations" : {

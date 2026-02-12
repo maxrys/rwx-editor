@@ -67,7 +67,7 @@ struct PopupBody: View {
                 ToggleRwxColored(subject: .group, permission: .x, self.$rights)
                 ToggleRwxColored(subject: .other, permission: .x, self.$rights)
 
-            }
+            }.padding(.horizontal, 20)
 
             /* MARK: rules via text/numeric */
 
