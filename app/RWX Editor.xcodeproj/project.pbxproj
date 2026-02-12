@@ -62,6 +62,7 @@
 		50B2771C2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 		50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 		50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
+		50B2771F2F3DCDF0005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -457,6 +458,7 @@
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
 				50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B2770D2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
+				50B2771F2F3DCDF0005F7475 /* enums.swift in Sources */,
 				50B277102F3BD044005F7475 /* Color.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,
 				50B276E82F39DC92005F7475 /* URL.swift in Sources */,
