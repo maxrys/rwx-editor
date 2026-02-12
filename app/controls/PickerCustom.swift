@@ -19,6 +19,10 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     fileprivate let cornerRadius: CGFloat = 10
     fileprivate let borderWidth: CGFloat = 0
 
+    fileprivate var keyToIndex: [Key: Int] = [:]
+    fileprivate var indexToKey: [Int: Key] = [:]
+    fileprivate var itemsOrdered: [(key: Key, value: String)] = []
+
     init(
         selected: Binding<Key>,
         items: [Key: String],
@@ -31,6 +35,27 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         self.isPlainListStyle = isPlainListStyle
         self.flexibility = flexibility
         self.colorSet = colorSet
+        self.itemsOrdered = self.items.ordered()
+        self.itemsOrdered.enumerated().forEach { index, keyValuePair in
+            self.keyToIndex[keyValuePair.key] = index
+            self.indexToKey[index] = keyValuePair.key
+        }
+    }
+
+    private func onPressKeyUpArrow() {
+        if let index = self.keyToIndex[self.selectedKey] {
+            if let nextKey = self.indexToKey[index + 1] {
+                self.selectedKey = nextKey
+            }
+        }
+    }
+
+    private func onPressKeyDownArrow() {
+        if let index = self.keyToIndex[self.selectedKey] {
+            if let prevKey = self.indexToKey[index - 1] {
+                self.selectedKey = prevKey
+            }
+        }
     }
 
     var body: some View {
@@ -39,6 +64,8 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
                 .disabled(true)
         } else {
             self.opener
+                .onKeyPressPolyfill(character: KeyEquivalentPolyfill.upArrow  .rawValue, action: self.onPressKeyUpArrow)
+                .onKeyPressPolyfill(character: KeyEquivalentPolyfill.downArrow.rawValue, action: self.onPressKeyDownArrow)
                 .popover(isPresented: self.$isOpened) {
                     PickerCustomPopover<Key>(
                         rootView: self
@@ -76,10 +103,6 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
 
     private var rootView: PickerCustom<Key>
 
-    private var itemsOrdered: [(key: Key, value: String)] {
-        self.rootView.items.ordered()
-    }
-
     init(rootView: PickerCustom<Key>) {
         self.rootView = rootView
     }
@@ -91,7 +114,7 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
     }
 
     private var list: some View {
-        ForEach(Array(self.itemsOrdered.enumerated()), id: \.element.key) { index, item in
+        ForEach(Array(self.rootView.itemsOrdered.enumerated()), id: \.element.key) { index, item in
             Button {
                 self.rootView.selectedKey = item.key
                 self.rootView.isOpened = false
