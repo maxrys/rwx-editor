@@ -63,6 +63,9 @@
 		50B277222F3DCEE9005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
 		50B277232F3DD167005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
 		50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277282F3DF227005F7475 /* PickerCustom.swift */; };
+		50B2772D2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
+		50B2772E2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
+		50B2772F2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,7 @@
 		50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxNumeric.swift; sourceTree = "<group>"; };
 		50B277202F3DCEE6005F7475 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
 		50B277282F3DF227005F7475 /* PickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustom.swift; sourceTree = "<group>"; };
+		50B2772C2F3E37B0005F7475 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 				50B277002F3B2357005F7475 /* CaseIterable.swift */,
 				50B2770E2F3BD044005F7475 /* Color.swift */,
 				50B276F62F3A71B0005F7475 /* Date.swift */,
+				50B2772C2F3E37B0005F7475 /* Dictionary.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
@@ -407,6 +412,7 @@
 				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
 				50B276F82F3A71B2005F7475 /* Date.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
+				50B2772D2F3E37B0005F7475 /* Dictionary.swift in Sources */,
 				50B277222F3DCEE9005F7475 /* types.swift in Sources */,
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */,
@@ -447,6 +453,7 @@
 				50B276D02F39CC05005F7475 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
 				50B277212F3DCEE9005F7475 /* types.swift in Sources */,
+				50B2772E2F3E37B0005F7475 /* Dictionary.swift in Sources */,
 				50B276F72F3A71B2005F7475 /* Date.swift in Sources */,
 				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E62F39DC88005F7475 /* URL.swift in Sources */,
@@ -458,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
+				50B2772F2F3E37B0005F7475 /* Dictionary.swift in Sources */,
 				50B276E42F39DC55005F7475 /* RightsValue.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
 				50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */,

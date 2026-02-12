@@ -11,7 +11,6 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
     @Binding fileprivate var selectedKey: Key
     @State fileprivate var isOpened: Bool = false
-    @State fileprivate var hovered: Key?
 
     fileprivate let items: [Key: String]
     fileprivate let isPlainListStyle: Bool
@@ -41,8 +40,9 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         } else {
             self.opener
                 .popover(isPresented: self.$isOpened) {
-                    if (self.items.count <= 10) { self.list }
-                    else { ScrollView(.vertical) { self.list }.frame(maxHeight: 370) }
+                    PickerCustomPopover<Key>(
+                        rootView: self
+                    )
                 }
         }
     }
@@ -68,38 +68,62 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         .pointerStyleLinkPolyfill()
     }
 
-    @ViewBuilder var list: some View {
+}
+
+fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparable {
+
+    @State fileprivate var hoveredKey: Key?
+
+    private var rootView: PickerCustom<Key>
+
+    private var itemsOrdered: [(key: Key, value: String)] {
+        self.rootView.items.ordered()
+    }
+
+    init(rootView: PickerCustom<Key>) {
+        self.rootView = rootView
+    }
+
+    var body: some View {
         VStack (alignment: .leading, spacing: 6) {
-            ForEach(self.items.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
+            ForEach(Array(self.itemsOrdered.enumerated()), id: \.element.key) { index, item in
                 Button {
-                    self.selectedKey = key
-                    self.isOpened = false
+                    self.rootView.selectedKey = item.key
+                    self.rootView.isOpened = false
                 } label: {
                     var backgroundColor: Color {
-                        if (self.selectedKey == key) { return Color.accentColor.opacity(0.5) }
-                        if (self.hovered     == key) { return Color.accentColor.opacity(0.2) }
-                        return self.isPlainListStyle ?
-                            Color.clear :
-                            self.colorSet.itemBackground
+                        if (self.rootView.selectedKey      == item.key) { return self.rootView.colorSet.itemSelectedBackground }
+                        if (self.hoveredKey                == item.key) { return self.rootView.colorSet.itemHoveringBackground }
+                        if (self.rootView.isPlainListStyle == false   ) { return self.rootView.colorSet.itemBackground }
+                        return Color.clear
                     }
-                    Text(value)
+                    Text(item.value)
                         .lineLimit(1)
                         .padding(.horizontal, 9)
                         .padding(.vertical  , 5)
-                        .frame(maxWidth: .infinity, alignment: self.isPlainListStyle ? .leading : .center)
-                        .foregroundPolyfill(self.colorSet.itemText)
+                        .frame(maxWidth: .infinity, alignment: self.rootView.isPlainListStyle ? .leading : .center)
+                        .foregroundPolyfill(self.rootView.colorSet.itemText)
                         .background(backgroundColor)
-                        .contentShapePolyfill(RoundedRectangle(cornerRadius: 10))
-                        .cornerRadius(10)
-                        .onHover { isHovered in
-                            self.hovered = isHovered ? key : nil
+                        .clipShape(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
+                        .contentShapePolyfill(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
+                        .onHover { isHovering in
+                            self.hoveredKey = isHovering ? item.key : nil
                         }
-                }.buttonStyle(.plain)
+                }
+                .pointerStyleLinkPolyfill()
+                .buttonStyle(.plain)
+                .id(index)
             }
         }.padding(10)
     }
 
 }
+
+
+
+/* ############################################################# */
+/* ########################## PREVIEW ########################## */
+/* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
     @Previewable @State var selectedV1: UInt = 0
