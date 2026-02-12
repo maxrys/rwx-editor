@@ -7,7 +7,7 @@ import SwiftUI
 
 struct Popup: View {
 
-    @State private var rights: UInt
+    @State private var rights: RightsValue
     @State private var owner: String
     @State private var group: String
 

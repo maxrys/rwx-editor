@@ -13,7 +13,7 @@ struct PopupBody: View {
 
     @Environment(\.colorScheme) private var colorScheme
 
-    @Binding private var rights: UInt
+    @Binding private var rights: RightsValue
     @Binding private var owner: String
     @Binding private var group: String
 
@@ -21,7 +21,7 @@ struct PopupBody: View {
 
     init(
         _ info: FSEntityInfo,
-        _ rights: Binding<UInt>,
+        _ rights: Binding<RightsValue>,
         _ owner: Binding<String>,
         _ group: Binding<String>
     ) {
@@ -120,10 +120,10 @@ struct PopupBody: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var info: FSEntityInfo = FSEntityInfo("/private/etc/")!
-    @Previewable @State var rights: UInt       = FSEntityInfo("/private/etc/")!.rights
-    @Previewable @State var owner: String      = FSEntityInfo("/private/etc/")!.owner
-    @Previewable @State var group: String      = FSEntityInfo("/private/etc/")!.group
+    @Previewable @State var info: FSEntityInfo  = FSEntityInfo("/private/etc/")!
+    @Previewable @State var rights: RightsValue = FSEntityInfo("/private/etc/")!.rights
+    @Previewable @State var owner: String       = FSEntityInfo("/private/etc/")!.owner
+    @Previewable @State var group: String       = FSEntityInfo("/private/etc/")!.group
     VStack(spacing: 20) {
         PopupBody(
             info,

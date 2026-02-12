@@ -33,7 +33,7 @@ public enum Subject {
         }
     }
 
-    func rightGet(from rights: UInt) -> UInt {
+    func rightGet(from rights: RightsValue) -> UInt {
         rights >> self.offset & 0b111
     }
 

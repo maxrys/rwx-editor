@@ -22,9 +22,9 @@
 		50B276D22F39CC3E005F7475 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D12F39CC3E005F7475 /* MainView.swift */; };
 		50B276D42F39CC5E005F7475 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D32F39CC59005F7475 /* Popup.swift */; };
 		50B276DC2F39DB98005F7475 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276DB2F39DB98005F7475 /* Test.swift */; };
-		50B276E22F39DC3F005F7475 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* UInt.swift */; };
-		50B276E32F39DC3F005F7475 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* UInt.swift */; };
-		50B276E42F39DC55005F7475 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* UInt.swift */; };
+		50B276E22F39DC3F005F7475 /* RightsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* RightsValue.swift */; };
+		50B276E32F39DC3F005F7475 /* RightsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* RightsValue.swift */; };
+		50B276E42F39DC55005F7475 /* RightsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* RightsValue.swift */; };
 		50B276E62F39DC88005F7475 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
 		50B276E72F39DC88005F7475 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
 		50B276E82F39DC92005F7475 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
@@ -63,6 +63,9 @@
 		50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 		50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */; };
 		50B2771F2F3DCDF0005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
+		50B277212F3DCEE9005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
+		50B277222F3DCEE9005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
+		50B277232F3DD167005F7475 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +109,7 @@
 		50B276D32F39CC59005F7475 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		50B276D92F39DB98005F7475 /* RWX Editor Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RWX Editor Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276DB2F39DB98005F7475 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		50B276E12F39DC3F005F7475 /* UInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt.swift; sourceTree = "<group>"; };
+		50B276E12F39DC3F005F7475 /* RightsValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsValue.swift; sourceTree = "<group>"; };
 		50B276E52F39DC88005F7475 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		50B276EA2F3A40C9005F7475 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		50B276EB2F3A411D005F7475 /* FinderSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderSync.entitlements; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		50B277152F3C765C005F7475 /* PanelRwxText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelRwxText.swift; sourceTree = "<group>"; };
 		50B277172F3C7744005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxNumeric.swift; sourceTree = "<group>"; };
+		50B277202F3DCEE6005F7475 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 		50B276AB2F3899C9005F7475 /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				50B277202F3DCEE6005F7475 /* types.swift */,
 				50B276C22F39CB73005F7475 /* const.swift */,
 				50B277122F3BD0F2005F7475 /* enums.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
@@ -197,8 +202,8 @@
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
+				50B276E12F39DC3F005F7475 /* RightsValue.swift */,
 				50B276CE2F39CC00005F7475 /* String.swift */,
-				50B276E12F39DC3F005F7475 /* UInt.swift */,
 				50B276E52F39DC88005F7475 /* URL.swift */,
 				50B276FC2F3A8D32005F7475 /* View.swift */,
 			);
@@ -403,6 +408,7 @@
 				50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */,
 				50B276F82F3A71B2005F7475 /* Date.swift in Sources */,
 				50B276CF2F39CC00005F7475 /* String.swift in Sources */,
+				50B277222F3DCEE9005F7475 /* types.swift in Sources */,
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
@@ -422,7 +428,7 @@
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
 				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
-				50B276E32F39DC3F005F7475 /* UInt.swift in Sources */,
+				50B276E32F39DC3F005F7475 /* RightsValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +439,7 @@
 				50B277132F3BD0F2005F7475 /* enums.swift in Sources */,
 				50B2770B2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */,
-				50B276E22F39DC3F005F7475 /* UInt.swift in Sources */,
+				50B276E22F39DC3F005F7475 /* RightsValue.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				50B2770F2F3BD044005F7475 /* Color.swift in Sources */,
 				50B276FF2F3A8D34005F7475 /* View.swift in Sources */,
@@ -441,6 +447,7 @@
 				50B276C72F39CBC9005F7475 /* Logger.swift in Sources */,
 				50B276D02F39CC05005F7475 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
+				50B277212F3DCEE9005F7475 /* types.swift in Sources */,
 				50B276F72F3A71B2005F7475 /* Date.swift in Sources */,
 				50B2771E2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
@@ -454,13 +461,14 @@
 			files = (
 				50B2771C2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
-				50B276E42F39DC55005F7475 /* UInt.swift in Sources */,
+				50B276E42F39DC55005F7475 /* RightsValue.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,
 				50B277012F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B2770D2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50B2771F2F3DCDF0005F7475 /* enums.swift in Sources */,
 				50B277102F3BD044005F7475 /* Color.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,
+				50B277232F3DD167005F7475 /* types.swift in Sources */,
 				50B276E82F39DC92005F7475 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

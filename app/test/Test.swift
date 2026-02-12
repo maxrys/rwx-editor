@@ -133,7 +133,7 @@ struct Test {
     }
 
     func subjectRightGet() throws {
-        let etalonGetter: (UInt, Subject) -> UInt = { rights, subject in
+        let etalonGetter: (RightsValue, Subject) -> UInt = { rights, subject in
             let bitR = rights[subject.offset + Permission.r.offset]
             let bitW = rights[subject.offset + Permission.w.offset]
             let bitX = rights[subject.offset + Permission.x.offset]
@@ -143,7 +143,7 @@ struct Test {
                 result[Permission.x.offset] = bitX
             return result
         }
-        for rights in UInt(0) ... UInt(0o777) {
+        for rights in RightsValue(0) ... RightsValue(0o777) {
             let etalonOwner = etalonGetter(rights, .owner)
             let etalonGroup = etalonGetter(rights, .group)
             let etalonOther = etalonGetter(rights, .other)

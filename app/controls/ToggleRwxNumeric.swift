@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ToggleRwxNumeric: View {
 
-    @Binding private var rights: UInt
+    @Binding private var rights: RightsValue
 
     private let values: [UInt: String] = [
         0: "0",
@@ -20,11 +20,11 @@ struct ToggleRwxNumeric: View {
         7: "7",
     ]
 
-    init(_ rights: Binding<UInt>) {
+    init(_ rights: Binding<RightsValue>) {
         self._rights = rights
     }
 
-    let valuePack: (UInt, UInt, Subject) -> UInt = { value, rightsValue, subject in
+    let valuePack: (UInt, RightsValue, Subject) -> RightsValue = { value, rightsValue, subject in
         let bitR = value[Permission.r.offset]
         let bitW = value[Permission.w.offset]
         let bitX = value[Permission.x.offset]

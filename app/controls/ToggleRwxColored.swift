@@ -13,7 +13,7 @@ struct ToggleRwxColored: View {
 
     static private let ICON_SIZE: CGFloat = 25
 
-    @Binding private var rights: UInt
+    @Binding private var rights: RightsValue
 
     private let subject: Subject
     private let permission: Permission
@@ -28,7 +28,7 @@ struct ToggleRwxColored: View {
         ]
     }
 
-    init(subject: Subject, permission: Permission, _ rights: Binding<UInt>) {
+    init(subject: Subject, permission: Permission, _ rights: Binding<RightsValue>) {
         self.subject     = subject
         self.permission  = permission
         self._rights     = rights
@@ -74,7 +74,7 @@ struct ToggleRwxColored: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var rights: UInt = 0o777
+    @Previewable @State var rights: RightsValue = 0o777
     HStack(spacing: 10) {
         ToggleRwxColored(subject: .owner, permission: .r, $rights)
         ToggleRwxColored(subject: .group, permission: .x, $rights)

@@ -12,9 +12,9 @@ struct PanelRwxText: View {
         case background = "color Panel RWX Text Background"
     }
 
-    @Binding private var rights: UInt
+    @Binding private var rights: RightsValue
 
-    init(_ rights: Binding<UInt>) {
+    init(_ rights: Binding<RightsValue>) {
         self._rights = rights
     }
 
@@ -56,7 +56,7 @@ struct PanelRwxText: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var rights: UInt = 0o644
+    @Previewable @State var rights: RightsValue = 0o644
     HStack {
         PanelRwxText($rights)
     }.padding(20)
