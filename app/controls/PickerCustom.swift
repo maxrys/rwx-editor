@@ -61,8 +61,8 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
                     RoundedRectangle(cornerRadius: self.cornerRadius)
                         .stroke(self.colorSet.border, lineWidth: self.borderWidth)
                         .background(self.colorSet.background))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .contentShapePolyfill(RoundedRectangle(cornerRadius: 10))
+                .clipShape(RoundedRectangle(cornerRadius: self.cornerRadius))
+                .contentShapePolyfill(RoundedRectangle(cornerRadius: self.cornerRadius))
         }
         .buttonStyle(.plain)
         .pointerStyleLinkPolyfill()
@@ -72,7 +72,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
 fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparable {
 
-    @State fileprivate var hoveredKey: Key?
+    @State private var hoveredKey: Key?
 
     private var rootView: PickerCustom<Key>
 
@@ -84,7 +84,11 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
         self.rootView = rootView
     }
 
-    var body: some View {
+    public var body: some View {
+        self.list
+    }
+
+    private var list: some View {
         VStack (alignment: .leading, spacing: 6) {
             ForEach(Array(self.itemsOrdered.enumerated()), id: \.element.key) { index, item in
                 Button {
@@ -125,6 +129,13 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
+fileprivate func generatePreviewItems_intKey(count: Int) -> [UInt: String] {
+    (1000 ..< 1000 + count).reduce(into: [UInt: String]()) { result, i in
+        if (i == 1005) { result[UInt(i)] = "Value \(i) long long long long long long" }
+        else           { result[UInt(i)] = "Value \(i)" }
+    }
+}
+
 @available(macOS 14.0, *) #Preview {
     @Previewable @State var selectedV1: UInt = 0
     @Previewable @State var selectedV2: UInt = 0
@@ -132,41 +143,22 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
 
     VStack(spacing: 20) {
 
-        /* no value */
-
-        let itemsV1: [UInt: String] = [:]
-
         VStack {
-            Text("No value:")
-            PickerCustom<UInt>(selected: $selectedV1, items: itemsV1, isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV1, items: itemsV1)
+            Text("No value:").font(.headline)
+            PickerCustom<UInt>(selected: $selectedV1, items: generatePreviewItems_intKey(count: 0), isPlainListStyle: true)
+            PickerCustom<UInt>(selected: $selectedV1, items: generatePreviewItems_intKey(count: 0))
         }
 
-        /* single value */
-
-        let itemsV2: [UInt: String] = [
-            0: "Single value"
-        ]
-
         VStack {
-            Text("Single value:")
-            PickerCustom<UInt>(selected: $selectedV2, items: itemsV2, isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV2, items: itemsV2)
+            Text("Single value:").font(.headline)
+            PickerCustom<UInt>(selected: $selectedV2, items: generatePreviewItems_intKey(count: 1), isPlainListStyle: true)
+            PickerCustom<UInt>(selected: $selectedV2, items: generatePreviewItems_intKey(count: 1))
         }
 
-        /* multiple values */
-
-        let itemsV3 = {
-            (0 ..< 100).reduce(into: [UInt: String]()) { result, i in
-                if (i == 5) { result[UInt(i)] = "Value \(i) long long long long long long" }
-                else        { result[UInt(i)] = "Value \(i)" }
-            }
-        }()
-
         VStack {
-            Text("Multiple values:")
-            PickerCustom<UInt>(selected: $selectedV3, items: itemsV3, isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV3, items: itemsV3)
+            Text("Multiple values:").font(.headline)
+            PickerCustom<UInt>(selected: $selectedV3, items: generatePreviewItems_intKey(count: 9), isPlainListStyle: true)
+            PickerCustom<UInt>(selected: $selectedV3, items: generatePreviewItems_intKey(count: 9))
         }
 
     }
@@ -177,20 +169,12 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
 
 @available(macOS 14.0, *) #Preview {
     @Previewable @State var selected: UInt = 0
-
-    let items = {
-        (0 ..< 100).reduce(into: [UInt: String]()) { result, i in
-            if (i == 5) { result[UInt(i)] = "Value \(i) long long long long long long" }
-            else        { result[UInt(i)] = "Value \(i)" }
-        }
-    }()
-
     VStack {
-        Text("Flexibility:")
-        PickerCustom<UInt>(selected: $selected, items: items)
-        PickerCustom<UInt>(selected: $selected, items: items, flexibility: .none)
-        PickerCustom<UInt>(selected: $selected, items: items, flexibility: .size(100))
-        PickerCustom<UInt>(selected: $selected, items: items, flexibility: .infinity)
+        Text("Flexibility:").font(.headline)
+        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10))
+        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .none)
+        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .size(100))
+        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .infinity)
     }
     .padding(20)
     .frame(width: 200)
