@@ -25,6 +25,7 @@ struct Test {
         try? self.bitSet()
         try? self.bitToggle()
         try? self.subjectRightGet()
+        try? self.subjectRightSet()
         try? self.url()
     }
 
@@ -150,6 +151,30 @@ struct Test {
             let owner = Subject.owner.rightGet(from: rights)
             let group = Subject.group.rightGet(from: rights)
             let other = Subject.other.rightGet(from: rights)
+            #expect(etalonOwner == owner)
+            #expect(etalonGroup == group)
+            #expect(etalonOther == other)
+        }
+    }
+
+    func subjectRightSet() throws {
+        let etalonSetter: (UInt, RightsValue, Subject) -> RightsValue = { value, rightsValue, subject in
+            let bitR = value[Permission.r.offset]
+            let bitW = value[Permission.w.offset]
+            let bitX = value[Permission.x.offset]
+            var result = rightsValue
+                result[subject.offset + Permission.r.offset] = bitR
+                result[subject.offset + Permission.w.offset] = bitW
+                result[subject.offset + Permission.x.offset] = bitX
+            return result
+        }
+        for rights in RightsValue(0) ... RightsValue(0o777 + 1) {
+            let etalonOwner = etalonSetter(0o1, rights, .owner)
+            let etalonGroup = etalonSetter(0o2, rights, .group)
+            let etalonOther = etalonSetter(0o3, rights, .other)
+            let owner = Subject.owner.rightSet(0o1, to: rights)
+            let group = Subject.group.rightSet(0o2, to: rights)
+            let other = Subject.other.rightSet(0o3, to: rights)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)

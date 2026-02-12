@@ -24,21 +24,10 @@ struct ToggleRwxNumeric: View {
         self._rights = rights
     }
 
-    let valuePack: (UInt, RightsValue, Subject) -> RightsValue = { value, rightsValue, subject in
-        let bitR = value[Permission.r.offset]
-        let bitW = value[Permission.w.offset]
-        let bitX = value[Permission.x.offset]
-        var result = rightsValue
-            result[subject.offset + Permission.r.offset] = bitR
-            result[subject.offset + Permission.w.offset] = bitW
-            result[subject.offset + Permission.x.offset] = bitX
-        return result
-    }
-
     var body: some View {
-        let ownerProxy = Binding<UInt> { Subject.owner.rightGet(from: self.rights) } set: { value in self.rights = self.valuePack(value, self.rights, .owner) }
-        let groupProxy = Binding<UInt> { Subject.group.rightGet(from: self.rights) } set: { value in self.rights = self.valuePack(value, self.rights, .group) }
-        let otherProxy = Binding<UInt> { Subject.other.rightGet(from: self.rights) } set: { value in self.rights = self.valuePack(value, self.rights, .other) }
+        let ownerProxy = Binding<UInt> { Subject.owner.rightGet(from: self.rights) } set: { value in self.rights = Subject.owner.rightSet(value, to: self.rights) }
+        let groupProxy = Binding<UInt> { Subject.group.rightGet(from: self.rights) } set: { value in self.rights = Subject.group.rightSet(value, to: self.rights) }
+        let otherProxy = Binding<UInt> { Subject.other.rightGet(from: self.rights) } set: { value in self.rights = Subject.other.rightSet(value, to: self.rights) }
         VStack {
             Text("owner \(ownerProxy.wrappedValue)")
             Text("group \(groupProxy.wrappedValue)")

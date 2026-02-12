@@ -37,4 +37,8 @@ public enum Subject {
         rights >> self.offset & 0b111
     }
 
+    func rightSet(_ value: UInt, to rights: RightsValue) -> RightsValue {
+        (rights & ~(0b111 << self.offset)) | ((value & 0b111) << self.offset)
+    }
+
 }
