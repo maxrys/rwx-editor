@@ -13,6 +13,7 @@ struct Popup: View {
 
     private let fullpath: String
     private let info: FSEntityInfo
+    private let messageBox = MessageBox()
 
     init?(fullpath: String) {
         guard let info = FSEntityInfo(fullpath) else {
@@ -46,6 +47,18 @@ struct Popup: View {
             /* MARK: foot */
 
             PopupFoot()
+
+            /* MARK: message box */
+
+            self.messageBox
+
+            Button("test messageBox") {
+                self.messageBox.insert(
+                    type: .error,
+                    title: NSLocalizedString("title", comment: ""),
+                    description: "description"
+                )
+            }.padding(20)
 
         }
         .environment(\.layoutDirection, .leftToRight)
