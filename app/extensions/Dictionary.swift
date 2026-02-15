@@ -3,11 +3,23 @@
 /* ### Copyright © 2024—2025 Maxim Rysevets. All rights reserved. ### */
 /* ################################################################## */
 
-extension Dictionary where Key: Comparable {
+extension Dictionary {
 
-    @inlinable public func ordered() -> [Element] {
+    public enum SortedBy {
+        case keyAsc
+        case keyDsc
+        case valueAsc
+        case valueDsc
+    }
+
+    public func sortedBy(order: Self.SortedBy = .keyAsc) -> [Element] where Key: Comparable, Value: Comparable {
         self.sorted(by: { (lhs, rhs) in
-            lhs.key < rhs.key
+            switch order {
+                case .keyAsc  : lhs.key   < rhs.key
+                case .keyDsc  : lhs.key   > rhs.key
+                case .valueAsc: lhs.value < rhs.value
+                case .valueDsc: lhs.value > rhs.value
+            }
         })
     }
 

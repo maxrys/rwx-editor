@@ -10,9 +10,10 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     typealias ColorSet = Color.PickerColorSet
 
     @Binding fileprivate var selectedKey: Key
-    @State fileprivate var isOpened: Bool = false
+    @State fileprivate var isOpened = false
 
     fileprivate let items: [Key: String]
+    fileprivate let sortedBy: Dictionary<Key, String>.SortedBy
     fileprivate let isPlainListStyle: Bool
     fileprivate let flexibility: Flexibility
     fileprivate let colorSet: ColorSet
@@ -21,22 +22,24 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
     fileprivate var keyToIndex: [Key: Int] = [:]
     fileprivate var indexToKey: [Int: Key] = [:]
-    fileprivate var itemsOrdered: [(key: Key, value: String)] = []
+    fileprivate var itemsSorted: [(key: Key, value: String)] = []
 
     init(
         selected: Binding<Key>,
         items: [Key: String],
+        sortedBy: Dictionary<Key, String>.SortedBy = .keyAsc,
         isPlainListStyle: Bool = false,
         flexibility: Flexibility = .none,
         colorSet: ColorSet = Color.picker
     ) {
         self._selectedKey = selected
         self.items = items
+        self.sortedBy = sortedBy
         self.isPlainListStyle = isPlainListStyle
         self.flexibility = flexibility
         self.colorSet = colorSet
-        self.itemsOrdered = self.items.ordered()
-        self.itemsOrdered.enumerated().forEach { index, keyValuePair in
+        self.itemsSorted = self.items.sortedBy(order: self.sortedBy)
+        self.itemsSorted.enumerated().forEach { index, keyValuePair in
             self.keyToIndex[keyValuePair.key] = index
             self.indexToKey[index] = keyValuePair.key
         }
@@ -74,7 +77,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         }
     }
 
-    @ViewBuilder var opener: some View {
+    @ViewBuilder private var opener: some View {
         Button {
             self.isOpened = true
         } label: {
@@ -87,8 +90,8 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
                 .background(
                     RoundedRectangle(cornerRadius: self.cornerRadius)
                         .stroke(self.colorSet.border, lineWidth: self.borderWidth)
-                        .background(self.colorSet.background))
-                .clipShape(RoundedRectangle(cornerRadius: self.cornerRadius))
+                        .background(self.colorSet.background)
+                        .clipShape(RoundedRectangle(cornerRadius: self.cornerRadius)))
                 .contentShapePolyfill(RoundedRectangle(cornerRadius: self.cornerRadius))
         }
         .buttonStyle(.plain)
@@ -114,7 +117,7 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
     }
 
     private var list: some View {
-        ForEach(Array(self.rootView.itemsOrdered.enumerated()), id: \.element.key) { index, item in
+        ForEach(Array(self.rootView.itemsSorted.enumerated()), id: \.element.key) { index, item in
             Button {
                 self.rootView.selectedKey = item.key
                 self.rootView.isOpened = false
@@ -131,8 +134,9 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
                     .padding(.vertical  , 5)
                     .frame(maxWidth: .infinity, alignment: self.rootView.isPlainListStyle ? .leading : .center)
                     .foregroundPolyfill(self.rootView.colorSet.itemText)
-                    .background(backgroundColor)
-                    .clipShape(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
+                    .background(
+                        RoundedRectangle(cornerRadius: self.rootView.cornerRadius)
+                            .fill(backgroundColor))
                     .contentShapePolyfill(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
                     .onHover { isHovering in
                         self.hoveredKey = isHovering ? item.key : nil
