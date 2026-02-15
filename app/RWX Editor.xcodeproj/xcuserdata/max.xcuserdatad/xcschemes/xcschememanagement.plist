@@ -9,11 +9,6 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>RWX Editor Test.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>RWX Editor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>50B276B32F39C991005F7475</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50B276D82F39DB98005F7475</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "23B95E81-2A0D-495C-9E0D-83591D098AF4",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:RWX Editor.xcodeproj",
+      "identifier" : "50B276962F389876005F7475",
+      "name" : "RWX Editor"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RWX Editor.xcodeproj",
+        "identifier" : "50B276D82F39DB98005F7475",
+        "name" : "RWX Editor Test"
+      }
+    }
+  ],
+  "version" : 1
+}
