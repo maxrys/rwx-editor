@@ -41,15 +41,6 @@ extension View {
         } else { self }
     }
 
-    @ViewBuilder func onKeyPressPolyfill(character: String, action: @escaping () -> Void) -> some View {
-        if #available(macOS 14.0, *) {
-            self.onKeyPress(phases: .down) { press in
-                if (press.characters.contains(character)) { action() }
-                return .ignored
-            }
-        } else { self }
-    }
-
     @ViewBuilder func pointerStyleLinkPolyfill(isEnabled: Bool = true) -> some View {
         if (isEnabled) {
             if #available(macOS 15.0, *) {
@@ -63,6 +54,25 @@ extension View {
         } else {
             self
         }
+    }
+
+    @ViewBuilder func overlayPolyfill<Content: View>(
+        alignment: Alignment = .center,
+        @ViewBuilder content: @escaping () -> Content
+    ) -> some View {
+        ZStack(alignment: alignment) {
+            self
+            content()
+        }
+    }
+
+    @ViewBuilder func onKeyPressPolyfill(character: String, action: @escaping () -> Void) -> some View {
+        if #available(macOS 14.0, *) {
+            self.onKeyPress(phases: .down) { press in
+                if (press.characters.contains(character)) { action() }
+                return .ignored
+            }
+        } else { self }
     }
 
 }

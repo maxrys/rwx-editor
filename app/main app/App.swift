@@ -13,6 +13,13 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         case withURL
     }
 
+    static var sharedDelegate: ThisAppDelegate!
+
+    override init() {
+        super.init()
+        Self.sharedDelegate = self
+    }
+
     private var launchType: LaunchType?
 
     func logLaunchType() {

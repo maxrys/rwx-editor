@@ -11,6 +11,12 @@ struct MainView: View {
         VStack {
             Text("Settings")
                 .padding(20)
+
+            Button("test popup") {
+                if let delegate = ThisAppDelegate.sharedDelegate {
+                    delegate.showWindowPopup(fullpath: "/private/etc/")
+                }
+            }.padding(20)
         }
         .frame(width: 400, height: 200)
         .environment(\.layoutDirection, .leftToRight)

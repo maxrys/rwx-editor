@@ -4,14 +4,13 @@
 /* ############################################################# */
 
 import Foundation
-import Combine
 
-final class ValueState<T>: ObservableObject {
+extension Numeric {
 
-    @Published var value: T
-
-    init(_ value: T) {
-        self.value = value
+    func fixBounds(min: Self = 0, max: Self) -> Self where Self: Comparable {
+        if (self < min) { return min }
+        if (self > max) { return max }
+        return self
     }
 
 }
