@@ -92,7 +92,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
                         .stroke(self.colorSet.border, lineWidth: self.borderWidth)
                         .background(self.colorSet.background)
                         .clipShape(RoundedRectangle(cornerRadius: self.cornerRadius)))
-                .contentShapePolyfill(RoundedRectangle(cornerRadius: self.cornerRadius))
+                .contentShape(RoundedRectangle(cornerRadius: self.cornerRadius))
         }
         .buttonStyle(.plain)
         .pointerStyleLinkPolyfill()
@@ -137,7 +137,7 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
                     .background(
                         RoundedRectangle(cornerRadius: self.rootView.cornerRadius)
                             .fill(backgroundColor))
-                    .contentShapePolyfill(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
+                    .contentShape(RoundedRectangle(cornerRadius: self.rootView.cornerRadius))
                     .onHover { isHovering in
                         self.hoveredKey = isHovering ? item.key : nil
                     }
