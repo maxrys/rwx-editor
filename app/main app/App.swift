@@ -122,7 +122,7 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     @NSApplicationDelegateAdaptor(ThisAppDelegate.self) var appDelegate
 
-    var body: some Scene {
+    public var body: some Scene {
     }
 
 }

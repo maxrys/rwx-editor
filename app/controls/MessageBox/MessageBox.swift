@@ -17,27 +17,27 @@ struct MessageBox: View {
 
     @ObservedObject private var data = MessageStorage()
 
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack (spacing: 0) {
                     ForEach(self.data.messages, id: \.key) { ID, message in
                         VStack(alignment: .leading, spacing: 0) {
                             
-                            self.Title(message)
+                            self.TitleView(message)
                                 .overlayPolyfill(alignment: .topTrailing) {
                                     if (message.isClosable) {
-                                        self.ButtonClose(ID)
+                                        self.ButtonCloseView(ID)
                                     }
                                 }
 
                             if (!message.description.isEmpty) {
-                                self.Description(message)
+                                self.DescriptionView(message)
                             }
 
                         }.overlayPolyfill(alignment: .bottomLeading) {
                             if let _ = message.expiresAt {
-                                self.Progress(
+                                self.ProgressView(
                                     width: geometry.size.width * data.progress(ID)
                                 )
                             }
@@ -48,7 +48,7 @@ struct MessageBox: View {
         }
     }
 
-    @ViewBuilder private func Title(_ message: Message) -> some View {
+    @ViewBuilder private func TitleView(_ message: Message) -> some View {
         Text(message.title)
             .font(.system(size: 14, weight: .bold))
             .multilineTextAlignment(.center)
@@ -59,7 +59,7 @@ struct MessageBox: View {
             .background(message.type.colorTitleBackground)
     }
 
-    @ViewBuilder private func Description(_ message: Message) -> some View {
+    @ViewBuilder private func DescriptionView(_ message: Message) -> some View {
         Text(message.description)
             .font(.system(size: 13))
             .multilineTextAlignment(.center)
@@ -70,12 +70,12 @@ struct MessageBox: View {
             .background(message.type.colorDescriptionBackground)
     }
 
-    @ViewBuilder private func Progress(width: CGFloat) -> some View {
+    @ViewBuilder private func ProgressView(width: CGFloat) -> some View {
         Color.black.opacity(0.3)
             .frame(width: width, height: 3)
     }
 
-    @ViewBuilder private func ButtonClose(_ ID: MessageID) -> some View {
+    @ViewBuilder private func ButtonCloseView(_ ID: MessageID) -> some View {
         Button {
             self.data.delete(ID)
         } label: {

@@ -38,10 +38,10 @@ struct PopupBody: View {
         GridItem(.flexible(), spacing: 0),
     ]
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 20) {
 
-            self.ShadowTop
+            self.ShadowTopView()
 
             /* MARK: rules via toggles */
 
@@ -76,14 +76,14 @@ struct PopupBody: View {
                 ToggleRwxNumeric(self.$rights)
             }
 
-            self.ShadowBottom
+            self.ShadowBottomView()
 
         }
         .frame(maxWidth: .infinity)
         .background(Color(Self.ColorNames.body.rawValue))
     }
 
-    @ViewBuilder var ShadowTop: some View {
+    @ViewBuilder private func ShadowTopView() -> some View {
         Rectangle()
             .fill(
                 LinearGradient(
@@ -96,7 +96,7 @@ struct PopupBody: View {
             ).frame(height: 6)
     }
 
-    @ViewBuilder var ShadowBottom: some View {
+    @ViewBuilder private func ShadowBottomView() -> some View {
         Rectangle()
             .fill(
                 LinearGradient(

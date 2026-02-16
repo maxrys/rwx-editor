@@ -61,12 +61,12 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         if (self.items.isEmpty) {
-            self.opener
+            self.OpenerView()
                 .disabled(true)
         } else {
-            self.opener
+            self.OpenerView()
                 .onKeyPressPolyfill(character: KeyEquivalentPolyfill.upArrow  .rawValue, action: self.onPressKeyUpArrow)
                 .onKeyPressPolyfill(character: KeyEquivalentPolyfill.downArrow.rawValue, action: self.onPressKeyDownArrow)
                 .popover(isPresented: self.$isOpened) {
@@ -77,7 +77,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         }
     }
 
-    @ViewBuilder private var opener: some View {
+    @ViewBuilder private func OpenerView() -> some View {
         Button {
             self.isOpened = true
         } label: {
@@ -112,11 +112,11 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
 
     public var body: some View {
         if (self.rootView.items.count > 8)
-             { List   { self.list }.listStyle(.sidebar) }
-        else { VStack { self.list }.padding(10) }
+             { List   { self.ListView() }.listStyle(.sidebar) }
+        else { VStack { self.ListView() }.padding(10) }
     }
 
-    private var list: some View {
+    @ViewBuilder private func ListView() -> some View {
         ForEach(Array(self.rootView.itemsSorted.enumerated()), id: \.element.key) { index, item in
             Button {
                 self.rootView.selectedKey = item.key

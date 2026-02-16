@@ -28,7 +28,7 @@ struct PanelRwxText: View {
         ]
     }
 
-    var body: some View {
+    public var body: some View {
         let symbolR = Permission.r.rawValue
         let symbolW = Permission.w.rawValue
         let symbolX = Permission.x.rawValue

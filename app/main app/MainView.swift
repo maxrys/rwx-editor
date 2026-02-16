@@ -7,7 +7,7 @@ import SwiftUI
 
 struct MainView: View {
 
-    var body: some View {
+    public var body: some View {
         VStack {
             Text("Settings")
                 .padding(20)

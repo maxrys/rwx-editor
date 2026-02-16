@@ -42,7 +42,7 @@ struct ToggleRwxColored: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         Button {
             self.rights[self.bitPosition].toggle()
         } label: {

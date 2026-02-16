@@ -26,7 +26,7 @@ struct Popup: View {
         self.group  = info.group
     }
 
-    var body: some View {
+    public var body: some View {
         VStack (spacing: 0) {
 
             /* MARK: head */

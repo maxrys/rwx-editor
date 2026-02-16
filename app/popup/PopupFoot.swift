@@ -11,7 +11,7 @@ struct PopupFoot: View {
         case foot = "color Popup Foot Background"
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 0) {
             Text("PopupFoot")
         }
