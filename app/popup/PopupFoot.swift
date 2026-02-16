@@ -11,9 +11,31 @@ struct PopupFoot: View {
         case foot = "color Popup Foot Background"
     }
 
+    private let messageBox: MessageBox
+
+    init(messageBox: MessageBox) {
+        self.messageBox = messageBox
+    }
+
     public var body: some View {
-        VStack(spacing: 0) {
-            Text("PopupFoot")
+        HStack(spacing: 10) {
+
+            Button("test 1") {
+                self.messageBox.insert(
+                    type: .error,
+                    title: NSLocalizedString("Error Message", comment: ""),
+                    description: "description"
+                )
+            }
+
+            Button("test 2") {
+                self.messageBox.insert(
+                    type: .ok,
+                    title: NSLocalizedString("Ok Message", comment: ""),
+                    description: "description"
+                )
+            }
+
         }
         .padding(20)
         .frame(maxWidth: .infinity)
@@ -29,5 +51,5 @@ struct PopupFoot: View {
 /* ############################################################# */
 
 #Preview {
-    PopupFoot()
+    PopupFoot(messageBox: MessageBox())
 }

@@ -46,19 +46,13 @@ struct Popup: View {
 
             /* MARK: foot */
 
-            PopupFoot()
+            PopupFoot(
+                messageBox: self.messageBox
+            )
 
             /* MARK: message box */
 
             self.messageBox
-
-            Button("test messageBox") {
-                self.messageBox.insert(
-                    type: .error,
-                    title: NSLocalizedString("title", comment: ""),
-                    description: "description"
-                )
-            }.padding(20)
 
         }
         .environment(\.layoutDirection, .leftToRight)

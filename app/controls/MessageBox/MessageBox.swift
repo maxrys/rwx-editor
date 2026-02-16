@@ -17,30 +17,28 @@ struct MessageBox: View {
 
     @ObservedObject private var data = MessageStorage()
 
-    public var body: some View {
-        GeometryReader { geometry in
-            ScrollView {
-                VStack (spacing: 0) {
-                    ForEach(self.data.messages, id: \.key) { ID, message in
-                        VStack(alignment: .leading, spacing: 0) {
-                            
-                            self.TitleView(message)
-                                .overlayPolyfill(alignment: .topTrailing) {
-                                    if (message.isClosable) {
-                                        self.ButtonCloseView(ID)
-                                    }
+    var body: some View {
+        GeometryReaderPolyfill(isIgnoreHeight: true) { size in
+            VStack (spacing: 0) {
+                ForEach(self.data.messages, id: \.key) { ID, message in
+                    VStack(alignment: .leading, spacing: 0) {
+
+                        self.TitleView(message)
+                            .overlayPolyfill(alignment: .topTrailing) {
+                                if (message.isClosable) {
+                                    self.ButtonCloseView(ID)
                                 }
-
-                            if (!message.description.isEmpty) {
-                                self.DescriptionView(message)
                             }
 
-                        }.overlayPolyfill(alignment: .bottomLeading) {
-                            if let _ = message.expiresAt {
-                                self.ProgressView(
-                                    width: geometry.size.width * data.progress(ID)
-                                )
-                            }
+                        if (!message.description.isEmpty) {
+                            self.DescriptionView(message)
+                        }
+
+                    }.overlayPolyfill(alignment: .bottomLeading) {
+                        if let _ = message.expiresAt {
+                            self.ProgressView(
+                                width: size.width * data.progress(ID)
+                            )
                         }
                     }
                 }

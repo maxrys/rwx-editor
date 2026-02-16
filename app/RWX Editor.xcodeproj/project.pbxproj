@@ -72,13 +72,16 @@
 		50DCD7C92F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
 		50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
 		50DCD7CB2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
-		50DCD7E32F4311A800E067C3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DCD7E12F4311A800E067C3 /* Media.xcassets */; };
-		50DCD7E42F4311A800E067C3 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7DB2F4311A800E067C3 /* MessageType.swift */; };
-		50DCD7E52F4311A800E067C3 /* MessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7DE2F4311A800E067C3 /* MessageStorage.swift */; };
-		50DCD7E62F4311A800E067C3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7DD2F4311A800E067C3 /* Message.swift */; };
-		50DCD7E72F4311A800E067C3 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7DF2F4311A800E067C3 /* MessageBox.swift */; };
-		50DCD7E82F4311A800E067C3 /* MessageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7E02F4311A800E067C3 /* MessageColors.swift */; };
-		50DCD7E92F4311A800E067C3 /* MessageLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7DC2F4311A800E067C3 /* MessageLifecycle.swift */; };
+		50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
+		50DCD7EE2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
+		50DCD7EF2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
+		50DCD7F82F434C2E00E067C3 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F42F434C2E00E067C3 /* MessageBox.swift */; };
+		50DCD7F92F434C2E00E067C3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F22F434C2E00E067C3 /* Message.swift */; };
+		50DCD7FA2F434C2E00E067C3 /* MessageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F52F434C2E00E067C3 /* MessageColors.swift */; };
+		50DCD7FB2F434C2E00E067C3 /* MessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */; };
+		50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */; };
+		50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F02F434C2E00E067C3 /* MessageType.swift */; };
+		50DCD7FE2F434C2E00E067C3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DCD7F62F434C2E00E067C3 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,13 +151,14 @@
 		50B2772C2F3E37B0005F7475 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		50DCD7DB2F4311A800E067C3 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
-		50DCD7DC2F4311A800E067C3 /* MessageLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLifecycle.swift; sourceTree = "<group>"; };
-		50DCD7DD2F4311A800E067C3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		50DCD7DE2F4311A800E067C3 /* MessageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStorage.swift; sourceTree = "<group>"; };
-		50DCD7DF2F4311A800E067C3 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
-		50DCD7E02F4311A800E067C3 /* MessageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageColors.swift; sourceTree = "<group>"; };
-		50DCD7E12F4311A800E067C3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
+		50DCD7F02F434C2E00E067C3 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
+		50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLifecycle.swift; sourceTree = "<group>"; };
+		50DCD7F22F434C2E00E067C3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStorage.swift; sourceTree = "<group>"; };
+		50DCD7F42F434C2E00E067C3 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		50DCD7F52F434C2E00E067C3 /* MessageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageColors.swift; sourceTree = "<group>"; };
+		50DCD7F62F434C2E00E067C3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 				50B2770E2F3BD044005F7475 /* Color.swift */,
 				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B2772C2F3E37B0005F7475 /* Dictionary.swift */,
+				50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
@@ -285,7 +290,7 @@
 		50B277092F3BCFC0005F7475 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				50DCD7E22F4311A800E067C3 /* MessageBox */,
+				50DCD7F72F434C2E00E067C3 /* MessageBox */,
 				50B277152F3C765C005F7475 /* PanelRwxText.swift */,
 				50B277282F3DF227005F7475 /* PickerCustom.swift */,
 				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
@@ -295,16 +300,16 @@
 			path = controls;
 			sourceTree = "<group>";
 		};
-		50DCD7E22F4311A800E067C3 /* MessageBox */ = {
+		50DCD7F72F434C2E00E067C3 /* MessageBox */ = {
 			isa = PBXGroup;
 			children = (
-				50DCD7DB2F4311A800E067C3 /* MessageType.swift */,
-				50DCD7DC2F4311A800E067C3 /* MessageLifecycle.swift */,
-				50DCD7DD2F4311A800E067C3 /* Message.swift */,
-				50DCD7DE2F4311A800E067C3 /* MessageStorage.swift */,
-				50DCD7DF2F4311A800E067C3 /* MessageBox.swift */,
-				50DCD7E02F4311A800E067C3 /* MessageColors.swift */,
-				50DCD7E12F4311A800E067C3 /* Media.xcassets */,
+				50DCD7F02F434C2E00E067C3 /* MessageType.swift */,
+				50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */,
+				50DCD7F22F434C2E00E067C3 /* Message.swift */,
+				50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */,
+				50DCD7F42F434C2E00E067C3 /* MessageBox.swift */,
+				50DCD7F52F434C2E00E067C3 /* MessageColors.swift */,
+				50DCD7F62F434C2E00E067C3 /* Media.xcassets */,
 			);
 			path = MessageBox;
 			sourceTree = "<group>";
@@ -419,7 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DCD7E32F4311A800E067C3 /* Media.xcassets in Resources */,
+				50DCD7FE2F434C2E00E067C3 /* Media.xcassets in Resources */,
 				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */,
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
@@ -460,15 +465,15 @@
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
+				50DCD7F82F434C2E00E067C3 /* MessageBox.swift in Sources */,
+				50DCD7F92F434C2E00E067C3 /* Message.swift in Sources */,
+				50DCD7FA2F434C2E00E067C3 /* MessageColors.swift in Sources */,
+				50DCD7FB2F434C2E00E067C3 /* MessageStorage.swift in Sources */,
+				50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */,
+				50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50B277142F3BD0F2005F7475 /* enums.swift in Sources */,
-				50DCD7E42F4311A800E067C3 /* MessageType.swift in Sources */,
-				50DCD7E52F4311A800E067C3 /* MessageStorage.swift in Sources */,
-				50DCD7E62F4311A800E067C3 /* Message.swift in Sources */,
-				50DCD7E72F4311A800E067C3 /* MessageBox.swift in Sources */,
-				50DCD7E82F4311A800E067C3 /* MessageColors.swift in Sources */,
-				50DCD7E92F4311A800E067C3 /* MessageLifecycle.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
@@ -479,6 +484,7 @@
 				50B276E72F39DC88005F7475 /* URL.swift in Sources */,
 				50B277112F3BD044005F7475 /* Color.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
+				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */,
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
@@ -506,6 +512,7 @@
 				50DCD7C72F425A8D00E067C3 /* Numeric.swift in Sources */,
 				50B2772E2F3E37B0005F7475 /* Dictionary.swift in Sources */,
 				50B276F72F3A71B2005F7475 /* Date.swift in Sources */,
+				50DCD7EE2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
 				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E62F39DC88005F7475 /* URL.swift in Sources */,
 				50DCD7C92F425A9B00E067C3 /* Timer.swift in Sources */,
@@ -527,6 +534,7 @@
 				50B277102F3BD044005F7475 /* Color.swift in Sources */,
 				50B276E92F39DCCA005F7475 /* String.swift in Sources */,
 				50B277232F3DD167005F7475 /* types.swift in Sources */,
+				50DCD7EF2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
 				50B276E82F39DC92005F7475 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

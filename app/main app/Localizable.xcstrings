@@ -67,6 +67,9 @@
         }
       }
     },
+    "Error Message" : {
+
+    },
     "Execute" : {
       "localizations" : {
         "ru" : {
@@ -126,6 +129,9 @@
     "No value:" : {
 
     },
+    "Ok Message" : {
+
+    },
     "Other" : {
       "localizations" : {
         "ru" : {
@@ -155,9 +161,6 @@
           }
         }
       }
-    },
-    "PopupFoot" : {
-      "shouldTranslate" : false
     },
     "Read" : {
       "localizations" : {
@@ -242,13 +245,13 @@
         }
       }
     },
-    "test messageBox" : {
+    "test 1" : {
+
+    },
+    "test 2" : {
 
     },
     "test popup" : {
-
-    },
-    "title" : {
 
     },
     "Type" : {

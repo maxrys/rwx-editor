@@ -104,7 +104,7 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
 
     @State private var hoveredKey: Key?
 
-    private var rootView: PickerCustom<Key>
+    private let rootView: PickerCustom<Key>
 
     init(rootView: PickerCustom<Key>) {
         self.rootView = rootView
