@@ -37,24 +37,23 @@ struct Message {
         lhs.description == rhs.description
     }
 
-    var isPersistent: Bool {
-        self.expiresAt == nil
-    }
-
-    var isExpired: Bool {
-        guard let expiresAt = self.expiresAt else { return false }
-        return CACurrentMediaTime() > expiresAt
-    }
-
-    var progress: Double {
-        guard let expiresAt = self.expiresAt else { return 0 }
-        let maxValue = expiresAt            - self.startedAt
-        let curValue = CACurrentMediaTime() - self.startedAt
-        guard maxValue > 0 else { return 0 }
-        return (curValue / maxValue).fixBounds(
-            min: 0.0,
-            max: 1.0
-        )
+    var status: MessageStatus {
+        if let expiresAt = self.expiresAt {
+            if (CACurrentMediaTime() > expiresAt) {
+                return .expired
+            } else {
+                let maxValue = expiresAt            - self.startedAt
+                let curValue = CACurrentMediaTime() - self.startedAt
+                guard maxValue > 0 else { return .inProgress(0) }
+                return .inProgress(
+                    (curValue / maxValue).fixBounds(
+                        min: 0.0,
+                        max: 1.0
+                    )
+                )
+            }
+        }
+        return .persistent
     }
 
 }

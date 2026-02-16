@@ -34,13 +34,14 @@ final class MessageStorage: ObservableObject {
     private func onTimerTick(timer: Timer.Custom) {
         var isTimerRequired = false
         for (ID, pair) in self.data {
-            if (!pair.message.isPersistent) {
-                if (pair.message.isExpired) {
+            switch pair.message.status {
+                case .expired:
                     self.delete(ID)
-                } else {
-                    self.data[ID]?.progress = pair.message.progress
+                case .inProgress(let progress):
+                    self.data[ID]?.progress = progress
                     isTimerRequired = true
-                }
+                case .persistent:
+                    continue
             }
         }
         if (!isTimerRequired && !self.timer.isStoped) {
@@ -49,9 +50,9 @@ final class MessageStorage: ObservableObject {
     }
 
     public var messages: [(key: MessageID, value: Message)] {
-        self.data.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }).map { dictItem in (
-             key  : dictItem.key,
-             value: dictItem.value.message
+        self.data.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }).map { element in (
+             key  : element.key,
+             value: element.value.message
         )}
     }
 
@@ -73,11 +74,15 @@ final class MessageStorage: ObservableObject {
             }
         }
         self.newID += 1
-        self.data[self.newID] = (
-            message: newMessage, progress: newMessage.progress
-        )
-        if (!newMessage.isPersistent && self.timer.isStoped) {
-            self.timer.startOrRenew()
+        switch newMessage.status {
+            case .persistent              : self.data[self.newID] = (message: newMessage, progress: 0)
+            case .inProgress(let progress): self.data[self.newID] = (message: newMessage, progress: progress)
+            case .expired                 : break
+        }
+        if case .inProgress = newMessage.status {
+            if (self.timer.isStoped) {
+                self.timer.startOrRenew()
+            }
         }
     }
 
