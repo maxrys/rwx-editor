@@ -69,6 +69,12 @@
 		50CE9FB92F471491001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FB82F471491001006CF /* Assets.xcassets */; };
 		50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FBB2F4714AF001006CF /* Assets.xcassets */; };
 		50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FBE2F4715B7001006CF /* PickerCustomColor.swift */; };
+		50CE9FD52F471AE3001006CF /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD42F471AE3001006CF /* ButtonCustom.swift */; };
+		50CE9FD82F471B0B001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FD72F471B0B001006CF /* Assets.xcassets */; };
+		50CE9FDA2F471B54001006CF /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD92F471B54001006CF /* Shape.swift */; };
+		50CE9FDB2F471B54001006CF /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD92F471B54001006CF /* Shape.swift */; };
+		50CE9FDC2F471B54001006CF /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD92F471B54001006CF /* Shape.swift */; };
+		50CE9FDE2F471BAB001006CF /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */; };
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7C62F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7C72F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
@@ -155,6 +161,10 @@
 		50CE9FB82F471491001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CE9FBB2F4714AF001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CE9FBE2F4715B7001006CF /* PickerCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustomColor.swift; sourceTree = "<group>"; };
+		50CE9FD42F471AE3001006CF /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
+		50CE9FD72F471B0B001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50CE9FD92F471B54001006CF /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
@@ -241,6 +251,7 @@
 				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
 				50DCD7C42F425A8D00E067C3 /* Numeric.swift */,
 				50B276E12F39DC3F005F7475 /* RightsValue.swift */,
+				50CE9FD92F471B54001006CF /* Shape.swift */,
 				50B276CE2F39CC00005F7475 /* String.swift */,
 				50DCD7C82F425A9B00E067C3 /* Timer.swift */,
 				50B276E52F39DC88005F7475 /* URL.swift */,
@@ -296,6 +307,7 @@
 		50B277092F3BCFC0005F7475 /* controls */ = {
 			isa = PBXGroup;
 			children = (
+				50CE9FD62F471AE8001006CF /* ButtonCustom */,
 				50DCD7F72F434C2E00E067C3 /* MessageBox */,
 				50CE9FB72F47147D001006CF /* PanelRwxText */,
 				50CE9FBA2F4714A3001006CF /* PickerCustom */,
@@ -331,6 +343,16 @@
 				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = ToggleRwxColored;
+			sourceTree = "<group>";
+		};
+		50CE9FD62F471AE8001006CF /* ButtonCustom */ = {
+			isa = PBXGroup;
+			children = (
+				50CE9FD42F471AE3001006CF /* ButtonCustom.swift */,
+				50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */,
+				50CE9FD72F471B0B001006CF /* Assets.xcassets */,
+			);
+			path = ButtonCustom;
 			sourceTree = "<group>";
 		};
 		50DCD7F72F434C2E00E067C3 /* MessageBox */ = {
@@ -463,6 +485,7 @@
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
 				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
+				50CE9FD82F471B0B001006CF /* Assets.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +522,7 @@
 				50B277222F3DCEE9005F7475 /* types.swift in Sources */,
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */,
+				50CE9FD52F471AE3001006CF /* ButtonCustom.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50DCD7F82F434C2E00E067C3 /* MessageBox.swift in Sources */,
 				50DCD7F92F434C2E00E067C3 /* Message.swift in Sources */,
@@ -507,8 +531,10 @@
 				50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */,
 				50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
+				50CE9FDB2F471B54001006CF /* Shape.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */,
+				50CE9FDE2F471BAB001006CF /* ButtonCustomColor.swift in Sources */,
 				50B277142F3BD0F2005F7475 /* enums.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
@@ -551,6 +577,7 @@
 				50DCD7EE2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
 				50B276FB2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				50B276E62F39DC88005F7475 /* URL.swift in Sources */,
+				50CE9FDA2F471B54001006CF /* Shape.swift in Sources */,
 				50DCD7C92F425A9B00E067C3 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +589,7 @@
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
 				50B2772F2F3E37B0005F7475 /* Dictionary.swift in Sources */,
 				50B276E42F39DC55005F7475 /* RightsValue.swift in Sources */,
+				50CE9FDC2F471B54001006CF /* Shape.swift in Sources */,
 				50DCD7CB2F425A9B00E067C3 /* Timer.swift in Sources */,
 				50DCD7C62F425A8D00E067C3 /* Numeric.swift in Sources */,
 				50B276FE2F3A8D34005F7475 /* View.swift in Sources */,

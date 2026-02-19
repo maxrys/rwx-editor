@@ -20,26 +20,36 @@ struct PopupFoot: View {
     public var body: some View {
         HStack(spacing: 10) {
 
-            Button("test 1") {
-                self.messageBox.insert(
-                    type: .error,
-                    title: NSLocalizedString("Error Message", comment: ""),
-                    description: "description"
-                )
-            }
+            /* MARK: cancel button */
 
-            Button("test 2") {
-                self.messageBox.insert(
-                    type: .ok,
-                    title: NSLocalizedString("Ok Message", comment: ""),
-                    description: "description"
-                )
-            }
+            ButtonCustom(NSLocalizedString("cancel", comment: ""), flexibility: .size(100)) {
+                self.onCancel()
+            }.disabled(false)
+
+            /* MARK: apply button */
+
+            ButtonCustom(NSLocalizedString("apply", comment: ""), flexibility: .size(100)) {
+                self.onApply()
+            }.disabled(false)
 
         }
         .padding(20)
         .frame(maxWidth: .infinity)
         .background(Color(Self.ColorNames.foot.rawValue))
+    }
+
+    private func onCancel() {
+        self.messageBox.insert(
+            type: .error,
+            title: "onCancel"
+        )
+    }
+
+    private func onApply() {
+        self.messageBox.insert(
+            type: .ok,
+            title: "onApply"
+        )
     }
 
 }

@@ -47,6 +47,12 @@
         }
       }
     },
+    "apply" : {
+
+    },
+    "cancel" : {
+
+    },
     "Created" : {
       "localizations" : {
         "ru" : {
@@ -66,9 +72,6 @@
           }
         }
       }
-    },
-    "Error Message" : {
-
     },
     "Execute" : {
       "localizations" : {
@@ -127,9 +130,6 @@
       }
     },
     "No value:" : {
-
-    },
-    "Ok Message" : {
 
     },
     "Other" : {
@@ -244,12 +244,6 @@
           }
         }
       }
-    },
-    "test 1" : {
-
-    },
-    "test 2" : {
-
     },
     "test popup" : {
 
