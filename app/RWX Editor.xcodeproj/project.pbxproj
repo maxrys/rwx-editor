@@ -66,6 +66,8 @@
 		50B2772D2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
 		50B2772E2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
 		50B2772F2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
+		50CE9FB92F471491001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FB82F471491001006CF /* Assets.xcassets */; };
+		50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FBB2F4714AF001006CF /* Assets.xcassets */; };
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7C62F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7C72F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
@@ -149,6 +151,8 @@
 		50B277202F3DCEE6005F7475 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
 		50B277282F3DF227005F7475 /* PickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustom.swift; sourceTree = "<group>"; };
 		50B2772C2F3E37B0005F7475 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		50CE9FB82F471491001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50CE9FBB2F4714AF001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
@@ -291,13 +295,39 @@
 			isa = PBXGroup;
 			children = (
 				50DCD7F72F434C2E00E067C3 /* MessageBox */,
-				50B277152F3C765C005F7475 /* PanelRwxText.swift */,
-				50B277282F3DF227005F7475 /* PickerCustom.swift */,
-				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
+				50CE9FB72F47147D001006CF /* PanelRwxText */,
+				50CE9FBA2F4714A3001006CF /* PickerCustom */,
+				50CE9FBD2F4714C9001006CF /* ToggleRwxColored */,
 				50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */,
-				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = controls;
+			sourceTree = "<group>";
+		};
+		50CE9FB72F47147D001006CF /* PanelRwxText */ = {
+			isa = PBXGroup;
+			children = (
+				50B277152F3C765C005F7475 /* PanelRwxText.swift */,
+				50CE9FB82F471491001006CF /* Assets.xcassets */,
+			);
+			path = PanelRwxText;
+			sourceTree = "<group>";
+		};
+		50CE9FBA2F4714A3001006CF /* PickerCustom */ = {
+			isa = PBXGroup;
+			children = (
+				50B277282F3DF227005F7475 /* PickerCustom.swift */,
+				50CE9FBB2F4714AF001006CF /* Assets.xcassets */,
+			);
+			path = PickerCustom;
+			sourceTree = "<group>";
+		};
+		50CE9FBD2F4714C9001006CF /* ToggleRwxColored */ = {
+			isa = PBXGroup;
+			children = (
+				50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */,
+				50B277172F3C7744005F7475 /* Assets.xcassets */,
+			);
+			path = ToggleRwxColored;
 			sourceTree = "<group>";
 		};
 		50DCD7F72F434C2E00E067C3 /* MessageBox */ = {
@@ -428,6 +458,8 @@
 				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */,
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
+				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
+				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
