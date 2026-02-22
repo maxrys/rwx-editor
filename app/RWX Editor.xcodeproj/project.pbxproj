@@ -19,7 +19,7 @@
 		50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CB2F39CBF7005F7475 /* NSWindow.swift */; };
 		50B276CF2F39CC00005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
 		50B276D02F39CC05005F7475 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
-		50B276D22F39CC3E005F7475 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D12F39CC3E005F7475 /* MainView.swift */; };
+		50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D12F39CC3E005F7475 /* MainScene.swift */; };
 		50B276D42F39CC5E005F7475 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D32F39CC59005F7475 /* Popup.swift */; };
 		50B276DC2F39DB98005F7475 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276DB2F39DB98005F7475 /* Test.swift */; };
 		50B276E22F39DC3F005F7475 /* RightsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* RightsValue.swift */; };
@@ -131,7 +131,7 @@
 		50B276C82F39CBD1005F7475 /* NSApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplication.swift; sourceTree = "<group>"; };
 		50B276CB2F39CBF7005F7475 /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
 		50B276CE2F39CC00005F7475 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		50B276D12F39CC3E005F7475 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		50B276D12F39CC3E005F7475 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		50B276D32F39CC59005F7475 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		50B276D92F39DB98005F7475 /* RWX Editor Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RWX Editor Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276DB2F39DB98005F7475 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276A72F389886005F7475 /* App.swift */,
-				50B276D12F39CC3E005F7475 /* MainView.swift */,
+				50B276D12F39CC3E005F7475 /* MainScene.swift */,
 				50B276A52F389886005F7475 /* Assets.xcassets */,
 				50B277042F3B2D93005F7475 /* Localizable.xcstrings */,
 				50B276EA2F3A40C9005F7475 /* app.entitlements */,
@@ -537,7 +537,7 @@
 				50CE9FDE2F471BAB001006CF /* ButtonCustomColor.swift in Sources */,
 				50B277142F3BD0F2005F7475 /* enums.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
-				50B276D22F39CC3E005F7475 /* MainView.swift in Sources */,
+				50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
 				50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,

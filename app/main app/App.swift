@@ -92,7 +92,7 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 title: WINDOW_MAIN_TITLE,
                 isVisible: true,
                 delegate: self,
-                view: MainView()
+                view: MainScene()
             )
         }
         NSApplication.showAppsDock()
