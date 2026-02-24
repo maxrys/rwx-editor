@@ -7,7 +7,7 @@ import os
 import Cocoa
 import FinderSync
 
-class FinderSyncExt: FIFinderSync {
+class FinderSync: FIFinderSync {
 
     var selectedURLs: [URL] {
         if let urls = FIFinderSyncController.default().selectedItemURLs() {
