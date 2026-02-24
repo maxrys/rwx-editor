@@ -13,11 +13,8 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         case withURL
     }
 
-    static var sharedDelegate: ThisAppDelegate!
-
     override init() {
         super.init()
-        Self.sharedDelegate = self
     }
 
     private var launchType: LaunchType?
@@ -95,6 +92,7 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 view: MainScene()
             )
         }
+        self.showMainMenu()
         NSApplication.showAppsDock()
     }
 
@@ -116,13 +114,20 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
     }
 
-}
+    func showMainMenu() {
+        let appName = ProcessInfo.processInfo.processName
+        let mainMenu = NSMenu(title: "MainMenu")
 
-@main struct ThisApp: App {
+        /* MARK: App menu (About, Quit) */
+        let appMenu = NSMenu()
+            appMenu.addItem(withTitle: "About \(appName)", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+            appMenu.addItem(NSMenuItem.separator())
+            appMenu.addItem(withTitle: "Quit \(appName)", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        let appMenuItem = NSMenuItem()
+            appMenuItem.submenu = appMenu
+        mainMenu.addItem(appMenuItem)
 
-    @NSApplicationDelegateAdaptor(ThisAppDelegate.self) var appDelegate
-
-    public var body: some Scene {
+        NSApp.mainMenu = mainMenu
     }
 
 }

@@ -13,9 +13,7 @@ struct MainScene: View {
                 .padding(20)
 
             Button("test popup") {
-                if let delegate = ThisAppDelegate.sharedDelegate {
-                    delegate.showWindowPopup(fullpath: "/private/etc/")
-                }
+                appDelegate.showWindowPopup(fullpath: "/private/etc/")
             }.padding(20)
         }
         .frame(width: 400, height: 200)

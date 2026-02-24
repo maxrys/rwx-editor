@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
-		50B276B72F39C991005F7475 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276B62F39C991005F7475 /* FinderSync.swift */; };
+		50B276B72F39C991005F7475 /* FinderSyncExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276B62F39C991005F7475 /* FinderSyncExt.swift */; };
 		50B276BB2F39C991005F7475 /* RWX Editor Finder Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50B276C32F39CB7C005F7475 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* const.swift */; };
 		50B276C42F39CB7C005F7475 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* const.swift */; };
@@ -77,6 +77,7 @@
 		50CE9FDE2F471BAB001006CF /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */; };
 		50CEA0AB2F4C5881001006CF /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */; };
 		50CEA0AD2F4C58EE001006CF /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */; };
+		50CEA0B32F4E47A9001006CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEA0B22F4E47A5001006CF /* main.swift */; };
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7C62F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7C72F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
@@ -125,7 +126,7 @@
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B276A72F389886005F7475 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWX Editor Finder Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B276B62F39C991005F7475 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
+		50B276B62F39C991005F7475 /* FinderSyncExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSyncExt.swift; sourceTree = "<group>"; };
 		50B276B82F39C991005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B276C12F39CA05005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B276C22F39CB73005F7475 /* const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
 		50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		50CEA0B22F4E47A5001006CF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		50B276AD2F3899DD005F7475 /* main app */ = {
 			isa = PBXGroup;
 			children = (
+				50CEA0B22F4E47A5001006CF /* main.swift */,
 				50B276A72F389886005F7475 /* App.swift */,
 				50B276D12F39CC3E005F7475 /* MainScene.swift */,
 				50B276A52F389886005F7475 /* Assets.xcassets */,
@@ -293,7 +296,7 @@
 		50B276AF2F3899F7005F7475 /* finder extension */ = {
 			isa = PBXGroup;
 			children = (
-				50B276B62F39C991005F7475 /* FinderSync.swift */,
+				50B276B62F39C991005F7475 /* FinderSyncExt.swift */,
 				50B276EB2F3A411D005F7475 /* FinderSync.entitlements */,
 				50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */,
 				50B276B82F39C991005F7475 /* Info.plist */,
@@ -548,6 +551,7 @@
 				50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
 				50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
+				50CEA0B32F4E47A9001006CF /* main.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
@@ -571,7 +575,7 @@
 				50B277132F3BD0F2005F7475 /* enums.swift in Sources */,
 				50B277022F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B276E22F39DC3F005F7475 /* RightsValue.swift in Sources */,
-				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
+				50B276B72F39C991005F7475 /* FinderSyncExt.swift in Sources */,
 				50B2770F2F3BD044005F7475 /* Color.swift in Sources */,
 				50B276FF2F3A8D34005F7475 /* View.swift in Sources */,
 				50B276F42F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
