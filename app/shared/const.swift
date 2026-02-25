@@ -8,7 +8,7 @@ import Foundation
 let NOT_APPLICABLE = "—"
 
 let WINDOW_MAIN_ID = "main"
-let WINDOW_MAIN_TITLE  = NSLocalizedString("RWX Editor Settings", comment: "")
+let WINDOW_MAIN_TITLE  = NSLocalizedString("RWX Editor | Settings", comment: "")
 let WINDOW_POPUP_TITLE = NSLocalizedString("RWX Editor", comment: "")
 
 let URL_PREFIX_FILE = "file://"

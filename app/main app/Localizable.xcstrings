@@ -48,10 +48,24 @@
       }
     },
     "apply" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "применить"
+          }
+        }
+      }
     },
     "cancel" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "отменить"
+          }
+        }
+      }
     },
     "Created" : {
       "localizations" : {
@@ -94,7 +108,7 @@
       }
     },
     "Flexibility:" : {
-
+      "shouldTranslate" : false
     },
     "Group" : {
       "localizations" : {
@@ -117,7 +131,7 @@
       }
     },
     "Multiple values:" : {
-
+      "shouldTranslate" : false
     },
     "Name" : {
       "localizations" : {
@@ -130,7 +144,7 @@
       }
     },
     "No value:" : {
-
+      "shouldTranslate" : false
     },
     "Other" : {
       "localizations" : {
@@ -212,12 +226,12 @@
         }
       }
     },
-    "RWX Editor Settings" : {
+    "RWX Editor | Settings" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RWX Редактор Установки"
+            "value" : "RWX Редактор | Установки"
           }
         }
       }
@@ -233,7 +247,7 @@
       }
     },
     "Single value:" : {
-
+      "shouldTranslate" : false
     },
     "Size" : {
       "localizations" : {
@@ -246,7 +260,7 @@
       }
     },
     "test popup" : {
-
+      "shouldTranslate" : false
     },
     "Type" : {
       "localizations" : {
