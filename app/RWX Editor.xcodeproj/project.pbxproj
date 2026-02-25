@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501FA4D42F4F0C05004663D2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501FA4D22F4F0C05004663D2 /* Media.xcassets */; };
+		501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */; };
+		501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
 		50B276B72F39C991005F7475 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276B62F39C991005F7475 /* FinderSync.swift */; };
@@ -69,12 +72,9 @@
 		50CE9FB92F471491001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FB82F471491001006CF /* Assets.xcassets */; };
 		50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FBB2F4714AF001006CF /* Assets.xcassets */; };
 		50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FBE2F4715B7001006CF /* PickerCustomColor.swift */; };
-		50CE9FD52F471AE3001006CF /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD42F471AE3001006CF /* ButtonCustom.swift */; };
-		50CE9FD82F471B0B001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FD72F471B0B001006CF /* Assets.xcassets */; };
 		50CE9FDA2F471B54001006CF /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD92F471B54001006CF /* Shape.swift */; };
 		50CE9FDB2F471B54001006CF /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD92F471B54001006CF /* Shape.swift */; };
 		50CE9FDC2F471B54001006CF /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FD92F471B54001006CF /* Shape.swift */; };
-		50CE9FDE2F471BAB001006CF /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */; };
 		50CEA0AB2F4C5881001006CF /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */; };
 		50CEA0AD2F4C58EE001006CF /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */; };
 		50CEA0B32F4E47A9001006CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEA0B22F4E47A5001006CF /* main.swift */; };
@@ -121,6 +121,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
+		501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
+		501FA4D22F4F0C05004663D2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		504A8C452F41CDCA00F3AD49 /* Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.xctestplan; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,10 +167,7 @@
 		50CE9FB82F471491001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CE9FBB2F4714AF001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CE9FBE2F4715B7001006CF /* PickerCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustomColor.swift; sourceTree = "<group>"; };
-		50CE9FD42F471AE3001006CF /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
-		50CE9FD72F471B0B001006CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CE9FD92F471B54001006CF /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
-		50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
 		50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		50CEA0B22F4E47A5001006CF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -208,6 +208,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501FA4D32F4F0C05004663D2 /* ButtonCustom */ = {
+			isa = PBXGroup;
+			children = (
+				501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */,
+				501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */,
+				501FA4D22F4F0C05004663D2 /* Media.xcassets */,
+			);
+			path = ButtonCustom;
+			sourceTree = "<group>";
+		};
 		50B2768E2F389876005F7475 = {
 			isa = PBXGroup;
 			children = (
@@ -316,7 +326,7 @@
 		50B277092F3BCFC0005F7475 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				50CE9FD62F471AE8001006CF /* ButtonCustom */,
+				501FA4D32F4F0C05004663D2 /* ButtonCustom */,
 				50DCD7F72F434C2E00E067C3 /* MessageBox */,
 				50CE9FB72F47147D001006CF /* PanelRwxText */,
 				50CE9FBA2F4714A3001006CF /* PickerCustom */,
@@ -352,16 +362,6 @@
 				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = ToggleRwxColored;
-			sourceTree = "<group>";
-		};
-		50CE9FD62F471AE8001006CF /* ButtonCustom */ = {
-			isa = PBXGroup;
-			children = (
-				50CE9FD42F471AE3001006CF /* ButtonCustom.swift */,
-				50CE9FDD2F471BA7001006CF /* ButtonCustomColor.swift */,
-				50CE9FD72F471B0B001006CF /* Assets.xcassets */,
-			);
-			path = ButtonCustom;
 			sourceTree = "<group>";
 		};
 		50DCD7F72F434C2E00E067C3 /* MessageBox */ = {
@@ -495,7 +495,7 @@
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
 				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
-				50CE9FD82F471B0B001006CF /* Assets.xcassets in Resources */,
+				501FA4D42F4F0C05004663D2 /* Media.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +533,6 @@
 				50B277222F3DCEE9005F7475 /* types.swift in Sources */,
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */,
-				50CE9FD52F471AE3001006CF /* ButtonCustom.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
 				50DCD7F82F434C2E00E067C3 /* MessageBox.swift in Sources */,
 				50DCD7F92F434C2E00E067C3 /* Message.swift in Sources */,
@@ -545,7 +544,6 @@
 				50CE9FDB2F471B54001006CF /* Shape.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */,
-				50CE9FDE2F471BAB001006CF /* ButtonCustomColor.swift in Sources */,
 				50B277142F3BD0F2005F7475 /* enums.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */,
@@ -555,6 +553,8 @@
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
+				501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */,
+				501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */,
 				50B276E72F39DC88005F7475 /* URL.swift in Sources */,
 				50B277112F3BD044005F7475 /* Color.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,

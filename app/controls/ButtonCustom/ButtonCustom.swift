@@ -7,26 +7,29 @@ import SwiftUI
 
 struct ButtonCustom: View {
 
-    typealias Style = Color.ButtonCustomColorSet.Style
+    typealias ColorStyle = Color.ButtonCustomColorSet.Style
 
     @Environment(\.colorScheme) private var colorScheme
 
     private let text: String
     private let disabled: Bool
-    private let style: Style
+    private let colorStyle: ColorStyle
+    private let isFlat: Bool
     private let flexibility: Flexibility
     private let onClick: () -> Void
 
     init(
         _ text: String = "button",
         disabled: Bool = false,
-        style: Style = .accent,
+        colorStyle: ColorStyle = .accent,
+        isFlat: Bool = true,
         flexibility: Flexibility = .none,
         onClick: @escaping () -> Void = { }
     ) {
         self.text = text
         self.disabled = disabled
-        self.style = style
+        self.colorStyle = colorStyle
+        self.isFlat = isFlat
         self.flexibility = flexibility
         self.onClick = onClick
     }
@@ -36,20 +39,22 @@ struct ButtonCustom: View {
             Text(self.text)
                 .lineLimit(1)
                 .flexibility(self.flexibility)
-                .font(.system(size: 12, weight: .regular))
-                .foregroundPolyfill(self.style.text)
+                .font(.system(size: 12.5, weight: .regular))
+                .foregroundPolyfill(self.colorStyle.text)
                 .padding(.horizontal, 9)
-                .padding(.vertical  , 5)
+                .padding(.top       , 2)
+                .padding(.bottom    , 3)
                 .background(
-                    RoundedRectangle(cornerRadius: 7)
-                        .fillGradientPolyfill(self.style.background)
-                        .shadow(
-                            color: self.colorScheme == .dark ?
-                                .black.opacity(1.0) :
-                                .black.opacity(0.3),
-                            radius: 1.0,
-                            y: 1
-                        )
+                    (self.isFlat ?
+                        AnyView(RoundedRectangle(cornerRadius: 5).fill                (self.colorStyle.background)) :
+                        AnyView(RoundedRectangle(cornerRadius: 5).fillGradientPolyfill(self.colorStyle.background))
+                    ).shadow(
+                        color: self.colorScheme == .dark ?
+                            .black.opacity(1.0) :
+                            .black.opacity(0.4),
+                        radius: 0.7,
+                        y: 0.3
+                    )
                 )
         }
         .buttonStyle(.plain)
@@ -66,14 +71,24 @@ struct ButtonCustom: View {
 /* ############################################################# */
 
 #Preview {
-    VStack {
-        ButtonCustom()
-        ButtonCustom(flexibility: .none)
-        ButtonCustom(flexibility: .size(100))
-        ButtonCustom(flexibility: .infinity)
-        ButtonCustom(style: .accent)
-        ButtonCustom(style: .danger)
-        ButtonCustom(style: .custom)
+    VStack(spacing: 20) {
+
+        VStack {
+            Text("flexibility").font(.headline)
+            ButtonCustom()
+            ButtonCustom(flexibility: .none)
+            ButtonCustom(flexibility: .size(100))
+            ButtonCustom(flexibility: .infinity)
+        }
+
+        VStack {
+            Text("style").font(.headline)
+            ButtonCustom(colorStyle: .accent)
+            ButtonCustom(colorStyle: .danger)
+            ButtonCustom(colorStyle: .custom(text: nil, background: nil))
+            ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
+        }
+
     }
     .frame(width: 200)
     .padding(20)

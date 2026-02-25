@@ -22,13 +22,23 @@ struct PopupFoot: View {
 
             /* MARK: cancel button */
 
-            ButtonCustom(NSLocalizedString("cancel", comment: ""), flexibility: .size(100)) {
+            ButtonCustom(
+                NSLocalizedString("cancel", comment: ""),
+                colorStyle: .custom(text: nil, background: nil),
+                isFlat: false,
+                flexibility: .size(100)
+            ) {
                 self.onCancel()
             }.disabled(false)
 
             /* MARK: apply button */
 
-            ButtonCustom(NSLocalizedString("apply", comment: ""), flexibility: .size(100)) {
+            ButtonCustom(
+                NSLocalizedString("apply", comment: ""),
+                colorStyle: .custom(text: nil, background: nil),
+                isFlat: false,
+                flexibility: .size(100)
+            ) {
                 self.onApply()
             }.disabled(false)
 
