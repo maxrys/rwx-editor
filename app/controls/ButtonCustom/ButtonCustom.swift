@@ -15,6 +15,8 @@ struct ButtonCustom: View {
     private let disabled: Bool
     private let colorStyle: ColorStyle
     private let isFlat: Bool
+    private let font: Font
+    private let padding: EdgeInsets
     private let flexibility: Flexibility
     private let onClick: () -> Void
 
@@ -23,6 +25,8 @@ struct ButtonCustom: View {
         disabled: Bool = false,
         colorStyle: ColorStyle = .accent,
         isFlat: Bool = true,
+        font: Font = .system(size: 12.5, weight: .regular),
+        padding: EdgeInsets = .init(top: 2, leading: 9, bottom: 3, trailing: 9),
         flexibility: Flexibility = .none,
         onClick: @escaping () -> Void = { }
     ) {
@@ -30,6 +34,8 @@ struct ButtonCustom: View {
         self.disabled = disabled
         self.colorStyle = colorStyle
         self.isFlat = isFlat
+        self.font = font
+        self.padding = padding
         self.flexibility = flexibility
         self.onClick = onClick
     }
@@ -39,11 +45,9 @@ struct ButtonCustom: View {
             Text(self.text)
                 .lineLimit(1)
                 .flexibility(self.flexibility)
-                .font(.system(size: 12.5, weight: .regular))
+                .font(self.font)
                 .foregroundPolyfill(self.colorStyle.text)
-                .padding(.horizontal, 9)
-                .padding(.top       , 2)
-                .padding(.bottom    , 3)
+                .padding(self.padding)
                 .background(
                     (self.isFlat ?
                         AnyView(RoundedRectangle(cornerRadius: 5).fill                (self.colorStyle.background)) :
