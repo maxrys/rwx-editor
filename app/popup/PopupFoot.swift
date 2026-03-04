@@ -11,6 +11,8 @@ struct PopupFoot: View {
         case foot = "color Popup Foot Background"
     }
 
+    @EnvironmentObject private var popupState: PopupState
+
     private let messageBox: MessageBox
 
     init(messageBox: MessageBox) {
@@ -72,4 +74,5 @@ struct PopupFoot: View {
 
 #Preview {
     PopupFoot(messageBox: MessageBox())
+        .frame(width: 300)
 }

@@ -12,14 +12,14 @@ struct PopupHead: View {
         case gridTint = "color Popup Head Row Tint"
     }
 
+    @EnvironmentObject private var popupState: PopupState
+
     @State private var rollerForCreated: Date.VisibilityMode = .convenient
     @State private var rollerForUpdated: Date.VisibilityMode = .convenient
     @State private var rollerForSize: ByteCountFormatter.VisibilityMode = .useBytes
 
-    private let info: FSEntityInfo
-
-    init(_ info: FSEntityInfo) {
-        self.info = info
+    private var info: FSEntityInfo {
+        self.popupState.info
     }
 
     private var formattedType: String {
@@ -95,12 +95,12 @@ struct PopupHead: View {
             self.TitleView(NSLocalizedString("Path", comment: ""), isTinted: true)
             self.ValueView(self.formattedPath, isTinted: true, isSelectable: true)
 
-            if let realName = self.info.realName {
+            if let realName = self.info.realName,
+               let realPath = self.info.realPath {
+
                 self.TitleView(NSLocalizedString("Real Name", comment: ""))
                 self.ValueView(realName, isSelectable: true)
-            }
 
-            if let realPath = self.info.realPath {
                 self.TitleView(NSLocalizedString("Real Path", comment: ""), isTinted: true)
                 self.ValueView(realPath, isTinted: true, isSelectable: true)
             }
@@ -186,11 +186,11 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
 /* ############################################################# */
 
 #Preview {
-    VStack(spacing: 20) {
-        PopupHead(FSEntityInfo("/private/etc/")!)      /* directory */
-        PopupHead(FSEntityInfo("/private/etc/hosts")!) /* file */
+    VStack(spacing: 10) {
+        PopupHead().environmentObject(PopupState(fullpath: "/private/etc/")!)      /* directory */
+        PopupHead().environmentObject(PopupState(fullpath: "/private/etc/hosts")!) /* file */
     }
-    .padding(20)
+    .padding(10)
     .background(Color.black)
     .frame(width: 300)
 }

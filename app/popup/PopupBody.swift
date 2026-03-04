@@ -12,23 +12,10 @@ struct PopupBody: View {
     }
 
     @Environment(\.colorScheme) private var colorScheme
+    @EnvironmentObject private var popupState: PopupState
 
-    @Binding private var rights: RightsValue
-    @Binding private var owner: String
-    @Binding private var group: String
-
-    private let info: FSEntityInfo
-
-    init(
-        _ info: FSEntityInfo,
-        _ rights: Binding<RightsValue>,
-        _ owner: Binding<String>,
-        _ group: Binding<String>
-    ) {
-        self.info = info
-        self._rights = rights
-        self._owner = owner
-        self._group = group
+    private var rightsBinding: Binding<RightsValue> {
+        self.popupState.getBinding(\.rights)
     }
 
     private let columns = [
@@ -53,27 +40,27 @@ struct PopupBody: View {
                 Text(NSLocalizedString("Other", comment: ""))
 
                 Text(NSLocalizedString("Read", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .r, self.$rights)
-                ToggleRwxColored(subject: .group, permission: .r, self.$rights)
-                ToggleRwxColored(subject: .other, permission: .r, self.$rights)
+                ToggleRwxColored(subject: .owner, permission: .r, self.rightsBinding)
+                ToggleRwxColored(subject: .group, permission: .r, self.rightsBinding)
+                ToggleRwxColored(subject: .other, permission: .r, self.rightsBinding)
 
                 Text(NSLocalizedString("Write", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .w, self.$rights)
-                ToggleRwxColored(subject: .group, permission: .w, self.$rights)
-                ToggleRwxColored(subject: .other, permission: .w, self.$rights)
+                ToggleRwxColored(subject: .owner, permission: .w, self.rightsBinding)
+                ToggleRwxColored(subject: .group, permission: .w, self.rightsBinding)
+                ToggleRwxColored(subject: .other, permission: .w, self.rightsBinding)
 
-                Text(self.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .x, self.$rights)
-                ToggleRwxColored(subject: .group, permission: .x, self.$rights)
-                ToggleRwxColored(subject: .other, permission: .x, self.$rights)
+                Text(self.popupState.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
+                ToggleRwxColored(subject: .owner, permission: .x, self.rightsBinding)
+                ToggleRwxColored(subject: .group, permission: .x, self.rightsBinding)
+                ToggleRwxColored(subject: .other, permission: .x, self.rightsBinding)
 
             }.padding(.horizontal, 20)
 
             /* MARK: rules via text/numeric */
 
             HStack(spacing: 20) {
-                PanelRwxText(self.$rights)
-                ToggleRwxNumeric(self.$rights)
+                PanelRwxText(self.rightsBinding)
+                ToggleRwxNumeric(self.rightsBinding)
             }
 
             self.ShadowBottomView()
@@ -119,20 +106,12 @@ struct PopupBody: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var info: FSEntityInfo  = FSEntityInfo("/private/etc/")!
-    @Previewable @State var rights: RightsValue = FSEntityInfo("/private/etc/")!.rights
-    @Previewable @State var owner: String       = FSEntityInfo("/private/etc/")!.owner
-    @Previewable @State var group: String       = FSEntityInfo("/private/etc/")!.group
-    VStack(spacing: 20) {
-        PopupBody(
-            info,
-            $rights,
-            $owner,
-            $group
-        ).frame(width: 300)
+#Preview {
+    VStack(spacing: 10) {
+        PopupBody().environmentObject(PopupState(fullpath: "/private/etc/")!)      /* directory */
+        PopupBody().environmentObject(PopupState(fullpath: "/private/etc/hosts")!) /* file */
     }
-    .padding(20)
+    .padding(10)
     .background(Color.black)
-    .frame(width: 300)
+    .frame(width: 310)
 }

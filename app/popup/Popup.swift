@@ -3,58 +3,33 @@
 /* ### Copyright © 2026 Maxim Rysevets. All rights reserved. ### */
 /* ############################################################# */
 
+import os
 import SwiftUI
 
 struct Popup: View {
 
-    @State private var rights: RightsValue
-    @State private var owner: String
-    @State private var group: String
+    @StateObject private var popupState: PopupState
 
-    private let fullpath: String
-    private let info: FSEntityInfo
     private let messageBox = MessageBox()
 
     init?(fullpath: String) {
-        guard let info = FSEntityInfo(fullpath) else {
+        Logger.customLog("Popup init with fullpath = \(fullpath)")
+        guard let state = PopupState(fullpath: fullpath) else {
             return nil
         }
-        self.fullpath = fullpath
-        self.info   = info
-        self.rights = info.rights
-        self.owner  = info.owner
-        self.group  = info.group
+        self._popupState = StateObject(
+            wrappedValue: state
+        )
     }
 
     public var body: some View {
         VStack (spacing: 0) {
-
-            /* MARK: head */
-
-            PopupHead(
-                self.info
-            )
-
-            /* MARK: body */
-
-            PopupBody(
-                self.info,
-                self.$rights,
-                self.$owner,
-                self.$group
-            )
-
-            /* MARK: foot */
-
-            PopupFoot(
-                messageBox: self.messageBox
-            )
-
-            /* MARK: message box */
-
+            PopupHead()
+            PopupBody()
+            PopupFoot(messageBox: self.messageBox)
             self.messageBox
-
         }
+        .environmentObject(self.popupState)
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: 300)
     }
@@ -68,11 +43,11 @@ struct Popup: View {
 /* ############################################################# */
 
 #Preview {
-    VStack(spacing: 20) {
+    VStack(spacing: 10) {
         Popup(fullpath: "")                   /* empty */
         Popup(fullpath: "/private/etc/")      /* directory */
         Popup(fullpath: "/private/etc/hosts") /* file */
     }
-    .padding(20)
+    .padding(10)
     .background(Color.black)
 }
