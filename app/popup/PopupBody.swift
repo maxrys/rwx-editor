@@ -14,21 +14,8 @@ struct PopupBody: View {
     private var ownerBinding: Binding<String>           { self.popupState.getBinding(\.owner) }
     private var groupBinding: Binding<String>           { self.popupState.getBinding(\.group) }
 
-    private let owners: [String: String] = {
-        var result: [String: String] = [:]
-        Process.systemUsers().filter({ $0.first != "_" }).sorted().forEach { value in
-            result[value] = value
-        }
-        return result
-    }()
-
-    private let groups: [String: String] = {
-        var result: [String: String] = [:]
-        Process.systemGroups().filter({ $0.first != "_" }).sorted().forEach { value in
-            result[value] = value
-        }
-        return result
-    }()
+    @State private var owners: [String: String] = [:]
+    @State private var groups: [String: String] = [:]
 
     private let columns = [
         GridItem(.flexible(), spacing: 0),
@@ -104,6 +91,30 @@ struct PopupBody: View {
         }
         .frame(maxWidth: .infinity)
         .background(Color.popup.body)
+        .onAppear {
+            self.ownersReload()
+            self.groupsReload()
+        }
+    }
+
+    private func ownersReload() {
+        self.owners.removeAll()
+        Process.systemUsers()
+            .filter({ $0.first != "_" })
+            .sorted()
+            .forEach { value in
+                self.owners[value] = value
+            }
+    }
+
+    private func groupsReload() {
+        self.groups.removeAll()
+        Process.systemGroups()
+            .filter({ $0.first != "_" })
+            .sorted()
+            .forEach { value in
+                self.groups[value] = value
+            }
     }
 
     @ViewBuilder private func ShadowTopView() -> some View {

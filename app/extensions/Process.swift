@@ -15,7 +15,7 @@ extension Process {
     }
 
     static func shell(path: String = "/bin/zsh", args: [String] = [], separatedBy: String = "\n") -> ShellResult {
-        let task = Process()
+        let task = Self()
         let pipeOut = Pipe()
         let pipeErr = Pipe()
         task.standardInput = nil
@@ -49,7 +49,7 @@ extension Process {
     }
 
     static func systemUsers() -> [String] {
-        let shellResult = Process.shell(
+        let shellResult = Self.shell(
             path: "/usr/bin/env",
             args: ["dscl", ".", "list", "/Users"]
         )
@@ -67,7 +67,7 @@ extension Process {
     }
 
     static func systemGroups() -> [String] {
-        let shellResult = Process.shell(
+        let shellResult = Self.shell(
             path: "/usr/bin/env",
             args: ["groups"],
             separatedBy: " "
