@@ -10,33 +10,23 @@ struct Popup: View {
 
     static let FRAME_WIDTH: CGFloat = 300
 
-    private let messageBox = MessageBox()
+    @State private var info: FSEntityInfo?
+
     private let fullpath: String
-    private var info: FSEntityInfo?
-    private var popupState: PopupState?
 
     init(fullpath: String) {
         Logger.customLog("Popup init with fullpath = \(fullpath)")
         self.fullpath = fullpath
-        self.infoRefresh()
     }
 
-    mutating func infoRefresh() {
+    func infoRefresh() {
         self.info = FSEntityInfo(self.fullpath)
-        if let info = self.info
-             { self.popupState = PopupState(info) }
-        else { self.popupState = nil }
     }
 
     public var body: some View {
-        Group {
-            if let popupState = self.popupState {
-                VStack(spacing: 0) {
-                    PopupHead()
-                    PopupBody()
-                    PopupFoot(messageBox: self.messageBox)
-                    self.messageBox
-                }.environmentObject(popupState)
+        VStack(spacing: 0) {
+            if let info = self.info {
+                PopupScene(info)
             } else {
                 Text("UNKNOWN OBJECT")
                     .padding(20)
@@ -46,9 +36,8 @@ struct Popup: View {
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: Self.FRAME_WIDTH)
-        .onAppBecomeForeground {
-            // self.infoRefresh()
-        }
+        .onAppear              { self.infoRefresh() }
+        .onAppBecomeForeground { self.infoRefresh() }
     }
 
 }
