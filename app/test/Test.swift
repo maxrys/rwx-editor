@@ -24,8 +24,8 @@ struct Test {
         try? self.bitGet()
         try? self.bitSet()
         try? self.bitToggle()
-        try? self.subjectRightGet()
-        try? self.subjectRightSet()
+        try? self.subjectPermissionGet()
+        try? self.subjectPermissionSet()
         try? self.url()
     }
 
@@ -133,7 +133,7 @@ struct Test {
         value = 0b111111111;  value[8].toggle();  expected = "0b011111111";  received = self.prettyResult(value);  print("\(received) = \(expected)");  #expect(received == expected)
     }
 
-    func subjectRightGet() throws {
+    func subjectPermissionGet() throws {
         let etalonGetter: (PermissionsValue, PermissionSubject) -> UInt = { perms, subject in
             let bitR = perms[subject.offset + Permission.r.offset]
             let bitW = perms[subject.offset + Permission.w.offset]
@@ -148,16 +148,16 @@ struct Test {
             let etalonOwner = etalonGetter(perms, .owner)
             let etalonGroup = etalonGetter(perms, .group)
             let etalonOther = etalonGetter(perms, .other)
-            let owner = PermissionSubject.owner.rightGet(from: perms)
-            let group = PermissionSubject.group.rightGet(from: perms)
-            let other = PermissionSubject.other.rightGet(from: perms)
+            let owner = PermissionSubject.owner.permissionGet(from: perms)
+            let group = PermissionSubject.group.permissionGet(from: perms)
+            let other = PermissionSubject.other.permissionGet(from: perms)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)
         }
     }
 
-    func subjectRightSet() throws {
+    func subjectPermissionSet() throws {
         let etalonSetter: (UInt, PermissionsValue, PermissionSubject) -> PermissionsValue = { value, permsValue, subject in
             let bitR = value[Permission.r.offset]
             let bitW = value[Permission.w.offset]
@@ -172,9 +172,9 @@ struct Test {
             let etalonOwner = etalonSetter(0o1, perms, .owner)
             let etalonGroup = etalonSetter(0o2, perms, .group)
             let etalonOther = etalonSetter(0o3, perms, .other)
-            let owner = PermissionSubject.owner.rightSet(0o1, to: perms)
-            let group = PermissionSubject.group.rightSet(0o2, to: perms)
-            let other = PermissionSubject.other.rightSet(0o3, to: perms)
+            let owner = PermissionSubject.owner.permissionSet(0o1, to: perms)
+            let group = PermissionSubject.group.permissionSet(0o2, to: perms)
+            let other = PermissionSubject.other.permissionSet(0o3, to: perms)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)
