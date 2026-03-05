@@ -7,10 +7,10 @@ import SwiftUI
 
 struct PanelRwxText: View {
 
-    @Binding private var rights: RightsValue
+    @Binding private var perms: RightsValue
 
-    init(_ rights: Binding<RightsValue>) {
-        self._rights = rights
+    init(_ perms: Binding<RightsValue>) {
+        self._perms = perms
     }
 
     private let bitPosition: (PermissionSubject, Permission) -> UInt = { subject, permission in
@@ -18,7 +18,7 @@ struct PanelRwxText: View {
     }
 
     private func isOn(_ subject: PermissionSubject, _ permission: Permission) -> Bool {
-        self.rights[
+        self.perms[
             self.bitPosition(subject, permission)
         ]
     }
@@ -51,8 +51,8 @@ struct PanelRwxText: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var rights: RightsValue = 0o644
+    @Previewable @State var perms: RightsValue = 0o644
     HStack {
-        PanelRwxText($rights)
+        PanelRwxText($perms)
     }.padding(20)
 }

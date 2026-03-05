@@ -134,23 +134,23 @@ struct Test {
     }
 
     func subjectRightGet() throws {
-        let etalonGetter: (RightsValue, PermissionSubject) -> UInt = { rights, subject in
-            let bitR = rights[subject.offset + Permission.r.offset]
-            let bitW = rights[subject.offset + Permission.w.offset]
-            let bitX = rights[subject.offset + Permission.x.offset]
+        let etalonGetter: (RightsValue, PermissionSubject) -> UInt = { perms, subject in
+            let bitR = perms[subject.offset + Permission.r.offset]
+            let bitW = perms[subject.offset + Permission.w.offset]
+            let bitX = perms[subject.offset + Permission.x.offset]
             var result: UInt = 0
                 result[Permission.r.offset] = bitR
                 result[Permission.w.offset] = bitW
                 result[Permission.x.offset] = bitX
             return result
         }
-        for rights in RightsValue(0) ... RightsValue(0o777) {
-            let etalonOwner = etalonGetter(rights, .owner)
-            let etalonGroup = etalonGetter(rights, .group)
-            let etalonOther = etalonGetter(rights, .other)
-            let owner = PermissionSubject.owner.rightGet(from: rights)
-            let group = PermissionSubject.group.rightGet(from: rights)
-            let other = PermissionSubject.other.rightGet(from: rights)
+        for perms in RightsValue(0) ... RightsValue(0o777) {
+            let etalonOwner = etalonGetter(perms, .owner)
+            let etalonGroup = etalonGetter(perms, .group)
+            let etalonOther = etalonGetter(perms, .other)
+            let owner = PermissionSubject.owner.rightGet(from: perms)
+            let group = PermissionSubject.group.rightGet(from: perms)
+            let other = PermissionSubject.other.rightGet(from: perms)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)
@@ -158,23 +158,23 @@ struct Test {
     }
 
     func subjectRightSet() throws {
-        let etalonSetter: (UInt, RightsValue, PermissionSubject) -> RightsValue = { value, rightsValue, subject in
+        let etalonSetter: (UInt, RightsValue, PermissionSubject) -> RightsValue = { value, permsValue, subject in
             let bitR = value[Permission.r.offset]
             let bitW = value[Permission.w.offset]
             let bitX = value[Permission.x.offset]
-            var result = rightsValue
+            var result = permsValue
                 result[subject.offset + Permission.r.offset] = bitR
                 result[subject.offset + Permission.w.offset] = bitW
                 result[subject.offset + Permission.x.offset] = bitX
             return result
         }
-        for rights in RightsValue(0) ... RightsValue(0o777 + 1) {
-            let etalonOwner = etalonSetter(0o1, rights, .owner)
-            let etalonGroup = etalonSetter(0o2, rights, .group)
-            let etalonOther = etalonSetter(0o3, rights, .other)
-            let owner = PermissionSubject.owner.rightSet(0o1, to: rights)
-            let group = PermissionSubject.group.rightSet(0o2, to: rights)
-            let other = PermissionSubject.other.rightSet(0o3, to: rights)
+        for perms in RightsValue(0) ... RightsValue(0o777 + 1) {
+            let etalonOwner = etalonSetter(0o1, perms, .owner)
+            let etalonGroup = etalonSetter(0o2, perms, .group)
+            let etalonOther = etalonSetter(0o3, perms, .other)
+            let owner = PermissionSubject.owner.rightSet(0o1, to: perms)
+            let group = PermissionSubject.group.rightSet(0o2, to: perms)
+            let other = PermissionSubject.other.rightSet(0o3, to: perms)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)

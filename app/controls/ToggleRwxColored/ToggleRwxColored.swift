@@ -9,7 +9,7 @@ struct ToggleRwxColored: View {
 
     static private let ICON_SIZE: CGFloat = 25
 
-    @Binding private var rights: RightsValue
+    @Binding private var perms: RightsValue
 
     private let subject: PermissionSubject
     private let permission: Permission
@@ -19,15 +19,15 @@ struct ToggleRwxColored: View {
     }
 
     private var isOn: Bool {
-        self.rights[
+        self.perms[
             self.bitPosition
         ]
     }
 
-    init(subject: PermissionSubject, permission: Permission, _ rights: Binding<RightsValue>) {
-        self.subject     = subject
-        self.permission  = permission
-        self._rights     = rights
+    init(subject: PermissionSubject, permission: Permission, _ perms: Binding<RightsValue>) {
+        self.subject    = subject
+        self.permission = permission
+        self._perms     = perms
     }
 
     var background: Color {
@@ -40,7 +40,7 @@ struct ToggleRwxColored: View {
 
     public var body: some View {
         Button {
-            self.rights[self.bitPosition].toggle()
+            self.perms[self.bitPosition].toggle()
         } label: {
             if (self.isOn) {
                 ZStack {
@@ -70,10 +70,10 @@ struct ToggleRwxColored: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var rights: RightsValue = 0o777
+    @Previewable @State var perms: RightsValue = 0o777
     HStack(spacing: 10) {
-        ToggleRwxColored(subject: .owner, permission: .r, $rights)
-        ToggleRwxColored(subject: .group, permission: .x, $rights)
-        ToggleRwxColored(subject: .other, permission: .w, $rights)
+        ToggleRwxColored(subject: .owner, permission: .r, $perms)
+        ToggleRwxColored(subject: .group, permission: .x, $perms)
+        ToggleRwxColored(subject: .other, permission: .w, $perms)
     }.padding(20)
 }

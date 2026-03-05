@@ -15,11 +15,11 @@ final class PopupState: ObservableObject {
         )
     }
 
-    private let originalRights: RightsValue
+    private let originalPerms: RightsValue
     private let originalOwner: String
     private let originalGroup: String
 
-    @Published var rights: RightsValue
+    @Published var perms: RightsValue
     @Published var owner: String
     @Published var group: String
 
@@ -32,12 +32,12 @@ final class PopupState: ObservableObject {
         }
         self.fullpath = fullpath
         self.info   = info
-        self.rights = info.rights
-        self.owner  = info.owner
-        self.group  = info.group
-        self.originalRights = info.rights
-        self.originalOwner  = info.owner
-        self.originalGroup  = info.group
+        self.perms = info.perms
+        self.owner = info.owner
+        self.group = info.group
+        self.originalPerms = info.perms
+        self.originalOwner = info.owner
+        self.originalGroup = info.group
     }
 
 }

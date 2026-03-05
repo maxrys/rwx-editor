@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ToggleRwxNumeric: View {
 
-    @Binding private var rights: RightsValue
+    @Binding private var perms: RightsValue
 
     private let values: [UInt: String] = [
         0: "0",
@@ -20,14 +20,14 @@ struct ToggleRwxNumeric: View {
         7: "7",
     ]
 
-    init(_ rights: Binding<RightsValue>) {
-        self._rights = rights
+    init(_ perms: Binding<RightsValue>) {
+        self._perms = perms
     }
 
     public var body: some View {
-        let ownerProxy = Binding<UInt> { PermissionSubject.owner.rightGet(from: self.rights) } set: { value in self.rights = PermissionSubject.owner.rightSet(value, to: self.rights) }
-        let groupProxy = Binding<UInt> { PermissionSubject.group.rightGet(from: self.rights) } set: { value in self.rights = PermissionSubject.group.rightSet(value, to: self.rights) }
-        let otherProxy = Binding<UInt> { PermissionSubject.other.rightGet(from: self.rights) } set: { value in self.rights = PermissionSubject.other.rightSet(value, to: self.rights) }
+        let ownerProxy = Binding<UInt> { PermissionSubject.owner.rightGet(from: self.perms) } set: { value in self.perms = PermissionSubject.owner.rightSet(value, to: self.perms) }
+        let groupProxy = Binding<UInt> { PermissionSubject.group.rightGet(from: self.perms) } set: { value in self.perms = PermissionSubject.group.rightSet(value, to: self.perms) }
+        let otherProxy = Binding<UInt> { PermissionSubject.other.rightGet(from: self.perms) } set: { value in self.perms = PermissionSubject.other.rightSet(value, to: self.perms) }
         HStack(spacing: 3) {
             PickerCustom<UInt>(selected: ownerProxy, items: self.values)
             PickerCustom<UInt>(selected: groupProxy, items: self.values)
@@ -44,9 +44,9 @@ struct ToggleRwxNumeric: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var rights: UInt = 0o644
+    @Previewable @State var perms: UInt = 0o644
     VStack(spacing: 20) {
-        ToggleRwxNumeric($rights)
-        Text(String(rights, radix: 8))
+        ToggleRwxNumeric($perms)
+        Text(String(perms, radix: 8))
     }.padding(20)
 }

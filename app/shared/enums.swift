@@ -33,12 +33,12 @@ public enum PermissionSubject {
         }
     }
 
-    func rightGet(from rights: RightsValue) -> UInt {
-        rights >> self.offset & 0b111
+    func rightGet(from perms: RightsValue) -> UInt {
+        perms >> self.offset & 0b111
     }
 
-    func rightSet(_ value: UInt, to rights: RightsValue) -> RightsValue {
-        (rights & ~(0b111 << self.offset)) | ((value & 0b111) << self.offset)
+    func rightSet(_ value: UInt, to perms: RightsValue) -> RightsValue {
+        (perms & ~(0b111 << self.offset)) | ((value & 0b111) << self.offset)
     }
 
 }
