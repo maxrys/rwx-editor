@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-extension RightsValue {
+extension PermissionsValue {
 
     subscript(index: UInt) -> Bool {
         get {

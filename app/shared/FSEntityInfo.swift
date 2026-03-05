@@ -27,7 +27,7 @@ final class FSEntityInfo {
     public private(set) var updated: Date
     public private(set) var size: UInt = 0
 
-    public let perms: RightsValue
+    public let perms: PermissionsValue
     public let owner: String
     public let group: String
 
@@ -67,12 +67,12 @@ final class FSEntityInfo {
 
         /* MARK: created/updated/references/perms/owner/group */
 
-        if let created    = attributes[.creationDate]          as? Date        { self.created    = created    } else { return nil }
-        if let updated    = attributes[.modificationDate]      as? Date        { self.updated    = updated    } else { return nil }
-        if let references = attributes[.referenceCount]        as? UInt        { self.references = references } else { return nil }
-        if let perms      = attributes[.posixPermissions]      as? RightsValue { self.perms      = perms      } else { return nil }
-        if let owner      = attributes[.ownerAccountName]      as? String      { self.owner      = owner      } else { return nil }
-        if let group      = attributes[.groupOwnerAccountName] as? String      { self.group      = group      } else { return nil }
+        if let created    = attributes[.creationDate]          as? Date             { self.created    = created    } else { return nil }
+        if let updated    = attributes[.modificationDate]      as? Date             { self.updated    = updated    } else { return nil }
+        if let references = attributes[.referenceCount]        as? UInt             { self.references = references } else { return nil }
+        if let perms      = attributes[.posixPermissions]      as? PermissionsValue { self.perms      = perms      } else { return nil }
+        if let owner      = attributes[.ownerAccountName]      as? String           { self.owner      = owner      } else { return nil }
+        if let group      = attributes[.groupOwnerAccountName] as? String           { self.group      = group      } else { return nil }
 
         /* MARK: size */
 

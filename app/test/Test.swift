@@ -134,7 +134,7 @@ struct Test {
     }
 
     func subjectRightGet() throws {
-        let etalonGetter: (RightsValue, PermissionSubject) -> UInt = { perms, subject in
+        let etalonGetter: (PermissionsValue, PermissionSubject) -> UInt = { perms, subject in
             let bitR = perms[subject.offset + Permission.r.offset]
             let bitW = perms[subject.offset + Permission.w.offset]
             let bitX = perms[subject.offset + Permission.x.offset]
@@ -144,7 +144,7 @@ struct Test {
                 result[Permission.x.offset] = bitX
             return result
         }
-        for perms in RightsValue(0) ... RightsValue(0o777) {
+        for perms in PermissionsValue(0) ... PermissionsValue(0o777) {
             let etalonOwner = etalonGetter(perms, .owner)
             let etalonGroup = etalonGetter(perms, .group)
             let etalonOther = etalonGetter(perms, .other)
@@ -158,7 +158,7 @@ struct Test {
     }
 
     func subjectRightSet() throws {
-        let etalonSetter: (UInt, RightsValue, PermissionSubject) -> RightsValue = { value, permsValue, subject in
+        let etalonSetter: (UInt, PermissionsValue, PermissionSubject) -> PermissionsValue = { value, permsValue, subject in
             let bitR = value[Permission.r.offset]
             let bitW = value[Permission.w.offset]
             let bitX = value[Permission.x.offset]
@@ -168,7 +168,7 @@ struct Test {
                 result[subject.offset + Permission.x.offset] = bitX
             return result
         }
-        for perms in RightsValue(0) ... RightsValue(0o777 + 1) {
+        for perms in PermissionsValue(0) ... PermissionsValue(0o777 + 1) {
             let etalonOwner = etalonSetter(0o1, perms, .owner)
             let etalonGroup = etalonSetter(0o2, perms, .group)
             let etalonOther = etalonSetter(0o3, perms, .other)

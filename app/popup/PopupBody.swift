@@ -10,7 +10,7 @@ struct PopupBody: View {
     @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
-    private var permsBinding: Binding<RightsValue> {
+    private var permsBinding: Binding<PermissionsValue> {
         self.popupState.getBinding(\.perms)
     }
 

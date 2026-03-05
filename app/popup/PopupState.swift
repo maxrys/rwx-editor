@@ -15,11 +15,11 @@ final class PopupState: ObservableObject {
         )
     }
 
-    private let originalPerms: RightsValue
+    private let originalPerms: PermissionsValue
     private let originalOwner: String
     private let originalGroup: String
 
-    @Published var perms: RightsValue
+    @Published var perms: PermissionsValue
     @Published var owner: String
     @Published var group: String
 

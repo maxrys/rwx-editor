@@ -7,9 +7,9 @@ import SwiftUI
 
 struct PanelRwxText: View {
 
-    @Binding private var perms: RightsValue
+    @Binding private var perms: PermissionsValue
 
-    init(_ perms: Binding<RightsValue>) {
+    init(_ perms: Binding<PermissionsValue>) {
         self._perms = perms
     }
 
@@ -51,7 +51,7 @@ struct PanelRwxText: View {
 /* ############################################################# */
 
 @available(macOS 14.0, *) #Preview {
-    @Previewable @State var perms: RightsValue = 0o644
+    @Previewable @State var perms: PermissionsValue = 0o644
     HStack {
         PanelRwxText($perms)
     }.padding(20)

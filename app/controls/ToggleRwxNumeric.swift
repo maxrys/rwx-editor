@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ToggleRwxNumeric: View {
 
-    @Binding private var perms: RightsValue
+    @Binding private var perms: PermissionsValue
 
     private let values: [UInt: String] = [
         0: "0",
@@ -20,7 +20,7 @@ struct ToggleRwxNumeric: View {
         7: "7",
     ]
 
-    init(_ perms: Binding<RightsValue>) {
+    init(_ perms: Binding<PermissionsValue>) {
         self._perms = perms
     }
 
