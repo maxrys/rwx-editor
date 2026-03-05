@@ -15,29 +15,40 @@ final class PopupState: ObservableObject {
         )
     }
 
-    private let originalPerms: PermissionsValue
-    private let originalOwner: String
-    private let originalGroup: String
-
     @Published var perms: PermissionsValue
     @Published var owner: String
     @Published var group: String
 
     let fullpath: String
     let info: FSEntityInfo
+    let originalPerms: PermissionsValue
+    let originalOwner: String
+    let originalGroup: String
+
+    public var isChanged: Bool {
+        self.perms != self.originalPerms ||
+        self.owner != self.originalOwner ||
+        self.group != self.originalGroup
+    }
 
     init?(fullpath: String) {
         guard let info = FSEntityInfo(fullpath) else {
             return nil
         }
         self.fullpath = fullpath
-        self.info   = info
+        self.info  = info
         self.perms = info.perms
         self.owner = info.owner
         self.group = info.group
         self.originalPerms = info.perms
         self.originalOwner = info.owner
         self.originalGroup = info.group
+    }
+
+    public func resetToDefault() {
+        self.perms = self.originalPerms
+        self.owner = self.originalOwner
+        self.group = self.originalGroup
     }
 
 }

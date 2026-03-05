@@ -25,9 +25,8 @@ struct PopupFoot: View {
                 colorStyle: .custom(text: nil, background: nil),
                 isFlat: false,
                 flexibility: .size(100)
-            ) {
-                self.onCancel()
-            }.disabled(false)
+            ) { self.popupState.resetToDefault() }
+            .disabled(!self.popupState.isChanged)
 
             /* MARK: apply button */
 
@@ -36,21 +35,12 @@ struct PopupFoot: View {
                 colorStyle: .custom(text: nil, background: nil),
                 isFlat: false,
                 flexibility: .size(100)
-            ) {
-                self.onApply()
-            }.disabled(false)
+            ) { self.onApply() }.disabled(false)
 
         }
         .padding(20)
         .frame(maxWidth: .infinity)
         .background(Color.popup.foot)
-    }
-
-    private func onCancel() {
-        self.messageBox.insert(
-            type: .error,
-            title: "onCancel"
-        )
     }
 
     private func onApply() {
