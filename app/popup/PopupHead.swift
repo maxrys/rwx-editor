@@ -7,11 +7,6 @@ import SwiftUI
 
 struct PopupHead: View {
 
-    enum ColorNames: String {
-        case head     = "color Popup Head Background"
-        case gridTint = "color Popup Head Row Tint"
-    }
-
     @EnvironmentObject private var popupState: PopupState
 
     @State private var rollerForCreated: Date.VisibilityMode = .convenient
@@ -118,7 +113,7 @@ struct PopupHead: View {
             self.ValueView(self.formattedSize, isTinted: true, isSelectable: true)
 
         }
-        .background(Color(Self.ColorNames.head.rawValue))
+        .background(Color.popup.head)
         .font(.system(size: 12, weight: .regular))
     }
 
@@ -135,7 +130,7 @@ struct PopupHead: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .background(
             isTinted ?
-                Color(Self.ColorNames.gridTint.rawValue) :
+                Color.popup.gridTint :
                 Color.clear
         )
     }
@@ -149,9 +144,9 @@ struct PopupHead: View {
         .padding(.vertical  , 6)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(
-             isTinted ?
-                 Color(Self.ColorNames.gridTint.rawValue) :
-                 Color.clear
+            isTinted ?
+                Color.popup.gridTint :
+                Color.clear
         )
     }
 

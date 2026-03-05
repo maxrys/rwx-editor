@@ -7,11 +7,6 @@ import SwiftUI
 
 struct PanelRwxText: View {
 
-    enum ColorNames: String {
-        case text       = "color Panel RWX Text Text"
-        case background = "color Panel RWX Text Background"
-    }
-
     @Binding private var rights: RightsValue
 
     init(_ rights: Binding<RightsValue>) {
@@ -39,10 +34,10 @@ struct PanelRwxText: View {
         Text(text)
             .font(.system(size: 13, weight: .regular, design: .monospaced))
             .padding(.init(top: 4, leading: 9, bottom: 6, trailing: 9))
-            .foregroundPolyfill(Color(Self.ColorNames.text.rawValue))
+            .foregroundPolyfill(Color.panelRWXText.text)
             .background(
                 RoundedRectangle(cornerRadius: 5)
-                    .fill(Color(Self.ColorNames.background.rawValue))
+                    .fill(Color.panelRWXText.background)
             )
             .textSelectionPolyfill()
     }

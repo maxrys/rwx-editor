@@ -7,10 +7,6 @@ import SwiftUI
 
 struct PopupBody: View {
 
-    enum ColorNames: String {
-        case body = "color Popup Body Background"
-    }
-
     @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
@@ -67,7 +63,7 @@ struct PopupBody: View {
 
         }
         .frame(maxWidth: .infinity)
-        .background(Color(Self.ColorNames.body.rawValue))
+        .background(Color.popup.body)
     }
 
     @ViewBuilder private func ShadowTopView() -> some View {

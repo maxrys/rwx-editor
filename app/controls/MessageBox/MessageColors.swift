@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/* MessageBox */
-
 extension Color {
 
     struct MessageBoxCustomColorSet {

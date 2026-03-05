@@ -7,10 +7,6 @@ import SwiftUI
 
 struct ToggleRwxColored: View {
 
-    enum ColorNames: String {
-        case empty = "color Toggle RWX Colored Empty"
-    }
-
     static private let ICON_SIZE: CGFloat = 25
 
     @Binding private var rights: RightsValue
@@ -57,7 +53,7 @@ struct ToggleRwxColored: View {
                 }
             } else {
                 Circle()
-                    .fill(Color(Self.ColorNames.empty.rawValue))
+                    .fill(Color.toggleRWXColored.empty)
                     .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
             }
         }

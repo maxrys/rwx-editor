@@ -7,10 +7,6 @@ import SwiftUI
 
 struct PopupFoot: View {
 
-    enum ColorNames: String {
-        case foot = "color Popup Foot Background"
-    }
-
     @EnvironmentObject private var popupState: PopupState
 
     private let messageBox: MessageBox
@@ -47,7 +43,7 @@ struct PopupFoot: View {
         }
         .padding(20)
         .frame(maxWidth: .infinity)
-        .background(Color(Self.ColorNames.foot.rawValue))
+        .background(Color.popup.foot)
     }
 
     private func onCancel() {
