@@ -7,13 +7,13 @@ import SwiftUI
 
 extension PermissionsValue {
 
-    subscript(index: UInt) -> Bool {
+    subscript(bitPosition: UInt) -> Bool {
         get {
-            (self >> index & 0b1) == 1
+            (self >> bitPosition & 0b1) == 1
         }
-        set(isOn) {
-            if (isOn) { self |=  (0b1 << index) }
-            else      { self &= ~(0b1 << index) }
+        set(isBitOn) {
+            if (isBitOn) { self |=  (0b1 << bitPosition) }
+            else         { self &= ~(0b1 << bitPosition) }
         }
     }
 
