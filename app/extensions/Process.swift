@@ -26,11 +26,9 @@ extension Process {
         do {
             try task.run()
             task.waitUntilExit()
-            let stdOutResult = String(data: pipeOut.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8) ?? ""
-            let stdErrResult = String(data: pipeErr.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8) ?? ""
             if (task.terminationStatus == 0) {
-                return .ok(data:
-                    stdOutResult
+                return .ok(
+                    data: pipeOut.fileHandleForReading.readDataToEndOfFile().toString
                         .trimPrefix("\n")
                         .trimSuffix("\n")
                         .components(separatedBy: separatedBy)
@@ -38,7 +36,7 @@ extension Process {
             } else {
                 return .error(
                     code: task.terminationStatus,
-                    text: stdErrResult
+                    text: pipeErr.fileHandleForReading.readDataToEndOfFile().toString
                         .trimPrefix("\n")
                         .trimSuffix("\n")
                 )
