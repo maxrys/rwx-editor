@@ -19,7 +19,6 @@ final class PopupState: ObservableObject {
     @Published var owner: String
     @Published var group: String
 
-    let fullpath: String
     let info: FSEntityInfo
     let originalPerms: PermissionsValue
     let originalOwner: String
@@ -31,11 +30,7 @@ final class PopupState: ObservableObject {
         self.group != self.originalGroup
     }
 
-    init?(fullpath: String) {
-        guard let info = FSEntityInfo(fullpath) else {
-            return nil
-        }
-        self.fullpath = fullpath
+    init(_ info: FSEntityInfo) {
         self.info  = info
         self.perms = info.perms
         self.owner = info.owner

@@ -272,6 +272,16 @@
         }
       }
     },
+    "UNKNOWN OBJECT" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "НЕИЗВЕСТНЫЙ ОБЪЕКТ"
+          }
+        }
+      }
+    },
     "Updated" : {
       "localizations" : {
         "ru" : {

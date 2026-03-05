@@ -8,30 +8,47 @@ import SwiftUI
 
 struct Popup: View {
 
-    @StateObject private var popupState: PopupState
+    static let FRAME_WIDTH: CGFloat = 300
 
     private let messageBox = MessageBox()
+    private let fullpath: String
+    private var info: FSEntityInfo?
+    private var popupState: PopupState?
 
-    init?(fullpath: String) {
+    init(fullpath: String) {
         Logger.customLog("Popup init with fullpath = \(fullpath)")
-        guard let state = PopupState(fullpath: fullpath) else {
-            return nil
-        }
-        self._popupState = StateObject(
-            wrappedValue: state
-        )
+        self.fullpath = fullpath
+        self.infoRefresh()
+    }
+
+    mutating func infoRefresh() {
+        self.info = FSEntityInfo(self.fullpath)
+        if let info = self.info
+             { self.popupState = PopupState(info) }
+        else { self.popupState = nil }
     }
 
     public var body: some View {
-        VStack (spacing: 0) {
-            PopupHead()
-            PopupBody()
-            PopupFoot(messageBox: self.messageBox)
-            self.messageBox
+        Group {
+            if let popupState = self.popupState {
+                VStack(spacing: 0) {
+                    PopupHead()
+                    PopupBody()
+                    PopupFoot(messageBox: self.messageBox)
+                    self.messageBox
+                }.environmentObject(popupState)
+            } else {
+                Text("UNKNOWN OBJECT")
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.popup.body)
+            }
         }
-        .environmentObject(self.popupState)
         .environment(\.layoutDirection, .leftToRight)
-        .frame(width: 300)
+        .frame(width: Self.FRAME_WIDTH)
+        .onAppBecomeForeground {
+            // self.infoRefresh()
+        }
     }
 
 }

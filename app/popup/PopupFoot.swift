@@ -35,7 +35,8 @@ struct PopupFoot: View {
                 colorStyle: .custom(text: nil, background: nil),
                 isFlat: false,
                 flexibility: .size(100)
-            ) { self.onApply() }.disabled(false)
+            ) { self.onApply() }
+            .disabled(!self.popupState.isChanged)
 
         }
         .padding(20)
@@ -60,5 +61,6 @@ struct PopupFoot: View {
 
 #Preview {
     PopupFoot(messageBox: MessageBox())
+        .environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))
         .frame(width: 300)
 }

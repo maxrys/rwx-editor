@@ -155,8 +155,8 @@ struct PopupBody: View {
 
 #Preview {
     VStack(spacing: 10) {
-        PopupBody().environmentObject(PopupState(fullpath: "/private/etc/")!)      /* directory */
-        PopupBody().environmentObject(PopupState(fullpath: "/private/etc/hosts")!) /* file */
+        PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/")!))      /* directory */
+        PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!)) /* file */
     }
     .padding(10)
     .background(Color.black)

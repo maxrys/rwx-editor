@@ -182,8 +182,8 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
 
 #Preview {
     VStack(spacing: 10) {
-        PopupHead().environmentObject(PopupState(fullpath: "/private/etc/")!)      /* directory */
-        PopupHead().environmentObject(PopupState(fullpath: "/private/etc/hosts")!) /* file */
+        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/")!))      /* directory */
+        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!)) /* file */
     }
     .padding(10)
     .background(Color.black)
