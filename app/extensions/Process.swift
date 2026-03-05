@@ -3,6 +3,7 @@
 /* ### Copyright © 2026 Maxim Rysevets. All rights reserved. ### */
 /* ############################################################# */
 
+import os
 import Foundation
 
 extension Process {
@@ -13,7 +14,7 @@ extension Process {
         case fatal
     }
 
-    static func shell(path: String = "/bin/zsh", args: [String] = []) -> ShellResult {
+    static func shell(path: String = "/bin/zsh", args: [String] = [], separatedBy: String = "\n") -> ShellResult {
         let task = Process()
         let pipeOut = Pipe()
         let pipeErr = Pipe()
@@ -32,7 +33,7 @@ extension Process {
                     stdOutResult
                         .trimPrefix("\n")
                         .trimSuffix("\n")
-                        .components(separatedBy: "\n")
+                        .components(separatedBy: separatedBy)
                 )
             } else {
                 return .error(
@@ -44,6 +45,43 @@ extension Process {
             }
         } catch {
             return .fatal
+        }
+    }
+
+    static func systemUsers() -> [String] {
+        let shellResult = Process.shell(
+            path: "/usr/bin/env",
+            args: ["dscl", ".", "list", "/Users"]
+        )
+        switch shellResult {
+            case .ok(let data):
+                Logger.customLog("systemUsers shellResult = ok")
+                return data
+            case .error(let code, let text):
+                Logger.customLog("systemUsers shellResult = error | code = \(code) | text = \(text)")
+                return []
+            case .fatal:
+                Logger.customLog("systemUsers shellResult = fatal")
+                return []
+        }
+    }
+
+    static func systemGroups() -> [String] {
+        let shellResult = Process.shell(
+            path: "/usr/bin/env",
+            args: ["groups"],
+            separatedBy: " "
+        )
+        switch shellResult {
+            case .ok(let data):
+                Logger.customLog("systemUsers shellResult = ok")
+                return data
+            case .error(let code, let text):
+                Logger.customLog("systemUsers shellResult = error | code = \(code) | text = \(text)")
+                return []
+            case .fatal:
+                Logger.customLog("systemUsers shellResult = fatal")
+                return []
         }
     }
 

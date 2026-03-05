@@ -10,9 +10,25 @@ struct PopupBody: View {
     @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
-    private var permsBinding: Binding<PermissionsValue> {
-        self.popupState.getBinding(\.perms)
-    }
+    private var permsBinding: Binding<PermissionsValue> { self.popupState.getBinding(\.perms) }
+    private var ownerBinding: Binding<String>           { self.popupState.getBinding(\.owner) }
+    private var groupBinding: Binding<String>           { self.popupState.getBinding(\.group) }
+
+    private let owners: [String: String] = {
+        var result: [String: String] = [:]
+        Process.systemUsers().filter({ $0.first != "_" }).sorted().forEach { value in
+            result[value] = value
+        }
+        return result
+    }()
+
+    private let groups: [String: String] = {
+        var result: [String: String] = [:]
+        Process.systemGroups().filter({ $0.first != "_" }).sorted().forEach { value in
+            result[value] = value
+        }
+        return result
+    }()
 
     private let columns = [
         GridItem(.flexible(), spacing: 0),
@@ -58,6 +74,30 @@ struct PopupBody: View {
                 PanelRwxText(self.permsBinding)
                 ToggleRwxNumeric(self.permsBinding)
             }
+
+            /* MARK: owner picker + group picker */
+
+            VStack(alignment: .trailing, spacing: 10) {
+                HStack(spacing: 10) {
+                    Text(NSLocalizedString("Owner", comment: ""))
+                    PickerCustom<String>(
+                        selected: self.ownerBinding,
+                        items: self.owners,
+                        isPlainListStyle: true,
+                        flexibility: .size(150)
+                    )
+                }
+
+                HStack(spacing: 10) {
+                    Text(NSLocalizedString("Group", comment: ""))
+                    PickerCustom<String>(
+                        selected: self.groupBinding,
+                        items: self.groups,
+                        isPlainListStyle: true,
+                        flexibility: .size(150)
+                    )
+                }
+            }.padding(.top, 10)
 
             self.ShadowBottomView()
 
