@@ -19,7 +19,7 @@ public enum Permission: String {
 
 }
 
-public enum Subject {
+public enum PermissionSubject {
 
     case owner
     case group

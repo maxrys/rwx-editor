@@ -134,7 +134,7 @@ struct Test {
     }
 
     func subjectRightGet() throws {
-        let etalonGetter: (RightsValue, Subject) -> UInt = { rights, subject in
+        let etalonGetter: (RightsValue, PermissionSubject) -> UInt = { rights, subject in
             let bitR = rights[subject.offset + Permission.r.offset]
             let bitW = rights[subject.offset + Permission.w.offset]
             let bitX = rights[subject.offset + Permission.x.offset]
@@ -148,9 +148,9 @@ struct Test {
             let etalonOwner = etalonGetter(rights, .owner)
             let etalonGroup = etalonGetter(rights, .group)
             let etalonOther = etalonGetter(rights, .other)
-            let owner = Subject.owner.rightGet(from: rights)
-            let group = Subject.group.rightGet(from: rights)
-            let other = Subject.other.rightGet(from: rights)
+            let owner = PermissionSubject.owner.rightGet(from: rights)
+            let group = PermissionSubject.group.rightGet(from: rights)
+            let other = PermissionSubject.other.rightGet(from: rights)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)
@@ -158,7 +158,7 @@ struct Test {
     }
 
     func subjectRightSet() throws {
-        let etalonSetter: (UInt, RightsValue, Subject) -> RightsValue = { value, rightsValue, subject in
+        let etalonSetter: (UInt, RightsValue, PermissionSubject) -> RightsValue = { value, rightsValue, subject in
             let bitR = value[Permission.r.offset]
             let bitW = value[Permission.w.offset]
             let bitX = value[Permission.x.offset]
@@ -172,9 +172,9 @@ struct Test {
             let etalonOwner = etalonSetter(0o1, rights, .owner)
             let etalonGroup = etalonSetter(0o2, rights, .group)
             let etalonOther = etalonSetter(0o3, rights, .other)
-            let owner = Subject.owner.rightSet(0o1, to: rights)
-            let group = Subject.group.rightSet(0o2, to: rights)
-            let other = Subject.other.rightSet(0o3, to: rights)
+            let owner = PermissionSubject.owner.rightSet(0o1, to: rights)
+            let group = PermissionSubject.group.rightSet(0o2, to: rights)
+            let other = PermissionSubject.other.rightSet(0o3, to: rights)
             #expect(etalonOwner == owner)
             #expect(etalonGroup == group)
             #expect(etalonOther == other)

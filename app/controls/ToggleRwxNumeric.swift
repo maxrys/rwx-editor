@@ -25,9 +25,9 @@ struct ToggleRwxNumeric: View {
     }
 
     public var body: some View {
-        let ownerProxy = Binding<UInt> { Subject.owner.rightGet(from: self.rights) } set: { value in self.rights = Subject.owner.rightSet(value, to: self.rights) }
-        let groupProxy = Binding<UInt> { Subject.group.rightGet(from: self.rights) } set: { value in self.rights = Subject.group.rightSet(value, to: self.rights) }
-        let otherProxy = Binding<UInt> { Subject.other.rightGet(from: self.rights) } set: { value in self.rights = Subject.other.rightSet(value, to: self.rights) }
+        let ownerProxy = Binding<UInt> { PermissionSubject.owner.rightGet(from: self.rights) } set: { value in self.rights = PermissionSubject.owner.rightSet(value, to: self.rights) }
+        let groupProxy = Binding<UInt> { PermissionSubject.group.rightGet(from: self.rights) } set: { value in self.rights = PermissionSubject.group.rightSet(value, to: self.rights) }
+        let otherProxy = Binding<UInt> { PermissionSubject.other.rightGet(from: self.rights) } set: { value in self.rights = PermissionSubject.other.rightSet(value, to: self.rights) }
         HStack(spacing: 3) {
             PickerCustom<UInt>(selected: ownerProxy, items: self.values)
             PickerCustom<UInt>(selected: groupProxy, items: self.values)

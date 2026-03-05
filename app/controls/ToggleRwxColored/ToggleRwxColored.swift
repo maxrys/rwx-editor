@@ -11,7 +11,7 @@ struct ToggleRwxColored: View {
 
     @Binding private var rights: RightsValue
 
-    private let subject: Subject
+    private let subject: PermissionSubject
     private let permission: Permission
 
     private var bitPosition: UInt {
@@ -24,7 +24,7 @@ struct ToggleRwxColored: View {
         ]
     }
 
-    init(subject: Subject, permission: Permission, _ rights: Binding<RightsValue>) {
+    init(subject: PermissionSubject, permission: Permission, _ rights: Binding<RightsValue>) {
         self.subject     = subject
         self.permission  = permission
         self._rights     = rights

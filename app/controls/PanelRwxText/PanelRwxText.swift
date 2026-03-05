@@ -13,11 +13,11 @@ struct PanelRwxText: View {
         self._rights = rights
     }
 
-    private let bitPosition: (Subject, Permission) -> UInt = { subject, permission in
+    private let bitPosition: (PermissionSubject, Permission) -> UInt = { subject, permission in
         subject.offset + permission.offset
     }
 
-    private func isOn(_ subject: Subject, _ permission: Permission) -> Bool {
+    private func isOn(_ subject: PermissionSubject, _ permission: Permission) -> Bool {
         self.rights[
             self.bitPosition(subject, permission)
         ]
