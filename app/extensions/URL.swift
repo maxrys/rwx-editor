@@ -15,14 +15,13 @@ extension URL {
            .trimPrefix(Self.URL_PREFIX)
            .trimSuffix(Self.URL_SUFFIX)
 
-        let components = absolute.split(
-            separator: "/",
-            omittingEmptySubsequences: false
+        let components = absolute.components(
+            separatedBy: "/"
         )
 
         if (components.count >= 2) {
-            let path = String(describing: components.dropLast().joined(separator: "/"))
-            let name = String(describing: components.last!)
+            let path = components.dropLast().joined(separator: "/")
+            let name = components.last!
             return (
                 path: path.hasSuffix("/") ? path : path + "/",
                 name: name
