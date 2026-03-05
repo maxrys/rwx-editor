@@ -7,16 +7,13 @@ import SwiftUI
 
 struct PopupScene: View {
 
-    @StateObject private var popupState: PopupState
-
+    private var popupState: PopupState
     private let messageBox = MessageBox()
     private let info: FSEntityInfo
 
     init(_ info: FSEntityInfo) {
         self.info = info
-        self._popupState = StateObject(
-            wrappedValue: PopupState(info)
-        )
+        self.popupState = PopupState(info)
     }
 
     public var body: some View {

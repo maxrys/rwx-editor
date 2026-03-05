@@ -20,7 +20,11 @@ struct Popup: View {
     }
 
     func infoRefresh() {
-        self.info = FSEntityInfo(self.fullpath)
+        let newInfo = FSEntityInfo(self.fullpath)
+        if (newInfo != self.info) {
+            Logger.customLog("Popup infoRefresh")
+            self.info = newInfo
+        }
     }
 
     public var body: some View {

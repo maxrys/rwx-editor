@@ -5,7 +5,7 @@
 
 import Foundation
 
-final class FSEntityInfo {
+final class FSEntityInfo: Equatable {
 
     public enum FSType {
         case directory
@@ -13,6 +13,10 @@ final class FSEntityInfo {
         case link
         case alias
         case other
+    }
+
+    static func == (lhs: FSEntityInfo, rhs: FSEntityInfo) -> Bool {
+        return Self.equalViaMirror(lhs: lhs, rhs: rhs)
     }
 
     public let fullpath: String
