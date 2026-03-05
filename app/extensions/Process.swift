@@ -72,13 +72,13 @@ extension Process {
         )
         switch shellResult {
             case .ok(let data):
-                Logger.customLog("systemUsers shellResult = ok")
+                Logger.customLog("systemGroups shellResult = ok")
                 return data
             case .error(let code, let text):
-                Logger.customLog("systemUsers shellResult = error | code = \(code) | text = \(text)")
+                Logger.customLog("systemGroups shellResult = error | code = \(code) | text = \(text)")
                 return []
             case .fatal:
-                Logger.customLog("systemUsers shellResult = fatal")
+                Logger.customLog("systemGroups shellResult = fatal")
                 return []
         }
     }
