@@ -26,7 +26,7 @@ struct Test {
         try? self.bitToggle()
         try? self.subjectPermissionGet()
         try? self.subjectPermissionSet()
-        try? self.url()
+        try? self.parseFullpath()
     }
 
     func bitGet() throws {
@@ -181,7 +181,7 @@ struct Test {
         }
     }
 
-    func url() throws {
+    func parseFullpath() throws {
         let paths = [
             "/"                      : (path: "/",           name: ""         ),
             "/file"                  : (path: "/",           name: "file"     ),
@@ -194,8 +194,7 @@ struct Test {
         ]
 
         for (value, expected) in paths {
-            let url = URL(string: value)
-            let received = url!.pathAndName
+            let received = FSEntityInfo.parseFullpath(value)
             print("pathAndName: \(value) | (\(received.path),\(received.name)) = (\(expected.path),\(expected.name))")
             #expect(received == expected)
         }

@@ -23,7 +23,6 @@
 		501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* PermissionsValue.swift */; };
 		501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
 		501FA4DD2F4F0FEC004663D2 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
-		501FA4DE2F4F0FFE004663D2 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
 		501FA4DF2F4F1014004663D2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
 		50309B082F59E998008CA064 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
 		50309B0A2F5A1307008CA064 /* PopupScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B092F5A1303008CA064 /* PopupScene.swift */; };
@@ -31,6 +30,8 @@
 		50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0D2F5AC7C7008CA064 /* Features.swift */; };
 		50309B102F5ACC06008CA064 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 50309B0F2F5ACC06008CA064 /* Credits.html */; };
 		50309B122F5AD3BA008CA064 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B112F5AD3B8008CA064 /* menu.swift */; };
+		50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
+		50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -46,7 +47,6 @@
 		50B276D42F39CC5E005F7475 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276D32F39CC59005F7475 /* Popup.swift */; };
 		50B276DC2F39DB98005F7475 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276DB2F39DB98005F7475 /* Test.swift */; };
 		50B276E32F39DC3F005F7475 /* PermissionsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E12F39DC3F005F7475 /* PermissionsValue.swift */; };
-		50B276E72F39DC88005F7475 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276E52F39DC88005F7475 /* URL.swift */; };
 		50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276ED2F3A466B005F7475 /* PopupHead.swift */; };
 		50B276F02F3A46FA005F7475 /* PopupBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276EF2F3A46FA005F7475 /* PopupBody.swift */; };
 		50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F12F3A4709005F7475 /* PopupFoot.swift */; };
@@ -144,7 +144,6 @@
 		50B276D92F39DB98005F7475 /* RWX Editor Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RWX Editor Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276DB2F39DB98005F7475 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		50B276E12F39DC3F005F7475 /* PermissionsValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsValue.swift; sourceTree = "<group>"; };
-		50B276E52F39DC88005F7475 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		50B276EA2F3A40C9005F7475 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		50B276EB2F3A411D005F7475 /* FinderSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderSync.entitlements; sourceTree = "<group>"; };
 		50B276ED2F3A466B005F7475 /* PopupHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHead.swift; sourceTree = "<group>"; };
@@ -277,7 +276,6 @@
 				50CE9FD92F471B54001006CF /* Shape.swift */,
 				50B276CE2F39CC00005F7475 /* String.swift */,
 				50DCD7C82F425A9B00E067C3 /* Timer.swift */,
-				50B276E52F39DC88005F7475 /* URL.swift */,
 				50B276FC2F3A8D32005F7475 /* View.swift */,
 			);
 			path = extensions;
@@ -575,7 +573,6 @@
 				501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */,
 				5003F0CA2F58D5170030B75A /* PopupState.swift in Sources */,
 				501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */,
-				50B276E72F39DC88005F7475 /* URL.swift in Sources */,
 				50B277112F3BD044005F7475 /* Color.swift in Sources */,
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
@@ -611,11 +608,12 @@
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
 				501FA4DD2F4F0FEC004663D2 /* enums.swift in Sources */,
 				5003F0D32F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */,
+				50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */,
 				501FA4D92F4F0EDB004663D2 /* Logger.swift in Sources */,
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */,
-				501FA4DE2F4F0FFE004663D2 /* URL.swift in Sources */,
+				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

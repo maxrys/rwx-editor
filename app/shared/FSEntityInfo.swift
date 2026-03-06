@@ -7,6 +7,9 @@ import Foundation
 
 final class FSEntityInfo: Equatable {
 
+    static let URL_PREFIX = "file://"
+    static let URL_SUFFIX = "/"
+
     public enum FSType {
         case directory
         case file
@@ -37,17 +40,18 @@ final class FSEntityInfo: Equatable {
 
     init?(_ fullpath: String) {
 
-        self.fullpath = fullpath
-
         guard !fullpath.isEmpty else {
             return nil
         }
-        guard let fullpathAsURL = URL(string: "file://\(fullpath)") else {
+        guard let fullpath = fullpath.removingPercentEncoding else {
             return nil
         }
         guard let attributes = try? FileManager.default.attributesOfItem(atPath: fullpath) else {
             return nil
         }
+
+        let fullpathAsURL = URL(fileURLWithPath: fullpath)
+        self.fullpath = fullpath
 
         /* MARK: type */
 
@@ -65,7 +69,7 @@ final class FSEntityInfo: Equatable {
 
         /* MARK: path/name */
 
-        let (path, name) = fullpathAsURL.pathAndName
+        let (path, name) = Self.parseFullpath(fullpath)
         self.name = name
         self.path = path
 
@@ -94,13 +98,34 @@ final class FSEntityInfo: Equatable {
                     self.type = .alias
                 case (false, true, true):
                     self.type = .link
-                    let (realPath, realName) = fullpathAsURL.resolvingSymlinksInPath().pathAndName
+                    let (realPath, realName) = Self.parseFullpath(fullpathAsURL.resolvingSymlinksInPath().absoluteString)
                     self.realName = realName
                     self.realPath = realPath
                 default: break
             }
         }
 
+    }
+
+    static public func parseFullpath(_ fullpath: String) -> (path: String, name: String) {
+        let normalized = fullpath
+           .trimPrefix(Self.URL_PREFIX)
+           .trimSuffix(Self.URL_SUFFIX)
+
+        let components = normalized.components(
+            separatedBy: "/"
+        )
+
+        if (components.count >= 2) {
+            let path = components.dropLast().joined(separator: "/")
+            let name = components.last!
+            return (
+                path: path.hasSuffix("/") ? path : path + "/",
+                name: name
+            )
+        }
+
+        return (path: "/", name: "")
     }
 
 }
