@@ -18,12 +18,11 @@ final class Features {
                 " | group = \(state.group)"
             )
 
-            let objectURL = URL(fileURLWithPath: state.info.fullpath)
             try FileManager.default.setAttributes(
                 [.posixPermissions     : state.perms,
                  .ownerAccountName     : state.owner,
                  .groupOwnerAccountName: state.group],
-                ofItemAtPath: objectURL.path
+                ofItemAtPath: state.info.fullpath
             )
 
             messageBox.insert(
@@ -32,11 +31,11 @@ final class Features {
             )
 
             return true
-        } catch {
+        } catch let error as NSError {
             messageBox.insert(
                 type: .error,
                 title: NSLocalizedString("completed unsuccessfully", comment: ""),
-                description: error.localizedDescription
+                description: error.code == 513 ? "SandBox error" : error.localizedDescription
             )
             return false
         }
