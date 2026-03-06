@@ -298,13 +298,13 @@
 		50B276AE2F3899E8005F7475 /* popup */ = {
 			isa = PBXGroup;
 			children = (
+				50309B0D2F5AC7C7008CA064 /* Features.swift */,
 				5003F0C92F58D5170030B75A /* PopupState.swift */,
 				50B276D32F39CC59005F7475 /* Popup.swift */,
 				50309B092F5A1303008CA064 /* PopupScene.swift */,
 				50B276ED2F3A466B005F7475 /* PopupHead.swift */,
 				50B276EF2F3A46FA005F7475 /* PopupBody.swift */,
 				50B276F12F3A4709005F7475 /* PopupFoot.swift */,
-				50309B0D2F5AC7C7008CA064 /* Features.swift */,
 				5003F0CC2F597EC90030B75A /* PopupColors.swift */,
 				50B277072F3B3BBB005F7475 /* Assets.xcassets */,
 			);
