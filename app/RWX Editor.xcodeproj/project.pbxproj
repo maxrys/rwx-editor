@@ -62,7 +62,6 @@
 		50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277072F3B3BBB005F7475 /* Assets.xcassets */; };
 		50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */; };
-		50B277112F3BD044005F7475 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2770E2F3BD044005F7475 /* Color.swift */; };
 		50B277142F3BD0F2005F7475 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277122F3BD0F2005F7475 /* enums.swift */; };
 		50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277152F3C765C005F7475 /* PanelRwxText.swift */; };
 		50B277182F3C7744005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B277172F3C7744005F7475 /* Assets.xcassets */; };
@@ -162,7 +161,6 @@
 		50B277042F3B2D93005F7475 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		50B277072F3B3BBB005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxColored.swift; sourceTree = "<group>"; };
-		50B2770E2F3BD044005F7475 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		50B277122F3BD0F2005F7475 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		50B277152F3C765C005F7475 /* PanelRwxText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelRwxText.swift; sourceTree = "<group>"; };
 		50B277172F3C7744005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 			children = (
 				50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */,
 				50B277002F3B2357005F7475 /* CaseIterable.swift */,
-				50B2770E2F3BD044005F7475 /* Color.swift */,
 				50309B072F59E998008CA064 /* Data.swift */,
 				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B2772C2F3E37B0005F7475 /* Dictionary.swift */,
@@ -580,7 +577,6 @@
 				501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */,
 				5003F0CA2F58D5170030B75A /* PopupState.swift in Sources */,
 				501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */,
-				50B277112F3BD044005F7475 /* Color.swift in Sources */,
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
