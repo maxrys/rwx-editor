@@ -32,6 +32,7 @@
 		50309B122F5AD3BA008CA064 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B112F5AD3B8008CA064 /* menu.swift */; };
 		50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
 		50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
+		50309B152F5B201A008CA064 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* const.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -614,6 +615,7 @@
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */,
 				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
+				50309B152F5B201A008CA064 /* const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

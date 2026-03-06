@@ -194,7 +194,7 @@ struct Test {
         ]
 
         for (value, expected) in paths {
-            let received = FSEntityInfo.parseFullpath(value)
+            let received = FSEntityInfo.parseFullpath(value.trimPrefix(URL_PREFIX_FILE))
             print("pathAndName: \(value) | (\(received.path),\(received.name)) = (\(expected.path),\(expected.name))")
             #expect(received == expected)
         }

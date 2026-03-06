@@ -299,9 +299,6 @@
         }
       }
     },
-    "test popup" : {
-      "shouldTranslate" : false
-    },
     "Type" : {
       "localizations" : {
         "ru" : {

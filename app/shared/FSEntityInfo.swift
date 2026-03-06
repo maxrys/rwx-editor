@@ -7,9 +7,6 @@ import Foundation
 
 final class FSEntityInfo: Equatable {
 
-    static let URL_PREFIX = "file://"
-    static let URL_SUFFIX = "/"
-
     public enum FSType {
         case directory
         case file
@@ -41,9 +38,6 @@ final class FSEntityInfo: Equatable {
     init?(_ fullpath: String) {
 
         guard !fullpath.isEmpty else {
-            return nil
-        }
-        guard let fullpath = fullpath.removingPercentEncoding else {
             return nil
         }
         guard let attributes = try? FileManager.default.attributesOfItem(atPath: fullpath) else {
@@ -97,10 +91,16 @@ final class FSEntityInfo: Equatable {
                 case (true, true, false):
                     self.type = .alias
                 case (false, true, true):
-                    self.type = .link
-                    let (realPath, realName) = Self.parseFullpath(fullpathAsURL.resolvingSymlinksInPath().absoluteString)
-                    self.realName = realName
-                    self.realPath = realPath
+                    if let originalFullpathDecoded = fullpathAsURL.resolvingSymlinksInPath().absoluteString.removingPercentEncoding {
+                        self.type = .link
+                        let (realPath, realName) = Self.parseFullpath(
+                            originalFullpathDecoded
+                                .trimPrefix(URL_PREFIX_FILE)
+                                .trimPrefix(URL_SUFFIX_FOR_DIR)
+                        )
+                        self.realName = realName
+                        self.realPath = realPath
+                    }
                 default: break
             }
         }
@@ -108,11 +108,7 @@ final class FSEntityInfo: Equatable {
     }
 
     static public func parseFullpath(_ fullpath: String) -> (path: String, name: String) {
-        let normalized = fullpath
-           .trimPrefix(Self.URL_PREFIX)
-           .trimSuffix(Self.URL_SUFFIX)
-
-        let components = normalized.components(
+        let components = fullpath.trimSuffix(URL_SUFFIX_FOR_DIR).components(
             separatedBy: "/"
         )
 

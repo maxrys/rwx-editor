@@ -11,10 +11,6 @@ struct MainScene: View {
         VStack {
             Text("Settings")
                 .padding(20)
-
-            Button("test popup") {
-                appDelegate.showWindowPopup(fullpath: "/Users/max/Desktop/test.txt")
-            }.padding(20)
         }
         .frame(width: 400, height: 200)
         .environment(\.layoutDirection, .leftToRight)
