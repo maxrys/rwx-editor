@@ -11,9 +11,6 @@ let WINDOW_MAIN_TITLE  = NSLocalizedString("RWX Editor | Settings", comment: "")
 let WINDOW_POPUP_TITLE = NSLocalizedString("RWX Editor", comment: "")
 
 let NOT_APPLICABLE = "—"
-let URL_PREFIX_FILE = "file://"
-let URL_PREFIX_THIS_APP = "rwxEditor://"
-let URL_SUFFIX_FOR_DIR = "/"
 
 let FINDER_EXT_DIRECTORY_URLS: Set<URL> = [
     URL(fileURLWithPath: "/")

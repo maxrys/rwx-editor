@@ -37,11 +37,11 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             default   : break
         }
         for url in urls {
-            if let fullpath = url.absoluteString.removingPercentEncoding {
-                self.showWindowPopup(
-                    fullpath: fullpath.trimPrefix(URL_PREFIX_THIS_APP)
+            self.showWindowPopup(
+                fullpath: url.normalized(
+                    isTrimDirSuffix: false
                 )
-            }
+            )
         }
     }
 

@@ -44,7 +44,7 @@ final class FSEntityInfo: Equatable {
             return nil
         }
 
-        let fullpathAsURL = URL(fileURLWithPath: fullpath)
+        let fullpathURL = URL(fileURLWithPath: fullpath)
         self.fullpath = fullpath
 
         /* MARK: type */
@@ -63,7 +63,7 @@ final class FSEntityInfo: Equatable {
 
         /* MARK: path/name */
 
-        let (path, name) = Self.parseFullpath(fullpath)
+        let (path, name) = Self.parseFullpath(fullpathURL.normalized())
         self.name = name
         self.path = path
 
@@ -86,21 +86,17 @@ final class FSEntityInfo: Equatable {
 
         /* MARK: realPath/realName */
 
-        if let subtype = try? fullpathAsURL.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
+        if let subtype = try? fullpathURL.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
             switch (subtype.isRegularFile, subtype.isAliasFile, subtype.isSymbolicLink) {
                 case (true, true, false):
                     self.type = .alias
                 case (false, true, true):
-                    if let originalFullpathDecoded = fullpathAsURL.resolvingSymlinksInPath().absoluteString.removingPercentEncoding {
-                        self.type = .link
-                        let (realPath, realName) = Self.parseFullpath(
-                            originalFullpathDecoded
-                                .trimPrefix(URL_PREFIX_FILE)
-                                .trimPrefix(URL_SUFFIX_FOR_DIR)
-                        )
-                        self.realName = realName
-                        self.realPath = realPath
-                    }
+                    let (realPath, realName) = Self.parseFullpath(
+                        fullpathURL.resolvingSymlinksInPath().normalized()
+                    )
+                    self.realName = realName
+                    self.realPath = realPath
+                    self.type     = .link
                 default: break
             }
         }
@@ -108,7 +104,7 @@ final class FSEntityInfo: Equatable {
     }
 
     static public func parseFullpath(_ fullpath: String) -> (path: String, name: String) {
-        let components = fullpath.trimSuffix(URL_SUFFIX_FOR_DIR).components(
+        let components = fullpath.components(
             separatedBy: "/"
         )
 
