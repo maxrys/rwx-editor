@@ -32,23 +32,15 @@ struct PopupFoot: View {
 
             ButtonCustom(
                 NSLocalizedString("apply", comment: ""),
-                colorStyle: .custom(text: nil, background: nil),
                 isFlat: false,
                 flexibility: .size(100)
-            ) { self.onApply() }
+            ) { Features.onApply(self.messageBox) }
             .disabled(!self.popupState.isChanged)
 
         }
         .padding(20)
         .frame(maxWidth: .infinity)
         .background(Color.popup.foot)
-    }
-
-    private func onApply() {
-        self.messageBox.insert(
-            type: .ok,
-            title: "onApply"
-        )
     }
 
 }

@@ -28,6 +28,7 @@
 		50309B082F59E998008CA064 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
 		50309B0A2F5A1307008CA064 /* PopupScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B092F5A1303008CA064 /* PopupScene.swift */; };
 		50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
+		50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0D2F5AC7C7008CA064 /* Features.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -119,6 +120,7 @@
 		50309B072F59E998008CA064 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		50309B092F5A1303008CA064 /* PopupScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupScene.swift; sourceTree = "<group>"; };
 		50309B0B2F5A30C8008CA064 /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
+		50309B0D2F5AC7C7008CA064 /* Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features.swift; sourceTree = "<group>"; };
 		504A8C452F41CDCA00F3AD49 /* Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.xctestplan; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +301,7 @@
 				50B276ED2F3A466B005F7475 /* PopupHead.swift */,
 				50B276EF2F3A46FA005F7475 /* PopupBody.swift */,
 				50B276F12F3A4709005F7475 /* PopupFoot.swift */,
+				50309B0D2F5AC7C7008CA064 /* Features.swift */,
 				5003F0CC2F597EC90030B75A /* PopupColors.swift */,
 				50B277072F3B3BBB005F7475 /* Assets.xcassets */,
 			);
@@ -558,6 +561,7 @@
 				50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50CEA0B32F4E47A9001006CF /* main.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
+				50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
 				501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */,
