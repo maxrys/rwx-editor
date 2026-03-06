@@ -13,7 +13,7 @@
 		5003F0D12F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */; };
 		5003F0D22F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */; };
 		5003F0D32F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */; };
-		501FA4D42F4F0C05004663D2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501FA4D22F4F0C05004663D2 /* Media.xcassets */; };
+		501FA4D42F4F0C05004663D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501FA4D22F4F0C05004663D2 /* Assets.xcassets */; };
 		501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */; };
 		501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */; };
 		501FA4D72F4F0E82004663D2 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* types.swift */; };
@@ -88,7 +88,7 @@
 		50DCD7FB2F434C2E00E067C3 /* MessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */; };
 		50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */; };
 		50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F02F434C2E00E067C3 /* MessageType.swift */; };
-		50DCD7FE2F434C2E00E067C3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DCD7F62F434C2E00E067C3 /* Media.xcassets */; };
+		50DCD7FE2F434C2E00E067C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DCD7F62F434C2E00E067C3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +122,7 @@
 		5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxColoredColor.swift; sourceTree = "<group>"; };
 		501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
 		501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
-		501FA4D22F4F0C05004663D2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		501FA4D22F4F0C05004663D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50309B072F59E998008CA064 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		50309B092F5A1303008CA064 /* PopupScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupScene.swift; sourceTree = "<group>"; };
 		50309B0B2F5A30C8008CA064 /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStorage.swift; sourceTree = "<group>"; };
 		50DCD7F42F434C2E00E067C3 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
 		50DCD7F52F434C2E00E067C3 /* MessageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageColors.swift; sourceTree = "<group>"; };
-		50DCD7F62F434C2E00E067C3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		50DCD7F62F434C2E00E067C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +219,7 @@
 			children = (
 				501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */,
 				501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */,
-				501FA4D22F4F0C05004663D2 /* Media.xcassets */,
+				501FA4D22F4F0C05004663D2 /* Assets.xcassets */,
 			);
 			path = ButtonCustom;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 				50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */,
 				50DCD7F42F434C2E00E067C3 /* MessageBox.swift */,
 				50DCD7F52F434C2E00E067C3 /* MessageColors.swift */,
-				50DCD7F62F434C2E00E067C3 /* Media.xcassets */,
+				50DCD7F62F434C2E00E067C3 /* Assets.xcassets */,
 			);
 			path = MessageBox;
 			sourceTree = "<group>";
@@ -505,14 +505,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DCD7FE2F434C2E00E067C3 /* Media.xcassets in Resources */,
+				50DCD7FE2F434C2E00E067C3 /* Assets.xcassets in Resources */,
 				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */,
 				50CEA0AB2F4C5881001006CF /* InfoPlist.xcstrings in Resources */,
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
 				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
-				501FA4D42F4F0C05004663D2 /* Media.xcassets in Resources */,
+				501FA4D42F4F0C05004663D2 /* Assets.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
 				50309B102F5ACC06008CA064 /* Credits.html in Resources */,
 			);
