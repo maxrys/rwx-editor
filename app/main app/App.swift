@@ -92,7 +92,7 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 view: MainScene()
             )
         }
-        self.showMainMenu()
+        NSApp.mainMenu = Menu.getMain()
         NSApplication.showAppsDock()
     }
 
@@ -112,22 +112,6 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 )
             )
         }
-    }
-
-    func showMainMenu() {
-        let appName = ProcessInfo.processInfo.processName
-        let mainMenu = NSMenu(title: "MainMenu")
-
-        /* MARK: App menu (About, Quit) */
-        let appMenu = NSMenu()
-            appMenu.addItem(withTitle: "About \(appName)", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
-            appMenu.addItem(NSMenuItem.separator())
-            appMenu.addItem(withTitle: "Quit \(appName)", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
-        let appMenuItem = NSMenuItem()
-            appMenuItem.submenu = appMenu
-        mainMenu.addItem(appMenuItem)
-
-        NSApp.mainMenu = mainMenu
     }
 
 }

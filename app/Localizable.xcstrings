@@ -27,6 +27,16 @@
         }
       }
     },
+    "About %@" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О приложении %@"
+          }
+        }
+      }
+    },
     "Access" : {
       "localizations" : {
         "ru" : {
@@ -192,6 +202,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Путь"
+          }
+        }
+      }
+    },
+    "Quit %@" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершить %@"
           }
         }
       }
