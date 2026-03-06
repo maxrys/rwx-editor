@@ -34,7 +34,7 @@ struct PopupFoot: View {
                 NSLocalizedString("apply", comment: ""),
                 isFlat: false,
                 flexibility: .size(100)
-            ) { Features.onApply(self.messageBox) }
+            ) { Features.onApply(self.messageBox, self.popupState) }
             .disabled(!self.popupState.isChanged)
 
         }

@@ -13,7 +13,7 @@ struct MainScene: View {
                 .padding(20)
 
             Button("test popup") {
-                appDelegate.showWindowPopup(fullpath: "/private/etc/")
+                appDelegate.showWindowPopup(fullpath: "/Users/max/Desktop/test.txt")
             }.padding(20)
         }
         .frame(width: 400, height: 200)
