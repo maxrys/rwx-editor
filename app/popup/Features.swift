@@ -4,14 +4,23 @@
 /* ################################################################## */
 
 import os
+import AppKit
 
 final class Features {
 
     static public func onApply(_ messageBox: MessageBox) {
-        messageBox.insert(
-            type: .ok,
-            title: "onApply"
-        )
+        do {
+            messageBox.insert(
+                type: .ok,
+                title: NSLocalizedString("completed successfully", comment: "")
+            )
+        } catch {
+            messageBox.insert(
+                type: .error,
+                title: NSLocalizedString("completed unsuccessfully", comment: ""),
+                description: error.localizedDescription
+            )
+        }
     }
 
 }

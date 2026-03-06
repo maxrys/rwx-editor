@@ -29,6 +29,7 @@
 		50309B0A2F5A1307008CA064 /* PopupScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B092F5A1303008CA064 /* PopupScene.swift */; };
 		50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
 		50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0D2F5AC7C7008CA064 /* Features.swift */; };
+		50309B102F5ACC06008CA064 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 50309B0F2F5ACC06008CA064 /* Credits.html */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -121,6 +122,7 @@
 		50309B092F5A1303008CA064 /* PopupScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupScene.swift; sourceTree = "<group>"; };
 		50309B0B2F5A30C8008CA064 /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
 		50309B0D2F5AC7C7008CA064 /* Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features.swift; sourceTree = "<group>"; };
+		50309B0F2F5ACC06008CA064 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		504A8C452F41CDCA00F3AD49 /* Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.xctestplan; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +153,7 @@
 		50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteCountFormatter.swift; sourceTree = "<group>"; };
 		50B276FC2F3A8D32005F7475 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		50B277002F3B2357005F7475 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
-		50B277042F3B2D93005F7475 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = "main app/Localizable.xcstrings"; sourceTree = SOURCE_ROOT; };
+		50B277042F3B2D93005F7475 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		50B277072F3B3BBB005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B2770A2F3BCFCB005F7475 /* ToggleRwxColored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxColored.swift; sourceTree = "<group>"; };
 		50B2770E2F3BD044005F7475 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -219,6 +221,8 @@
 		50B2768E2F389876005F7475 = {
 			isa = PBXGroup;
 			children = (
+				50B276A52F389886005F7475 /* Assets.xcassets */,
+				50B277042F3B2D93005F7475 /* Localizable.xcstrings */,
 				50B276AB2F3899C9005F7475 /* shared */,
 				50B276AC2F3899D1005F7475 /* extensions */,
 				50B277092F3BCFC0005F7475 /* controls */,
@@ -283,11 +287,10 @@
 				50CEA0B22F4E47A5001006CF /* main.swift */,
 				50B276A72F389886005F7475 /* App.swift */,
 				50B276D12F39CC3E005F7475 /* MainScene.swift */,
-				50B276A52F389886005F7475 /* Assets.xcassets */,
-				50B277042F3B2D93005F7475 /* Localizable.xcstrings */,
-				50B276EA2F3A40C9005F7475 /* app.entitlements */,
 				50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */,
+				50B276EA2F3A40C9005F7475 /* app.entitlements */,
 				50B276C12F39CA05005F7475 /* Info.plist */,
+				50309B0F2F5ACC06008CA064 /* Credits.html */,
 			);
 			path = "main app";
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
 				501FA4D42F4F0C05004663D2 /* Media.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
+				50309B102F5ACC06008CA064 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
