@@ -55,7 +55,7 @@ final class ThisAppDelegate: NSApplicationMultiLaunch, NSWindowDelegate {
                 view: MainScene()
             )
         }
-        NSApp.mainMenu = Menu.getMain()
+        NSApp.mainMenu = NSMenu.main
         NSApplication.showAppsDock()
     }
 

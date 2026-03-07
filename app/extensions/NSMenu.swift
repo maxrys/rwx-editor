@@ -5,9 +5,9 @@
 
 import AppKit
 
-final class Menu {
+extension NSMenu {
 
-    static func getMain() -> NSMenu {
+    static public var main: Self {
 
         let appLocalizedName = Bundle.main.object(
             forInfoDictionaryKey: "CFBundleDisplayName"
@@ -15,13 +15,13 @@ final class Menu {
             ProcessInfo.processInfo.processName, comment: ""
         )
 
-        let mainMenu = NSMenu(
+        let result = Self(
             title: "Main Menu"
         )
 
         /* MARK: App menu (About, Quit) */
 
-        let appMenu = NSMenu()
+        let appMenu = Self()
 
         appMenu.addItem(
             withTitle: String(format: NSLocalizedString("About %@" , comment: ""), appLocalizedName),
@@ -41,9 +41,10 @@ final class Menu {
 
         let appMenuItem = NSMenuItem()
             appMenuItem.submenu = appMenu
-        mainMenu.addItem(appMenuItem)
+        result.addItem(appMenuItem)
 
-        return mainMenu
+        return result
     }
+
 
 }
