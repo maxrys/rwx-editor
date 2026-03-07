@@ -127,6 +127,26 @@
         }
       }
     },
+    "extension is disabled" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "расширение выключено"
+          }
+        }
+      }
+    },
+    "extension is enabled" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "расширение включено"
+          }
+        }
+      }
+    },
     "file" : {
       "localizations" : {
         "ru" : {
@@ -182,6 +202,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Объект не поддерживается"
+          }
+        }
+      }
+    },
+    "Open System Preference" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открытые системные настройки"
           }
         }
       }
