@@ -9,8 +9,7 @@ struct MainScene: View {
 
     public var body: some View {
         VStack {
-            Text("Settings")
-                .padding(20)
+            ExtensionStatus()
         }
         .frame(width: 400, height: 200)
         .environment(\.layoutDirection, .leftToRight)

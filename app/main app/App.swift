@@ -8,6 +8,10 @@ import SwiftUI
 
 final class ThisAppDelegate: NSApplicationMultiLaunch, NSWindowDelegate {
 
+    static var appVersion      : String? { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String }
+    static var appBundleVersion: String? { Bundle.main.infoDictionary?["CFBundleVersion"           ] as? String }
+    static var appCopyright    : String? { Bundle.main.infoDictionary?["NSHumanReadableCopyright"  ] as? String }
+
     func applicationSupportsSecureRestorableState       (_    app: NSApplication) -> Bool { true }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
 

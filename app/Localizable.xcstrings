@@ -286,16 +286,6 @@
         }
       }
     },
-    "Settings" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Установки"
-          }
-        }
-      }
-    },
     "Single value:" : {
       "shouldTranslate" : false
     },
