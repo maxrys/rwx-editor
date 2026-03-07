@@ -32,10 +32,17 @@ struct Popup: View {
             if let info = self.info {
                 PopupScene(info)
             } else {
-                Text("UNKNOWN OBJECT")
-                    .padding(20)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.popup.body)
+                let messageBox = MessageBox()
+                messageBox
+                    .frame(maxWidth: 300)
+                    .onAppear {
+                        messageBox.insert(
+                            type: .error,
+                            title: NSLocalizedString("Object is not suppoted", comment: ""),
+                            description: self.fullpath,
+                            lifeTime: .infinity
+                        )
+                    }
             }
         }
         .environment(\.layoutDirection, .leftToRight)

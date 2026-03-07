@@ -176,6 +176,16 @@
     "No value:" : {
       "shouldTranslate" : false
     },
+    "Object is not suppoted" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Объект не поддерживается"
+          }
+        }
+      }
+    },
     "Other" : {
       "localizations" : {
         "ru" : {
@@ -305,16 +315,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Тип"
-          }
-        }
-      }
-    },
-    "UNKNOWN OBJECT" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "НЕИЗВЕСТНЫЙ ОБЪЕКТ"
           }
         }
       }
