@@ -6,36 +6,16 @@
 import os
 import SwiftUI
 
-final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
-
-    enum LaunchType {
-        case pure
-        case withURL
-    }
-
-    override init() {
-        super.init()
-    }
-
-    private var launchType: LaunchType?
-
-    func logLaunchType() {
-        switch self.launchType {
-            case .pure   : Logger.customLog("launchType = pure")
-            case .withURL: Logger.customLog("launchType = withURL")
-            case .none   : Logger.customLog("launchType = nil")
-        }
-    }
+final class ThisAppDelegate: NSApplicationMultiLaunch, NSWindowDelegate {
 
     func applicationSupportsSecureRestorableState       (_    app: NSApplication) -> Bool { true }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
 
-    func application(_ sender: NSApplication, open urls: [URL]) {
-        self.logLaunchType()
-        switch self.launchType {
-            case .none: self.launchType = .withURL
-            default   : break
-        }
+    override func onLaunchViaClickIcon() {
+        self.showWindowMain()
+    }
+
+    override func onLaunchViaReceivedURLs(urls: [URL]) {
         for url in urls {
             self.showWindowPopup(
                 fullpath: url.normalized(
@@ -43,25 +23,6 @@ final class ThisAppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 )
             )
         }
-    }
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.logLaunchType()
-        switch self.launchType {
-            case .withURL: self.launchType = .pure
-            case .none   : self.launchType = .pure; fallthrough
-            case .pure   : self.showWindowMain()
-        }
-    }
-
-    func applicationShouldHandleReopen(_ app: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        self.logLaunchType()
-        switch self.launchType {
-            case .withURL: self.launchType = .pure
-            case .none   : self.launchType = .pure; fallthrough
-            case .pure   : self.showWindowMain()
-        }
-        return true
     }
 
     func windowWillClose(_ notification: Notification) {
