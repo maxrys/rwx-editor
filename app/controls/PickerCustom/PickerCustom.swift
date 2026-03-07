@@ -13,7 +13,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     @State fileprivate var isOpened = false
 
     fileprivate let items: [Key: String]
-    fileprivate let sortedBy: Dictionary<Key, String>.SortedBy
+    fileprivate let sortedBy: Dictionary<Key, String>.OrderBy
     fileprivate let isPlainListStyle: Bool
     fileprivate let flexibility: Flexibility
     fileprivate let colorSet: ColorSet
@@ -27,7 +27,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     init(
         selected: Binding<Key>,
         items: [Key: String],
-        sortedBy: Dictionary<Key, String>.SortedBy = .keyAsc,
+        sortedBy: Dictionary<Key, String>.OrderBy = .keyAscending,
         isPlainListStyle: Bool = false,
         flexibility: Flexibility = .none,
         colorSet: ColorSet = Color.picker
@@ -38,7 +38,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         self.isPlainListStyle = isPlainListStyle
         self.flexibility = flexibility
         self.colorSet = colorSet
-        self.itemsSorted = self.items.sortedBy(order: self.sortedBy)
+        self.itemsSorted = self.items.sorted(order: self.sortedBy)
         self.itemsSorted.enumerated().forEach { index, keyValuePair in
             self.keyToIndex[keyValuePair.key] = index
             self.indexToKey[index] = keyValuePair.key
