@@ -7,13 +7,11 @@ import SwiftUI
 
 struct ButtonCustom: View {
 
-    typealias ColorStyle = Color.ButtonCustomColorSet.Style
-
     @Environment(\.colorScheme) private var colorScheme
 
     private let text: String
     private let disabled: Bool
-    private let colorStyle: ColorStyle
+    private let colorStyle: Color.ButtonCustomStyle
     private let isFlat: Bool
     private let font: Font
     private let padding: EdgeInsets
@@ -23,7 +21,7 @@ struct ButtonCustom: View {
     init(
         _ text: String = "button",
         disabled: Bool = false,
-        colorStyle: ColorStyle = .accent,
+        colorStyle: Color.ButtonCustomStyle = .accent,
         isFlat: Bool = true,
         font: Font = .system(size: 12.5, weight: .regular),
         padding: EdgeInsets = .init(top: 3, leading: 9, bottom: 5, trailing: 9),
