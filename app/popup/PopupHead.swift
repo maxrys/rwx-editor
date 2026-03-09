@@ -80,7 +80,7 @@ struct PopupHead: View {
                     alignment: .leading
                 ) { EmptyView() }
             },
-            body: {
+            bodyAsArray: {
                 var result:[AnyView] = []
 
                 result.append(self.TitleView(NSLocalizedString("Type", comment: "")))

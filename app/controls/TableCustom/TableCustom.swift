@@ -32,7 +32,7 @@ struct TableCustom: View {
         isScrollable: Bool = true,
         selectionType: SelectionType = .multiple,
         @ViewBuilderArray<TableCustom_HeadCell> head headCells: () -> [TableCustom_HeadCell],
-        body bodyCells: [any View]
+        bodyAsArray bodyCells: [any View]
     ) {
         self._selectedRows = selectedRows
         self.isVisibleHeader = isVisibleHeader
@@ -41,6 +41,24 @@ struct TableCustom: View {
         self.selectionType = selectionType
         self.headCells = headCells()
         self.bodyCells = bodyCells
+    }
+
+    init(
+        selected selectedRows: Binding<Set<Int>>,
+        isVisibleHeader: Bool = true,
+        isFocusable: Bool = true,
+        isScrollable: Bool = true,
+        selectionType: SelectionType = .multiple,
+        @ViewBuilderArray<TableCustom_HeadCell> head headCells: () -> [TableCustom_HeadCell],
+        @ViewBuilderArray<View> bodyAsViews bodyCells: () -> [any View]
+    ) {
+        self._selectedRows = selectedRows
+        self.isVisibleHeader = isVisibleHeader
+        self.isFocusable = isFocusable
+        self.isScrollable = isScrollable
+        self.selectionType = selectionType
+        self.headCells = headCells()
+        self.bodyCells = bodyCells()
     }
 
     private var gridColumns: [GridItem] {
@@ -152,7 +170,7 @@ struct TableCustom: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-struct TableCustom_Previews: PreviewProvider {
+struct TableCustom_Previews1: PreviewProvider {
     static var previews: some View {
         TableCustom(
             selected: Binding.constant([4]),
@@ -169,13 +187,43 @@ struct TableCustom_Previews: PreviewProvider {
                     spacing: 0
                 ) { EmptyView() }
             },
-            body: [
+            bodyAsArray: [
                 AnyView(Text("Value 1")), AnyView(Image(systemName: "1.square")),
                 AnyView(Text("Value 2")), AnyView(Image(systemName: "2.square")),
                 AnyView(Text("Value 3")), AnyView(Image(systemName: "3.square")),
                 AnyView(Text("Value 4")), AnyView(Image(systemName: "4.square")),
                 AnyView(Text("Value 5")), AnyView(Image(systemName: "5.square")),
             ]
+        )
+        .padding(20)
+        .frame(width: 250)
+    }
+}
+
+struct TableCustom_Previews2: PreviewProvider {
+    static var previews: some View {
+        TableCustom(
+            selected: Binding.constant([4]),
+            isVisibleHeader: true,
+            isFocusable: true,
+            head: {
+                TableCustom_HeadCell(
+                    size: .flexible(),
+                    spacing: 0,
+                    alignment: .leading
+                ) { Text(NSLocalizedString("Values", comment: "")).font(.system(size: 11)) }
+                TableCustom_HeadCell(
+                    size: .fixed(30),
+                    spacing: 0
+                ) { EmptyView() }
+            },
+            bodyAsViews: {
+                Text("Value 1"); Image(systemName: "1.square")
+                Text("Value 2"); Image(systemName: "2.square")
+                Text("Value 3"); Image(systemName: "3.square")
+                Text("Value 4"); Image(systemName: "4.square")
+                Text("Value 5"); Image(systemName: "5.square")
+            }
         )
         .padding(20)
         .frame(width: 250)
