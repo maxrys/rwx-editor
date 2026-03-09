@@ -29,7 +29,7 @@ final class FSEntityInfo: Equatable {
     public private(set) var references: UInt
     public private(set) var created: Date
     public private(set) var updated: Date
-    public private(set) var size: UInt = 0
+    public private(set) var size: UInt?
 
     public let perms: PermissionsValue
     public let owner: String

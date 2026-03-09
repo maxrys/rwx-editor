@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5003F0CA2F58D5170030B75A /* PopupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0C92F58D5170030B75A /* PopupState.swift */; };
-		5003F0CD2F597EC90030B75A /* PopupColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0CC2F597EC90030B75A /* PopupColors.swift */; };
 		5003F0CF2F5980100030B75A /* PanelRwxTextColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0CE2F5980100030B75A /* PanelRwxTextColors.swift */; };
 		5003F0D12F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */; };
 		5003F0D22F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */; };
@@ -131,7 +130,6 @@
 
 /* Begin PBXFileReference section */
 		5003F0C92F58D5170030B75A /* PopupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupState.swift; sourceTree = "<group>"; };
-		5003F0CC2F597EC90030B75A /* PopupColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupColors.swift; sourceTree = "<group>"; };
 		5003F0CE2F5980100030B75A /* PanelRwxTextColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelRwxTextColors.swift; sourceTree = "<group>"; };
 		5003F0D02F5980DB0030B75A /* ToggleRwxColoredColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRwxColoredColor.swift; sourceTree = "<group>"; };
 		501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
@@ -362,7 +360,6 @@
 				50B276ED2F3A466B005F7475 /* PopupHead.swift */,
 				50B276EF2F3A46FA005F7475 /* PopupBody.swift */,
 				50B276F12F3A4709005F7475 /* PopupFoot.swift */,
-				5003F0CC2F597EC90030B75A /* PopupColors.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
@@ -640,7 +637,6 @@
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
-				5003F0CD2F597EC90030B75A /* PopupColors.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */,
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,

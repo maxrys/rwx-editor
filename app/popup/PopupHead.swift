@@ -53,12 +53,16 @@ struct PopupHead: View {
     }
 
     private var formattedSize: String {
-        switch self.rollerForSize {
-            case .useBytes: ByteCountFormatter.format(self.info.size, unit: .useBytes)
-            case .useKB   : ByteCountFormatter.format(self.info.size, unit: .useKB)
-            case .useMB   : ByteCountFormatter.format(self.info.size, unit: .useMB)
-            case .useGB   : ByteCountFormatter.format(self.info.size, unit: .useGB)
-            case .useTB   : ByteCountFormatter.format(self.info.size, unit: .useTB)
+        if let size = self.info.size {
+            switch self.rollerForSize {
+                case .useBytes: return ByteCountFormatter.format(size, unit: .useBytes)
+                case .useKB   : return ByteCountFormatter.format(size, unit: .useKB)
+                case .useMB   : return ByteCountFormatter.format(size, unit: .useMB)
+                case .useGB   : return ByteCountFormatter.format(size, unit: .useGB)
+                case .useTB   : return ByteCountFormatter.format(size, unit: .useTB)
+            }
+        } else {
+            return ""
         }
     }
 
@@ -105,8 +109,11 @@ struct PopupHead: View {
                 result.append(self.ValueView(self.formattedCreated, isSelectable: true))
                 result.append(self.TitleView(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated))))
                 result.append(self.ValueView(self.formattedUpdated, isSelectable: true))
-                result.append(self.TitleView(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize))))
-                result.append(self.ValueView(self.formattedSize, isSelectable: true))
+
+                if self.info.size != nil {
+                    result.append(self.TitleView(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize))))
+                    result.append(self.ValueView(self.formattedSize, isSelectable: true))
+                }
 
                 return result
             }()
