@@ -17,6 +17,15 @@ struct PopupHead: View {
         self.popupState.info
     }
 
+    private var formattedName: String { self.info.name }
+    private var formattedPath: String { self.info.path }
+    private var formattedRealName: String { self.info.realName ?? "" }
+    private var formattedRealPath: String { self.info.realPath ?? "" }
+
+    private var formattedReferences: String {
+        String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
+    }
+
     private var formattedType: String {
         switch self.info.type {
             case .directory: NSLocalizedString("directory", comment: "")
@@ -25,26 +34,6 @@ struct PopupHead: View {
             case .link     : NSLocalizedString("link"     , comment: "")
             case .other    : ""
         }
-    }
-
-    private var formattedName: String {
-        self.info.name
-    }
-
-    private var formattedPath: String {
-        self.info.path
-    }
-
-    private var formattedRealName: String {
-        self.info.realName ?? ""
-    }
-
-    private var formattedRealPath: String {
-        self.info.realPath ?? ""
-    }
-
-    private var formattedReferences: String {
-        String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
     }
 
     private var formattedCreated: String {
@@ -73,80 +62,74 @@ struct PopupHead: View {
         }
     }
 
-    private let columns = [
-        GridItem(.fixed(100), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
-    ]
-
     public var body: some View {
-        LazyVGrid(columns: columns, spacing: 0) {
+        TableCustom(
+            selected: Binding.constant([]),
+            isVisibleHeader: false,
+            isFocusable: false,
+            isScrollable: false,
+            head: {
+                TableCustom_HeadCell(
+                    size: .fixed(100),
+                    spacing: 1,
+                    alignment: .trailing
+                ) { EmptyView() }
+                TableCustom_HeadCell(
+                    size: .flexible(),
+                    spacing: 1,
+                    alignment: .leading
+                ) { EmptyView() }
+            },
+            body: {
+                var result:[AnyView] = []
 
-            self.TitleView(NSLocalizedString("Type", comment: ""), isTinted: true)
-            self.ValueView(self.formattedType, isTinted: true)
+                result.append(self.TitleView(NSLocalizedString("Type", comment: "")))
+                result.append(self.ValueView(self.formattedType))
+                result.append(self.TitleView(NSLocalizedString("Name", comment: "")))
+                result.append(self.ValueView(self.formattedName, isSelectable: true))
+                result.append(self.TitleView(NSLocalizedString("Path", comment: "")))
+                result.append(self.ValueView(self.formattedPath, isSelectable: true))
 
-            self.TitleView(NSLocalizedString("Name", comment: ""))
-            self.ValueView(self.formattedName, isSelectable: true)
+                if let realName = self.info.realName,
+                   let realPath = self.info.realPath {
 
-            self.TitleView(NSLocalizedString("Path", comment: ""), isTinted: true)
-            self.ValueView(self.formattedPath, isTinted: true, isSelectable: true)
+                    result.append(self.TitleView(NSLocalizedString("Real Name", comment: "")))
+                    result.append(self.ValueView(realName, isSelectable: true))
+                    result.append(self.TitleView(NSLocalizedString("Real Path", comment: "")))
+                    result.append(self.ValueView(realPath, isSelectable: true))
+                }
 
-            if let realName = self.info.realName,
-               let realPath = self.info.realPath {
+                result.append(self.TitleView(NSLocalizedString("Reference Count", comment: "")))
+                result.append(self.ValueView(self.formattedReferences))
+                result.append(self.TitleView(NSLocalizedString("Created", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForCreated))))
+                result.append(self.ValueView(self.formattedCreated, isSelectable: true))
+                result.append(self.TitleView(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated))))
+                result.append(self.ValueView(self.formattedUpdated, isSelectable: true))
+                result.append(self.TitleView(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize))))
+                result.append(self.ValueView(self.formattedSize, isSelectable: true))
 
-                self.TitleView(NSLocalizedString("Real Name", comment: ""))
-                self.ValueView(realName, isSelectable: true)
-
-                self.TitleView(NSLocalizedString("Real Path", comment: ""), isTinted: true)
-                self.ValueView(realPath, isTinted: true, isSelectable: true)
-            }
-
-            self.TitleView(NSLocalizedString("Reference Count", comment: ""))
-            self.ValueView(self.formattedReferences)
-
-            self.TitleView(NSLocalizedString("Created", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForCreated)))
-            self.ValueView(self.formattedCreated, isTinted: true, isSelectable: true)
-
-            self.TitleView(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated)))
-            self.ValueView(self.formattedUpdated, isSelectable: true)
-
-            self.TitleView(NSLocalizedString("Size", comment: ""), isTinted: true, controls: AnyView(RollerStick(value: self.$rollerForSize)))
-            self.ValueView(self.formattedSize, isTinted: true, isSelectable: true)
-
-        }
+                return result
+            }()
+        )
         .background(Color.popup.head)
         .font(.system(size: 12, weight: .regular))
     }
 
-    @ViewBuilder func TitleView(_ text: String, isTinted: Bool = false, controls: AnyView? = nil) -> some View {
-        HStack(spacing: 4) {
-            Text(text)
-                .multilineTextAlignment(.trailing)
-            if let controls {
-                controls
+    private func TitleView(_ text: String, controls: AnyView? = nil) -> AnyView {
+        AnyView(
+            HStack(spacing: 4) {
+                Text(text)
+                    .multilineTextAlignment(.trailing)
+                if let controls {
+                    controls
+                }
             }
-        }
-        .padding(.horizontal, 7)
-        .padding(.vertical  , 6)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-        .background(
-            isTinted ?
-                Color.popup.gridTint :
-                Color.clear
         )
     }
 
-    @ViewBuilder func ValueView(_ text: String, isTinted: Bool = false, isSelectable: Bool = false) -> some View {
-        HStack(spacing: 0) {
-            Text(text)
-                .textSelectionPolyfill(isEnabled: isSelectable)
-        }
-        .padding(.horizontal, 7)
-        .padding(.vertical  , 6)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(
-            isTinted ?
-                Color.popup.gridTint :
-                Color.clear
+    private func ValueView(_ text: String, isSelectable: Bool = false) -> AnyView {
+        AnyView(
+            Text(text).textSelectionPolyfill(isEnabled: isSelectable)
         )
     }
 

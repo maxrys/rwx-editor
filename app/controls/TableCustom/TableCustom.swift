@@ -20,6 +20,7 @@ struct TableCustom: View {
 
     private let isVisibleHeader: Bool
     private let isFocusable: Bool
+    private let isScrollable: Bool
     private let selectionType: SelectionType
     private let headCells: [TableCustom_HeadCell]
     private let bodyCells: [any View]
@@ -28,6 +29,7 @@ struct TableCustom: View {
         selected selectedRows: Binding<Set<Int>>,
         isVisibleHeader: Bool = true,
         isFocusable: Bool = true,
+        isScrollable: Bool = true,
         selectionType: SelectionType = .multiple,
         @ViewBuilderArray<TableCustom_HeadCell> head headCells: () -> [TableCustom_HeadCell],
         body bodyCells: [any View]
@@ -35,6 +37,7 @@ struct TableCustom: View {
         self._selectedRows = selectedRows
         self.isVisibleHeader = isVisibleHeader
         self.isFocusable = isFocusable
+        self.isScrollable = isScrollable
         self.selectionType = selectionType
         self.headCells = headCells()
         self.bodyCells = bodyCells
@@ -73,25 +76,27 @@ struct TableCustom: View {
 
             /* MARK: Body */
 
-            ScrollView {
-                LazyVGrid(columns: gridColumns, spacing: 0) {
-                    ForEach(self.bodyCells.indices, id: \.self) { index in
-                        if let cell = self.bodyCells[safe: index] {
-                            let rowIndex = index / self.headCells.count
-                            let colIndex = index % self.headCells.count
-                            let isSelected = self.selectedRows.contains(rowIndex)
-                            let isEven = rowIndex % 2 == 0
-                            AnyView(cell).id(index)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 4)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: self.headCells[safe: colIndex]?.alignment ?? .center)
-                                .foregroundPolyfill(Color.tableCustom.rowTextColor(isSelected, self.appIsFocused))
-                                .background(Color.tableCustom.rowBackgroundColor(isSelected, isEven, self.appIsFocused))
-                                .onTapGesture { self.onClickRow(rowIndex) }
-                        }
+            let bodyGrid = LazyVGrid(columns: gridColumns, spacing: 0) {
+                ForEach(self.bodyCells.indices, id: \.self) { index in
+                    if let cell = self.bodyCells[safe: index] {
+                        let rowIndex = index / self.headCells.count
+                        let colIndex = index % self.headCells.count
+                        let isSelected = self.selectedRows.contains(rowIndex)
+                        let isEven = rowIndex % 2 == 0
+                        AnyView(cell).id(index)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: self.headCells[safe: colIndex]?.alignment ?? .center)
+                            .foregroundPolyfill(Color.tableCustom.rowTextColor(isSelected, self.appIsFocused))
+                            .background(Color.tableCustom.rowBackgroundColor(isSelected, isEven, self.appIsFocused))
+                            .onTapGesture { self.onClickRow(rowIndex) }
                     }
                 }
-            }.background(Color.tableCustom.bodyBackground)
+            }
+
+            if self.isScrollable {
+                ScrollView { bodyGrid }.background(Color.tableCustom.bodyBackground)
+            } else         { bodyGrid  .background(Color.tableCustom.bodyBackground) }
 
         }
         .focusable(self.isFocusable)
