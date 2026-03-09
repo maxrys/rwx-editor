@@ -9,6 +9,10 @@ struct Bookmarks: View {
 
     @State private var selectedItems: Set<Int> = []
 
+    init() {
+        dump(BookmarksModel.selectAll())
+    }
+
     public var body: some View {
         TableCustom(
             selected: self.$selectedItems,

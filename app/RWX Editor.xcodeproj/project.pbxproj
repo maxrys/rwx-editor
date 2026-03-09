@@ -53,6 +53,10 @@
 		506421792F5F15950020F6C8 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421782F5F15950020F6C8 /* Bookmarks.swift */; };
 		5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */; };
 		5064217E2F5F54C30020F6C8 /* launchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217D2F5F54C20020F6C8 /* launchAtLogin.swift */; };
+		506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 506421902F5F6CC80020F6C8 /* Model.xcdatamodeld */; };
+		506421932F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 506421902F5F6CC80020F6C8 /* Model.xcdatamodeld */; };
+		506421962F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
+		506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -159,6 +163,8 @@
 		506421782F5F15950020F6C8 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 		5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCustom.swift; sourceTree = "<group>"; };
 		5064217D2F5F54C20020F6C8 /* launchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchAtLogin.swift; sourceTree = "<group>"; };
+		506421912F5F6CC80020F6C8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		506421952F5F6E800020F6C8 /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -277,6 +283,15 @@
 			path = ToggleCustom;
 			sourceTree = "<group>";
 		};
+		506421942F5F6CF30020F6C8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				506421902F5F6CC80020F6C8 /* Model.xcdatamodeld */,
+				506421952F5F6E800020F6C8 /* BookmarksModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		50B2768E2F389876005F7475 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +300,7 @@
 				50B276AB2F3899C9005F7475 /* shared */,
 				50B276AC2F3899D1005F7475 /* extensions */,
 				50B277092F3BCFC0005F7475 /* controls */,
+				506421942F5F6CF30020F6C8 /* model */,
 				50B276AD2F3899DD005F7475 /* main app */,
 				50B276AE2F3899E8005F7475 /* popup */,
 				50B276AF2F3899F7005F7475 /* finder extension */,
@@ -620,6 +636,7 @@
 				50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */,
 				50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
+				506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */,
 				5003F0CF2F5980100030B75A /* PanelRwxTextColors.swift in Sources */,
 				50309B082F59E998008CA064 /* Data.swift in Sources */,
 				50CE9FDB2F471B54001006CF /* Shape.swift in Sources */,
@@ -654,6 +671,7 @@
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
+				506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */,
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
 				506421712F5EF0990020F6C8 /* NSEvent.swift in Sources */,
@@ -673,6 +691,7 @@
 			files = (
 				506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				501FA4D72F4F0E82004663D2 /* types.swift in Sources */,
+				506421962F5F6E800020F6C8 /* BookmarksModel.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				501FA4DA2F4F0EEB004663D2 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
@@ -680,6 +699,7 @@
 				501FA4D82F4F0ED7004663D2 /* Logger.swift in Sources */,
 				50309B182F5B22F8008CA064 /* URL.swift in Sources */,
 				50309B302F5C8579008CA064 /* Data.swift in Sources */,
+				506421932F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50309B2F2F5C84AE008CA064 /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,7 +899,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -926,7 +946,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -972,7 +992,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1018,7 +1038,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1100,6 +1120,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		506421902F5F6CC80020F6C8 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				506421912F5F6CC80020F6C8 /* Model.xcdatamodel */,
+			);
+			currentVersion = 506421912F5F6CC80020F6C8 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = model/Model.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50B2768F2F389876005F7475 /* Project object */;
 }
