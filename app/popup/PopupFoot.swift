@@ -7,6 +7,7 @@ import SwiftUI
 
 struct PopupFoot: View {
 
+    @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
     private let messageBox: MessageBox
@@ -40,7 +41,11 @@ struct PopupFoot: View {
         }
         .padding(20)
         .frame(maxWidth: .infinity)
-        .background(Color.popup.foot)
+        .background(
+            self.colorScheme == .dark ?
+                Color.white.opacity(0.03) :
+                Color.black.opacity(0.03)
+        )
     }
 
 }

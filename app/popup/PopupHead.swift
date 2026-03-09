@@ -71,12 +71,12 @@ struct PopupHead: View {
             head: {
                 TableCustom_HeadCell(
                     size: .fixed(100),
-                    spacing: 1,
+                    spacing: 2,
                     alignment: .trailing
                 ) { EmptyView() }
                 TableCustom_HeadCell(
                     size: .flexible(),
-                    spacing: 1,
+                    spacing: 2,
                     alignment: .leading
                 ) { EmptyView() }
             },
@@ -110,9 +110,7 @@ struct PopupHead: View {
 
                 return result
             }()
-        )
-        .background(Color.popup.head)
-        .font(.system(size: 12, weight: .regular))
+        ).font(.system(size: 12, weight: .regular))
     }
 
     private func TitleView(_ text: String, controls: AnyView? = nil) -> AnyView {

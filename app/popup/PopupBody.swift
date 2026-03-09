@@ -90,7 +90,6 @@ struct PopupBody: View {
 
         }
         .frame(maxWidth: .infinity)
-        .background(Color.popup.body)
         .onAppear {
             self.ownersReload()
             self.groupsReload()
