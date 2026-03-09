@@ -12,11 +12,11 @@ struct ExtensionStatus: View {
     @State private var isEnabled: Bool = false
 
     public var body: some View {
-        VStack(spacing: 15) {
+        HStack(spacing: 20) {
 
             Image(systemName: self.isEnabled ? "checkmark.circle.fill" : "xmark.circle.fill")
                 .resizable()
-                .frame(width: 40, height: 40)
+                .frame(width: 30, height: 30)
                 .foregroundPolyfill(
                     self.isEnabled ?
                         Color.status.ok :
@@ -31,6 +31,8 @@ struct ExtensionStatus: View {
                     NSLocalizedString("extension is disabled", comment: "")
             ).font(.system(size: 16, weight: .bold))
 
+            Spacer()
+
             ButtonCustom(
                 NSLocalizedString("Open System Preference", comment: ""),
                 colorStyle: .custom(text: nil, background: nil),
@@ -39,11 +41,10 @@ struct ExtensionStatus: View {
             ) { FinderSync.FIFinderSyncController.showExtensionManagementInterface() }
 
         }
-        .padding(20)
+        .padding(15)
         .frame(maxWidth: .infinity)
         .background(self.GroupBackground())
         .clipShape(RoundedRectangle(cornerRadius: 15))
-        .padding(20)
         .onAppear              { self.isEnabled = FIFinderSyncController.isExtensionEnabled }
         .onAppBecomeForeground { self.isEnabled = FIFinderSyncController.isExtensionEnabled }
     }
@@ -67,5 +68,6 @@ struct ExtensionStatus: View {
 
 #Preview {
     ExtensionStatus()
-        .frame(width: 400)
+        .frame(width: 600)
+        .padding(20)
 }

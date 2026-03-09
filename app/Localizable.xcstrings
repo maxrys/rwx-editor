@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "/path/to/file/or/dirrectory" : {
+
+    },
     "%@ 'at' %@" : {
       "localizations" : {
         "en" : {

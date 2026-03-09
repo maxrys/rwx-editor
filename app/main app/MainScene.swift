@@ -8,10 +8,12 @@ import SwiftUI
 struct MainScene: View {
 
     public var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             ExtensionStatus()
+            Bookmarks()
         }
-        .frame(width: 400, height: 200)
+        .padding(20)
+        .frame(width: 600, height: 400)
         .environment(\.layoutDirection, .leftToRight)
     }
 
