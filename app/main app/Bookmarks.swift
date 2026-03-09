@@ -17,7 +17,7 @@ struct Bookmarks: View {
                     size: .flexible(),
                     spacing: 1,
                     alignment: .leading
-                ) { Text(NSLocalizedString("Path", comment: "")).font(.system(size: 11)) }
+                ) { Text(NSLocalizedString("Permitted path", comment: "")).font(.system(size: 11)) }
                 TableCustom_HeadCell(
                     size: .fixed(30),
                     spacing: 1

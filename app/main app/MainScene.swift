@@ -8,8 +8,9 @@ import SwiftUI
 struct MainScene: View {
 
     public var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 15) {
             ExtensionStatus()
+            if #available(macOS 13.0, *) { launchAtLogin() }
             Bookmarks()
         }
         .padding(20)

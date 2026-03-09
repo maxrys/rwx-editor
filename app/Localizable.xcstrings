@@ -173,6 +173,16 @@
         }
       }
     },
+    "Launch at login" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск при входе в систему"
+          }
+        }
+      }
+    },
     "link" : {
       "localizations" : {
         "ru" : {
@@ -245,6 +255,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Путь"
+          }
+        }
+      }
+    },
+    "Permitted path" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разрешённый путь"
           }
         }
       }

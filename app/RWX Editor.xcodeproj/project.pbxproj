@@ -52,6 +52,7 @@
 		506421772F5EF1550020F6C8 /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421742F5EF1550020F6C8 /* ResultBuilder.swift */; };
 		506421792F5F15950020F6C8 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421782F5F15950020F6C8 /* Bookmarks.swift */; };
 		5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */; };
+		5064217E2F5F54C30020F6C8 /* launchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217D2F5F54C20020F6C8 /* launchAtLogin.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -157,6 +158,7 @@
 		506421742F5EF1550020F6C8 /* ResultBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilder.swift; sourceTree = "<group>"; };
 		506421782F5F15950020F6C8 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 		5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCustom.swift; sourceTree = "<group>"; };
+		5064217D2F5F54C20020F6C8 /* launchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchAtLogin.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				50B276D12F39CC3E005F7475 /* MainScene.swift */,
 				50309B352F5CBF97008CA064 /* ExtensionStatus.swift */,
 				506421782F5F15950020F6C8 /* Bookmarks.swift */,
+				5064217D2F5F54C20020F6C8 /* launchAtLogin.swift */,
 				50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */,
 				50B276EA2F3A40C9005F7475 /* app.entitlements */,
 				50B276C12F39CA05005F7475 /* Info.plist */,
@@ -624,6 +627,7 @@
 				5003F0D22F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */,
 				506421772F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
+				5064217E2F5F54C30020F6C8 /* launchAtLogin.swift in Sources */,
 				50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */,
 				50980A462F59ACC100EF7470 /* Process.swift in Sources */,
 				50309B322F5CA4B9008CA064 /* NSApplicationMultiLaunch.swift in Sources */,
