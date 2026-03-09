@@ -41,6 +41,16 @@
 		50309B342F5CBC3A008CA064 /* NSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B332F5CBC37008CA064 /* NSMenu.swift */; };
 		50309B362F5CBF97008CA064 /* ExtensionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B352F5CBF97008CA064 /* ExtensionStatus.swift */; };
 		50309B382F5CC32A008CA064 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
+		506421692F5EF04A0020F6C8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506421672F5EF04A0020F6C8 /* Media.xcassets */; };
+		5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421662F5EF04A0020F6C8 /* TableCustomColors.swift */; };
+		5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421642F5EF04A0020F6C8 /* TableCustom.swift */; };
+		5064216C2F5EF04A0020F6C8 /* TableCustom_HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421652F5EF04A0020F6C8 /* TableCustom_HeadCell.swift */; };
+		5064216F2F5EF07F0020F6C8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064216E2F5EF07F0020F6C8 /* Array.swift */; };
+		506421712F5EF0990020F6C8 /* NSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421702F5EF0990020F6C8 /* NSEvent.swift */; };
+		506421732F5EF0AA0020F6C8 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421722F5EF0AA0020F6C8 /* Set.swift */; };
+		506421752F5EF1550020F6C8 /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421742F5EF1550020F6C8 /* ResultBuilder.swift */; };
+		506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421742F5EF1550020F6C8 /* ResultBuilder.swift */; };
+		506421772F5EF1550020F6C8 /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421742F5EF1550020F6C8 /* ResultBuilder.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -138,6 +148,14 @@
 		50309B352F5CBF97008CA064 /* ExtensionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionStatus.swift; sourceTree = "<group>"; };
 		50309B372F5CC32A008CA064 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		504A8C452F41CDCA00F3AD49 /* Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.xctestplan; sourceTree = "<group>"; };
+		506421642F5EF04A0020F6C8 /* TableCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCustom.swift; sourceTree = "<group>"; };
+		506421652F5EF04A0020F6C8 /* TableCustom_HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCustom_HeadCell.swift; sourceTree = "<group>"; };
+		506421662F5EF04A0020F6C8 /* TableCustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCustomColors.swift; sourceTree = "<group>"; };
+		506421672F5EF04A0020F6C8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		5064216E2F5EF07F0020F6C8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		506421702F5EF0990020F6C8 /* NSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEvent.swift; sourceTree = "<group>"; };
+		506421722F5EF0AA0020F6C8 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		506421742F5EF1550020F6C8 /* ResultBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilder.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +248,25 @@
 			path = ButtonCustom;
 			sourceTree = "<group>";
 		};
+		506421682F5EF04A0020F6C8 /* TableCustom */ = {
+			isa = PBXGroup;
+			children = (
+				506421642F5EF04A0020F6C8 /* TableCustom.swift */,
+				506421652F5EF04A0020F6C8 /* TableCustom_HeadCell.swift */,
+				506421662F5EF04A0020F6C8 /* TableCustomColors.swift */,
+				506421672F5EF04A0020F6C8 /* Media.xcassets */,
+			);
+			path = TableCustom;
+			sourceTree = "<group>";
+		};
+		5064216D2F5EF0560020F6C8 /* ToggleRwxNumeric */ = {
+			isa = PBXGroup;
+			children = (
+				50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */,
+			);
+			path = ToggleRwxNumeric;
+			sourceTree = "<group>";
+		};
 		50B2768E2F389876005F7475 = {
 			isa = PBXGroup;
 			children = (
@@ -259,10 +296,11 @@
 		50B276AB2F3899C9005F7475 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				50B277202F3DCEE6005F7475 /* types.swift */,
 				50B276C22F39CB73005F7475 /* const.swift */,
+				50B277202F3DCEE6005F7475 /* types.swift */,
 				50B277122F3BD0F2005F7475 /* enums.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
+				506421742F5EF1550020F6C8 /* ResultBuilder.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -270,6 +308,7 @@
 		50B276AC2F3899D1005F7475 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5064216E2F5EF07F0020F6C8 /* Array.swift */,
 				50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */,
 				50B277002F3B2357005F7475 /* CaseIterable.swift */,
 				50309B372F5CC32A008CA064 /* Color.swift */,
@@ -281,11 +320,13 @@
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50309B312F5CA4B8008CA064 /* NSApplicationMultiLaunch.swift */,
+				506421702F5EF0990020F6C8 /* NSEvent.swift */,
 				50309B332F5CBC37008CA064 /* NSMenu.swift */,
 				50B276CB2F39CBF7005F7475 /* NSWindow.swift */,
 				50DCD7C42F425A8D00E067C3 /* Numeric.swift */,
 				50B276E12F39DC3F005F7475 /* PermissionsValue.swift */,
 				50980A452F59ACBF00EF7470 /* Process.swift */,
+				506421722F5EF0AA0020F6C8 /* Set.swift */,
 				50CE9FD92F471B54001006CF /* Shape.swift */,
 				50B276CE2F39CC00005F7475 /* String.swift */,
 				50DCD7C82F425A9B00E067C3 /* Timer.swift */,
@@ -353,8 +394,9 @@
 				50DCD7F72F434C2E00E067C3 /* MessageBox */,
 				50CE9FB72F47147D001006CF /* PanelRwxText */,
 				50CE9FBA2F4714A3001006CF /* PickerCustom */,
+				506421682F5EF04A0020F6C8 /* TableCustom */,
 				50CE9FBD2F4714C9001006CF /* ToggleRwxColored */,
-				50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */,
+				5064216D2F5EF0560020F6C8 /* ToggleRwxNumeric */,
 			);
 			path = controls;
 			sourceTree = "<group>";
@@ -518,6 +560,7 @@
 				50B277082F3B3BBB005F7475 /* Assets.xcassets in Resources */,
 				50CEA0AB2F4C5881001006CF /* InfoPlist.xcstrings in Resources */,
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
+				506421692F5EF04A0020F6C8 /* Media.xcassets in Resources */,
 				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
 				501FA4D42F4F0C05004663D2 /* Assets.xcassets in Resources */,
@@ -572,6 +615,7 @@
 				50CE9FDB2F471B54001006CF /* Shape.swift in Sources */,
 				50309B382F5CC32A008CA064 /* Color.swift in Sources */,
 				5003F0D22F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */,
+				506421772F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				50B276D42F39CC5E005F7475 /* Popup.swift in Sources */,
 				50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */,
 				50980A462F59ACC100EF7470 /* Process.swift in Sources */,
@@ -587,6 +631,8 @@
 				50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */,
 				50309B342F5CBC3A008CA064 /* NSMenu.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
+				5064216F2F5EF07F0020F6C8 /* Array.swift in Sources */,
+				506421732F5EF0AA0020F6C8 /* Set.swift in Sources */,
 				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
 				501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */,
 				5003F0CA2F58D5170030B75A /* PopupState.swift in Sources */,
@@ -598,9 +644,13 @@
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */,
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
+				506421712F5EF0990020F6C8 /* NSEvent.swift in Sources */,
 				50309B0A2F5A1307008CA064 /* PopupScene.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
 				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
+				5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */,
+				5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */,
+				5064216C2F5EF04A0020F6C8 /* TableCustom_HeadCell.swift in Sources */,
 				50B276E32F39DC3F005F7475 /* PermissionsValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				501FA4D72F4F0E82004663D2 /* types.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				501FA4DA2F4F0EEB004663D2 /* String.swift in Sources */,
@@ -629,6 +680,7 @@
 				501FA4DD2F4F0FEC004663D2 /* enums.swift in Sources */,
 				5003F0D32F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */,
 				50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */,
+				506421752F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				501FA4D92F4F0EDB004663D2 /* Logger.swift in Sources */,
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,

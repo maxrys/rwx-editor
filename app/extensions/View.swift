@@ -75,6 +75,16 @@ extension View {
         } else { self }
     }
 
+    @ViewBuilder func onKeyPressForSelectAll(action: @escaping () -> Void) -> some View {
+        if #available(macOS 14.0, *) {
+            self.onKeyPress(phases: .down) { press in
+                if (press.modifiers == [.command] &&
+                    press.characters.contains("a")) { action() }
+                return .handled
+            }
+        } else { self }
+    }
+
     @ViewBuilder func onAppBecomeBackground(_ action: @escaping () -> Void) -> some View {
         self.onReceive(
             NotificationCenter.default.publisher(for: NSApplication.didResignActiveNotification),
