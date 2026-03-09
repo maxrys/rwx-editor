@@ -51,6 +51,7 @@
 		506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421742F5EF1550020F6C8 /* ResultBuilder.swift */; };
 		506421772F5EF1550020F6C8 /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421742F5EF1550020F6C8 /* ResultBuilder.swift */; };
 		506421792F5F15950020F6C8 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421782F5F15950020F6C8 /* Bookmarks.swift */; };
+		5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -155,6 +156,7 @@
 		506421722F5EF0AA0020F6C8 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		506421742F5EF1550020F6C8 /* ResultBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilder.swift; sourceTree = "<group>"; };
 		506421782F5F15950020F6C8 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
+		5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCustom.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +265,14 @@
 				50B2771B2F3C89DC005F7475 /* ToggleRwxNumeric.swift */,
 			);
 			path = ToggleRwxNumeric;
+			sourceTree = "<group>";
+		};
+		5064217C2F5F4A050020F6C8 /* ToggleCustom */ = {
+			isa = PBXGroup;
+			children = (
+				5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */,
+			);
+			path = ToggleCustom;
 			sourceTree = "<group>";
 		};
 		50B2768E2F389876005F7475 = {
@@ -392,6 +402,7 @@
 				50CE9FB72F47147D001006CF /* PanelRwxText */,
 				50CE9FBA2F4714A3001006CF /* PickerCustom */,
 				506421682F5EF04A0020F6C8 /* TableCustom */,
+				5064217C2F5F4A050020F6C8 /* ToggleCustom */,
 				50CE9FBD2F4714C9001006CF /* ToggleRwxColored */,
 				5064216D2F5EF0560020F6C8 /* ToggleRwxNumeric */,
 			);
@@ -619,6 +630,7 @@
 				50B277142F3BD0F2005F7475 /* enums.swift in Sources */,
 				50309B172F5B22F8008CA064 /* URL.swift in Sources */,
 				506421792F5F15950020F6C8 /* Bookmarks.swift in Sources */,
+				5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
