@@ -23,14 +23,14 @@ struct Bookmarks: View {
                         size: .flexible(),
                         spacing: 1,
                         alignment: .leading
-                    ) { Text(NSLocalizedString("Permitted path", comment: "")).font(.system(size: 11)) }
+                    ) { Text(NSLocalizedString("Allowed directories", comment: "")).font(.system(size: 11)) }
                 },
                 bodyAsArray: [
-                    AnyView(Text("/path/to/file/or/dirrectory")),
-                    AnyView(Text("/path/to/file/or/dirrectory")),
-                    AnyView(Text("/path/to/file/or/dirrectory")),
-                    AnyView(Text("/path/to/file/or/dirrectory")),
-                    AnyView(Text("/path/to/file/or/dirrectory")),
+                    AnyView(Text("/path/to/dirrectory")),
+                    AnyView(Text("/path/to/dirrectory")),
+                    AnyView(Text("/path/to/dirrectory")),
+                    AnyView(Text("/path/to/dirrectory")),
+                    AnyView(Text("/path/to/dirrectory")),
                 ]
             )
 
@@ -41,16 +41,16 @@ struct Bookmarks: View {
                     isDisabled: self.selectedItems.isEmpty,
                     colorStyle: .custom(text: nil, background: nil),
                     isFlat: false,
-                    flexibility: .size(150)
+                    flexibility: .size(100)
                 ) { }
 
                 Spacer()
 
                 ButtonCustom(
-                    NSLocalizedString("add new...", comment: ""),
+                    NSLocalizedString("add new directory...", comment: ""),
                     colorStyle: .custom(text: nil, background: nil),
                     isFlat: false,
-                    flexibility: .size(150)
+                    flexibility: .size(200)
                 ) { }
 
             }

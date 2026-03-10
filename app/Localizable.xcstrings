@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "/path/to/file/or/dirrectory" : {
+    "/path/to/dirrectory" : {
       "shouldTranslate" : false
     },
     "%@ 'at' %@" : {
@@ -50,12 +50,12 @@
         }
       }
     },
-    "add new..." : {
+    "add new directory..." : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "добавить новый…"
+            "value" : "добавить новый каталог..."
           }
         }
       }
@@ -66,6 +66,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "псевдоним"
+          }
+        }
+      }
+    },
+    "Allowed directories" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разрешённые каталоги"
           }
         }
       }
@@ -275,16 +285,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Путь"
-          }
-        }
-      }
-    },
-    "Permitted path" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешённый путь"
           }
         }
       }

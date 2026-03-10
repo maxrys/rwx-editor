@@ -7,6 +7,9 @@ import SwiftUI
 
 struct MainScene: View {
 
+    static let FRAME_WIDTH : CGFloat = 600
+    static let FRAME_HEIGHT: CGFloat = 400
+
     public var body: some View {
         VStack(spacing: 15) {
             ExtensionStatus()
@@ -14,7 +17,7 @@ struct MainScene: View {
             Bookmarks()
         }
         .padding(20)
-        .frame(width: 600, height: 400)
+        .frame(width: Self.FRAME_WIDTH, height: Self.FRAME_HEIGHT)
         .environment(\.layoutDirection, .leftToRight)
     }
 
