@@ -61,6 +61,6 @@ struct ExtStatus: View {
         ExtStatus(                 isDemo: true)
         ExtStatus(isEnabled: true, isDemo: true)
     }
-    .frame(width: 500)
+    .frame(width: 300)
     .padding(20)
 }

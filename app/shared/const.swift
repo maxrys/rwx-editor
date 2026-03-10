@@ -11,16 +11,3 @@ let GROUP_NAME = "group.rwx-editor"
 let WINDOW_MAIN_ID = "main"
 let WINDOW_MAIN_TITLE  = NSLocalizedString("RWX Editor | Settings", comment: "")
 let WINDOW_POPUP_TITLE = NSLocalizedString("RWX Editor", comment: "")
-
-let FINDER_EXT_DIRECTORY_URLS: Set<URL> = [
-    URL(fileURLWithPath: "/")
-]
-
-let FINDER_EXT_MENU_TITLE = "RWX Editor Menu"
-let FINDER_EXT_MENU_ITEMS = [
-    (
-        eventName: "RWXEditorFinderContextMenu",
-        titleLocalized: NSLocalizedString("RWX Editor", comment: ""),
-        iconName: "circle.grid.3x3"
-    )
-]

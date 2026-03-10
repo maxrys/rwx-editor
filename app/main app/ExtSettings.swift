@@ -18,7 +18,7 @@ struct ExtSettings: View {
             if #available(macOS 13.0, *) {
                 HStack(spacing: 0) {
                     ExtLaunchAtLogin()
-                        .padding(15)
+                        .padding(12)
                 }
                 .frame(maxWidth: .infinity)
                 .background(
@@ -55,5 +55,5 @@ struct ExtSettings: View {
 #Preview {
     ExtSettings()
         .padding(20)
-        .frame(width: 400)
+        .frame(width: 350)
 }

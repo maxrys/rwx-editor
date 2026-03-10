@@ -7,6 +7,16 @@ import os
 import Cocoa
 import FinderSync
 
+let FINDER_EXT_DIRECTORY_URLS: Set<URL> = [URL(fileURLWithPath: "/")]
+let FINDER_EXT_MENU_TITLE = "RWX Editor Menu"
+let FINDER_EXT_MENU_ITEMS = [
+    (
+        eventName: "RWXEditorFinderContextMenu",
+        titleLocalized: NSLocalizedString("RWX Editor", comment: ""),
+        iconName: "circle.grid.3x3"
+    )
+]
+
 class FinderSync: FIFinderSync {
 
     var selectedURLs: [URL] {

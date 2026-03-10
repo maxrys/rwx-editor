@@ -53,7 +53,7 @@ struct Bookmarks: View {
 
                 ButtonCustom(
                     NSLocalizedString("add new directory...", comment: ""),
-                    colorStyle: .custom(text: nil, background: nil),
+                    colorStyle: .accent,
                     isFlat: false,
                     flexibility: .size(200)
                 ) { }
