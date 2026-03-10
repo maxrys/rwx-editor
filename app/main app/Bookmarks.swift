@@ -10,7 +10,7 @@ struct Bookmarks: View {
     @State private var selectedItems: Set<Int> = []
 
     init() {
-        dump(BookmarksModel.selectAll())
+        BookmarksModel.dump()
     }
 
     public var body: some View {

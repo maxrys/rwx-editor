@@ -49,19 +49,25 @@ public class BookmarksModel: NSManagedObject {
 
         Self.container = NSPersistentContainer(name: "Model")
         Self.container.persistentStoreDescriptions = [description]
+        Self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         Self.container.viewContext.automaticallyMergesChangesFromParent = true
         Self.container.loadPersistentStores(completionHandler: { (description, error) in
             if let error = error as NSError? {
                 let alert = NSAlert()
                 alert.messageText = "The application will be force closed."
-                alert.informativeText = "Error: \(error)\nThe database schema is outdated.\n\nTo solve the problem please delete the directory manually:\n" + Self.storageDirectoryURL.path
+                alert.informativeText =
+                    "Error: \(error.localizedDescription)\n\n" +
+                    "You can:\n\n" +
+                    "Revert to the previous version of the app\n\n" +
+                    "or Try to transfer the data manually\n\n" +
+                    "or Delete the conflicting storage at\n\(Self.storageURL.path)\n" +
+                    "!!! All app data will be lost !!!"
                 alert.alertStyle = .critical
                 alert.addButton(withTitle: "ОК")
                 alert.runModal()
                 NSApp.terminate(nil)
             } else {
-                let storagePath = Self.storageURL.absoluteString.removingPercentEncoding!
-                Logger.customLog("Model path = \"\(storagePath)\"")
+                Logger.customLog("Storage path = \"\(Self.storageURL.path)\"")
             }
         })
     }
@@ -69,12 +75,38 @@ public class BookmarksModel: NSManagedObject {
     static func selectAll() -> [BookmarksModel] {
         do {
             let fetchRequest = Self.fetchRequest()
-            fetchRequest.sortDescriptors = []
+            let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
+            fetchRequest.sortDescriptors = [orderByPath]
             return try Self.context.fetch(fetchRequest)
         } catch {
             Logger.customLog("Model Self.selectAll() error: \(error).")
         }
         return []
+    }
+
+    static func dump() {
+        #if DEBUG
+        var renderedRows: [String] = []
+        Self.selectAll().forEach { object in
+            let path = object.path.padding(toLength: 60, withPad: " ", startingAt: 0)
+            renderedRows.append(">> - \(path)")
+        }
+        if (renderedRows.isEmpty) {
+            renderedRows.append(
+                ">>" + String(repeating: " ", count: 30) + "... no data ..."
+            )
+        }
+        Logger.customLog("""
+        
+        Storage Dump for \"BookmarksModel\":
+        >> ---------------------------------------------------------------------------
+        >> path
+        >> ===========================================================================
+        \(renderedRows.joined(separator: "\n"))
+        >> ---------------------------------------------------------------------------
+        
+        """)
+        #endif
     }
 
 }
