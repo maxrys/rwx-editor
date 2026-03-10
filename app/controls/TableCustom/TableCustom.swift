@@ -22,6 +22,9 @@ struct TableCustom: View {
     private let isFocusable: Bool
     private let isScrollable: Bool
     private let selectionType: SelectionType
+    private let headCellPadding: EdgeInsets
+    private let bodyCellPadding: EdgeInsets
+
     private let headCells: [TableCustom_HeadCell]
     private let bodyCells: [any View]
 
@@ -31,6 +34,8 @@ struct TableCustom: View {
         isFocusable: Bool = true,
         isScrollable: Bool = true,
         selectionType: SelectionType = .multiple,
+        headCellPadding: EdgeInsets = .init(top: 7, leading: 10, bottom: 7, trailing: 10),
+        bodyCellPadding: EdgeInsets = .init(top: 4, leading: 8, bottom: 4, trailing: 8),
         @ViewBuilderArray<TableCustom_HeadCell> head headCells: () -> [TableCustom_HeadCell],
         bodyAsArray bodyCells: [any View]
     ) {
@@ -39,6 +44,8 @@ struct TableCustom: View {
         self.isFocusable = isFocusable
         self.isScrollable = isScrollable
         self.selectionType = selectionType
+        self.headCellPadding = headCellPadding
+        self.bodyCellPadding = bodyCellPadding
         self.headCells = headCells()
         self.bodyCells = bodyCells
     }
@@ -49,6 +56,8 @@ struct TableCustom: View {
         isFocusable: Bool = true,
         isScrollable: Bool = true,
         selectionType: SelectionType = .multiple,
+        headCellPadding: EdgeInsets = .init(top: 7, leading: 10, bottom: 7, trailing: 10),
+        bodyCellPadding: EdgeInsets = .init(top: 4, leading: 8, bottom: 4, trailing: 8),
         @ViewBuilderArray<TableCustom_HeadCell> head headCells: () -> [TableCustom_HeadCell],
         @ViewBuilderArray<View> bodyAsViews bodyCells: () -> [any View]
     ) {
@@ -57,6 +66,8 @@ struct TableCustom: View {
         self.isFocusable = isFocusable
         self.isScrollable = isScrollable
         self.selectionType = selectionType
+        self.headCellPadding = headCellPadding
+        self.bodyCellPadding = bodyCellPadding
         self.headCells = headCells()
         self.bodyCells = bodyCells()
     }
@@ -79,8 +90,7 @@ struct TableCustom: View {
                     ForEach(self.headCells.indices, id: \.self) { index in
                         if let cell = self.headCells[safe: index] {
                             cell.id(index)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 7)
+                                .padding(self.headCellPadding)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity,
                                     alignment: cell.alignment ?? .center
                                 )
@@ -102,8 +112,7 @@ struct TableCustom: View {
                         let isSelected = self.selectedRows.contains(rowIndex)
                         let isEven = rowIndex % 2 == 0
                         AnyView(cell).id(index)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
+                            .padding(self.bodyCellPadding)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: self.headCells[safe: colIndex]?.alignment ?? .center)
                             .foregroundPolyfill(Color.tableCustom.rowTextColor(isSelected, self.appIsFocused))
                             .background(Color.tableCustom.rowBackgroundColor(isSelected, isEven, self.appIsFocused))
@@ -188,11 +197,11 @@ struct TableCustom_Previews1: PreviewProvider {
                 ) { EmptyView() }
             },
             bodyAsArray: [
-                AnyView(Text("Value 1")), AnyView(Image(systemName: "1.square")),
-                AnyView(Text("Value 2")), AnyView(Image(systemName: "2.square")),
-                AnyView(Text("Value 3")), AnyView(Image(systemName: "3.square")),
-                AnyView(Text("Value 4")), AnyView(Image(systemName: "4.square")),
-                AnyView(Text("Value 5")), AnyView(Image(systemName: "5.square")),
+                AnyView(Text("Value 1")), AnyView(Image(systemName: "1.circle")),
+                AnyView(Text("Value 2")), AnyView(Image(systemName: "2.circle")),
+                AnyView(Text("Value 3")), AnyView(Image(systemName: "3.circle")),
+                AnyView(Text("Value 4")), AnyView(Image(systemName: "4.circle")),
+                AnyView(Text("Value 5")), AnyView(Image(systemName: "5.circle")),
             ]
         )
         .padding(20)

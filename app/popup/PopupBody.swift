@@ -89,7 +89,6 @@ struct PopupBody: View {
             self.ShadowBottomView()
 
         }
-        .frame(maxWidth: .infinity)
         .onAppear {
             self.ownersReload()
             self.groupsReload()
@@ -153,11 +152,9 @@ struct PopupBody: View {
 /* ############################################################# */
 
 #Preview {
-    VStack(spacing: 10) {
-        PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/")!))      /* directory */
-        PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!)) /* file */
-    }
-    .padding(10)
-    .background(Color.black)
-    .frame(width: 310)
+    VStack(spacing: 0) {
+        let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
+        PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/"     )!)); Delimiter /* directory */
+        PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))            /* file */
+    }.frame(width: 300)
 }

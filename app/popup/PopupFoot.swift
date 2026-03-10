@@ -17,25 +17,21 @@ struct PopupFoot: View {
     }
 
     public var body: some View {
-        HStack(spacing: 10) {
-
-            /* MARK: cancel button */
+        HStack(spacing: 15) {
 
             ButtonCustom(
                 NSLocalizedString("cancel", comment: ""),
                 isDisabled: !self.popupState.isChanged,
                 colorStyle: .custom(text: nil, background: nil),
                 isFlat: false,
-                flexibility: .size(100)
+                flexibility: .infinity
             ) { self.popupState.resetToDefault() }
-
-            /* MARK: apply button */
 
             ButtonCustom(
                 NSLocalizedString("apply", comment: ""),
                 isDisabled: !self.popupState.isChanged,
                 isFlat: false,
-                flexibility: .size(100)
+                flexibility: .infinity
             ) { Features.onApply(self.messageBox, self.popupState) }
 
         }

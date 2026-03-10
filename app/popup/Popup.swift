@@ -60,11 +60,10 @@ struct Popup: View {
 /* ############################################################# */
 
 #Preview {
-    VStack(spacing: 10) {
-        Popup(fullpath: "")                   /* empty */
-        Popup(fullpath: "/private/etc/")      /* directory */
-        Popup(fullpath: "/private/etc/hosts") /* file */
-    }
-    .padding(10)
-    .background(Color.black)
+    VStack(spacing: 0) {
+        let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
+        Popup(fullpath: "")             ; Delimiter /* empty */
+        Popup(fullpath: "/private/etc/"); Delimiter /* directory */
+        Popup(fullpath: "/private/etc/hosts")       /* file */
+    }.frame(width: 300)
 }

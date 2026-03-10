@@ -72,6 +72,7 @@ struct PopupHead: View {
             isVisibleHeader: false,
             isFocusable: false,
             isScrollable: false,
+            bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
             head: {
                 TableCustom_HeadCell(
                     size: .fixed(100),
@@ -169,11 +170,9 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
 /* ############################################################# */
 
 #Preview {
-    VStack(spacing: 10) {
-        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/")!))      /* directory */
-        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!)) /* file */
-    }
-    .padding(10)
-    .background(Color.black)
-    .frame(width: 300)
+    VStack(spacing: 0) {
+        let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
+        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/"     )!)); Delimiter /* directory */
+        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))            /* file */
+    }.frame(width: 300)
 }
