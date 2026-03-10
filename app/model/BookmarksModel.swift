@@ -27,7 +27,7 @@ public class BookmarksModel: NSManagedObject {
 
     static var context: NSManagedObjectContext {
         if (Self.container == nil) { Self.containerInit() }
-        return Self.container!.viewContext
+        return Self.container.viewContext
     }
 
     static func fetchRequest() -> NSFetchRequest<BookmarksModel> {
