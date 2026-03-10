@@ -23,35 +23,19 @@ public class BookmarksModel: NSManagedObject {
         storageDirectoryURL.appendingPathComponent(STORAGE_NAME)
     }()
 
-    static var container: NSPersistentContainer!
-
-    static var context: NSManagedObjectContext {
-        if (Self.container == nil) { Self.containerInit() }
-        return Self.container.viewContext
-    }
-
-    static func fetchRequest() -> NSFetchRequest<BookmarksModel> {
-        return NSFetchRequest<BookmarksModel>(entityName: "Bookmarks")
-    }
-
-    convenience init() {
-        self.init(context: Self.context)
-    }
-
-    static func containerInit() {
+    static let container: NSPersistentContainer = {
         let description = NSPersistentStoreDescription()
-        description.url = Self.storageURL
+        description.url = storageURL
         description.configuration = "Default"
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         description.shouldInferMappingModelAutomatically = true
         description.shouldMigrateStoreAutomatically = true
 
-        Self.container = NSPersistentContainer(name: "Model")
-        Self.container.persistentStoreDescriptions = [description]
-        Self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        Self.container.viewContext.automaticallyMergesChangesFromParent = true
-        Self.container.loadPersistentStores(completionHandler: { (description, error) in
+        var result = NSPersistentContainer(name: "Model")
+        result.persistentStoreDescriptions = [description]
+        result.viewContext.automaticallyMergesChangesFromParent = true
+        result.loadPersistentStores(completionHandler: { (description, error) in
             if let error = error as NSError? {
                 let alert = NSAlert()
                 alert.messageText = "The application will be force closed."
@@ -60,16 +44,29 @@ public class BookmarksModel: NSManagedObject {
                     "You can:\n\n" +
                     "Revert to the previous version of the app\n\n" +
                     "or Try to transfer the data manually\n\n" +
-                    "or Delete the conflicting storage at\n\(Self.storageURL.path)\n" +
+                    "or Delete the conflicting storage at\n\(storageURL.path)\n" +
                     "!!! All app data will be lost !!!"
                 alert.alertStyle = .critical
                 alert.addButton(withTitle: "ОК")
                 alert.runModal()
                 NSApp.terminate(nil)
             } else {
-                Logger.customLog("Storage path = \"\(Self.storageURL.path)\"")
+                Logger.customLog("Storage path = \"\(storageURL.path)\"")
             }
         })
+        return result
+    }()
+
+    static var context: NSManagedObjectContext {
+        Self.container.viewContext
+    }
+
+    static func fetchRequest() -> NSFetchRequest<BookmarksModel> {
+        return NSFetchRequest<BookmarksModel>(entityName: "Bookmarks")
+    }
+
+    convenience init() {
+        self.init(context: Self.context)
     }
 
     static func selectAll() -> [BookmarksModel] {
