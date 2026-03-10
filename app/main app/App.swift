@@ -6,7 +6,16 @@
 import os
 import SwiftUI
 
-final class ThisAppDelegate: NSApplicationMultiLaunch, NSWindowDelegate {
+@main final class App: NSApplicationMultiLaunch, NSWindowDelegate {
+
+    private static var appDelegate: App!
+
+    static func main() {
+        let app = NSApplication.shared
+        Self.appDelegate = App()
+        app.delegate = Self.appDelegate
+        app.run()
+    }
 
     static var appVersion      : String? { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String }
     static var appBundleVersion: String? { Bundle.main.infoDictionary?["CFBundleVersion"           ] as? String }
