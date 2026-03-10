@@ -6,9 +6,8 @@
 import SwiftUI
 import FinderSync
 
-struct ExtensionStatus: View {
+struct ExtStatus: View {
 
-    @Environment(\.colorScheme) private var colorScheme
     @State private var isEnabled: Bool = false
 
     public var body: some View {
@@ -29,7 +28,7 @@ struct ExtensionStatus: View {
                 self.isEnabled ?
                     NSLocalizedString("extension is enabled" , comment: "") :
                     NSLocalizedString("extension is disabled", comment: "")
-            ).font(.system(size: 16, weight: .bold))
+            ).font(.system(size: 14, weight: .bold)).opacity(0.8)
 
             Spacer()
 
@@ -41,33 +40,14 @@ struct ExtensionStatus: View {
             ) { FinderSync.FIFinderSyncController.showExtensionManagementInterface() }
 
         }
-        .padding(15)
-        .frame(maxWidth: .infinity)
-        .background(self.GroupBackground())
-        .clipShape(RoundedRectangle(cornerRadius: 15))
         .onAppear              { self.isEnabled = FIFinderSyncController.isExtensionEnabled }
         .onAppBecomeForeground { self.isEnabled = FIFinderSyncController.isExtensionEnabled }
-    }
-
-    @ViewBuilder func GroupBackground() -> some View {
-        RoundedRectangle(cornerRadius: 15)
-            .stroke(
-                self.colorScheme == .dark ?
-                    Color.white.opacity(0.5) :
-                    Color.black.opacity(0.5),
-                lineWidth: 1
-            )
-            .background(
-                self.colorScheme == .dark ?
-                    Color.black.opacity(0.2) :
-                    Color.white.opacity(0.7)
-            )
     }
 
 }
 
 #Preview {
-    ExtensionStatus()
-        .frame(width: 600)
+    ExtStatus()
+        .frame(width: 500)
         .padding(20)
 }

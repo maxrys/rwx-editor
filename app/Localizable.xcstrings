@@ -223,6 +223,16 @@
         }
       }
     },
+    "Location paths" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пути расположения"
+          }
+        }
+      }
+    },
     "Multiple values:" : {
       "shouldTranslate" : false
     },

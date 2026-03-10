@@ -6,7 +6,7 @@
 import SwiftUI
 import ServiceManagement
 
-struct launchAtLogin: View {
+struct ExtLaunchAtLogin: View {
 
     static var launchAtLogin: Bool {
         get {
@@ -48,7 +48,7 @@ struct launchAtLogin: View {
 /* ############################################################# */
 
 #Preview {
-    launchAtLogin()
-        .frame(maxWidth: 200)
+    ExtLaunchAtLogin()
+        .frame(maxWidth: 300)
         .padding(20)
 }

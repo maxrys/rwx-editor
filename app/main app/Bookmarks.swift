@@ -14,7 +14,11 @@ struct Bookmarks: View {
     }
 
     public var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 15) {
+
+            Text(NSLocalizedString("Allowed directories", comment: ""))
+                .font(.system(size: 16, weight: .bold))
+                .opacity(0.8)
 
             TableCustom(
                 selected: self.$selectedItems,
@@ -23,7 +27,7 @@ struct Bookmarks: View {
                         size: .flexible(),
                         spacing: 1,
                         alignment: .leading
-                    ) { Text(NSLocalizedString("Allowed directories", comment: "")).font(.system(size: 11)) }
+                    ) { Text(NSLocalizedString("Location paths", comment: "")).font(.system(size: 11)) }
                 },
                 bodyAsArray: [
                     AnyView(Text("/path/to/dirrectory")),

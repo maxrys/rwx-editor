@@ -8,12 +8,11 @@ import SwiftUI
 struct MainScene: View {
 
     static let FRAME_WIDTH : CGFloat = 600
-    static let FRAME_HEIGHT: CGFloat = 400
+    static let FRAME_HEIGHT: CGFloat = 500
 
     public var body: some View {
-        VStack(spacing: 15) {
-            ExtensionStatus()
-            if #available(macOS 13.0, *) { launchAtLogin() }
+        VStack(spacing: 30) {
+            ExtSettings()
             Bookmarks()
         }
         .padding(20)
