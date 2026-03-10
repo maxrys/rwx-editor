@@ -8,46 +8,59 @@ import FinderSync
 
 struct ExtStatus: View {
 
-    @State private var isEnabled: Bool = false
+    @State private var isEnabled: Bool
+    private let isDemo: Bool
+
+    init(isEnabled: Bool = false, isDemo: Bool = false) {
+        self.isEnabled = isEnabled
+        self.isDemo = isDemo
+    }
 
     public var body: some View {
-        HStack(spacing: 20) {
-
-            Image(systemName: self.isEnabled ? "checkmark.circle.fill" : "xmark.circle.fill")
-                .resizable()
+        HStack(spacing: 10) {
+            Color.white
+                .opacity(0.2)
                 .frame(width: 30, height: 30)
-                .foregroundPolyfill(
-                    self.isEnabled ?
-                        Color.status.ok :
-                        Color.status.error
-                )
-                .background(Color.white)
                 .clipShape(Circle())
-
-            Text(
-                self.isEnabled ?
-                    NSLocalizedString("extension is enabled" , comment: "") :
-                    NSLocalizedString("extension is disabled", comment: "")
-            ).font(.system(size: 14, weight: .bold)).opacity(0.8)
-
-            Spacer()
-
-            ButtonCustom(
-                NSLocalizedString("Open System Preference", comment: ""),
-                colorStyle: .custom(text: nil, background: nil),
-                isFlat: false,
-                flexibility: .none
-            ) { FinderSync.FIFinderSyncController.showExtensionManagementInterface() }
-
+                .overlayPolyfill {
+                    Image(systemName: self.isEnabled ? "checkmark" : "xmark")
+                        .font(.system(size: 16))
+                }
+            Text(self.isEnabled ?
+                NSLocalizedString("extension is enabled" , comment: "") :
+                NSLocalizedString("extension is disabled", comment: "")
+            ).font(.system(size: 13))
         }
-        .onAppear              { self.isEnabled = FIFinderSyncController.isExtensionEnabled }
-        .onAppBecomeForeground { self.isEnabled = FIFinderSyncController.isExtensionEnabled }
+        .padding(7)
+        .padding(.trailing, 7)
+        .foregroundPolyfill(Color.white)
+        .background(
+            self.isEnabled ?
+                Color.status.ok :
+                Color.status.error
+        )
+        .clipShape(Capsule())
+        .pointerStyleLinkPolyfill()
+        .onTapGesture {
+            FinderSync.FIFinderSyncController.showExtensionManagementInterface()
+        }
+        .onAppear              { if (!self.isDemo) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
+        .onAppBecomeForeground { if (!self.isDemo) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
     }
 
 }
 
+
+
+/* ############################################################# */
+/* ########################## PREVIEW ########################## */
+/* ############################################################# */
+
 #Preview {
-    ExtStatus()
-        .frame(width: 500)
-        .padding(20)
+    VStack(spacing: 10) {
+        ExtStatus(                 isDemo: true)
+        ExtStatus(isEnabled: true, isDemo: true)
+    }
+    .frame(width: 500)
+    .padding(20)
 }

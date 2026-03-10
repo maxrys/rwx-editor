@@ -259,16 +259,6 @@
         }
       }
     },
-    "Open System Preference" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открытые системные настройки"
-          }
-        }
-      }
-    },
     "Other" : {
       "localizations" : {
         "ru" : {
