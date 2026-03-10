@@ -8,7 +8,7 @@ import SwiftUI
 
 @main final class App: NSApplicationMultiLaunch, NSWindowDelegate {
 
-    private static var appDelegate: App!
+    @MainActor private static var appDelegate: App!
 
     static func main() {
         let app = NSApplication.shared

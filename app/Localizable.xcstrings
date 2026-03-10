@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "/path/to/file/or/dirrectory" : {
-
+      "shouldTranslate" : false
     },
     "%@ 'at' %@" : {
       "localizations" : {

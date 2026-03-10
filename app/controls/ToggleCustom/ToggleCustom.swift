@@ -18,7 +18,7 @@ struct ToggleCustom: View {
         text: String? = nil,
         isOn: Binding<Bool>,
         isFlexible: Bool = false,
-        size: CGSize = CGSize(width: 50, height: 22),
+        size: CGSize = CGSize(width: 40, height: 16),
         innerPadding: CGFloat = 3
     ) {
         self.text = text
