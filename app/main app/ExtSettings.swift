@@ -34,11 +34,7 @@ struct ExtSettings: View {
 
     @ViewBuilder func GroupBackground() -> some View {
         RoundedRectangle(cornerRadius: 15)
-            .fill(
-                self.colorScheme == .dark ?
-                    Color.black :
-                    Color.white
-            )
+            .fill(Color.form.group)
             .shadow(
                 color: self.colorScheme == .dark ?
                     .black.opacity(1.0) :
@@ -59,4 +55,5 @@ struct ExtSettings: View {
 #Preview {
     ExtSettings()
         .padding(20)
+        .frame(width: 400)
 }

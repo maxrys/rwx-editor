@@ -25,6 +25,11 @@ extension Color {
         let error   = Color("color Status Error")
     }
 
+    struct FormColorSet {
+        let group = Color("color Group")
+    }
+
     static let status = StatusColorSet()
+    static let form = FormColorSet()
 
 }
