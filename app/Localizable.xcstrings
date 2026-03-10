@@ -50,6 +50,16 @@
         }
       }
     },
+    "add new..." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "добавить новый…"
+          }
+        }
+      }
+    },
     "alias" : {
       "localizations" : {
         "ru" : {
@@ -106,6 +116,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Создано"
+          }
+        }
+      }
+    },
+    "delete" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "удалить"
           }
         }
       }

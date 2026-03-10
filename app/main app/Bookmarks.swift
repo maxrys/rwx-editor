@@ -14,27 +14,48 @@ struct Bookmarks: View {
     }
 
     public var body: some View {
-        TableCustom(
-            selected: self.$selectedItems,
-            head: {
-                TableCustom_HeadCell(
-                    size: .flexible(),
-                    spacing: 1,
-                    alignment: .leading
-                ) { Text(NSLocalizedString("Permitted path", comment: "")).font(.system(size: 11)) }
-                TableCustom_HeadCell(
-                    size: .fixed(30),
-                    spacing: 1
-                ) { EmptyView() }
-            },
-            bodyAsArray: [
-                AnyView(Text("/path/to/file/or/dirrectory")), AnyView(Image(systemName: "xmark.circle")),
-                AnyView(Text("/path/to/file/or/dirrectory")), AnyView(Image(systemName: "xmark.circle")),
-                AnyView(Text("/path/to/file/or/dirrectory")), AnyView(Image(systemName: "xmark.circle")),
-                AnyView(Text("/path/to/file/or/dirrectory")), AnyView(Image(systemName: "xmark.circle")),
-                AnyView(Text("/path/to/file/or/dirrectory")), AnyView(Image(systemName: "xmark.circle")),
-            ]
-        )
+        VStack(spacing: 10) {
+
+            TableCustom(
+                selected: self.$selectedItems,
+                head: {
+                    TableCustom_HeadCell(
+                        size: .flexible(),
+                        spacing: 1,
+                        alignment: .leading
+                    ) { Text(NSLocalizedString("Permitted path", comment: "")).font(.system(size: 11)) }
+                },
+                bodyAsArray: [
+                    AnyView(Text("/path/to/file/or/dirrectory")),
+                    AnyView(Text("/path/to/file/or/dirrectory")),
+                    AnyView(Text("/path/to/file/or/dirrectory")),
+                    AnyView(Text("/path/to/file/or/dirrectory")),
+                    AnyView(Text("/path/to/file/or/dirrectory")),
+                ]
+            )
+
+            HStack(spacing: 10) {
+
+                ButtonCustom(
+                    NSLocalizedString("delete", comment: ""),
+                    isDisabled: self.selectedItems.isEmpty,
+                    colorStyle: .custom(text: nil, background: nil),
+                    isFlat: false,
+                    flexibility: .size(150)
+                ) { }
+
+                Spacer()
+
+                ButtonCustom(
+                    NSLocalizedString("add new...", comment: ""),
+                    colorStyle: .custom(text: nil, background: nil),
+                    isFlat: false,
+                    flexibility: .size(150)
+                ) { }
+
+            }
+
+        }
     }
 
 }
@@ -47,6 +68,6 @@ struct Bookmarks: View {
 
 #Preview {
     Bookmarks()
-        .frame(maxWidth: 300)
+        .frame(maxWidth: 400)
         .padding(20)
 }

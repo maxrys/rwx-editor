@@ -10,7 +10,7 @@ struct ButtonCustom: View {
     @Environment(\.colorScheme) private var colorScheme
 
     private let text: String
-    private let disabled: Bool
+    private let isDisabled: Bool
     private let colorStyle: Color.ButtonCustomStyle
     private let isFlat: Bool
     private let font: Font
@@ -20,7 +20,7 @@ struct ButtonCustom: View {
 
     init(
         _ text: String = "button",
-        disabled: Bool = false,
+        isDisabled: Bool = false,
         colorStyle: Color.ButtonCustomStyle = .accent,
         isFlat: Bool = true,
         font: Font = .system(size: 12.5, weight: .regular),
@@ -29,7 +29,7 @@ struct ButtonCustom: View {
         onClick: @escaping () -> Void = { }
     ) {
         self.text = text
-        self.disabled = disabled
+        self.isDisabled = isDisabled
         self.colorStyle = colorStyle
         self.isFlat = isFlat
         self.font = font
@@ -60,7 +60,7 @@ struct ButtonCustom: View {
                 )
         }
         .buttonStyle(.plain)
-        .disabled(self.disabled)
+        .disabled(self.isDisabled)
         .pointerStyleLinkPolyfill()
     }
 
