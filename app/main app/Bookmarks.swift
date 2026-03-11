@@ -71,30 +71,23 @@ struct Bookmarks: View {
 
     public func addBookmark() {
         let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
+        openPanel.allowsMultipleSelection = true
         openPanel.canChooseFiles = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = false
-        openPanel.prompt = NSLocalizedString("select a directory to grant access", comment: "")
+        openPanel.prompt = NSLocalizedString(
+            "select a directory to grant access", comment: ""
+        )
 
         guard openPanel.runModal() == .OK else {
             return
         }
-        guard let url = openPanel.url else {
-            return
-        }
 
-        let bookmarkData = try? url.bookmarkData(
-            options: .withSecurityScope,
-            includingResourceValuesForKeys: nil,
-            relativeTo: nil
-        )
-
-        if let bookmarkData {
-            let bookmark = Bookmark(from: bookmarkData)
-            _ = bookmark.startAccessing()
-            if let url = bookmark.info.url {
-                self.state.insert(url.path, bookmarkData)
+        for url in openPanel.urls {
+            if let bookmark = Bookmark(from: url) {
+                if bookmark.startAccessing() {
+                    self.state.insert(url.path, bookmark.data)
+                }
             }
         }
     }

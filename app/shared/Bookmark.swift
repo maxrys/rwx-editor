@@ -27,6 +27,17 @@ final class Bookmark {
         self.data = data
     }
 
+    init?(from url: URL) {
+        let url = try? url.bookmarkData(
+            options: .withSecurityScope,
+            includingResourceValuesForKeys: nil,
+            relativeTo: nil
+        )
+        if let url
+             { self.data = url }
+        else { return nil }
+    }
+
     func startAccessing() -> Bool {
         let (url, isExpired) = self.info
         if let url, (!isExpired)
