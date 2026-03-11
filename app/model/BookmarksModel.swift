@@ -76,9 +76,40 @@ public class BookmarksModel: NSManagedObject {
             fetchRequest.sortDescriptors = [orderByPath]
             return try Self.context.fetch(fetchRequest)
         } catch {
-            Logger.customLog("Model Self.selectAll() error: \(error).")
+            Logger.customLog("Model BookmarksModel.selectAll() error: \(error).")
         }
         return []
+    }
+
+    static func insert(path: String, data: Data) -> Bool {
+        do {
+            let newObject = BookmarksModel()
+                newObject.path = path
+                newObject.data = data
+                newObject.createdAt = Int64(Date().timeIntervalSince1970)
+            try Self.context.save()
+            return true
+        } catch {
+            Logger.customLog("Model BookmarksModel.insert() error: \(error).")
+        }
+        return false
+    }
+
+    static func delete(_ paths: [String]) -> Bool {
+        do {
+            let fetchRequest = Self.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "(path IN %@)", paths)
+            fetchRequest.includesPropertyValues = false
+            let items = try Self.context.fetch(fetchRequest)
+            items.forEach { item in
+                let _ = Self.context.delete(item)
+            }
+            try Self.context.save()
+            return true
+        } catch {
+            Logger.customLog("Model BookmarksModel.delete() error: \(error).")
+        }
+        return false
     }
 
     static func dump() {

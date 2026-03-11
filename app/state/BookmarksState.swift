@@ -23,8 +23,10 @@ final class BookmarksState: ObservableObject {
         self.data[path] = data
     }
 
-    func delete(_ path: String) {
-        self.data[path] = nil
+    func delete(_ paths: [String]) {
+        for path in paths {
+            self.data[path] = nil
+        }
     }
 
 }

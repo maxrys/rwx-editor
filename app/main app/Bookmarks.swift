@@ -46,13 +46,9 @@ struct Bookmarks: View {
                     isFlat: false,
                     flexibility: .size(100)
                 ) {
-                    let existsPaths = self.state.selectPaths()
-                    existsPaths.enumerated().forEach { index, path in
-                        if (self.selectedItems.contains(index)) {
-                            self.state.delete(path)
-                        }
-                    }
-                    self.selectedItems.removeAll()
+                    self.state.delete(self.state.selectPaths().enumerated().compactMap { index, path in
+                        self.selectedItems.contains(index) ? path : nil
+                    })
                 }
 
                 Spacer()
@@ -66,6 +62,8 @@ struct Bookmarks: View {
 
             }
 
+        }.onChange(of: self.state.data) { _ in
+            self.selectedItems.removeAll()
         }
     }
 
