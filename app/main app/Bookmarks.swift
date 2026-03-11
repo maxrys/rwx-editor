@@ -58,7 +58,7 @@ struct Bookmarks: View {
             self.bookmarksState.selectedRows.removeAll()
         }
         .onAppBecomeForeground {
-            self.bookmarksState.itemsReload()
+            self.bookmarksState.reload()
         }
     }
 

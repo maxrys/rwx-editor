@@ -33,13 +33,13 @@ final class BookmarksState: ObservableObject {
     }
 
     init() {
-        self.itemsReload()
+        self.reload()
     }
 
     static func hash(items: [String: Data]) -> Int {
         if (!items.isEmpty) {
             var hasher = Hasher()
-            for (path, data) in items {
+            for (path, data) in items.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }) {
                 hasher.combine(path)
                 hasher.combine(data) }
             return hasher.finalize()
@@ -47,10 +47,17 @@ final class BookmarksState: ObservableObject {
         return 0
     }
 
-    func itemsReload() {
-        self.items = self.select()
-        Logger.customLog("\nBookmarksState().itemsReload()")
-        BookmarksModel.dump()
+    func reload() {
+        let newItems = self.select()
+        let newItemsHash = Self.hash(items: newItems)
+        let oldItemsHash = Self.hash(items: self.items)
+        Logger.customLog("Old Data Hash: \(oldItemsHash)")
+        Logger.customLog("New Data Hash: \(newItemsHash)")
+        if (oldItemsHash != newItemsHash) {
+            self.items = newItems
+            Logger.customLog("\nBookmarksState().reload()")
+            BookmarksModel.dump()
+        }
     }
 
     func select() -> [String: Data] {
