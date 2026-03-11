@@ -16,39 +16,50 @@ final class BookmarksState: ObservableObject {
         )
     }
 
-    @Published public private(set) var data: [String: Data] = [:]
+    @Published public private(set) var items: [String: Data] = [:]
     @Published public var selectedRows: Set<Int> = []
 
-    public var dataOrdered: [String] {
-        self.data.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }).map { path, data in
+    public var itemsOrdered: [String] {
+        self.items.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }).map { path, data in
             path
         }
     }
 
     public var selectedRowsToPaths: [String] {
-        let rows = self.dataOrdered
+        let items = self.itemsOrdered
         return self.selectedRows.compactMap { index in
-            rows[safe: index]
+            items[safe: index]
         }
     }
 
     init() {
-        self.dataReload()
+        self.itemsReload()
     }
 
-    func dataReload() {
-        self.data.removeAll()
-        for item in BookmarksModel.selectAll() {
-            self.data[item.path] = item.data
+    static func hash(items: [String: Data]) -> Int {
+        if (!items.isEmpty) {
+            var hasher = Hasher()
+            for (path, data) in items {
+                hasher.combine(path)
+                hasher.combine(data) }
+            return hasher.finalize()
         }
-        Logger.customLog("\nBookmarksState().dataReload()")
+        return 0
+    }
+
+    func itemsReload() {
+        self.items.removeAll()
+        for item in BookmarksModel.selectAll() {
+            self.items[item.path] = item.data
+        }
+        Logger.customLog("\nBookmarksState().itemsReload()")
         BookmarksModel.dump()
     }
 
     func insert(_ path: String, _ data: Data) {
         _ = BookmarksModel.delete([path])
         _ = BookmarksModel.insert(path: path, data: data)
-        self.data[path] = data
+        self.items[path] = data
         Logger.customLog("\nBookmarksState().insert()")
         BookmarksModel.dump()
     }
@@ -56,7 +67,7 @@ final class BookmarksState: ObservableObject {
     func delete(_ paths: [String]) {
         _ = BookmarksModel.delete(paths)
         for path in paths {
-            self.data[path] = nil
+            self.items[path] = nil
         }
         Logger.customLog("\nBookmarksState().delete()")
         BookmarksModel.dump()

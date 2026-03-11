@@ -7,7 +7,7 @@ import SwiftUI
 
 struct Bookmarks: View {
 
-    @ObservedObject private var state = BookmarksState()
+    @ObservedObject private var bookmarksState = BookmarksState()
 
     public var body: some View {
         VStack(spacing: 15) {
@@ -17,7 +17,7 @@ struct Bookmarks: View {
                 .opacity(0.8)
 
             TableCustom(
-                selected: self.state.getBinding(\.selectedRows),
+                selected: self.bookmarksState.getBinding(\.selectedRows),
                 bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
                 head: {
                     TableCustom_HeadCell(
@@ -27,7 +27,7 @@ struct Bookmarks: View {
                     ) { Text(NSLocalizedString("Location paths", comment: "")).font(.system(size: 11)) }
                 },
                 bodyAsArray:
-                    self.state.dataOrdered.flatMap { path in [
+                    self.bookmarksState.itemsOrdered.flatMap { path in [
                         AnyView(Text(path))
                     ]}
             )
@@ -36,7 +36,7 @@ struct Bookmarks: View {
 
                 ButtonCustom(
                     NSLocalizedString("delete", comment: ""),
-                    isDisabled: self.state.selectedRows.isEmpty,
+                    isDisabled: self.bookmarksState.selectedRows.isEmpty,
                     colorStyle: .custom(text: nil, background: nil),
                     isFlat: false,
                     flexibility: .size(100)
@@ -54,17 +54,17 @@ struct Bookmarks: View {
             }
 
         }
-        .onChange(of: self.state.data) { _ in
-            self.state.selectedRows.removeAll()
+        .onChange(of: self.bookmarksState.items) { _ in
+            self.bookmarksState.selectedRows.removeAll()
         }
         .onAppBecomeForeground {
-            self.state.dataReload()
+            self.bookmarksState.itemsReload()
         }
     }
 
     public func onDeleteBookmark() {
-        self.state.delete(
-            self.state.selectedRowsToPaths
+        self.bookmarksState.delete(
+            self.bookmarksState.selectedRowsToPaths
         )
     }
 
@@ -85,7 +85,7 @@ struct Bookmarks: View {
         for url in openPanel.urls {
             if let bookmark = Bookmark(from: url) {
                 if bookmark.startAccessing() {
-                    self.state.insert(url.path, bookmark.data)
+                    self.bookmarksState.insert(url.path, bookmark.data)
                 }
             }
         }
