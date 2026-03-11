@@ -24,9 +24,12 @@ struct TableCustom: View {
     private let selectionType: SelectionType
     private let headCellPadding: EdgeInsets
     private let bodyCellPadding: EdgeInsets
-
     private let headCells: [TableCustom_HeadCell]
     private let bodyCells: [any View]
+
+    private var rowsCount: Int {
+        self.bodyCells.count / self.headCells.count
+    }
 
     init(
         selected selectedRows: Binding<Set<Int>>,
@@ -129,7 +132,7 @@ struct TableCustom: View {
         .focusable(self.isFocusable)
         .onKeyPressForSelectAll() {
             Task {
-                self.selectedRows = Set(0 ..< self.bodyCells.count / self.headCells.count)
+                self.selectedRows = Set(0 ..< self.rowsCount)
             }
         }
         .onAppBecomeForeground {

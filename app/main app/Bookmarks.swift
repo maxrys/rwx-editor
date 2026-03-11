@@ -8,7 +8,6 @@ import SwiftUI
 struct Bookmarks: View {
 
     @ObservedObject private var state = BookmarksState()
-    @State private var selectedItems: Set<Int> = []
 
     init() {
         BookmarksModel.dump()
@@ -22,7 +21,7 @@ struct Bookmarks: View {
                 .opacity(0.8)
 
             TableCustom(
-                selected: self.$selectedItems,
+                selected: self.state.getBinding(\.selectedRows),
                 bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
                 head: {
                     TableCustom_HeadCell(
@@ -32,7 +31,7 @@ struct Bookmarks: View {
                     ) { Text(NSLocalizedString("Location paths", comment: "")).font(.system(size: 11)) }
                 },
                 bodyAsArray:
-                    self.state.selectPaths().flatMap { path in [
+                    self.state.dataOrdered.flatMap { path in [
                         AnyView(Text(path))
                     ]}
             )
@@ -41,15 +40,11 @@ struct Bookmarks: View {
 
                 ButtonCustom(
                     NSLocalizedString("delete", comment: ""),
-                    isDisabled: self.selectedItems.isEmpty,
+                    isDisabled: self.state.selectedRows.isEmpty,
                     colorStyle: .custom(text: nil, background: nil),
                     isFlat: false,
                     flexibility: .size(100)
-                ) {
-                    self.state.delete(self.state.selectPaths().enumerated().compactMap { index, path in
-                        self.selectedItems.contains(index) ? path : nil
-                    })
-                }
+                ) { self.onDeleteBookmark() }
 
                 Spacer()
 
@@ -58,16 +53,22 @@ struct Bookmarks: View {
                     colorStyle: .accent,
                     isFlat: false,
                     flexibility: .size(200)
-                ) { self.addBookmark() }
+                ) { self.onAddBookmark() }
 
             }
 
         }.onChange(of: self.state.data) { _ in
-            self.selectedItems.removeAll()
+            self.state.selectedRows.removeAll()
         }
     }
 
-    public func addBookmark() {
+    public func onDeleteBookmark() {
+        self.state.delete(
+            self.state.selectedRowsToPaths
+        )
+    }
+
+    public func onAddBookmark() {
         let openPanel = NSOpenPanel()
         openPanel.allowsMultipleSelection = true
         openPanel.canChooseFiles = false
