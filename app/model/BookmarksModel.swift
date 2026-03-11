@@ -62,7 +62,7 @@ public class BookmarksModel: NSManagedObject {
     }
 
     static func fetchRequest() -> NSFetchRequest<BookmarksModel> {
-        return NSFetchRequest<BookmarksModel>(entityName: "Bookmarks")
+        NSFetchRequest<BookmarksModel>(entityName: "Bookmarks")
     }
 
     convenience init() {
@@ -77,8 +77,8 @@ public class BookmarksModel: NSManagedObject {
             return try Self.context.fetch(fetchRequest)
         } catch {
             Logger.customLog("Model BookmarksModel.selectAll() error: \(error).")
+            return []
         }
-        return []
     }
 
     static func insert(path: String, data: Data) -> Bool {
@@ -91,25 +91,23 @@ public class BookmarksModel: NSManagedObject {
             return true
         } catch {
             Logger.customLog("Model BookmarksModel.insert() error: \(error).")
+            return false
         }
-        return false
     }
 
     static func delete(_ paths: [String]) -> Bool {
         do {
             let fetchRequest = Self.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "(path IN %@)", paths)
-            fetchRequest.includesPropertyValues = false
-            let items = try Self.context.fetch(fetchRequest)
-            items.forEach { item in
-                let _ = Self.context.delete(item)
-            }
+            fetchRequest.predicate = NSPredicate(format: "path IN %@", paths)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            deleteRequest.resultType = .resultTypeCount
+            try Self.context.execute(deleteRequest)
             try Self.context.save()
             return true
         } catch {
             Logger.customLog("Model BookmarksModel.delete() error: \(error).")
+            return false
         }
-        return false
     }
 
     static func dump() {
