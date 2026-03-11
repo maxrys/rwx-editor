@@ -129,7 +129,7 @@ struct TableCustom: View {
         .focusable(self.isFocusable)
         .onKeyPressForSelectAll() {
             Task {
-                self.selectedRows = Set(0 ..< self.bodyCells.count)
+                self.selectedRows = Set(0 ..< self.bodyCells.count / self.headCells.count)
             }
         }
         .onAppBecomeForeground {
