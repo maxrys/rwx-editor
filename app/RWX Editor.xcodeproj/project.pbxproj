@@ -58,6 +58,10 @@
 		506421962F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506421BC2F60764B0020F6C8 /* ExtSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421BB2F60764B0020F6C8 /* ExtSettings.swift */; };
+		506421C32F61878E0020F6C8 /* BookmarksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C22F61878E0020F6C8 /* BookmarksState.swift */; };
+		506421C52F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
+		506421C62F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
+		506421C72F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -166,6 +170,8 @@
 		506421912F5F6CC80020F6C8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		506421952F5F6E800020F6C8 /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
 		506421BB2F60764B0020F6C8 /* ExtSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSettings.swift; sourceTree = "<group>"; };
+		506421C22F61878E0020F6C8 /* BookmarksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksState.swift; sourceTree = "<group>"; };
+		506421C42F618AAC0020F6C8 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,6 +298,15 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		506421C12F6187760020F6C8 /* state */ = {
+			isa = PBXGroup;
+			children = (
+				506421C22F61878E0020F6C8 /* BookmarksState.swift */,
+				5003F0C92F58D5170030B75A /* PopupState.swift */,
+			);
+			path = state;
+			sourceTree = "<group>";
+		};
 		50B2768E2F389876005F7475 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +316,7 @@
 				50B276AC2F3899D1005F7475 /* extensions */,
 				50B277092F3BCFC0005F7475 /* controls */,
 				506421942F5F6CF30020F6C8 /* model */,
+				506421C12F6187760020F6C8 /* state */,
 				50B276AD2F3899DD005F7475 /* main app */,
 				50B276AE2F3899E8005F7475 /* popup */,
 				50B276AF2F3899F7005F7475 /* finder extension */,
@@ -325,6 +341,7 @@
 				50B276C22F39CB73005F7475 /* const.swift */,
 				50B277202F3DCEE6005F7475 /* types.swift */,
 				50B277122F3BD0F2005F7475 /* enums.swift */,
+				506421C42F618AAC0020F6C8 /* Bookmark.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
 				506421742F5EF1550020F6C8 /* ResultBuilder.swift */,
 			);
@@ -383,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				50309B0D2F5AC7C7008CA064 /* Features.swift */,
-				5003F0C92F58D5170030B75A /* PopupState.swift */,
 				50B276D32F39CC59005F7475 /* Popup.swift */,
 				50309B092F5A1303008CA064 /* PopupScene.swift */,
 				50B276ED2F3A466B005F7475 /* PopupHead.swift */,
@@ -639,6 +655,7 @@
 				506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */,
 				5003F0CF2F5980100030B75A /* PanelRwxTextColors.swift in Sources */,
 				50309B082F59E998008CA064 /* Data.swift in Sources */,
+				506421C32F61878E0020F6C8 /* BookmarksState.swift in Sources */,
 				506421BC2F60764B0020F6C8 /* ExtSettings.swift in Sources */,
 				50CE9FDB2F471B54001006CF /* Shape.swift in Sources */,
 				50309B382F5CC32A008CA064 /* Color.swift in Sources */,
@@ -653,6 +670,7 @@
 				50309B172F5B22F8008CA064 /* URL.swift in Sources */,
 				506421792F5F15950020F6C8 /* Bookmarks.swift in Sources */,
 				5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */,
+				506421C52F618AB00020F6C8 /* Bookmark.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
@@ -698,6 +716,7 @@
 				5003F0D12F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */,
 				501FA4D82F4F0ED7004663D2 /* Logger.swift in Sources */,
 				50309B182F5B22F8008CA064 /* URL.swift in Sources */,
+				506421C72F618AB00020F6C8 /* Bookmark.swift in Sources */,
 				50309B302F5C8579008CA064 /* Data.swift in Sources */,
 				506421932F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50309B2F2F5C84AE008CA064 /* Process.swift in Sources */,
@@ -717,6 +736,7 @@
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
+				506421C62F618AB00020F6C8 /* Bookmark.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */,
 				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
 				50309B152F5B201A008CA064 /* const.swift in Sources */,

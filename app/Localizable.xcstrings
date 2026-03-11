@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "/path/to/dirrectory" : {
-      "shouldTranslate" : false
-    },
     "%@ 'at' %@" : {
       "localizations" : {
         "en" : {
@@ -66,16 +63,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "псевдоним"
-          }
-        }
-      }
-    },
-    "Allowed directories" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешённые каталоги"
           }
         }
       }
@@ -289,6 +276,16 @@
         }
       }
     },
+    "Provided access to directories" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предоставленный доступ к каталогам"
+          }
+        }
+      }
+    },
     "Quit %@" : {
       "localizations" : {
         "ru" : {
@@ -355,6 +352,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RWX Редактор | Установки"
+          }
+        }
+      }
+    },
+    "select a directory to grant access" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "выбрать каталог для доступа"
           }
         }
       }
