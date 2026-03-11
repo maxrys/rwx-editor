@@ -48,12 +48,15 @@ final class BookmarksState: ObservableObject {
     }
 
     func itemsReload() {
-        self.items.removeAll()
-        for item in BookmarksModel.selectAll() {
-            self.items[item.path] = item.data
-        }
+        self.items = self.select()
         Logger.customLog("\nBookmarksState().itemsReload()")
         BookmarksModel.dump()
+    }
+
+    func select() -> [String: Data] {
+        BookmarksModel.selectAll().reduce(into: [:]) { result, modelItem in
+            result[modelItem.path] = modelItem.data
+        }
     }
 
     func insert(_ path: String, _ data: Data) {
