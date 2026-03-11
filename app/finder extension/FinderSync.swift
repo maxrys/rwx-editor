@@ -17,7 +17,7 @@ let FINDER_EXT_MENU_ITEMS = [
     )
 ]
 
-class FinderSync: FIFinderSync {
+final class FinderSync: FIFinderSync {
 
     var selectedURLs: [URL] {
         if let urls = FIFinderSyncController.default().selectedItemURLs() {

@@ -7,7 +7,7 @@ import os
 import AppKit
 import CoreData
 
-public class BookmarksModel: NSManagedObject {
+final public class BookmarksModel: NSManagedObject {
 
     @NSManaged var path: String
     @NSManaged var data: Data

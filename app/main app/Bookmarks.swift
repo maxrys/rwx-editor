@@ -9,10 +9,6 @@ struct Bookmarks: View {
 
     @ObservedObject private var state = BookmarksState()
 
-    init() {
-        BookmarksModel.dump()
-    }
-
     public var body: some View {
         VStack(spacing: 15) {
 
@@ -57,8 +53,12 @@ struct Bookmarks: View {
 
             }
 
-        }.onChange(of: self.state.data) { _ in
+        }
+        .onChange(of: self.state.data) { _ in
             self.state.selectedRows.removeAll()
+        }
+        .onAppBecomeForeground {
+            self.state.dataReload()
         }
     }
 

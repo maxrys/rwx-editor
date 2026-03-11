@@ -3,6 +3,7 @@
 /* ### Copyright © 2024—2026 Maxim Rysevets. All rights reserved. ### */
 /* ################################################################## */
 
+import os
 import SwiftUI
 import Combine
 
@@ -32,16 +33,33 @@ final class BookmarksState: ObservableObject {
     }
 
     init() {
+        self.dataReload()
+    }
+
+    func dataReload() {
+        self.data.removeAll()
+        for item in BookmarksModel.selectAll() {
+            self.data[item.path] = item.data
+        }
+        Logger.customLog("\nBookmarksState().dataReload()")
+        BookmarksModel.dump()
     }
 
     func insert(_ path: String, _ data: Data) {
+        _ = BookmarksModel.delete([path])
+        _ = BookmarksModel.insert(path: path, data: data)
         self.data[path] = data
+        Logger.customLog("\nBookmarksState().insert()")
+        BookmarksModel.dump()
     }
 
     func delete(_ paths: [String]) {
+        _ = BookmarksModel.delete(paths)
         for path in paths {
             self.data[path] = nil
         }
+        Logger.customLog("\nBookmarksState().delete()")
+        BookmarksModel.dump()
     }
 
 }
