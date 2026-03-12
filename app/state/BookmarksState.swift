@@ -69,18 +69,12 @@ final class BookmarksState: ObservableObject {
     func insert(_ path: String, _ data: Data) {
         _ = BookmarksModel.delete([path])
         _ = BookmarksModel.insert(path: path, data: data)
-        self.items[path] = data
-        Logger.customLog("\nBookmarksState().insert()")
-        BookmarksModel.dump()
+        self.reload()
     }
 
     func delete(_ paths: [String]) {
         _ = BookmarksModel.delete(paths)
-        for path in paths {
-            self.items[path] = nil
-        }
-        Logger.customLog("\nBookmarksState().delete()")
-        BookmarksModel.dump()
+        self.reload()
     }
 
 }
