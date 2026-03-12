@@ -7,6 +7,11 @@ import os
 import AppKit
 import CoreData
 
+enum ExecuteResult {
+    case success(affected: Int?)
+    case failure
+}
+
 final public class BookmarksModel: NSManagedObject {
 
     @NSManaged var path: String
@@ -95,18 +100,19 @@ final public class BookmarksModel: NSManagedObject {
         }
     }
 
-    static func delete(_ paths: [String]) -> Bool {
+    static func delete(_ paths: [String]) -> ExecuteResult {
         do {
             let fetchRequest = Self.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "path IN %@", paths)
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
             deleteRequest.resultType = .resultTypeCount
-            try Self.context.execute(deleteRequest)
+            let result = try Self.context.execute(deleteRequest) as? NSBatchDeleteResult
+            let affected = result?.result as? Int ?? 0
             try Self.context.save()
-            return true
+            return .success(affected: affected)
         } catch {
             Logger.customLog("Model BookmarksModel.delete() error: \(error).")
-            return false
+            return .failure
         }
     }
 

@@ -62,6 +62,7 @@
 		506421C52F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
 		506421C62F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
 		506421C72F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
+		506421C92F62B22D0020F6C8 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C82F62B22D0020F6C8 /* Bool.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -172,6 +173,7 @@
 		506421BB2F60764B0020F6C8 /* ExtSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSettings.swift; sourceTree = "<group>"; };
 		506421C22F61878E0020F6C8 /* BookmarksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksState.swift; sourceTree = "<group>"; };
 		506421C42F618AAC0020F6C8 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		506421C82F62B22D0020F6C8 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				5064216E2F5EF07F0020F6C8 /* Array.swift */,
+				506421C82F62B22D0020F6C8 /* Bool.swift */,
 				50B276F92F3A74D0005F7475 /* ByteCountFormatter.swift */,
 				50B277002F3B2357005F7475 /* CaseIterable.swift */,
 				50309B372F5CC32A008CA064 /* Color.swift */,
@@ -694,6 +697,7 @@
 				50B276C32F39CB7C005F7475 /* const.swift in Sources */,
 				506421712F5EF0990020F6C8 /* NSEvent.swift in Sources */,
 				50309B0A2F5A1307008CA064 /* PopupScene.swift in Sources */,
+				506421C92F62B22D0020F6C8 /* Bool.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
 				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */,
