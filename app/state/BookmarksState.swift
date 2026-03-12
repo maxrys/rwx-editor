@@ -16,19 +16,12 @@ final class BookmarksState: ObservableObject {
         )
     }
 
-    @Published public private(set) var items: [String: Data] = [:]
+    @Published public private(set) var items: [BookmarksFetchItem] = []
     @Published public var selectedRows: Set<Int> = []
 
-    public var itemsOrdered: [String] {
-        self.items.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }).map { path, data in
-            path
-        }
-    }
-
     public var selectedRowsToPaths: [String] {
-        let items = self.itemsOrdered
-        return self.selectedRows.compactMap { index in
-            items[safe: index]
+        self.selectedRows.compactMap { index in
+            self.items[safe: index]?.path
         }
     }
 
@@ -36,19 +29,20 @@ final class BookmarksState: ObservableObject {
         self.reload()
     }
 
-    static func hash(items: [String: Data]) -> Int {
+    static func hash(items: [BookmarksFetchItem]) -> Int {
         if (!items.isEmpty) {
             var hasher = Hasher()
-            for (path, data) in items.sorted(by: { (lhs, rhs) in lhs.key < rhs.key }) {
-                hasher.combine(path)
-                hasher.combine(data) }
+            for item in items {
+                hasher.combine(item.path)
+                hasher.combine(item.data)
+                hasher.combine(item.createdAt) }
             return hasher.finalize()
         }
         return 0
     }
 
     func reload() {
-        let newItems = self.select()
+        let newItems = BookmarksModel.selectAll()
         let newItemsHash = Self.hash(items: newItems)
         let oldItemsHash = Self.hash(items: self.items)
         Logger.customLog("Old Data Hash: \(oldItemsHash)")
@@ -57,12 +51,6 @@ final class BookmarksState: ObservableObject {
             self.items = newItems
             Logger.customLog("\nBookmarksState().reload()")
             BookmarksModel.dump()
-        }
-    }
-
-    private func select() -> [String: Data] {
-        BookmarksModel.selectAll().reduce(into: [:]) { result, modelItem in
-            result[modelItem.path] = modelItem.data
         }
     }
 

@@ -12,6 +12,12 @@ enum ExecuteResult {
     case failure
 }
 
+struct BookmarksFetchItem: Equatable {
+    let path: String
+    let data: Data
+    let createdAt: Int64
+}
+
 final public class BookmarksModel: NSManagedObject {
 
     @NSManaged var path: String
@@ -74,12 +80,18 @@ final public class BookmarksModel: NSManagedObject {
         self.init(context: Self.context)
     }
 
-    static func selectAll() -> [BookmarksModel] {
+    static func selectAll() -> [BookmarksFetchItem] {
         do {
             let fetchRequest = Self.fetchRequest()
             let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
             fetchRequest.sortDescriptors = [orderByPath]
-            return try Self.context.fetch(fetchRequest)
+            return try Self.context.fetch(fetchRequest).map { model in
+                BookmarksFetchItem(
+                    path     : model.path,
+                    data     : model.data,
+                    createdAt: model.createdAt
+                )
+            }
         } catch {
             Logger.customLog("Model BookmarksModel.selectAll() error: \(error).")
             return []

@@ -27,8 +27,8 @@ struct Bookmarks: View {
                     ) { Text(NSLocalizedString("Location paths", comment: "")).font(.system(size: 11)) }
                 },
                 bodyAsArray:
-                    self.bookmarksState.itemsOrdered.flatMap { path in [
-                        AnyView(Text(path))
+                    self.bookmarksState.items.flatMap { item in [
+                        AnyView(Text(item.path))
                     ]}
             )
 
