@@ -112,26 +112,34 @@ final public class BookmarksModel: NSManagedObject {
 
     static func dump() {
         #if DEBUG
-        var renderedRows: [String] = []
-        Self.selectAll().forEach { object in
-            let path = object.path.padding(toLength: 60, withPad: " ", startingAt: 0)
-            renderedRows.append(">> - \(path)")
-        }
-        if (renderedRows.isEmpty) {
-            renderedRows.append(
-                ">>" + String(repeating: " ", count: 30) + "... no data ..."
-            )
-        }
-        Logger.customLog("""
-        
-        Storage Dump for \"BookmarksModel\":
-        >> ---------------------------------------------------------------------------
-        >> path
-        >> ===========================================================================
-        \(renderedRows.joined(separator: "\n"))
-        >> ---------------------------------------------------------------------------
-        
-        """)
+            let items = Self.selectAll()
+            if (!items.isEmpty) {
+
+                let rows: [String] = items.reduce(into: []) { result, item in
+                    let formattedPath = item.path.padding(toLength: 60, withPad: " ", startingAt: 0)
+                    result.append(">> - \(formattedPath)")
+                }
+
+                Logger.customLog("""
+                
+                Storage Dump for \"BookmarksModel\":
+                >> ---------------------------------------------------------------------------
+                >> path
+                >> ===========================================================================
+                \(rows.joined(separator: "\n"))
+                >> ---------------------------------------------------------------------------
+                
+                """)
+            } else {
+                Logger.customLog("""
+                
+                Storage Dump for \"BookmarksModel\":
+                >> ---------------------------------------------------------------------------
+                >>                              ... no data ...
+                >> ---------------------------------------------------------------------------
+                
+                """)
+            }
         #endif
     }
 

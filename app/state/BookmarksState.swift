@@ -60,7 +60,7 @@ final class BookmarksState: ObservableObject {
         }
     }
 
-    func select() -> [String: Data] {
+    private func select() -> [String: Data] {
         BookmarksModel.selectAll().reduce(into: [:]) { result, modelItem in
             result[modelItem.path] = modelItem.data
         }
