@@ -67,14 +67,17 @@ final class BookmarksState: ObservableObject {
     }
 
     func insert(_ path: String, _ data: Data) {
-        _ = BookmarksModel.delete([path])
-        _ = BookmarksModel.insert(path: path, data: data)
-        self.reload()
+        if case .success = BookmarksModel.delete([path]) {
+            if BookmarksModel.insert(path: path, data: data) {
+                self.reload()
+            }
+        }
     }
 
     func delete(_ paths: [String]) {
-        _ = BookmarksModel.delete(paths)
-        self.reload()
+        if case .success = BookmarksModel.delete(paths) {
+            self.reload()
+        }
     }
 
 }

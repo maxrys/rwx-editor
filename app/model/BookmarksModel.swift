@@ -8,7 +8,7 @@ import AppKit
 import CoreData
 
 enum ExecuteResult {
-    case success(affected: Int?)
+    case success(affected: Int)
     case failure
 }
 
