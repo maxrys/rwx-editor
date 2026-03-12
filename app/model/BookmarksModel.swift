@@ -85,11 +85,11 @@ final public class BookmarksModel: NSManagedObject {
             let fetchRequest = Self.fetchRequest()
             let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
             fetchRequest.sortDescriptors = [orderByPath]
-            return try Self.context.fetch(fetchRequest).map { model in
+            return try Self.context.fetch(fetchRequest).map { modelItem in
                 BookmarksFetchItem(
-                    path     : model.path,
-                    data     : model.data,
-                    createdAt: model.createdAt
+                    path     : modelItem.path,
+                    data     : modelItem.data,
+                    createdAt: modelItem.createdAt
                 )
             }
         } catch {

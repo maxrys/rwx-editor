@@ -49,6 +49,7 @@ final class BookmarksState: ObservableObject {
         Logger.customLog("New Data Hash: \(newItemsHash)")
         if (oldItemsHash != newItemsHash) {
             self.items = newItems
+            self.selectedRows.removeAll()
             Logger.customLog("\nBookmarksState().reload()")
             BookmarksModel.dump()
         }
