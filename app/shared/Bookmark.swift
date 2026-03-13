@@ -34,7 +34,7 @@ final class Bookmark {
             relativeTo: nil
         )
         if let url
-        { self.data = url }
+             { self.data = url }
         else { return nil }
     }
 

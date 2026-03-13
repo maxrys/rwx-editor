@@ -82,14 +82,16 @@ struct Bookmarks: View {
             return
         }
 
-        for url in openPanel.urls {
-            if let bookmark = Bookmark(from: url) {
-                if bookmark.startAccessing() {
-                    self.bookmarksState.insert(url.path, bookmark.data)
-                    bookmark.stopAccessing()
+        _ = self.bookmarksState.insert(
+            items: openPanel.urls.reduce(into: [(path: String, data: Data)]()) { result, url in
+                if let bookmark = Bookmark(from: url) {
+                    if bookmark.startAccessing() {
+                        result.append((path: url.path, bookmark.data))
+                        bookmark.stopAccessing()
+                    }
                 }
             }
-        }
+        )
     }
 
 }
