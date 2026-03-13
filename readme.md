@@ -14,3 +14,7 @@ After clicking on a menu item (in the context of a file or directory), the "RWX 
 - edit access rights to the file or directory;
 - edit the owner of the file or directory;
 - edit the group.
+
+It is open-source software.  
+Free from subscription model.  
+Free from AI-generated code.

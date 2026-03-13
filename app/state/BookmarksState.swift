@@ -51,7 +51,6 @@ final class BookmarksState: ObservableObject {
             self.items = newItems
             self.selectedRows.removeAll()
             Logger.customLog("\nBookmarksState().reload()")
-            BookmarksModel.dump()
         }
     }
 

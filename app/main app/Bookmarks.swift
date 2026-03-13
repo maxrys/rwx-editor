@@ -54,6 +54,9 @@ struct Bookmarks: View {
             }
 
         }
+        .onAppear {
+            BookmarksModel.dump()
+        }
         .onAppBecomeForeground {
             self.bookmarksState.reload()
         }
