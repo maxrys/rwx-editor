@@ -15,6 +15,15 @@ After clicking on a menu item (in the context of a file or directory), the "RWX 
 - edit the owner of the file or directory;
 - edit the group.
 
+Support for the following macOS versions:
+- 11 (Big Sur)
+- 12 (Monterey)
+- 13 (Ventura)
+- 14 (Sonoma)
+- 15 (Sequoia)
+- 26 (Tahoe)
+and later.
+
 It is open-source software.  
 Free from subscription model.  
 Free from AI-generated code.
