@@ -15,6 +15,7 @@ final class PopupState: ObservableObject {
         )
     }
 
+    @Published var isEditable: Bool
     @Published var perms: PermissionsValue
     @Published var owner: String
     @Published var group: String
@@ -30,7 +31,7 @@ final class PopupState: ObservableObject {
         self.group != self.originalGroup
     }
 
-    init(_ info: FSEntityInfo) {
+    init(_ info: FSEntityInfo, isEditable: Bool = true) {
         self.info  = info
         self.perms = info.perms
         self.owner = info.owner
@@ -38,6 +39,7 @@ final class PopupState: ObservableObject {
         self.originalPerms = info.perms
         self.originalOwner = info.owner
         self.originalGroup = info.group
+        self.isEditable = isEditable
     }
 
     public func resetToDefault() {

@@ -11,6 +11,7 @@ struct ToggleRwxColored: View {
 
     @Binding private var perms: PermissionsValue
 
+    private let isDisabled: Bool
     private let subject: PermissionSubject
     private let permission: Permission
 
@@ -24,10 +25,16 @@ struct ToggleRwxColored: View {
         ]
     }
 
-    init(subject: PermissionSubject, permission: Permission, _ perms: Binding<PermissionsValue>) {
+    init(
+        subject: PermissionSubject,
+        permission: Permission,
+        _ perms: Binding<PermissionsValue>,
+        isDisabled: Bool = false
+    ) {
         self.subject    = subject
         self.permission = permission
         self._perms     = perms
+        self.isDisabled = isDisabled
     }
 
     var background: Color {
@@ -57,6 +64,7 @@ struct ToggleRwxColored: View {
                     .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
             }
         }
+        .disabled(self.isDisabled)
         .buttonStyle(.plain)
         .pointerStyleLinkPolyfill()
     }
@@ -71,9 +79,16 @@ struct ToggleRwxColored: View {
 
 @available(macOS 14.0, *) #Preview {
     @Previewable @State var perms: PermissionsValue = 0o777
-    HStack(spacing: 10) {
-        ToggleRwxColored(subject: .owner, permission: .r, $perms)
-        ToggleRwxColored(subject: .group, permission: .x, $perms)
-        ToggleRwxColored(subject: .other, permission: .w, $perms)
+    VStack(spacing: 10) {
+        HStack(spacing: 10) {
+            ToggleRwxColored(subject: .owner, permission: .r, $perms)
+            ToggleRwxColored(subject: .group, permission: .x, $perms)
+            ToggleRwxColored(subject: .other, permission: .w, $perms)
+        }
+        HStack(spacing: 10) {
+            ToggleRwxColored(subject: .owner, permission: .r, $perms, isDisabled: true)
+            ToggleRwxColored(subject: .group, permission: .x, $perms, isDisabled: true)
+            ToggleRwxColored(subject: .other, permission: .w, $perms, isDisabled: true)
+        }
     }.padding(20)
 }

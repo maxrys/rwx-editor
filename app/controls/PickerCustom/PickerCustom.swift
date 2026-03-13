@@ -15,6 +15,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     fileprivate let items: [Key: String]
     fileprivate let sortedBy: Dictionary<Key, String>.OrderBy
     fileprivate let isPlainListStyle: Bool
+    fileprivate let isDisabled: Bool
     fileprivate let flexibility: Flexibility
     fileprivate let colorSet: ColorSet
     fileprivate let cornerRadius: CGFloat = 10
@@ -29,13 +30,15 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         items: [Key: String],
         sortedBy: Dictionary<Key, String>.OrderBy = .keyAscending,
         isPlainListStyle: Bool = false,
+        isDisabled: Bool = false,
         flexibility: Flexibility = .none,
-        colorSet: ColorSet = Color.picker
+        colorSet: ColorSet = Color.picker,
     ) {
         self._selectedKey = selected
         self.items = items
         self.sortedBy = sortedBy
         self.isPlainListStyle = isPlainListStyle
+        self.isDisabled = isDisabled
         self.flexibility = flexibility
         self.colorSet = colorSet
         self.itemsSorted = self.items.sorted(order: self.sortedBy)
@@ -67,6 +70,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
                 .disabled(true)
         } else {
             self.OpenerView()
+                .disabled(self.isDisabled)
                 .onKeyPressPolyfill(character: KeyEquivalentPolyfill.upArrow  .rawValue, action: self.onPressKeyUpArrow)
                 .onKeyPressPolyfill(character: KeyEquivalentPolyfill.downArrow.rawValue, action: self.onPressKeyDownArrow)
                 .popover(isPresented: self.$isOpened) {

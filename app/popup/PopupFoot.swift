@@ -21,7 +21,7 @@ struct PopupFoot: View {
 
             ButtonCustom(
                 NSLocalizedString("cancel", comment: ""),
-                isDisabled: !self.popupState.isChanged,
+                isDisabled: !self.popupState.isChanged || !self.popupState.isEditable,
                 colorStyle: .custom(text: nil, background: nil),
                 isFlat: false,
                 flexibility: .infinity
@@ -29,7 +29,7 @@ struct PopupFoot: View {
 
             ButtonCustom(
                 NSLocalizedString("apply", comment: ""),
-                isDisabled: !self.popupState.isChanged,
+                isDisabled: !self.popupState.isChanged || !self.popupState.isEditable,
                 isFlat: false,
                 flexibility: .infinity
             ) { Features.onApply(self.messageBox, self.popupState) }

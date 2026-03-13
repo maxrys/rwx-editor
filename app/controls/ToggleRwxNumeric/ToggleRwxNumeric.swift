@@ -9,6 +9,7 @@ struct ToggleRwxNumeric: View {
 
     @Binding private var perms: PermissionsValue
 
+    private let isDisabled: Bool
     private let values: [UInt: String] = [
         0: "0",
         1: "1",
@@ -20,8 +21,9 @@ struct ToggleRwxNumeric: View {
         7: "7",
     ]
 
-    init(_ perms: Binding<PermissionsValue>) {
+    init(_ perms: Binding<PermissionsValue>, isDisabled: Bool = false) {
         self._perms = perms
+        self.isDisabled = isDisabled
     }
 
     public var body: some View {
@@ -29,9 +31,9 @@ struct ToggleRwxNumeric: View {
         let groupProxy = Binding<UInt> { PermissionSubject.group.permissionGet(from: self.perms) } set: { value in self.perms = PermissionSubject.group.permissionSet(value, to: self.perms) }
         let otherProxy = Binding<UInt> { PermissionSubject.other.permissionGet(from: self.perms) } set: { value in self.perms = PermissionSubject.other.permissionSet(value, to: self.perms) }
         HStack(spacing: 3) {
-            PickerCustom<UInt>(selected: ownerProxy, items: self.values)
-            PickerCustom<UInt>(selected: groupProxy, items: self.values)
-            PickerCustom<UInt>(selected: otherProxy, items: self.values)
+            PickerCustom<UInt>(selected: ownerProxy, items: self.values, isDisabled: self.isDisabled)
+            PickerCustom<UInt>(selected: groupProxy, items: self.values, isDisabled: self.isDisabled)
+            PickerCustom<UInt>(selected: otherProxy, items: self.values, isDisabled: self.isDisabled)
         }
     }
 

@@ -7,7 +7,7 @@ import SwiftUI
 
 struct PopupScene: View {
 
-    private var popupState: PopupState
+    private let popupState: PopupState
     private let messageBox = MessageBox()
     private let info: FSEntityInfo
 
