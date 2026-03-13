@@ -17,4 +17,17 @@ extension URL {
         else                 { return decoded.trimPrefix(URL.PREFIX_THIS_APP).trimPrefix(URL.PREFIX_FILE) }
     }
 
+    public var parents: [String] {
+        var result: [String] = []
+        let parts = self.path.trimPrefix("/").trimSuffix("/").components(separatedBy: "/")
+        for index in (0 ..< parts.count).reversed() {
+            result.append(
+                "/" + parts[...index].joined(separator: "/")
+            )
+        }
+        if (result != ["/"])
+             { return result + ["/"] }
+        else { return result }
+    }
+
 }

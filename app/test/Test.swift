@@ -4,6 +4,7 @@
 /* ############################################################# */
 
 import Testing
+import System
 import Foundation
 
 extension String {
@@ -27,6 +28,7 @@ struct Test {
         try? self.subjectPermissionGet()
         try? self.subjectPermissionSet()
         try? self.parseFullpath()
+        try? self.urlParents()
     }
 
     func bitGet() throws {
@@ -201,6 +203,16 @@ struct Test {
             print("pathAndName: \(value) | (\(received.path),\(received.name)) = (\(expected.path),\(expected.name))")
             #expect(received == expected)
         }
+    }
+
+    func urlParents() throws {
+        #expect( URL("/x/y/z/")?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
+        #expect( URL("/x/y/z" )?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
+        #expect( URL("/x/y/"  )?.parents == [          "/x/y", "/x", "/"] )
+        #expect( URL("/x/y"   )?.parents == [          "/x/y", "/x", "/"] )
+        #expect( URL("/x/"    )?.parents == [                  "/x", "/"] )
+        #expect( URL("/x"     )?.parents == [                  "/x", "/"] )
+        #expect( URL("/"      )?.parents == [                        "/"] )
     }
 
 }

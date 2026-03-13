@@ -38,23 +38,6 @@ import SwiftUI
         }
     }
 
-    func windowWillClose(_ notification: Notification) {
-        if let window = notification.object as? NSWindow {
-            if let ID = window.ID {
-                if (ID == WINDOW_MAIN_ID) {
-                    Logger.customLog("Main Window will hide")
-                    NSApplication.hideAppsDock()
-                }
-                if (ID != WINDOW_MAIN_ID) {
-                    Logger.customLog("Popup Window will hide | ID = \(ID)")
-                    window.contentView = nil
-                    window.delegate = nil
-                    NSWindow.customWindows[ID] = nil
-                }
-            }
-        }
-    }
-
     func showWindowMain() {
         Logger.customLog("Main Window will show")
         if let windowMain = NSWindow.customWindows[WINDOW_MAIN_ID] {
@@ -87,6 +70,23 @@ import SwiftUI
                     fullpath: fullpath
                 )
             )
+        }
+    }
+
+    func windowWillClose(_ notification: Notification) {
+        if let window = notification.object as? NSWindow {
+            if let ID = window.ID {
+                if (ID == WINDOW_MAIN_ID) {
+                    Logger.customLog("Main Window will hide")
+                    NSApplication.hideAppsDock()
+                }
+                if (ID != WINDOW_MAIN_ID) {
+                    Logger.customLog("Popup Window will hide | ID = \(ID)")
+                    window.contentView = nil
+                    window.delegate = nil
+                    NSWindow.customWindows[ID] = nil
+                }
+            }
         }
     }
 

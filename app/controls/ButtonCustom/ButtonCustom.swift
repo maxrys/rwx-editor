@@ -24,7 +24,7 @@ struct ButtonCustom: View {
         colorStyle: Color.ButtonCustomStyle = .accent,
         isFlat: Bool = true,
         font: Font = .system(size: 12.5, weight: .regular),
-        padding: EdgeInsets = .init(top: 3, leading: 9, bottom: 5, trailing: 9),
+        padding: EdgeInsets = .init(top: 6, leading: 9, bottom: 6, trailing: 9),
         flexibility: Flexibility = .none,
         onClick: @escaping () -> Void = { }
     ) {
