@@ -34,7 +34,7 @@ final class Bookmark {
             relativeTo: nil
         )
         if let url
-             { self.data = url }
+        { self.data = url }
         else { return nil }
     }
 
@@ -43,6 +43,13 @@ final class Bookmark {
         if let url, (!isExpired)
              { return url.startAccessingSecurityScopedResource() }
         else { return false }
+    }
+
+    func stopAccessing() {
+        let (url, isExpired) = self.info
+        if let url, (!isExpired) {
+            url.stopAccessingSecurityScopedResource()
+        }
     }
 
 }

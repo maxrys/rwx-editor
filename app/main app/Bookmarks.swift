@@ -86,6 +86,7 @@ struct Bookmarks: View {
             if let bookmark = Bookmark(from: url) {
                 if bookmark.startAccessing() {
                     self.bookmarksState.insert(url.path, bookmark.data)
+                    bookmark.stopAccessing()
                 }
             }
         }
