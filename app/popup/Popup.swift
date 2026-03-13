@@ -32,23 +32,27 @@ struct Popup: View {
             if let info = self.info {
                 PopupScene(info)
             } else {
-                let messageBox = MessageBox()
-                messageBox
-                    .frame(maxWidth: 300)
-                    .onAppear {
-                        messageBox.insert(
-                            type: .error,
-                            title: NSLocalizedString("Object is not suppoted", comment: ""),
-                            description: self.fullpath,
-                            lifeTime: .infinity
-                        )
-                    }
+                self.NotSupportedView()
             }
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: Self.FRAME_WIDTH)
         .onAppear              { self.infoRefresh() }
         .onAppBecomeForeground { self.infoRefresh() }
+    }
+
+    @ViewBuilder func NotSupportedView() -> some View {
+        let messageBox = MessageBox()
+        messageBox
+            .frame(maxWidth: 300)
+            .onAppear {
+                messageBox.insert(
+                    type: .error,
+                    title: NSLocalizedString("Object is not suppoted", comment: ""),
+                    description: self.fullpath,
+                    lifeTime: .infinity
+                )
+            }
     }
 
 }
@@ -62,7 +66,7 @@ struct Popup: View {
 #Preview {
     VStack(spacing: 0) {
         let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-        Popup(fullpath: "")             ; Delimiter /* empty */
+        Popup(fullpath: "/unknown")     ; Delimiter
         Popup(fullpath: "/private/etc/"); Delimiter /* directory */
         Popup(fullpath: "/private/etc/hosts")       /* file */
     }.frame(width: 300)
