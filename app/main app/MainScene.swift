@@ -4,11 +4,22 @@
 /* ############################################################# */
 
 import SwiftUI
+import System
 
 struct MainScene: View {
 
     static let FRAME_WIDTH : CGFloat = 600
     static let FRAME_HEIGHT: CGFloat = 500
+
+    init() {
+        dump( BookmarksModel.search( URL("/x/y/z/1/2/3")!.parents ) ); print("")
+        dump( BookmarksModel.search( URL("/x/y/z/1/2"  )!.parents ) ); print("")
+        dump( BookmarksModel.search( URL("/x/y/z/1"    )!.parents ) ); print("")
+        dump( BookmarksModel.search( URL("/x/y/z"      )!.parents ) ); print("")
+        dump( BookmarksModel.search( URL("/x/y"        )!.parents ) ); print("")
+        dump( BookmarksModel.search( URL("/x"          )!.parents ) ); print("")
+        dump( BookmarksModel.search( URL("/"           )!.parents ) ); print("")
+    }
 
     public var body: some View {
         VStack(spacing: 30) {

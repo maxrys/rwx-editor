@@ -80,6 +80,27 @@ final public class BookmarksModel: NSManagedObject {
         self.init(context: Self.context)
     }
 
+    static func search(_ paths: [String]) -> BookmarksFetchItem? {
+        do {
+            let fetchRequest = Self.fetchRequest()
+            let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
+            fetchRequest.sortDescriptors = [orderByPath]
+            fetchRequest.predicate = NSPredicate(format: "path IN %@", paths)
+            return try Self.context.fetch(fetchRequest).reduce(into: Optional<BookmarksFetchItem>.none, { result, modelItem in
+                if (result == nil) {
+                    result = BookmarksFetchItem(
+                        path     : modelItem.path,
+                        data     : modelItem.data,
+                        createdAt: modelItem.createdAt
+                    )
+                }
+            })
+        } catch {
+            Logger.customLog("Model BookmarksModel.search() error: \(error).")
+            return nil
+        }
+    }
+
     static func selectAll() -> [BookmarksFetchItem] {
         do {
             let fetchRequest = Self.fetchRequest()
