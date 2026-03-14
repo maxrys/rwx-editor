@@ -102,9 +102,9 @@ final class FSEntityInfo: Equatable {
             }
         }
 
-        if let bookmark = BookmarkValue(searchValidBy: self.fullpath), !bookmark.info.isExpired
-             { self.isValidbookmark = true }
-        else { self.isValidbookmark = false }
+        self.isValidbookmark = BookmarkValue(
+            searchValidBy: self.fullpath
+        )?.info.isExpired == false
 
     }
 
