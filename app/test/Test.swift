@@ -4,7 +4,6 @@
 /* ############################################################# */
 
 import Testing
-import System
 import Foundation
 
 extension String {
@@ -206,13 +205,13 @@ struct Test {
     }
 
     func urlParents() throws {
-        #expect( URL("/x/y/z/")?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
-        #expect( URL("/x/y/z" )?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
-        #expect( URL("/x/y/"  )?.parents == [          "/x/y", "/x", "/"] )
-        #expect( URL("/x/y"   )?.parents == [          "/x/y", "/x", "/"] )
-        #expect( URL("/x/"    )?.parents == [                  "/x", "/"] )
-        #expect( URL("/x"     )?.parents == [                  "/x", "/"] )
-        #expect( URL("/"      )?.parents == [                        "/"] )
+        #expect( URL(string: "/x/y/z/")?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/y/z" )?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/y/"  )?.parents == [          "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/y"   )?.parents == [          "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/"    )?.parents == [                  "/x", "/"] )
+        #expect( URL(string: "/x"     )?.parents == [                  "/x", "/"] )
+        #expect( URL(string: "/"      )?.parents == [                        "/"] )
     }
 
 }
