@@ -27,7 +27,11 @@ struct PopupFoot: View {
                 isDisabled: !self.popupState.isChanged || !self.popupState.isEditable,
                 isFlat: false,
                 flexibility: .infinity
-            ) { Features.onApply(self.messageBoxState, self.popupState) }
+            ) {
+                if (Features.onApply(self.messageBoxState, self.popupState)) {
+                    self.popupState.resetToCurrent()
+                }
+            }
 
         }
         .padding(20)

@@ -20,10 +20,10 @@ final class PopupState: ObservableObject {
     @Published var owner: String
     @Published var group: String
 
-    let info: FSEntityInfo
-    let originalPerms: PermissionsValue
-    let originalOwner: String
-    let originalGroup: String
+    public let info: FSEntityInfo
+    public private(set) var originalPerms: PermissionsValue
+    public private(set) var originalOwner: String
+    public private(set) var originalGroup: String
 
     public var isChanged: Bool {
         self.perms != self.originalPerms ||
@@ -46,6 +46,12 @@ final class PopupState: ObservableObject {
         self.perms = self.originalPerms
         self.owner = self.originalOwner
         self.group = self.originalGroup
+    }
+
+    public func resetToCurrent() {
+        self.originalPerms = self.perms
+        self.originalOwner = self.owner
+        self.originalGroup = self.group
     }
 
 }

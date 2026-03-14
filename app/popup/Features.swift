@@ -18,24 +18,35 @@ final class Features {
                 " | group = \(state.group)"
             )
 
-            try FileManager.default.setAttributes(
-                [.posixPermissions     : state.perms,
-                 .ownerAccountName     : state.owner,
-                 .groupOwnerAccountName: state.group],
-                ofItemAtPath: state.info.fullpath
-            )
+            if let bookmark = BookmarkValue(searchValidBy: state.info.fullpath) {
+                if (!bookmark.info.isExpired) {
+                    if (bookmark.startAccessing()) {
 
-            messageBoxState.insert(
-                type: .ok,
-                title: NSLocalizedString("completed successfully", comment: "")
-            )
+                        defer { bookmark.stopAccessing() }
 
-            return true
+                        try FileManager.default.setAttributes(
+                            [.posixPermissions     : state.perms,
+                             .ownerAccountName     : state.owner,
+                             .groupOwnerAccountName: state.group],
+                            ofItemAtPath: state.info.fullpath
+                        )
+
+                        messageBoxState.insert(
+                            type: .ok,
+                            title: NSLocalizedString("completed successfully", comment: "")
+                        )
+
+                        return true
+                    }
+                }
+            }
+
+            return false
         } catch let error as NSError {
             messageBoxState.insert(
                 type: .error,
                 title: NSLocalizedString("completed unsuccessfully", comment: ""),
-                description: error.code == 513 ? "SandBox error" : error.localizedDescription
+                description: error.localizedDescription
             )
             return false
         }
