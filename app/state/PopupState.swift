@@ -24,6 +24,7 @@ final class PopupState: ObservableObject {
     let originalPerms: PermissionsValue
     let originalOwner: String
     let originalGroup: String
+    let bookmark: BookmarkValue?
 
     public var isChanged: Bool {
         self.perms != self.originalPerms ||
@@ -31,7 +32,7 @@ final class PopupState: ObservableObject {
         self.group != self.originalGroup
     }
 
-    init(_ info: FSEntityInfo, isEditable: Bool = true) {
+    init(_ info: FSEntityInfo) {
         self.info  = info
         self.perms = info.perms
         self.owner = info.owner
@@ -39,7 +40,8 @@ final class PopupState: ObservableObject {
         self.originalPerms = info.perms
         self.originalOwner = info.owner
         self.originalGroup = info.group
-        self.isEditable = isEditable
+        self.bookmark = BookmarkValue(searchValidBy: info.fullpath)
+        self.isEditable = self.bookmark != nil
     }
 
     public func resetToDefault() {
