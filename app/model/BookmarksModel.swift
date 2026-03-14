@@ -80,12 +80,13 @@ final public class BookmarksModel: NSManagedObject {
         self.init(context: Self.context)
     }
 
-    static func search(_ paths: [String]) -> BookmarksFetchItem? {
+    static func searchValid(_ path: String) -> BookmarksFetchItem? {
         do {
+            guard let pathParents = URL(string: path)?.pathParents else { return nil }
             let fetchRequest = Self.fetchRequest()
             let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
             fetchRequest.sortDescriptors = [orderByPath]
-            fetchRequest.predicate = NSPredicate(format: "path IN %@", paths)
+            fetchRequest.predicate = NSPredicate(format: "path IN %@", pathParents)
             return try Self.context.fetch(fetchRequest).reduce(into: Optional<BookmarksFetchItem>.none, { result, modelItem in
                 if (result == nil) {
                     if (!BookmarkValue(from: modelItem.data).info.isExpired) {
