@@ -19,10 +19,10 @@ struct Popup: View {
         self.fullpath = fullpath
     }
 
-    func infoRefresh() {
+    func refresh() {
         let newInfo = FSEntityInfo(self.fullpath)
         if (newInfo != self.info) {
-            Logger.customLog("Popup infoRefresh")
+            Logger.customLog("Popup refresh")
             self.info = newInfo
         }
     }
@@ -37,8 +37,8 @@ struct Popup: View {
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: Self.FRAME_WIDTH)
-        .onAppear              { self.infoRefresh() }
-        .onAppBecomeForeground { self.infoRefresh() }
+        .onAppear              { self.refresh() }
+        .onAppBecomeForeground { self.refresh() }
     }
 
     @ViewBuilder func NotSupportedView() -> some View {
