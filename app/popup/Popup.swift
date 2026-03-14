@@ -15,22 +15,30 @@ struct Popup: View {
     private let fullpath: String
 
     init(fullpath: String) {
-        Logger.customLog("Popup init with fullpath = \(fullpath)")
         self.fullpath = fullpath
+        Logger.customLog("Popup init with fullpath = \(fullpath)")
     }
 
     func refresh() {
         let newInfo = FSEntityInfo(self.fullpath)
         if (newInfo != self.info) {
-            Logger.customLog("Popup refresh")
             self.info = newInfo
+            Logger.customLog("Popup refresh")
         }
     }
 
     public var body: some View {
         VStack(spacing: 0) {
             if let info = self.info {
-                PopupScene(info)
+                let messageBox = MessageBox()
+                VStack(spacing: 0) {
+                    PopupHead()
+                    PopupBody()
+                    PopupFoot(messageBox: messageBox)
+                    messageBox
+                }.environmentObject(
+                    PopupState(info)
+                )
             } else {
                 self.NotSupportedView()
             }
