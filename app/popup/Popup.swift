@@ -10,6 +10,7 @@ struct Popup: View {
 
     static let FRAME_WIDTH: CGFloat = 300
 
+    @State private var messageBoxState = MessageState()
     @State private var info: FSEntityInfo?
 
     private let fullpath: String
@@ -30,15 +31,14 @@ struct Popup: View {
     public var body: some View {
         VStack(spacing: 0) {
             if let info = self.info {
-                let messageBox = MessageBox()
                 VStack(spacing: 0) {
                     PopupHead()
                     PopupBody()
-                    PopupFoot(messageBox: messageBox)
-                    messageBox
-                }.environmentObject(
-                    PopupState(info)
-                )
+                    PopupFoot()
+                    MessageBox(self.messageBoxState)
+                }
+                .environmentObject(PopupState(info))
+                .environmentObject(self.messageBoxState)
             } else {
                 self.NotSupportedView()
             }

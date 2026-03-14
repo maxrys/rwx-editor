@@ -8,13 +8,8 @@ import SwiftUI
 struct PopupFoot: View {
 
     @Environment(\.colorScheme) private var colorScheme
+    @EnvironmentObject private var messageBoxState: MessageState
     @EnvironmentObject private var popupState: PopupState
-
-    private let messageBox: MessageBox
-
-    init(messageBox: MessageBox) {
-        self.messageBox = messageBox
-    }
 
     public var body: some View {
         HStack(spacing: 15) {
@@ -32,7 +27,7 @@ struct PopupFoot: View {
                 isDisabled: !self.popupState.isChanged || !self.popupState.isEditable,
                 isFlat: false,
                 flexibility: .infinity
-            ) { Features.onApply(self.messageBox, self.popupState) }
+            ) { Features.onApply(self.messageBoxState, self.popupState) }
 
         }
         .padding(20)
@@ -53,7 +48,7 @@ struct PopupFoot: View {
 /* ############################################################# */
 
 #Preview {
-    PopupFoot(messageBox: MessageBox())
+    PopupFoot()
         .environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))
         .frame(width: 300)
 }

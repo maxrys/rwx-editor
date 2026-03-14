@@ -8,7 +8,7 @@ import AppKit
 
 final class Features {
 
-    static public func onApply(_ messageBox: MessageBox, _ state: PopupState) -> Bool {
+    static public func onApply(_ messageBoxState: MessageState, _ state: PopupState) -> Bool {
         do {
 
             Logger.customLog("Popup onApply before" +
@@ -25,14 +25,14 @@ final class Features {
                 ofItemAtPath: state.info.fullpath
             )
 
-            messageBox.insert(
+            messageBoxState.insert(
                 type: .ok,
                 title: NSLocalizedString("completed successfully", comment: "")
             )
 
             return true
         } catch let error as NSError {
-            messageBox.insert(
+            messageBoxState.insert(
                 type: .error,
                 title: NSLocalizedString("completed unsuccessfully", comment: ""),
                 description: error.code == 513 ? "SandBox error" : error.localizedDescription
