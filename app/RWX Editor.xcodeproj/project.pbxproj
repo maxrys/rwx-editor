@@ -65,6 +65,12 @@
 		506421DA2F64C10E0020F6C8 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		506421DB2F64C1780020F6C8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
 		506421DD2F656E410020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
+		506422102F6618BC0020F6C8 /* MessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220A2F6618BC0020F6C8 /* MessageState.swift */; };
+		506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220D2F6618BC0020F6C8 /* MessageColors.swift */; };
+		506422122F6618BC0020F6C8 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220C2F6618BC0020F6C8 /* MessageBox.swift */; };
+		506422132F6618BC0020F6C8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220B2F6618BC0020F6C8 /* Message.swift */; };
+		506422142F6618BC0020F6C8 /* Message_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506422092F6618BC0020F6C8 /* Message_types.swift */; };
+		506422152F6618BC0020F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5064220E2F6618BC0020F6C8 /* Assets.xcassets */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -108,13 +114,6 @@
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
 		50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
-		50DCD7F82F434C2E00E067C3 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F42F434C2E00E067C3 /* MessageBox.swift */; };
-		50DCD7F92F434C2E00E067C3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F22F434C2E00E067C3 /* Message.swift */; };
-		50DCD7FA2F434C2E00E067C3 /* MessageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F52F434C2E00E067C3 /* MessageColors.swift */; };
-		50DCD7FB2F434C2E00E067C3 /* MessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */; };
-		50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */; };
-		50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7F02F434C2E00E067C3 /* MessageType.swift */; };
-		50DCD7FE2F434C2E00E067C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DCD7F62F434C2E00E067C3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +174,12 @@
 		506421C22F61878E0020F6C8 /* BookmarksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksState.swift; sourceTree = "<group>"; };
 		506421C42F618AAC0020F6C8 /* BookmarkValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkValue.swift; sourceTree = "<group>"; };
 		506421C82F62B22D0020F6C8 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		506422092F6618BC0020F6C8 /* Message_types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message_types.swift; sourceTree = "<group>"; };
+		5064220A2F6618BC0020F6C8 /* MessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageState.swift; sourceTree = "<group>"; };
+		5064220B2F6618BC0020F6C8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5064220C2F6618BC0020F6C8 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		5064220D2F6618BC0020F6C8 /* MessageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageColors.swift; sourceTree = "<group>"; };
+		5064220E2F6618BC0020F6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,13 +226,6 @@
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
-		50DCD7F02F434C2E00E067C3 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
-		50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLifecycle.swift; sourceTree = "<group>"; };
-		50DCD7F22F434C2E00E067C3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStorage.swift; sourceTree = "<group>"; };
-		50DCD7F42F434C2E00E067C3 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
-		50DCD7F52F434C2E00E067C3 /* MessageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageColors.swift; sourceTree = "<group>"; };
-		50DCD7F62F434C2E00E067C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +306,19 @@
 				5003F0C92F58D5170030B75A /* PopupState.swift */,
 			);
 			path = state;
+			sourceTree = "<group>";
+		};
+		5064220F2F6618BC0020F6C8 /* MessageBox */ = {
+			isa = PBXGroup;
+			children = (
+				506422092F6618BC0020F6C8 /* Message_types.swift */,
+				5064220A2F6618BC0020F6C8 /* MessageState.swift */,
+				5064220B2F6618BC0020F6C8 /* Message.swift */,
+				5064220C2F6618BC0020F6C8 /* MessageBox.swift */,
+				5064220D2F6618BC0020F6C8 /* MessageColors.swift */,
+				5064220E2F6618BC0020F6C8 /* Assets.xcassets */,
+			);
+			path = MessageBox;
 			sourceTree = "<group>";
 		};
 		50B2768E2F389876005F7475 = {
@@ -436,7 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				501FA4D32F4F0C05004663D2 /* ButtonCustom */,
-				50DCD7F72F434C2E00E067C3 /* MessageBox */,
+				5064220F2F6618BC0020F6C8 /* MessageBox */,
 				50CE9FB72F47147D001006CF /* PanelRwxText */,
 				50CE9FBA2F4714A3001006CF /* PickerCustom */,
 				506421682F5EF04A0020F6C8 /* TableCustom */,
@@ -475,20 +486,6 @@
 				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = ToggleRwxColored;
-			sourceTree = "<group>";
-		};
-		50DCD7F72F434C2E00E067C3 /* MessageBox */ = {
-			isa = PBXGroup;
-			children = (
-				50DCD7F02F434C2E00E067C3 /* MessageType.swift */,
-				50DCD7F12F434C2E00E067C3 /* MessageLifecycle.swift */,
-				50DCD7F22F434C2E00E067C3 /* Message.swift */,
-				50DCD7F32F434C2E00E067C3 /* MessageStorage.swift */,
-				50DCD7F42F434C2E00E067C3 /* MessageBox.swift */,
-				50DCD7F52F434C2E00E067C3 /* MessageColors.swift */,
-				50DCD7F62F434C2E00E067C3 /* Assets.xcassets */,
-			);
-			path = MessageBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,11 +598,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DCD7FE2F434C2E00E067C3 /* Assets.xcassets in Resources */,
 				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50CEA0AB2F4C5881001006CF /* InfoPlist.xcstrings in Resources */,
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
 				506421692F5EF04A0020F6C8 /* Media.xcassets in Resources */,
+				506422152F6618BC0020F6C8 /* Assets.xcassets in Resources */,
 				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
 				501FA4D42F4F0C05004663D2 /* Assets.xcassets in Resources */,
@@ -648,12 +645,6 @@
 				50B277032F3B2357005F7475 /* CaseIterable.swift in Sources */,
 				50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */,
 				50B276F52F3A4991005F7475 /* FSEntityInfo.swift in Sources */,
-				50DCD7F82F434C2E00E067C3 /* MessageBox.swift in Sources */,
-				50DCD7F92F434C2E00E067C3 /* Message.swift in Sources */,
-				50DCD7FA2F434C2E00E067C3 /* MessageColors.swift in Sources */,
-				50DCD7FB2F434C2E00E067C3 /* MessageStorage.swift in Sources */,
-				50DCD7FC2F434C2E00E067C3 /* MessageLifecycle.swift in Sources */,
-				50DCD7FD2F434C2E00E067C3 /* MessageType.swift in Sources */,
 				50B276FD2F3A8D34005F7475 /* View.swift in Sources */,
 				506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */,
 				5003F0CF2F5980100030B75A /* PanelRwxTextColors.swift in Sources */,
@@ -701,6 +692,11 @@
 				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */,
 				5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */,
+				506422102F6618BC0020F6C8 /* MessageState.swift in Sources */,
+				506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */,
+				506422122F6618BC0020F6C8 /* MessageBox.swift in Sources */,
+				506422132F6618BC0020F6C8 /* Message.swift in Sources */,
+				506422142F6618BC0020F6C8 /* Message_types.swift in Sources */,
 				5064216C2F5EF04A0020F6C8 /* TableCustom_HeadCell.swift in Sources */,
 				50B276E32F39DC3F005F7475 /* PermissionsValue.swift in Sources */,
 			);

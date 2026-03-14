@@ -5,7 +5,10 @@
 
 import SwiftUI
 
-enum MessageType {
+typealias MessageID = UInt
+typealias MessageProgressPair = (message: Message, progress: Double)
+
+enum MessageType: Codable {
 
     case info
     case ok
@@ -29,5 +32,22 @@ enum MessageType {
             case .error  : Color.messageBox.errorDescriptionBackground
         }
     }
+
+}
+
+enum MessageStatus {
+
+    case persistent
+    case inProgress(Double)
+    case expired
+
+}
+
+enum MessageLifeTime {
+
+    static let LIFE_TIME_DEFAULT: CFTimeInterval = 3.0
+
+    case time(Double)
+    case infinity
 
 }

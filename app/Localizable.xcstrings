@@ -220,6 +220,12 @@
         }
       }
     },
+    "Long long long long long long long long long long long long long long long long long long long long long Description" : {
+      "shouldTranslate" : false
+    },
+    "Long long long long long long long long long long long long long long Title" : {
+      "shouldTranslate" : false
+    },
     "Multiple values:" : {
       "shouldTranslate" : false
     },
