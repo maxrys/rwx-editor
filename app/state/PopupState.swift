@@ -24,7 +24,6 @@ final class PopupState: ObservableObject {
     let originalPerms: PermissionsValue
     let originalOwner: String
     let originalGroup: String
-    let bookmark: BookmarkValue?
 
     public var isChanged: Bool {
         self.perms != self.originalPerms ||
@@ -40,8 +39,7 @@ final class PopupState: ObservableObject {
         self.originalPerms = info.perms
         self.originalOwner = info.owner
         self.originalGroup = info.group
-        self.bookmark = BookmarkValue(searchValidBy: info.fullpath)
-        self.isEditable = self.bookmark != nil
+        self.isEditable = info.isValidbookmark
     }
 
     public func resetToDefault() {

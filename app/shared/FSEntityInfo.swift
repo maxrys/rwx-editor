@@ -34,6 +34,7 @@ final class FSEntityInfo: Equatable {
     public let perms: PermissionsValue
     public let owner: String
     public let group: String
+    public let isValidbookmark: Bool
 
     init?(_ fullpath: String) {
 
@@ -100,6 +101,10 @@ final class FSEntityInfo: Equatable {
                 default: break
             }
         }
+
+        if let bookmark = BookmarkValue(searchValidBy: self.fullpath), !bookmark.info.isExpired
+             { self.isValidbookmark = true }
+        else { self.isValidbookmark = false }
 
     }
 
