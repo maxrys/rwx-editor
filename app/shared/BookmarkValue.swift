@@ -5,12 +5,12 @@
 
 import Foundation
 
-final class Bookmark {
+final class BookmarkValue {
 
     public private(set) var data: Data
 
     public var info: (url: URL?, isExpired: Bool) {
-        var isExpired = false
+        var isExpired = true
         let url = try? URL(
             resolvingBookmarkData: data,
             options: [.withSecurityScope],

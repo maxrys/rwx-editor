@@ -84,7 +84,7 @@ struct Bookmarks: View {
 
         _ = self.bookmarksState.insert(
             items: openPanel.urls.reduce(into: [(path: String, data: Data)]()) { result, url in
-                if let bookmark = Bookmark(from: url) {
+                if let bookmark = BookmarkValue(from: url) {
                     if bookmark.startAccessing() {
                         result.append((path: url.path, bookmark.data))
                         bookmark.stopAccessing()

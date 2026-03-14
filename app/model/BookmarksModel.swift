@@ -88,11 +88,13 @@ final public class BookmarksModel: NSManagedObject {
             fetchRequest.predicate = NSPredicate(format: "path IN %@", paths)
             return try Self.context.fetch(fetchRequest).reduce(into: Optional<BookmarksFetchItem>.none, { result, modelItem in
                 if (result == nil) {
-                    result = BookmarksFetchItem(
-                        path     : modelItem.path,
-                        data     : modelItem.data,
-                        createdAt: modelItem.createdAt
-                    )
+                    if (!BookmarkValue(from: modelItem.data).info.isExpired) {
+                        result = BookmarksFetchItem(
+                            path     : modelItem.path,
+                            data     : modelItem.data,
+                            createdAt: modelItem.createdAt
+                        )
+                    }
                 }
             })
         } catch {

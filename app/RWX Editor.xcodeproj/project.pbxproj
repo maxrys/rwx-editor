@@ -59,9 +59,9 @@
 		506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506421BC2F60764B0020F6C8 /* ExtSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421BB2F60764B0020F6C8 /* ExtSettings.swift */; };
 		506421C32F61878E0020F6C8 /* BookmarksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C22F61878E0020F6C8 /* BookmarksState.swift */; };
-		506421C52F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
-		506421C62F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
-		506421C72F618AB00020F6C8 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* Bookmark.swift */; };
+		506421C52F618AB00020F6C8 /* BookmarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* BookmarkValue.swift */; };
+		506421C62F618AB00020F6C8 /* BookmarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* BookmarkValue.swift */; };
+		506421C72F618AB00020F6C8 /* BookmarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* BookmarkValue.swift */; };
 		506421C92F62B22D0020F6C8 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C82F62B22D0020F6C8 /* Bool.swift */; };
 		506421DA2F64C10E0020F6C8 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		506421DB2F64C1780020F6C8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
@@ -174,7 +174,7 @@
 		506421952F5F6E800020F6C8 /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
 		506421BB2F60764B0020F6C8 /* ExtSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSettings.swift; sourceTree = "<group>"; };
 		506421C22F61878E0020F6C8 /* BookmarksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksState.swift; sourceTree = "<group>"; };
-		506421C42F618AAC0020F6C8 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		506421C42F618AAC0020F6C8 /* BookmarkValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkValue.swift; sourceTree = "<group>"; };
 		506421C82F62B22D0020F6C8 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		50980A452F59ACBF00EF7470 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,7 +345,7 @@
 				50B276C22F39CB73005F7475 /* const.swift */,
 				50B277202F3DCEE6005F7475 /* types.swift */,
 				50B277122F3BD0F2005F7475 /* enums.swift */,
-				506421C42F618AAC0020F6C8 /* Bookmark.swift */,
+				506421C42F618AAC0020F6C8 /* BookmarkValue.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
 				506421742F5EF1550020F6C8 /* ResultBuilder.swift */,
 			);
@@ -675,7 +675,7 @@
 				50309B172F5B22F8008CA064 /* URL.swift in Sources */,
 				506421792F5F15950020F6C8 /* Bookmarks.swift in Sources */,
 				5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */,
-				506421C52F618AB00020F6C8 /* Bookmark.swift in Sources */,
+				506421C52F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				50B276F22F3A4709005F7475 /* PopupFoot.swift in Sources */,
 				50B276D22F39CC3E005F7475 /* MainScene.swift in Sources */,
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
@@ -722,7 +722,7 @@
 				5003F0D12F5980DB0030B75A /* ToggleRwxColoredColor.swift in Sources */,
 				501FA4D82F4F0ED7004663D2 /* Logger.swift in Sources */,
 				50309B182F5B22F8008CA064 /* URL.swift in Sources */,
-				506421C72F618AB00020F6C8 /* Bookmark.swift in Sources */,
+				506421C72F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				50309B302F5C8579008CA064 /* Data.swift in Sources */,
 				506421932F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50309B2F2F5C84AE008CA064 /* Process.swift in Sources */,
@@ -743,7 +743,7 @@
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
-				506421C62F618AB00020F6C8 /* Bookmark.swift in Sources */,
+				506421C62F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */,
 				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
 				50309B152F5B201A008CA064 /* const.swift in Sources */,
