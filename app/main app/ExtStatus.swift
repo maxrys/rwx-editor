@@ -44,8 +44,8 @@ struct ExtStatus: View {
         .onTapGesture {
             FinderSync.FIFinderSyncController.showExtensionManagementInterface()
         }
-        .onAppear              { if (!self.isDemo) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
-        .onAppBecomeForeground { if (!self.isDemo) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
+        .onAppear              {           if (!self.isDemo                               ) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
+        .onWinBecomeForeground { window in if (!self.isDemo && window.ID == WINDOW_MAIN_ID) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
     }
 
 }

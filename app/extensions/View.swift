@@ -85,15 +85,6 @@ extension View {
         } else { self }
     }
 
-    @ViewBuilder func onAppBecomeForeground(_ action: @escaping () -> Void) -> some View {
-        self.onReceive(
-            NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification),
-            perform: { _ in
-                action()
-            }
-        )
-    }
-
     @ViewBuilder func onWinBecomeForeground(_ action: @escaping (NSWindow) -> Void) -> some View {
         self.onReceive(
             NotificationCenter.default.publisher(for: NSWindow.didBecomeMainNotification),

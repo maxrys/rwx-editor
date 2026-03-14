@@ -36,8 +36,8 @@ struct ExtLaunchAtLogin: View {
             isOn: self.$isEnabled
         )
         .onChange(of: self.isEnabled) { value in Self.launchAtLogin = value }
-        .onAppear              { self.isEnabled = Self.launchAtLogin }
-        .onAppBecomeForeground { self.isEnabled = Self.launchAtLogin }
+        .onAppear              {           if (            true           ) {  self.isEnabled = Self.launchAtLogin } }
+        .onWinBecomeForeground { window in if (window.ID == WINDOW_MAIN_ID) {  self.isEnabled = Self.launchAtLogin } }
     }
 
 }

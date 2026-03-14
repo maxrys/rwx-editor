@@ -58,8 +58,10 @@ struct Bookmarks: View {
         .onAppear {
             BookmarksModel.dump()
         }
-        .onAppBecomeForeground {
-            self.bookmarksState.reload()
+        .onWinBecomeForeground { window in
+            if (window.ID == WINDOW_MAIN_ID) {
+                self.bookmarksState.reload()
+            }
         }
     }
 
