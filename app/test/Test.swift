@@ -27,7 +27,7 @@ struct Test {
         try? self.subjectPermissionGet()
         try? self.subjectPermissionSet()
         try? self.parseFullpath()
-        try? self.urlParents()
+        try? self.urlPathParents()
     }
 
     func bitGet() throws {
@@ -204,14 +204,14 @@ struct Test {
         }
     }
 
-    func urlParents() throws {
-        #expect( URL(string: "/x/y/z/")?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
-        #expect( URL(string: "/x/y/z" )?.parents == ["/x/y/z", "/x/y", "/x", "/"] )
-        #expect( URL(string: "/x/y/"  )?.parents == [          "/x/y", "/x", "/"] )
-        #expect( URL(string: "/x/y"   )?.parents == [          "/x/y", "/x", "/"] )
-        #expect( URL(string: "/x/"    )?.parents == [                  "/x", "/"] )
-        #expect( URL(string: "/x"     )?.parents == [                  "/x", "/"] )
-        #expect( URL(string: "/"      )?.parents == [                        "/"] )
+    func urlPathParents() throws {
+        #expect( URL(string: "/x/y/z/")?.pathParents == ["/x/y/z", "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/y/z" )?.pathParents == ["/x/y/z", "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/y/"  )?.pathParents == [          "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/y"   )?.pathParents == [          "/x/y", "/x", "/"] )
+        #expect( URL(string: "/x/"    )?.pathParents == [                  "/x", "/"] )
+        #expect( URL(string: "/x"     )?.pathParents == [                  "/x", "/"] )
+        #expect( URL(string: "/"      )?.pathParents == [                        "/"] )
     }
 
 }

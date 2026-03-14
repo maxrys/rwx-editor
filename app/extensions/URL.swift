@@ -17,7 +17,7 @@ extension URL {
         else                 { return decoded.trimPrefix(URL.PREFIX_THIS_APP).trimPrefix(URL.PREFIX_FILE) }
     }
 
-    public var parents: [String] {
+    public var pathParents: [String] {
         var result: [String] = []
         let parts = self.path.trimPrefix("/").trimSuffix("/").split(separator: "/")
         for index in (0 ..< parts.count).reversed() {

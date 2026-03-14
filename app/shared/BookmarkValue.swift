@@ -7,6 +7,15 @@ import Foundation
 
 final class BookmarkValue {
 
+    static func search(_ path: String) -> Self? {
+        if let pathParents = URL(string: path)?.pathParents {
+            if let foundItem = BookmarksModel.search(pathParents) {
+                return Self(from: foundItem.data)
+            }
+        }
+        return nil
+    }
+
     public private(set) var data: Data
 
     public var info: (url: URL?, isExpired: Bool) {

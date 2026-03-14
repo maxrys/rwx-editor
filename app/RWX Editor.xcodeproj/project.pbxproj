@@ -65,6 +65,7 @@
 		506421C92F62B22D0020F6C8 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C82F62B22D0020F6C8 /* Bool.swift */; };
 		506421DA2F64C10E0020F6C8 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		506421DB2F64C1780020F6C8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
+		506421DD2F656E410020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		50980A462F59ACC100EF7470 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
@@ -742,6 +743,7 @@
 				501FA4D92F4F0EDB004663D2 /* Logger.swift in Sources */,
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,
+				506421DD2F656E410020F6C8 /* BookmarksModel.swift in Sources */,
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
 				506421C62F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */,
