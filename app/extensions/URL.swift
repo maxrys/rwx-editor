@@ -19,15 +19,13 @@ extension URL {
 
     public var parents: [String] {
         var result: [String] = []
-        let parts = self.path.trimPrefix("/").trimSuffix("/").components(separatedBy: "/")
+        let parts = self.path.trimPrefix("/").trimSuffix("/").split(separator: "/")
         for index in (0 ..< parts.count).reversed() {
             result.append(
                 "/" + parts[...index].joined(separator: "/")
             )
         }
-        if (result != ["/"])
-             { return result + ["/"] }
-        else { return result }
+        return result + ["/"]
     }
 
 }
