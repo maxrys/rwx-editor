@@ -45,8 +45,12 @@ struct Popup: View {
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: Self.FRAME_WIDTH)
-        .onAppear              { self.refresh() }
-        .onAppBecomeForeground { self.refresh() }
+        .onAppear { self.refresh() }
+        .onWinBecomeForeground { window in
+            if (window.ID == self.fullpath) {
+                self.refresh()
+            }
+        }
     }
 
     @ViewBuilder func NotSupportedView() -> some View {
