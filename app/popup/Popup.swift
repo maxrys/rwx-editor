@@ -54,17 +54,18 @@ struct Popup: View {
     }
 
     @ViewBuilder func NotSupportedView() -> some View {
-        let messageBox = MessageBox()
-        messageBox
-            .frame(maxWidth: 300)
-            .onAppear {
-                messageBox.insert(
-                    type: .error,
-                    title: NSLocalizedString("Object is not suppoted", comment: ""),
-                    description: self.fullpath,
-                    lifeTime: .infinity
-                )
-            }
+        VStack(alignment: .center, spacing: 0) {
+            Text(NSLocalizedString("Object is not suppoted", comment: ""))
+                .padding(20)
+                .font(.system(size: 14, weight: .bold))
+                .frame(maxWidth: .infinity)
+                .background(Color.messageBox.errorTitleBackground)
+            Text(self.fullpath)
+                .padding(10)
+                .font(.system(size: 14))
+                .frame(maxWidth: .infinity)
+                .background(Color.messageBox.errorDescriptionBackground)
+        }.foregroundPolyfill(Color.white)
     }
 
 }
