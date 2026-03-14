@@ -41,8 +41,7 @@ final class BookmarkValue {
     init?(searchValidBy path: String) {
         if let foundBookmark = BookmarksModel.searchValid(path) {
             self.data = foundBookmark.data
-        }
-        return nil
+        } else { return nil }
     }
 
     func startAccessing() -> Bool {
