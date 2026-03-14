@@ -19,6 +19,7 @@ struct TableCustom: View {
     @State private var appIsFocused: Bool = true
 
     private let isVisibleHeader: Bool
+    private let windowID: String?
     private let isFocusable: Bool
     private let isScrollable: Bool
     private let selectionType: SelectionType
@@ -33,6 +34,7 @@ struct TableCustom: View {
 
     init(
         selected selectedRows: Binding<Set<Int>>,
+        windowID: String? = nil,
         isVisibleHeader: Bool = true,
         isFocusable: Bool = true,
         isScrollable: Bool = true,
@@ -43,6 +45,7 @@ struct TableCustom: View {
         bodyAsArray bodyCells: [any View]
     ) {
         self._selectedRows = selectedRows
+        self.windowID = windowID
         self.isVisibleHeader = isVisibleHeader
         self.isFocusable = isFocusable
         self.isScrollable = isScrollable
@@ -55,6 +58,7 @@ struct TableCustom: View {
 
     init(
         selected selectedRows: Binding<Set<Int>>,
+        windowID: String? = nil,
         isVisibleHeader: Bool = true,
         isFocusable: Bool = true,
         isScrollable: Bool = true,
@@ -65,6 +69,7 @@ struct TableCustom: View {
         @ViewBuilderArray<View> bodyAsViews bodyCells: () -> [any View]
     ) {
         self._selectedRows = selectedRows
+        self.windowID = windowID
         self.isVisibleHeader = isVisibleHeader
         self.isFocusable = isFocusable
         self.isScrollable = isScrollable
@@ -135,11 +140,15 @@ struct TableCustom: View {
                 self.selectedRows = Set(0 ..< self.rowsCount)
             }
         }
-        .onAppBecomeForeground {
-            self.appIsFocused = true
+        .onWinBecomeForeground { window in
+            if (window.ID == self.windowID) {
+                self.appIsFocused = true
+            }
         }
-        .onAppBecomeBackground {
-            self.appIsFocused = false
+        .onWinBecomeBackground { window in
+            if (window.ID == self.windowID) {
+                self.appIsFocused = false
+            }
         }
     }
 

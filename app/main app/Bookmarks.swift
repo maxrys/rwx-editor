@@ -18,6 +18,7 @@ struct Bookmarks: View {
 
             TableCustom(
                 selected: self.bookmarksState.getBinding(\.selectedRows),
+                windowID: WINDOW_MAIN_ID,
                 bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
                 head: {
                     TableCustom_HeadCell(
