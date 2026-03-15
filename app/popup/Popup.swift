@@ -8,7 +8,7 @@ import SwiftUI
 
 struct Popup: View {
 
-    static let FRAME_WIDTH: CGFloat = 300
+    static let FRAME_WIDTH: CGFloat = 330
 
     @State private var messageBoxState = MessageState()
     @State private var info: FSEntityInfo?
@@ -110,5 +110,5 @@ struct Popup: View {
         Popup(fullpath: "/unknown")     ; Delimiter
         Popup(fullpath: "/private/etc/"); Delimiter /* directory */
         Popup(fullpath: "/private/etc/hosts")       /* file */
-    }.frame(width: 300)
+    }.frame(width: Popup.FRAME_WIDTH)
 }

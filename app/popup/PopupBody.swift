@@ -161,5 +161,5 @@ struct PopupBody: View {
         let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
         PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/"     )!)); Delimiter /* directory */
         PopupBody().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))            /* file */
-    }.frame(width: 300)
+    }.frame(width: Popup.FRAME_WIDTH)
 }

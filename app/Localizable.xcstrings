@@ -3,6 +3,12 @@
   "strings" : {
     "%@ 'at' %@" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ 'у' %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -19,6 +25,12 @@
     },
     "%@ pcs." : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ шт."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29,6 +41,12 @@
     },
     "About %@" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аб дадатку %@"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39,6 +57,12 @@
     },
     "Access" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступ"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -49,6 +73,12 @@
     },
     "add allowed directories..." : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "дадаць дазволеныя каталогі…"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59,6 +89,12 @@
     },
     "alias" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "псеўданім"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -69,6 +105,12 @@
     },
     "Allowed directories not found" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дазволеныя каталогі не знойдзены"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,6 +121,12 @@
     },
     "apply" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "прымяніць"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -89,6 +137,12 @@
     },
     "cancel" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "адмяніць"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -99,6 +153,12 @@
     },
     "completed successfully" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "выканана паспяхова"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -109,16 +169,28 @@
     },
     "completed unsuccessfully" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "выканана няўдала"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "завершено неудачно"
+            "value" : "выполнено неудачно"
           }
         }
       }
     },
     "Created" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створана"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -129,6 +201,12 @@
     },
     "delete" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "выдаліць"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,16 +217,28 @@
     },
     "directory" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "каталог"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "директория"
+            "value" : "каталог"
           }
         }
       }
     },
     "Execute" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -159,6 +249,12 @@
     },
     "extension is disabled" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пашырэнне выключана"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -169,6 +265,12 @@
     },
     "extension is enabled" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пашырэнне ўключана"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -179,6 +281,12 @@
     },
     "file" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "файл"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -192,6 +300,12 @@
     },
     "Group" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Група"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -202,6 +316,12 @@
     },
     "Launch at login" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск пры ўваходзе ў сістэму"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -212,6 +332,12 @@
     },
     "link" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "спасылка"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -222,6 +348,12 @@
     },
     "Location path" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шлях размяшчэння"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,6 +373,12 @@
     },
     "Name" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -254,6 +392,12 @@
     },
     "Object is not suppoted" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аб'ект не падтрымліваецца"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -264,6 +408,12 @@
     },
     "open settings" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "адкрыць наладкі"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -274,6 +424,12 @@
     },
     "Other" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Іншыя"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -284,6 +440,12 @@
     },
     "Owner" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уладальнік"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -294,6 +456,12 @@
     },
     "Path" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шлях"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -304,6 +472,12 @@
     },
     "Provided access to directories" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прадастаўлены доступ да каталогаў"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -314,6 +488,12 @@
     },
     "Quit %@" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завяршыць %@"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -324,6 +504,12 @@
     },
     "Read" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чытанне"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -334,6 +520,12 @@
     },
     "Real Name" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рэальная назва"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -344,6 +536,12 @@
     },
     "Real Path" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рэальны шлях"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -354,6 +552,12 @@
     },
     "Reference Count" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Колькасць спасылак"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -364,6 +568,12 @@
     },
     "RWX Editor" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Рэдактар ​"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -374,6 +584,12 @@
     },
     "RWX Editor | Settings" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Рэдактар ​​| Усталёўкі"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -384,6 +600,12 @@
     },
     "select a directories to grant access" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "абраць каталогі для доступу"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -397,6 +619,12 @@
     },
     "Size" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Памер"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -407,6 +635,12 @@
     },
     "Type" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тып"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -417,6 +651,12 @@
     },
     "Updated" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Абноўлена"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -427,6 +667,12 @@
     },
     "Write" : {
       "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запіс"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",

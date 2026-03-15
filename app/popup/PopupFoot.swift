@@ -52,5 +52,5 @@ struct PopupFoot: View {
 #Preview {
     PopupFoot()
         .environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))
-        .frame(width: 300)
+        .frame(width: Popup.FRAME_WIDTH)
 }
