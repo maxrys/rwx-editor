@@ -47,12 +47,12 @@
         }
       }
     },
-    "add new directory..." : {
+    "add allowed directories..." : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "добавить новый каталог..."
+            "value" : "добавить разрешённые каталоги…"
           }
         }
       }
@@ -63,6 +63,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "псевдоним"
+          }
+        }
+      }
+    },
+    "Allowed directories not found" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разрешенные каталоги не найдены"
           }
         }
       }
@@ -210,12 +220,12 @@
         }
       }
     },
-    "Location paths" : {
+    "Location path" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пути расположения"
+            "value" : "Путь расположения"
           }
         }
       }
@@ -248,6 +258,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Объект не поддерживается"
+          }
+        }
+      }
+    },
+    "open settings" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "открыть настройки"
           }
         }
       }
@@ -362,12 +382,12 @@
         }
       }
     },
-    "select a directory to grant access" : {
+    "select a directories to grant access" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "выбрать каталог для доступа"
+            "value" : "выбрать каталоги для доступа"
           }
         }
       }

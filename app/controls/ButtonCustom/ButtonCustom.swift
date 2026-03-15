@@ -22,9 +22,9 @@ struct ButtonCustom: View {
         _ text: String = "button",
         isDisabled: Bool = false,
         colorStyle: Color.ButtonCustomStyle = .accent,
-        isFlat: Bool = true,
+        isFlat: Bool = false,
         font: Font = .system(size: 12.5, weight: .regular),
-        padding: EdgeInsets = .init(top: 6, leading: 9, bottom: 6, trailing: 9),
+        padding: EdgeInsets = .init(top: 6, leading: 12, bottom: 6, trailing: 12),
         flexibility: Flexibility = .none,
         onClick: @escaping () -> Void = { }
     ) {

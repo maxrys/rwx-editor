@@ -18,14 +18,12 @@ struct PopupFoot: View {
                 NSLocalizedString("cancel", comment: ""),
                 isDisabled: !self.popupState.isChanged || !self.popupState.isEditable,
                 colorStyle: .custom(text: nil, background: nil),
-                isFlat: false,
                 flexibility: .infinity
             ) { self.popupState.resetToDefault() }
 
             ButtonCustom(
                 NSLocalizedString("apply", comment: ""),
                 isDisabled: !self.popupState.isChanged || !self.popupState.isEditable,
-                isFlat: false,
                 flexibility: .infinity
             ) {
                 if (Features.onApply(self.messageBoxState, self.popupState)) {

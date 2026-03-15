@@ -7,7 +7,7 @@ import SwiftUI
 
 struct MainScene: View {
 
-    static let FRAME_WIDTH : CGFloat = 600
+    static let FRAME_WIDTH : CGFloat = 800
     static let FRAME_HEIGHT: CGFloat = 500
 
     public var body: some View {

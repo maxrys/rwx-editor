@@ -25,7 +25,7 @@ struct Bookmarks: View {
                         size: .flexible(),
                         spacing: 1,
                         alignment: .leading
-                    ) { Text(NSLocalizedString("Location paths", comment: "")).font(.system(size: 11)) }
+                    ) { Text(NSLocalizedString("Location path", comment: "")).font(.system(size: 11)) }
                 },
                 bodyAsArray:
                     self.bookmarksState.items.flatMap { item in [
@@ -39,17 +39,15 @@ struct Bookmarks: View {
                     NSLocalizedString("delete", comment: ""),
                     isDisabled: self.bookmarksState.selectedRows.isEmpty,
                     colorStyle: .custom(text: nil, background: nil),
-                    isFlat: false,
                     flexibility: .size(100)
                 ) { self.onDeleteBookmark() }
 
                 Spacer()
 
                 ButtonCustom(
-                    NSLocalizedString("add new directory...", comment: ""),
+                    NSLocalizedString("add allowed directories...", comment: ""),
                     colorStyle: .accent,
-                    isFlat: false,
-                    flexibility: .size(200)
+                    flexibility: .size(250)
                 ) { self.onAddBookmark() }
 
             }
@@ -78,7 +76,7 @@ struct Bookmarks: View {
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = false
         openPanel.prompt = NSLocalizedString(
-            "select a directory to grant access", comment: ""
+            "select a directories to grant access", comment: ""
         )
 
         guard openPanel.runModal() == .OK else {

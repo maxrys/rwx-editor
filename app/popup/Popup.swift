@@ -32,10 +32,11 @@ struct Popup: View {
         VStack(spacing: 0) {
             if let info = self.info {
                 VStack(spacing: 0) {
+                    if (!info.isValidbookmark) { NoBookmarkMessageView() }
+                    MessageBox(self.messageBoxState)
                     PopupHead()
                     PopupBody()
                     PopupFoot()
-                    MessageBox(self.messageBoxState)
                 }
                 .environmentObject(PopupState(info))
                 .environmentObject(self.messageBoxState)
@@ -53,19 +54,46 @@ struct Popup: View {
         }
     }
 
+    @ViewBuilder func NoBookmarkMessageView() -> some View {
+        VStack(alignment: .center, spacing: 0) {
+            Text(NSLocalizedString("Allowed directories not found", comment: ""))
+                .font(.system(size: 14, weight: .bold))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(13)
+                .frame(maxWidth: .infinity)
+                .foregroundPolyfill(Color.messageBox.text)
+                .background(Color.messageBox.errorTitleBackground)
+            ButtonCustom(
+                NSLocalizedString("open settings", comment: ""),
+                colorStyle: .custom(text: nil, background: nil),
+            ) { App.appDelegate.showWindowMain() }
+            .padding(13)
+            .frame(maxWidth: .infinity)
+            .foregroundPolyfill(Color.messageBox.text)
+            .background(Color.messageBox.errorDescriptionBackground)
+        }
+    }
+
     @ViewBuilder func NotSupportedView() -> some View {
         VStack(alignment: .center, spacing: 0) {
             Text(NSLocalizedString("Object is not suppoted", comment: ""))
-                .padding(20)
                 .font(.system(size: 14, weight: .bold))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(13)
                 .frame(maxWidth: .infinity)
+                .foregroundPolyfill(Color.messageBox.text)
                 .background(Color.messageBox.errorTitleBackground)
             Text(self.fullpath)
-                .padding(10)
-                .font(.system(size: 14))
+                .font(.system(size: 13))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(13)
                 .frame(maxWidth: .infinity)
+                .foregroundPolyfill(Color.messageBox.text)
                 .background(Color.messageBox.errorDescriptionBackground)
-        }.foregroundPolyfill(Color.white)
+        }
     }
 
 }
