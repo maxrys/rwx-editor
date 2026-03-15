@@ -7,16 +7,13 @@ import SwiftUI
 
 struct MainScene: View {
 
-    static let FRAME_WIDTH : CGFloat = 800
-    static let FRAME_HEIGHT: CGFloat = 500
-
     public var body: some View {
         VStack(spacing: 30) {
             ExtSettings()
             Bookmarks()
         }
         .padding(20)
-        .frame(width: Self.FRAME_WIDTH, height: Self.FRAME_HEIGHT)
+        .frame(minHeight: 350)
         .environment(\.layoutDirection, .leftToRight)
     }
 

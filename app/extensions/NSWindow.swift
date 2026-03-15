@@ -54,15 +54,6 @@ extension NSWindow {
         } else {
             window.hide()
         }
-
-        hostingView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingView.leadingAnchor .constraint(equalTo: window.contentView!.leadingAnchor),
-            hostingView.trailingAnchor.constraint(equalTo: window.contentView!.trailingAnchor),
-            hostingView.topAnchor     .constraint(equalTo: window.contentView!.topAnchor),
-            hostingView.bottomAnchor  .constraint(equalTo: window.contentView!.bottomAnchor),
-        ])
-
         return true
     }
 
