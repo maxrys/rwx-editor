@@ -39,7 +39,7 @@
 		50309B342F5CBC3A008CA064 /* NSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B332F5CBC37008CA064 /* NSMenu.swift */; };
 		50309B362F5CBF97008CA064 /* ExtStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B352F5CBF97008CA064 /* ExtStatus.swift */; };
 		50309B382F5CC32A008CA064 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
-		506421692F5EF04A0020F6C8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506421672F5EF04A0020F6C8 /* Media.xcassets */; };
+		506421692F5EF04A0020F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506421672F5EF04A0020F6C8 /* Assets.xcassets */; };
 		5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421662F5EF04A0020F6C8 /* TableCustomColors.swift */; };
 		5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421642F5EF04A0020F6C8 /* TableCustom.swift */; };
 		5064216C2F5EF04A0020F6C8 /* TableCustom_HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421652F5EF04A0020F6C8 /* TableCustom_HeadCell.swift */; };
@@ -160,7 +160,7 @@
 		506421642F5EF04A0020F6C8 /* TableCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCustom.swift; sourceTree = "<group>"; };
 		506421652F5EF04A0020F6C8 /* TableCustom_HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCustom_HeadCell.swift; sourceTree = "<group>"; };
 		506421662F5EF04A0020F6C8 /* TableCustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCustomColors.swift; sourceTree = "<group>"; };
-		506421672F5EF04A0020F6C8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		506421672F5EF04A0020F6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5064216E2F5EF07F0020F6C8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		506421702F5EF0990020F6C8 /* NSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEvent.swift; sourceTree = "<group>"; };
 		506421722F5EF0AA0020F6C8 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				506421642F5EF04A0020F6C8 /* TableCustom.swift */,
 				506421652F5EF04A0020F6C8 /* TableCustom_HeadCell.swift */,
 				506421662F5EF04A0020F6C8 /* TableCustomColors.swift */,
-				506421672F5EF04A0020F6C8 /* Media.xcassets */,
+				506421672F5EF04A0020F6C8 /* Assets.xcassets */,
 			);
 			path = TableCustom;
 			sourceTree = "<group>";
@@ -601,7 +601,7 @@
 				50B277062F3B2D93005F7475 /* Localizable.xcstrings in Resources */,
 				50CEA0AB2F4C5881001006CF /* InfoPlist.xcstrings in Resources */,
 				50B277182F3C7744005F7475 /* Assets.xcassets in Resources */,
-				506421692F5EF04A0020F6C8 /* Media.xcassets in Resources */,
+				506421692F5EF04A0020F6C8 /* Assets.xcassets in Resources */,
 				506422152F6618BC0020F6C8 /* Assets.xcassets in Resources */,
 				50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */,
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
