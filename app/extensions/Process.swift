@@ -9,8 +9,8 @@ import Foundation
 extension Process {
 
     enum ShellResult {
-        case ok(data: [String])
-        case error(code: Int32, text: String)
+        case ok(lines: [String])
+        case error(code: Int32, description: String)
         case fatal
     }
 
@@ -28,7 +28,7 @@ extension Process {
             task.waitUntilExit()
             if (task.terminationStatus == 0) {
                 return .ok(
-                    data: pipeOut.fileHandleForReading.readDataToEndOfFile().toString
+                    lines: pipeOut.fileHandleForReading.readDataToEndOfFile().toString
                         .trimPrefix("\n")
                         .trimSuffix("\n")
                         .components(separatedBy: separatedBy)
@@ -36,7 +36,7 @@ extension Process {
             } else {
                 return .error(
                     code: task.terminationStatus,
-                    text: pipeErr.fileHandleForReading.readDataToEndOfFile().toString
+                    description: pipeErr.fileHandleForReading.readDataToEndOfFile().toString
                         .trimPrefix("\n")
                         .trimSuffix("\n")
                 )
@@ -52,11 +52,11 @@ extension Process {
             args: ["dscl", ".", "list", "/Users"]
         )
         switch shellResult {
-            case .ok(let data):
+            case .ok(let lines):
                 Logger.customLog("systemUsers shellResult = ok")
-                return data
-            case .error(let code, let text):
-                Logger.customLog("systemUsers shellResult = error | code = \(code) | text = \(text)")
+                return lines
+            case .error(let code, let description):
+                Logger.customLog("systemUsers shellResult = error | code = \(code) | description = \(description)")
                 return []
             case .fatal:
                 Logger.customLog("systemUsers shellResult = fatal")
@@ -71,11 +71,11 @@ extension Process {
             separatedBy: " "
         )
         switch shellResult {
-            case .ok(let data):
+            case .ok(let lines):
                 Logger.customLog("systemGroups shellResult = ok")
-                return data
-            case .error(let code, let text):
-                Logger.customLog("systemGroups shellResult = error | code = \(code) | text = \(text)")
+                return lines
+            case .error(let code, let description):
+                Logger.customLog("systemGroups shellResult = error | code = \(code) | description = \(description)")
                 return []
             case .fatal:
                 Logger.customLog("systemGroups shellResult = fatal")
