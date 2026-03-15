@@ -27,4 +27,5 @@ struct MainScene: View {
 
 #Preview {
     MainScene()
+        .frame(width: 470)
 }
