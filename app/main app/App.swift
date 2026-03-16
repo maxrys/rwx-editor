@@ -47,6 +47,7 @@ import SwiftUI
                 ID   : WINDOW_MAIN_ID,
                 title: WINDOW_MAIN_TITLE,
                 isVisible: true,
+                size: CGSize(width: 700, height: 500),
                 delegate: self,
                 view: MainScene()
             )

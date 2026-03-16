@@ -11,11 +11,11 @@ extension NSWindow {
         String: NSWindow
     ] = [:]
 
-    static public func get(_ ID: String) -> NSWindow? {
+    static func get(_ ID: String) -> NSWindow? {
         if let window = self.customWindows[ID] { return window }
         for window in NSApplication.shared.windows {
-            if let foundID = window.identifier {
-                if foundID.rawValue == ID {
+            if let foundID = window.ID {
+                if foundID == ID {
                     return window
                 }
             }
@@ -72,7 +72,8 @@ extension NSWindow {
 
     static func show(_ ID: String) { Self.get(ID)?.makeKeyAndOrderFront(nil) }
     static func hide(_ ID: String) { Self.get(ID)?.orderOut(nil) }
-    static func hideWithAnimation(_ ID: String) {
+
+    static func hideWithAnimation(_ ID: String, onComplete: @escaping () -> Void = {}) {
         if let window = Self.get(ID) {
             if (window.isVisible) {
                 let steps: UInt = 10
@@ -84,7 +85,9 @@ extension NSWindow {
                         window.alphaValue = opacity
                     },
                     onExpire: { _ in
-                        window.close()
+                        window.hide()
+                        window.alphaValue = 1.0
+                        onComplete()
                     }
                 )
             }
