@@ -37,6 +37,8 @@
 		50309B342F5CBC3A008CA064 /* NSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B332F5CBC37008CA064 /* NSMenu.swift */; };
 		50309B362F5CBF97008CA064 /* ExtStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B352F5CBF97008CA064 /* ExtStatus.swift */; };
 		50309B382F5CC32A008CA064 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
+		5032DB302F68864800D7453E /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
+		5032DB312F68866900D7453E /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506421692F5EF04A0020F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506421672F5EF04A0020F6C8 /* Assets.xcassets */; };
 		5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421662F5EF04A0020F6C8 /* TableCustomColors.swift */; };
 		5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421642F5EF04A0020F6C8 /* TableCustom.swift */; };
@@ -51,8 +53,6 @@
 		5064217B2F5F49FD0020F6C8 /* ToggleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217A2F5F49FD0020F6C8 /* ToggleCustom.swift */; };
 		5064217E2F5F54C30020F6C8 /* ExtLaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064217D2F5F54C20020F6C8 /* ExtLaunchAtLogin.swift */; };
 		506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 506421902F5F6CC80020F6C8 /* Model.xcdatamodeld */; };
-		506421932F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 506421902F5F6CC80020F6C8 /* Model.xcdatamodeld */; };
-		506421962F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506421972F5F6E800020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506421BC2F60764B0020F6C8 /* ExtSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421BB2F60764B0020F6C8 /* ExtSettings.swift */; };
 		506421C32F61878E0020F6C8 /* BookmarksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C22F61878E0020F6C8 /* BookmarksState.swift */; };
@@ -62,7 +62,6 @@
 		506421C92F62B22D0020F6C8 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C82F62B22D0020F6C8 /* Bool.swift */; };
 		506421DA2F64C10E0020F6C8 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50980A452F59ACBF00EF7470 /* Process.swift */; };
 		506421DB2F64C1780020F6C8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
-		506421DD2F656E410020F6C8 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		506422102F6618BC0020F6C8 /* MessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220A2F6618BC0020F6C8 /* MessageState.swift */; };
 		506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220D2F6618BC0020F6C8 /* MessageColors.swift */; };
 		506422122F6618BC0020F6C8 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220C2F6618BC0020F6C8 /* MessageBox.swift */; };
@@ -703,15 +702,14 @@
 			files = (
 				506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				501FA4D72F4F0E82004663D2 /* types.swift in Sources */,
-				506421962F5F6E800020F6C8 /* BookmarksModel.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				501FA4DA2F4F0EEB004663D2 /* String.swift in Sources */,
 				50B276C42F39CB7C005F7475 /* const.swift in Sources */,
 				501FA4D82F4F0ED7004663D2 /* Logger.swift in Sources */,
 				50309B182F5B22F8008CA064 /* URL.swift in Sources */,
 				506421C72F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
+				5032DB302F68864800D7453E /* BookmarksModel.swift in Sources */,
 				50309B302F5C8579008CA064 /* Data.swift in Sources */,
-				506421932F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50309B2F2F5C84AE008CA064 /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,12 +726,12 @@
 				501FA4D92F4F0EDB004663D2 /* Logger.swift in Sources */,
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,
-				506421DD2F656E410020F6C8 /* BookmarksModel.swift in Sources */,
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
 				506421C62F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* types.swift in Sources */,
 				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
 				50309B152F5B201A008CA064 /* const.swift in Sources */,
+				5032DB312F68866900D7453E /* BookmarksModel.swift in Sources */,
 				506421DA2F64C10E0020F6C8 /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
