@@ -17,8 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50B276B32F39C991005F7475"
-               BuildableName = "Finder Extension.appex"
-               BlueprintName = "Finder Extension"
+               BuildableName = "Extension.appex"
+               BlueprintName = "Extension"
                ReferencedContainer = "container:RWX Editor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,12 +57,8 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.finder"
-         RemotePath = "/Finder">
-      </RemoteRunnable>
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50B276962F389876005F7475"
@@ -70,7 +66,7 @@
             BlueprintName = "RWX Editor"
             ReferencedContainer = "container:RWX Editor.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

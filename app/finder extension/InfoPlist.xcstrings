@@ -32,19 +32,19 @@
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пашырэнне Finder"
+            "value" : "Пашырэнне"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Finder Extension"
+            "value" : "Extension"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Расширение Finder"
+            "value" : "Расширение"
           }
         }
       }
