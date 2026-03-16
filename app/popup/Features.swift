@@ -18,30 +18,25 @@ final class Features {
                 " | group = \(state.group)"
             )
 
-            if let bookmark = BookmarkValue(searchValidBy: state.info.fullpath) {
-                if (!bookmark.info.isExpired) {
-                    if (bookmark.startAccessing()) {
-
-                        defer { bookmark.stopAccessing() }
-
-                        try FileManager.default.setAttributes(
-                            [.posixPermissions     : state.perms,
-                             .ownerAccountName     : state.owner,
-                             .groupOwnerAccountName: state.group],
-                            ofItemAtPath: state.info.fullpath
-                        )
-
-                        messageBoxState.insert(
-                            type: .ok,
-                            title: NSLocalizedString("completed successfully", comment: "")
-                        )
-
-                        return true
-                    }
-                }
+            if let bookmark = BookmarkValue(searchValidBy: state.info.fullpath), !bookmark.info.isExpired, bookmark.startAccessing() {
+                try FileManager.default.setAttributes([
+                    .posixPermissions     : state.perms,
+                    .ownerAccountName     : state.owner,
+                    .groupOwnerAccountName: state.group], ofItemAtPath: state.info.fullpath)
+                bookmark.stopAccessing()
+                messageBoxState.insert(
+                    type: .ok,
+                    title: NSLocalizedString("completed successfully", comment: "")
+                )
+                return true
+            } else {
+                throw NSError(
+                    domain: "PopupDomain",
+                    code: 1, userInfo: [
+                        NSLocalizedDescriptionKey: NSLocalizedString("security bookmark for the directory is invalid", comment: "")
+                    ]
+                )
             }
-
-            return false
         } catch let error as NSError {
             messageBoxState.insert(
                 type: .error,
