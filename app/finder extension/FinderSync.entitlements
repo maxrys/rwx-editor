@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.maxrys.rwx-editor</string>
+		<string>group.rwx-editor</string>
 	</array>
 </dict>
 </plist>
