@@ -39,6 +39,7 @@
 		50309B382F5CC32A008CA064 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
 		5032DB302F68864800D7453E /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
 		5032DB312F68866900D7453E /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421952F5F6E800020F6C8 /* BookmarksModel.swift */; };
+		5032DB532F68B44B00D7453E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		506421692F5EF04A0020F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506421672F5EF04A0020F6C8 /* Assets.xcassets */; };
 		5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421662F5EF04A0020F6C8 /* TableCustomColors.swift */; };
 		5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421642F5EF04A0020F6C8 /* TableCustom.swift */; };
@@ -611,6 +612,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5032DB532F68B44B00D7453E /* Localizable.xcstrings in Resources */,
 				50CEA0AD2F4C58EE001006CF /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
