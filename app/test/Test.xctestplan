@@ -22,7 +22,7 @@
       "target" : {
         "containerPath" : "container:RWX Editor.xcodeproj",
         "identifier" : "50B276D82F39DB98005F7475",
-        "name" : "Test"
+        "name" : "RWX Editor Test"
       }
     }
   ],

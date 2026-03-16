@@ -17,8 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50B276B32F39C991005F7475"
-               BuildableName = "Extension.appex"
-               BlueprintName = "Extension"
+               BuildableName = "RWX Editor FinderExtension.appex"
+               BlueprintName = "RWX Editor FinderExtension"
                ReferencedContainer = "container:RWX Editor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
