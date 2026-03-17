@@ -74,7 +74,7 @@ struct PopupBody: View {
                         selected: self.ownerBinding,
                         items: self.owners,
                         isPlainListStyle: true,
-                        isDisabled: !self.popupState.isEditable,
+                        isDisabled: true /* !self.popupState.isEditable */,
                         flexibility: .size(150)
                     )
                 }
@@ -85,7 +85,7 @@ struct PopupBody: View {
                         selected: self.groupBinding,
                         items: self.groups,
                         isPlainListStyle: true,
-                        isDisabled: !self.popupState.isEditable,
+                        isDisabled: true /* !self.popupState.isEditable */,
                         flexibility: .size(150)
                     )
                 }
