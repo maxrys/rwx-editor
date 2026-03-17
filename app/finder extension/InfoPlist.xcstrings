@@ -32,19 +32,19 @@
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Рэдактар ​​RWX | Пашырэнне Finder"
+            "value" : "Рэдактар ​​RWX | Пашырэнне"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "RWX Editor Finder Extension"
+            "value" : "RWX Editor Extension"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RWX Редактор | Расширение Finder"
+            "value" : "RWX Редактор | Расширение"
           }
         }
       }
