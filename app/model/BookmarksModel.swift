@@ -25,9 +25,7 @@ final public class BookmarksModel: NSManagedObject {
     @NSManaged var createdAt: Int64
 
     static let storageDirectoryURL: URL = {
-        FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: GROUP_NAME
-        )!
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }()
 
     static let storageURL: URL = {
