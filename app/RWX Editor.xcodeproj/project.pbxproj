@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -568,7 +568,7 @@
 				};
 			};
 			buildConfigurationList = 50B276922F389876005F7475 /* Build configuration list for PBXProject "RWX Editor" */;
-			compatibilityVersion = "Xcode 15.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

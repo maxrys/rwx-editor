@@ -295,9 +295,6 @@
         }
       }
     },
-    "Flexibility:" : {
-      "shouldTranslate" : false
-    },
     "Group" : {
       "localizations" : {
         "be-BY" : {
@@ -368,9 +365,6 @@
     "Long long long long long long long long long long long long long long Title" : {
       "shouldTranslate" : false
     },
-    "Multiple values:" : {
-      "shouldTranslate" : false
-    },
     "Name" : {
       "localizations" : {
         "be-BY" : {
@@ -386,9 +380,6 @@
           }
         }
       }
-    },
-    "No value:" : {
-      "shouldTranslate" : false
     },
     "Object is not suppoted" : {
       "localizations" : {
@@ -629,9 +620,6 @@
           }
         }
       }
-    },
-    "Single value:" : {
-      "shouldTranslate" : false
     },
     "Size" : {
       "localizations" : {
