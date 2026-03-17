@@ -103,8 +103,10 @@ struct Bookmarks: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    Bookmarks()
-        .frame(maxWidth: 400)
-        .padding(20)
+struct Bookmarks_Previews: PreviewProvider {
+    static var previews: some View {
+        Bookmarks()
+            .frame(maxWidth: 400)
+            .padding(20)
+    }
 }

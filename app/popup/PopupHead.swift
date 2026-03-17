@@ -169,10 +169,12 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    VStack(spacing: 0) {
-        let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/"     )!)); Delimiter /* directory */
-        PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))            /* file */
-    }.frame(width: Popup.FRAME_WIDTH)
+struct PopupHead_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 0) {
+            let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
+            PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/"     )!)); Delimiter /* directory */
+            PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))            /* file */
+        }.frame(width: Popup.FRAME_WIDTH)
+    }
 }

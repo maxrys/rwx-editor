@@ -86,13 +86,20 @@ struct ToggleCustom: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var isOn: Bool = false
-    VStack(alignment: .trailing) {
-        ToggleCustom(text: "Test", isOn: $isOn, isFlexible: true)
-        ToggleCustom(text: "Test", isOn: $isOn, isFlexible: false)
-        ToggleCustom(isOn: $isOn)
+struct ToggleCustom_Previews: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var isOn: Bool = false
+        var body: some View {
+            VStack(alignment: .trailing) {
+                ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: true)
+                ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: false)
+                ToggleCustom(isOn: self.$isOn)
+            }
+            .frame(width: 200)
+            .padding(20)
+        }
     }
-    .frame(width: 200)
-    .padding(20)
+    static var previews: some View {
+        ViewWithState()
+    }
 }

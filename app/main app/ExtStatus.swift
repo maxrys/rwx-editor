@@ -56,11 +56,13 @@ struct ExtStatus: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    VStack(spacing: 10) {
-        ExtStatus(                 isDemo: true)
-        ExtStatus(isEnabled: true, isDemo: true)
+struct ExtStatus_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 10) {
+            ExtStatus(                 isDemo: true)
+            ExtStatus(isEnabled: true, isDemo: true)
+        }
+        .frame(width: 300)
+        .padding(20)
     }
-    .frame(width: 300)
-    .padding(20)
 }

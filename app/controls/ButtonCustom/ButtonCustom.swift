@@ -72,26 +72,28 @@ struct ButtonCustom: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    VStack(spacing: 20) {
+struct ButtonCustom_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 20) {
 
-        VStack {
-            Text("flexibility").font(.headline)
-            ButtonCustom()
-            ButtonCustom(flexibility: .none)
-            ButtonCustom(flexibility: .size(100))
-            ButtonCustom(flexibility: .infinity)
+            VStack {
+                Text("flexibility").font(.headline)
+                ButtonCustom()
+                ButtonCustom(flexibility: .none)
+                ButtonCustom(flexibility: .size(100))
+                ButtonCustom(flexibility: .infinity)
+            }
+
+            VStack {
+                Text("style").font(.headline)
+                ButtonCustom(colorStyle: .accent)
+                ButtonCustom(colorStyle: .danger)
+                ButtonCustom(colorStyle: .custom(text: nil, background: nil))
+                ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
+            }
+
         }
-
-        VStack {
-            Text("style").font(.headline)
-            ButtonCustom(colorStyle: .accent)
-            ButtonCustom(colorStyle: .danger)
-            ButtonCustom(colorStyle: .custom(text: nil, background: nil))
-            ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
-        }
-
+        .frame(width: 200)
+        .padding(20)
     }
-    .frame(width: 200)
-    .padding(20)
 }

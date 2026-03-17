@@ -77,18 +77,25 @@ struct ToggleRwxColored: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var perms: PermissionsValue = 0o777
-    VStack(spacing: 10) {
-        HStack(spacing: 10) {
-            ToggleRwxColored(subject: .owner, permission: .r, $perms)
-            ToggleRwxColored(subject: .group, permission: .x, $perms)
-            ToggleRwxColored(subject: .other, permission: .w, $perms)
+struct ToggleRwxColored_Previews: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var perms: UInt = 0o644
+        var body: some View {
+            VStack(spacing: 10) {
+                HStack(spacing: 10) {
+                    ToggleRwxColored(subject: .owner, permission: .r, self.$perms)
+                    ToggleRwxColored(subject: .group, permission: .x, self.$perms)
+                    ToggleRwxColored(subject: .other, permission: .w, self.$perms)
+                }
+                HStack(spacing: 10) {
+                    ToggleRwxColored(subject: .owner, permission: .r, self.$perms, isDisabled: true)
+                    ToggleRwxColored(subject: .group, permission: .x, self.$perms, isDisabled: true)
+                    ToggleRwxColored(subject: .other, permission: .w, self.$perms, isDisabled: true)
+                }
+            }.padding(20)
         }
-        HStack(spacing: 10) {
-            ToggleRwxColored(subject: .owner, permission: .r, $perms, isDisabled: true)
-            ToggleRwxColored(subject: .group, permission: .x, $perms, isDisabled: true)
-            ToggleRwxColored(subject: .other, permission: .w, $perms, isDisabled: true)
-        }
-    }.padding(20)
+    }
+    static var previews: some View {
+        ViewWithState()
+    }
 }

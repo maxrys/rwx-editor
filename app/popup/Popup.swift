@@ -104,11 +104,13 @@ struct Popup: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    VStack(spacing: 0) {
-        let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-        Popup(fullpath: "/unknown")     ; Delimiter
-        Popup(fullpath: "/private/etc/"); Delimiter /* directory */
-        Popup(fullpath: "/private/etc/hosts")       /* file */
-    }.frame(width: Popup.FRAME_WIDTH)
+struct Popup_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 0) {
+            let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
+            Popup(fullpath: "/unknown")     ; Delimiter
+            Popup(fullpath: "/private/etc/"); Delimiter /* directory */
+            Popup(fullpath: "/private/etc/hosts")       /* file */
+        }.frame(width: Popup.FRAME_WIDTH)
+    }
 }

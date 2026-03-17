@@ -167,47 +167,60 @@ fileprivate func generatePreviewItems_intKey(count: Int) -> [UInt: String] {
     }
 }
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var selectedV1: UInt = 0
-    @Previewable @State var selectedV2: UInt = 0
-    @Previewable @State var selectedV3: UInt = 0
+struct PickerCustom_Previews1: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var selectedV1: UInt = 0
+        @State private var selectedV2: UInt = 0
+        @State private var selectedV3: UInt = 0
+        var body: some View {
+            VStack(spacing: 20) {
 
-    VStack(spacing: 20) {
+                VStack {
+                    Text("No value:").font(.headline)
+                    PickerCustom<UInt>(selected: $selectedV1, items: generatePreviewItems_intKey(count: 0), isPlainListStyle: true)
+                    PickerCustom<UInt>(selected: $selectedV1, items: generatePreviewItems_intKey(count: 0))
+                }
 
-        VStack {
-            Text("No value:").font(.headline)
-            PickerCustom<UInt>(selected: $selectedV1, items: generatePreviewItems_intKey(count: 0), isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV1, items: generatePreviewItems_intKey(count: 0))
+                VStack {
+                    Text("Single value:").font(.headline)
+                    PickerCustom<UInt>(selected: $selectedV2, items: generatePreviewItems_intKey(count: 1), isPlainListStyle: true)
+                    PickerCustom<UInt>(selected: $selectedV2, items: generatePreviewItems_intKey(count: 1))
+                }
+
+                VStack {
+                    Text("Multiple values:").font(.headline)
+                    PickerCustom<UInt>(selected: $selectedV3, items: generatePreviewItems_intKey(count: 9), isPlainListStyle: true)
+                    PickerCustom<UInt>(selected: $selectedV3, items: generatePreviewItems_intKey(count: 9))
+                }
+
+            }
+            .padding(20)
+            .frame(width: 200)
+            .background(Color.gray)
         }
-
-        VStack {
-            Text("Single value:").font(.headline)
-            PickerCustom<UInt>(selected: $selectedV2, items: generatePreviewItems_intKey(count: 1), isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV2, items: generatePreviewItems_intKey(count: 1))
-        }
-
-        VStack {
-            Text("Multiple values:").font(.headline)
-            PickerCustom<UInt>(selected: $selectedV3, items: generatePreviewItems_intKey(count: 9), isPlainListStyle: true)
-            PickerCustom<UInt>(selected: $selectedV3, items: generatePreviewItems_intKey(count: 9))
-        }
-
     }
-    .padding(20)
-    .frame(width: 200)
-    .background(Color.gray)
+    static var previews: some View {
+        ViewWithState()
+    }
 }
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var selected: UInt = 0
-    VStack {
-        Text("Flexibility:").font(.headline)
-        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10))
-        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .none)
-        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .size(100))
-        PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .infinity)
+struct PickerCustom_Previews2: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var selected: UInt = 0
+        var body: some View {
+            VStack {
+                Text("Flexibility:").font(.headline)
+                PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10))
+                PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .none)
+                PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .size(100))
+                PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .infinity)
+            }
+            .padding(20)
+            .frame(width: 200)
+            .background(Color.gray)
+        }
     }
-    .padding(20)
-    .frame(width: 200)
-    .background(Color.gray)
+    static var previews: some View {
+        ViewWithState()
+    }
 }

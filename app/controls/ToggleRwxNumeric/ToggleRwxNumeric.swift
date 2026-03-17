@@ -45,10 +45,17 @@ struct ToggleRwxNumeric: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var perms: UInt = 0o644
-    VStack(spacing: 20) {
-        ToggleRwxNumeric($perms)
-        Text(String(perms, radix: 8))
-    }.padding(20)
+struct ToggleRwxNumeric_Previews: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var perms: UInt = 0o644
+        var body: some View {
+            VStack(spacing: 20) {
+                ToggleRwxNumeric(self.$perms)
+                Text(String(self.perms, radix: 8))
+            }.padding(20)
+        }
+    }
+    static var previews: some View {
+        ViewWithState()
+    }
 }

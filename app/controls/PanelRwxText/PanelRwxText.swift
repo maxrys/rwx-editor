@@ -50,9 +50,16 @@ struct PanelRwxText: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-@available(macOS 14.0, *) #Preview {
-    @Previewable @State var perms: PermissionsValue = 0o644
-    HStack {
-        PanelRwxText($perms)
-    }.padding(20)
+struct PanelRwxText_Previews: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var perms: UInt = 0o644
+        var body: some View {
+            HStack {
+                PanelRwxText(self.$perms)
+            }.padding(20)
+        }
+    }
+    static var previews: some View {
+        ViewWithState()
+    }
 }

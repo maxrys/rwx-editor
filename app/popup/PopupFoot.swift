@@ -49,8 +49,10 @@ struct PopupFoot: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    PopupFoot()
-        .environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))
-        .frame(width: Popup.FRAME_WIDTH)
+struct PopupFoot_Previews: PreviewProvider {
+    static var previews: some View {
+        PopupFoot()
+            .environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))
+            .frame(width: Popup.FRAME_WIDTH)
+    }
 }

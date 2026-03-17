@@ -25,7 +25,9 @@ struct MainScene: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    MainScene()
-        .frame(width: 470)
+struct MainScene_Previews: PreviewProvider {
+    static var previews: some View {
+        MainScene()
+            .frame(width: 470)
+    }
 }

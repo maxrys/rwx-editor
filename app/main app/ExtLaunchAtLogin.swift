@@ -47,8 +47,10 @@ struct ExtLaunchAtLogin: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    ExtLaunchAtLogin()
-        .frame(maxWidth: 300)
-        .padding(20)
+struct ExtLaunchAtLogin_Previews: PreviewProvider {
+    static var previews: some View {
+        ExtLaunchAtLogin()
+            .frame(maxWidth: 300)
+            .padding(20)
+    }
 }
