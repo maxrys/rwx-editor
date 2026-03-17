@@ -32,7 +32,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         isPlainListStyle: Bool = false,
         isDisabled: Bool = false,
         flexibility: Flexibility = .none,
-        colorSet: ColorSet = Color.picker,
+        colorSet: ColorSet = Color.picker
     ) {
         self._selectedKey = selected
         self.items = items

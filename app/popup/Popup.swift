@@ -66,7 +66,7 @@ struct Popup: View {
                 .background(Color.messageBox.errorTitleBackground)
             ButtonCustom(
                 NSLocalizedString("open settings", comment: ""),
-                colorStyle: .custom(text: nil, background: nil),
+                colorStyle: .custom(text: nil, background: nil)
             ) { App.appDelegate.showWindowMain() }
             .padding(13)
             .frame(maxWidth: .infinity)

@@ -50,16 +50,15 @@ final class FSEntityInfo: Equatable {
 
         /* MARK: type */
 
-        switch attributes[.type] as? FileAttributeType {
-            case .typeDirectory       : self.type = .directory
-            case .typeRegular         : self.type = .file
-            case .typeSymbolicLink    : self.type = .link
-            case .typeBlockSpecial    : return nil
-            case .typeCharacterSpecial: return nil
-            case .typeSocket          : return nil
-            case .typeUnknown         : return nil
-            case .none                : return nil
-            case .some(_)             : return nil
+        if let attribute = attributes[.type] as? FileAttributeType {
+            switch attribute {
+                case .typeDirectory   : self.type = .directory
+                case .typeRegular     : self.type = .file
+                case .typeSymbolicLink: self.type = .link
+                default: return nil
+            }
+        } else {
+            return nil
         }
 
         /* MARK: path/name */
