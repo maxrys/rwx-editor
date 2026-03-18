@@ -12,17 +12,17 @@ final class Features {
         do {
 
             Logger.customLog("Popup onApply before" +
-                " | fullpath = \(state.info.fullpath)" +
+                " | url.path = \(state.info.url.path)" +
                 " | perms = \(String(state.perms, radix: 8))" +
                 " | owner = \(state.owner)" +
                 " | group = \(state.group)"
             )
 
-            if let bookmark = BookmarkValue(searchValidBy: state.info.fullpath), !bookmark.info.isExpired, bookmark.startAccessing() {
+            if let bookmark = BookmarkValue(searchValidBy: state.info.url), !bookmark.info.isExpired, bookmark.startAccessing() {
                 try FileManager.default.setAttributes([
                     .posixPermissions     : state.perms,
                     .ownerAccountName     : state.owner,
-                    .groupOwnerAccountName: state.group], ofItemAtPath: state.info.fullpath)
+                    .groupOwnerAccountName: state.group], ofItemAtPath: state.info.url.path)
                 bookmark.stopAccessing()
                 messageBoxState.insert(
                     type: .ok,

@@ -13,15 +13,15 @@ struct Popup: View {
     @State private var messageBoxState = MessageState()
     @State private var info: FSEntityInfo?
 
-    private let fullpath: String
+    private let url: URL
 
-    init(fullpath: String) {
-        self.fullpath = fullpath
-        Logger.customLog("Popup init with fullpath = \(fullpath)")
+    init(_ url: URL) {
+        self.url = url
+        Logger.customLog("Popup init with URL.path = \(url.path)")
     }
 
     func refresh() {
-        let newInfo = FSEntityInfo(self.fullpath)
+        let newInfo = FSEntityInfo(self.url)
         if (newInfo != self.info) {
             self.info = newInfo
             Logger.customLog("Popup refresh")
@@ -48,7 +48,7 @@ struct Popup: View {
         .frame(width: Self.FRAME_WIDTH)
         .onAppear { self.refresh() }
         .onWinBecomeForeground { window in
-            if (window.ID == self.fullpath) {
+            if (window.ID == self.url.path) {
                 self.refresh()
             }
         }
@@ -77,7 +77,7 @@ struct Popup: View {
 
     @ViewBuilder func NotSupportedView() -> some View {
         VStack(alignment: .center, spacing: 0) {
-            Text(NSLocalizedString("Object is not suppoted", comment: ""))
+            Text(NSLocalizedString("Object is not supported", comment: ""))
                 .font(.system(size: 14, weight: .bold))
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
@@ -85,7 +85,7 @@ struct Popup: View {
                 .frame(maxWidth: .infinity)
                 .foregroundPolyfill(Color.messageBox.text)
                 .background(Color.messageBox.errorTitleBackground)
-            Text(self.fullpath)
+            Text(self.url.path)
                 .font(.system(size: 13))
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
@@ -108,9 +108,9 @@ struct Popup_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-            Popup(fullpath: "/unknown")     ; Delimiter
-            Popup(fullpath: "/private/etc/"); Delimiter /* directory */
-            Popup(fullpath: "/private/etc/hosts")       /* file */
+            Popup(URL(fileURLWithPath: "/unknown"))     ; Delimiter
+            Popup(URL(fileURLWithPath: "/private/etc/")); Delimiter /* directory */
+            Popup(URL(fileURLWithPath: "/private/etc/hosts"))       /* file */
         }.frame(width: Popup.FRAME_WIDTH)
     }
 }

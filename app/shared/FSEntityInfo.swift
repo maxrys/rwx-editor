@@ -19,7 +19,7 @@ final class FSEntityInfo: Equatable {
         return Self.equalViaMirror(lhs: lhs, rhs: rhs)
     }
 
-    public let fullpath: String
+    public let url: URL
 
     public private(set) var type: FSType
     public private(set) var name: String
@@ -36,17 +36,13 @@ final class FSEntityInfo: Equatable {
     public let group: String
     public let isValidbookmark: Bool
 
-    init?(_ fullpath: String) {
-
-        guard !fullpath.isEmpty else {
+    init?(_ url: URL) {
+        
+        self.url = url
+        
+        guard let attributes = try? FileManager.default.attributesOfItem(atPath: url.path) else {
             return nil
         }
-        guard let attributes = try? FileManager.default.attributesOfItem(atPath: fullpath) else {
-            return nil
-        }
-
-        let fullpathURL = URL(fileURLWithPath: fullpath)
-        self.fullpath = fullpath
 
         /* MARK: type */
 
@@ -62,8 +58,8 @@ final class FSEntityInfo: Equatable {
         }
 
         /* MARK: path/name */
-
-        let (path, name) = Self.parseFullpath(fullpathURL.normalized())
+        
+        let (path, name) = url.pathAndNamePair
         self.name = name
         self.path = path
 
@@ -86,14 +82,12 @@ final class FSEntityInfo: Equatable {
 
         /* MARK: realPath/realName */
 
-        if let subtype = try? fullpathURL.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
+        if let subtype = try? url.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
             switch (subtype.isRegularFile, subtype.isAliasFile, subtype.isSymbolicLink) {
                 case (true, true, false):
                     self.type = .alias
                 case (false, true, true):
-                    let (realPath, realName) = Self.parseFullpath(
-                        fullpathURL.resolvingSymlinksInPath().normalized()
-                    )
+                let (realPath, realName) = url.resolvingSymlinksInPath().pathAndNamePair
                     self.realName = realName
                     self.realPath = realPath
                     self.type     = .link
@@ -102,26 +96,9 @@ final class FSEntityInfo: Equatable {
         }
 
         self.isValidbookmark = BookmarkValue(
-            searchValidBy: self.fullpath
+            searchValidBy: url
         )?.info.isExpired == false
 
-    }
-
-    static public func parseFullpath(_ fullpath: String) -> (path: String, name: String) {
-        let components = fullpath.components(
-            separatedBy: "/"
-        )
-
-        if (components.count >= 2) {
-            let path = components.dropLast().joined(separator: "/")
-            let name = components.last!
-            return (
-                path: path.hasSuffix("/") ? path : path + "/",
-                name: name
-            )
-        }
-
-        return (path: "/", name: "")
     }
 
 }

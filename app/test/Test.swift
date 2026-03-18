@@ -26,7 +26,7 @@ struct Test {
         try? self.bitToggle()
         try? self.subjectPermissionGet()
         try? self.subjectPermissionSet()
-        try? self.parseFullpath()
+        try? self.urlPathAndNamePair()
         try? self.urlPathParents()
     }
 
@@ -182,7 +182,7 @@ struct Test {
         }
     }
 
-    func parseFullpath() throws {
+    func urlPathAndNamePair() throws {
         let paths = [
             "/"                      : (path: "/",           name: ""         ),
             "/file"                  : (path: "/",           name: "file"     ),
@@ -198,8 +198,8 @@ struct Test {
             let url = value.hasPrefix("file://") ?
                 URL(string: value)! :
                 URL(fileURLWithPath: value)
-            let received = FSEntityInfo.parseFullpath(url.normalized())
-            print("pathAndName: \(value) | (\(received.path),\(received.name)) = (\(expected.path),\(expected.name))")
+            let received = url.pathAndNamePair
+            print("urlPathAndNamePair: \(value) | (\(received.path),\(received.name)) = (\(expected.path),\(expected.name))")
             #expect(received == expected)
         }
     }

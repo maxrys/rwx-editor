@@ -38,8 +38,8 @@ final class BookmarkValue {
         else { return nil }
     }
 
-    init?(searchValidBy path: String) {
-        if let foundBookmark = BookmarksModel.searchValid(path) {
+    init?(searchValidBy url: URL) {
+        if let foundBookmark = BookmarksModel.searchValid(url) {
             self.data = foundBookmark.data
         } else { return nil }
     }

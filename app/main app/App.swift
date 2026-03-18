@@ -30,11 +30,7 @@ import SwiftUI
 
     override func onLaunchViaReceivedURLs(urls: [URL]) {
         for url in urls {
-            self.showWindowPopup(
-                fullpath: url.normalized(
-                    isTrimDirSuffix: false
-                )
-            )
+            self.showWindowPopup(url)
         }
     }
 
@@ -56,20 +52,18 @@ import SwiftUI
         NSApplication.showAppsDock()
     }
 
-    func showWindowPopup(fullpath: String) {
-        Logger.customLog("Popup Window will show | ID = \(fullpath)")
-        if let windowPopup = NSWindow.customWindows[fullpath] {
+    func showWindowPopup(_ url: URL) {
+        Logger.customLog("Popup Window will show | ID = \(url.path)")
+        if let windowPopup = NSWindow.customWindows[url.path] {
             windowPopup.show()
         } else {
             _ = NSWindow.makeAndShowFromSwiftUIView(
-                ID: fullpath,
+                ID: url.path,
                 title: WINDOW_POPUP_TITLE,
                 styleMask: [.titled, .closable],
                 isVisible: true,
                 delegate: self,
-                view: Popup(
-                    fullpath: fullpath
-                )
+                view: Popup(url)
             )
         }
     }

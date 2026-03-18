@@ -381,7 +381,7 @@
         }
       }
     },
-    "Object is not suppoted" : {
+    "Object is not supported" : {
       "localizations" : {
         "be-BY" : {
           "stringUnit" : {

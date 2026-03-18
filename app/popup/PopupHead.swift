@@ -17,10 +17,10 @@ struct PopupHead: View {
         self.popupState.info
     }
 
-    private var formattedName: String { self.info.name }
-    private var formattedPath: String { self.info.path }
-    private var formattedRealName: String { self.info.realName ?? "" }
-    private var formattedRealPath: String { self.info.realPath ?? "" }
+    private var formattedName: String { self.info.name.percentDecode }
+    private var formattedPath: String { self.info.path.percentDecode }
+    private var formattedRealName: String { if let name = self.info.realName { return name.percentDecode } else { return "" } }
+    private var formattedRealPath: String { if let path = self.info.realPath { return path.percentDecode } else { return "" } }
 
     private var formattedReferences: String {
         String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
@@ -173,8 +173,8 @@ struct PopupHead_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-            PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/"     )!)); Delimiter /* directory */
-            PopupHead().environmentObject(PopupState(FSEntityInfo("/private/etc/hosts")!))            /* file */
+            PopupHead().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/"     ))!)); Delimiter /* directory */
+            PopupHead().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/hosts"))!))            /* file */
         }.frame(width: Popup.FRAME_WIDTH)
     }
 }

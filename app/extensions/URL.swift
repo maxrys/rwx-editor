@@ -11,10 +11,9 @@ extension URL {
     static let PREFIX_FILE = "file://"
     static let SUFFIX_DIRRECTORY = "/"
 
-    public func normalized(isTrimDirSuffix: Bool = true) -> String {
-        let decoded: String = self.absoluteString.removingPercentEncoding ?? self.absoluteString
-        if (isTrimDirSuffix) { return decoded.trimPrefix(URL.PREFIX_THIS_APP).trimPrefix(URL.PREFIX_FILE).trimSuffix(URL.SUFFIX_DIRRECTORY) }
-        else                 { return decoded.trimPrefix(URL.PREFIX_THIS_APP).trimPrefix(URL.PREFIX_FILE) }
+    public func trimmed(isTrimSuffix: Bool = true) -> String {
+        if (isTrimSuffix) { return self.absoluteString.trimPrefix(URL.PREFIX_THIS_APP).trimPrefix(URL.PREFIX_FILE).trimSuffix(URL.SUFFIX_DIRRECTORY) }
+        else              { return self.absoluteString.trimPrefix(URL.PREFIX_THIS_APP).trimPrefix(URL.PREFIX_FILE) }
     }
 
     public var pathParents: [String] {
@@ -26,6 +25,23 @@ extension URL {
             )
         }
         return result + ["/"]
+    }
+
+    public var pathAndNamePair: (path: String, name: String) {
+        let components = self.trimmed().components(
+            separatedBy: "/"
+        )
+
+        if (components.count >= 2) {
+            let path = components.dropLast().joined(separator: "/")
+            let name = components.last!
+            return (
+                path: path.hasSuffix("/") ? path : path + "/",
+                name: name
+            )
+        }
+
+        return (path: "/", name: "")
     }
 
 }
