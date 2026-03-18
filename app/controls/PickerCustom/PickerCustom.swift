@@ -126,12 +126,12 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
                 self.rootView.selectedKey = item.key
                 self.rootView.isOpened = false
             } label: {
-                var backgroundColor: Color {
+                let backgroundColor: Color = {
                     if (self.rootView.selectedKey      == item.key) { return self.rootView.colorSet.itemSelectedBackground }
                     if (self.hoveredKey                == item.key) { return self.rootView.colorSet.itemHoveringBackground }
                     if (self.rootView.isPlainListStyle == false   ) { return self.rootView.colorSet.itemBackground }
                     return Color.clear
-                }
+                }()
                 Text(item.value)
                     .lineLimit(1)
                     .padding(.horizontal, 9)

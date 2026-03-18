@@ -114,12 +114,12 @@ struct TableCustom: View {
 
             let bodyGrid = LazyVGrid(columns: gridColumns, spacing: 0) {
                 ForEach(self.bodyCells.indices, id: \.self) { index in
-                    if let cell = self.bodyCells[safe: index] {
+                    if let cell = self.bodyCells[safe: index] as? AnyView {
                         let rowIndex = index / self.headCells.count
                         let colIndex = index % self.headCells.count
                         let isSelected = self.selectedRows.contains(rowIndex)
                         let isEven = rowIndex % 2 == 0
-                        AnyView(cell).id(index)
+                        cell.id(index)
                             .padding(self.bodyCellPadding)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: self.headCells[safe: colIndex]?.alignment ?? .center)
                             .foregroundPolyfill(Color.tableCustom.rowTextColor(isSelected, self.appIsFocused))

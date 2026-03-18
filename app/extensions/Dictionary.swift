@@ -16,10 +16,10 @@ extension Dictionary {
         order: Self.OrderBy = .keyAscending
     ) -> [Element] where Key: Comparable, Value: Comparable {
         switch order {
-            case .keyAscending   : self.sorted(by: { (lhs, rhs) in lhs.key   < rhs.key   })
-            case .keyDescending  : self.sorted(by: { (lhs, rhs) in lhs.key   > rhs.key   })
-            case .valueAscending : self.sorted(by: { (lhs, rhs) in lhs.value < rhs.value })
-            case .valueDescending: self.sorted(by: { (lhs, rhs) in lhs.value > rhs.value })
+            case .keyAscending   : return self.sorted(by: { (lhs, rhs) in lhs.key   < rhs.key   })
+            case .keyDescending  : return self.sorted(by: { (lhs, rhs) in lhs.key   > rhs.key   })
+            case .valueAscending : return self.sorted(by: { (lhs, rhs) in lhs.value < rhs.value })
+            case .valueDescending: return self.sorted(by: { (lhs, rhs) in lhs.value > rhs.value })
         }
     }
 
