@@ -8,13 +8,7 @@ import FinderSync
 
 struct ExtStatus: View {
 
-    @State private var isEnabled: Bool
-    private let isDemo: Bool
-
-    init(isEnabled: Bool = false, isDemo: Bool = false) {
-        self.isEnabled = isEnabled
-        self.isDemo = isDemo
-    }
+    @State private var isEnabled: Bool = false
 
     public var body: some View {
         HStack(spacing: 10) {
@@ -44,8 +38,8 @@ struct ExtStatus: View {
         .onTapGesture {
             FinderSync.FIFinderSyncController.showExtensionManagementInterface()
         }
-        .onAppear              {           if (!self.isDemo                               ) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
-        .onWinBecomeForeground { window in if (!self.isDemo && window.ID == WINDOW_MAIN_ID) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
+        .onAppear              {                                              self.isEnabled = FIFinderSyncController.isExtensionEnabled   }
+        .onWinBecomeForeground { window in if (window.ID == WINDOW_MAIN_ID) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
     }
 
 }
@@ -58,11 +52,6 @@ struct ExtStatus: View {
 
 struct ExtStatus_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 10) {
-            ExtStatus(                 isDemo: true)
-            ExtStatus(isEnabled: true, isDemo: true)
-        }
-        .frame(width: 300)
-        .padding(20)
+        ExtStatus().padding(20)
     }
 }

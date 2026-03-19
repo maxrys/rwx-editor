@@ -14,6 +14,7 @@ struct ExtSettings: View {
 
             ExtStatus()
                 .padding(15)
+                .frame(maxWidth: .infinity)
 
             if #available(macOS 13.0, *) {
                 HStack(spacing: 0) {
