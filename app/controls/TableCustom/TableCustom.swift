@@ -114,12 +114,12 @@ struct TableCustom: View {
 
             let bodyGrid = LazyVGrid(columns: gridColumns, spacing: 0) {
                 ForEach(self.bodyCells.indices, id: \.self) { index in
-                    if let cell = self.bodyCells[safe: index] as? AnyView {
+                    if let cell = self.bodyCells[safe: index] {
                         let rowIndex = index / self.headCells.count
                         let colIndex = index % self.headCells.count
                         let isSelected = self.selectedRows.contains(rowIndex)
                         let isEven = rowIndex % 2 == 0
-                        cell.id(index)
+                        AnyView(cell).id(index)
                             .padding(self.bodyCellPadding)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: self.headCells[safe: colIndex]?.alignment ?? .center)
                             .foregroundPolyfill(Color.tableCustom.rowTextColor(isSelected, self.appIsFocused))
@@ -140,16 +140,10 @@ struct TableCustom: View {
                 self.selectedRows = Set(0 ..< self.rowsCount)
             }
         }
-        .onWinBecomeForeground { window in
-            if (window.ID == self.windowID) {
-                self.appIsFocused = true
-            }
-        }
-        .onWinBecomeBackground { window in
-            if (window.ID == self.windowID) {
-                self.appIsFocused = false
-            }
-        }
+        .onWinBecomeForeground { window in if (self.windowID != nil && window.ID == self.windowID) { self.appIsFocused = true } }
+        .onWinBecomeBackground { window in if (self.windowID != nil && window.ID == self.windowID) { self.appIsFocused = false } }
+        .onAppBecomeForeground {           if (self.windowID == nil                              ) { self.appIsFocused = true } }
+        .onAppBecomeBackground {           if (self.windowID == nil                              ) { self.appIsFocused = false } }
     }
 
     @ViewBuilder private func Delimiter() -> some View {
@@ -192,61 +186,73 @@ struct TableCustom: View {
 /* ############################################################# */
 
 struct TableCustom_Previews1: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var selected: Set<Int> = [4]
+        var body: some View {
+            TableCustom(
+                selected: self.$selected,
+                isVisibleHeader: true,
+                isFocusable: true,
+                head: {
+                    TableCustom_HeadCell(
+                        size: .flexible(),
+                        spacing: 0,
+                        alignment: .leading
+                    ) { Text(NSLocalizedString("Values", comment: "")).font(.system(size: 11)) }
+                    TableCustom_HeadCell(
+                        size: .fixed(30),
+                        spacing: 0
+                    ) { EmptyView() }
+                },
+                bodyAsArray: [
+                    AnyView(Text("Value 1")), AnyView(Image(systemName: "1.circle")),
+                    AnyView(Text("Value 2")), AnyView(Image(systemName: "2.circle")),
+                    AnyView(Text("Value 3")), AnyView(Image(systemName: "3.circle")),
+                    AnyView(Text("Value 4")), AnyView(Image(systemName: "4.circle")),
+                    AnyView(Text("Value 5")), AnyView(Image(systemName: "5.circle")),
+                ]
+            )
+            .padding(20)
+            .frame(width: 250)
+        }
+    }
     static var previews: some View {
-        TableCustom(
-            selected: Binding.constant([4]),
-            isVisibleHeader: true,
-            isFocusable: true,
-            head: {
-                TableCustom_HeadCell(
-                    size: .flexible(),
-                    spacing: 0,
-                    alignment: .leading
-                ) { Text(NSLocalizedString("Values", comment: "")).font(.system(size: 11)) }
-                TableCustom_HeadCell(
-                    size: .fixed(30),
-                    spacing: 0
-                ) { EmptyView() }
-            },
-            bodyAsArray: [
-                AnyView(Text("Value 1")), AnyView(Image(systemName: "1.circle")),
-                AnyView(Text("Value 2")), AnyView(Image(systemName: "2.circle")),
-                AnyView(Text("Value 3")), AnyView(Image(systemName: "3.circle")),
-                AnyView(Text("Value 4")), AnyView(Image(systemName: "4.circle")),
-                AnyView(Text("Value 5")), AnyView(Image(systemName: "5.circle")),
-            ]
-        )
-        .padding(20)
-        .frame(width: 250)
+        ViewWithState()
     }
 }
 
 struct TableCustom_Previews2: PreviewProvider {
+    struct ViewWithState: View {
+        @State private var selected: Set<Int> = [4]
+        var body: some View {
+            TableCustom(
+                selected: self.$selected,
+                isVisibleHeader: true,
+                isFocusable: true,
+                head: {
+                    TableCustom_HeadCell(
+                        size: .flexible(),
+                        spacing: 0,
+                        alignment: .leading
+                    ) { Text(NSLocalizedString("Values", comment: "")).font(.system(size: 11)) }
+                    TableCustom_HeadCell(
+                        size: .fixed(30),
+                        spacing: 0
+                    ) { EmptyView() }
+                },
+                bodyAsViews: {
+                    Text("Value 1"); Image(systemName: "1.circle")
+                    Text("Value 2"); Image(systemName: "2.circle")
+                    Text("Value 3"); Image(systemName: "3.circle")
+                    Text("Value 4"); Image(systemName: "4.circle")
+                    Text("Value 5"); Image(systemName: "5.circle")
+                }
+            )
+            .padding(20)
+            .frame(width: 250)
+        }
+    }
     static var previews: some View {
-        TableCustom(
-            selected: Binding.constant([4]),
-            isVisibleHeader: true,
-            isFocusable: true,
-            head: {
-                TableCustom_HeadCell(
-                    size: .flexible(),
-                    spacing: 0,
-                    alignment: .leading
-                ) { Text(NSLocalizedString("Values", comment: "")).font(.system(size: 11)) }
-                TableCustom_HeadCell(
-                    size: .fixed(30),
-                    spacing: 0
-                ) { EmptyView() }
-            },
-            bodyAsViews: {
-                Text("Value 1"); Image(systemName: "1.square")
-                Text("Value 2"); Image(systemName: "2.square")
-                Text("Value 3"); Image(systemName: "3.square")
-                Text("Value 4"); Image(systemName: "4.square")
-                Text("Value 5"); Image(systemName: "5.square")
-            }
-        )
-        .padding(20)
-        .frame(width: 250)
+        ViewWithState()
     }
 }
