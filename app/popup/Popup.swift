@@ -15,6 +15,13 @@ struct Popup: View {
 
     private let url: URL
 
+    var currentUserName: String? {
+        if let pw = getpwuid(getuid()), let name = pw.pointee.pw_name {
+            return String(cString: name)
+        }
+        return nil
+    }
+
     init(_ url: URL) {
         self.url = url
         Logger.customLog("Popup init with URL.path = \(url.path)")
@@ -32,7 +39,21 @@ struct Popup: View {
         VStack(spacing: 0) {
             if let info = self.info {
                 VStack(spacing: 0) {
-                    if (!info.isValidbookmark) { NoBookmarkMessageView() }
+                    if (self.currentUserName != info.owner) {
+                        Self.StaticMessage(
+                            NSLocalizedString("you are not the owner of this object", comment: ""),
+                            self.url.path
+                        )
+                    }
+                    if (!info.isValidbookmark) {
+                        Self.StaticMessage(
+                            NSLocalizedString("Allowed directories not found", comment: ""),
+                            ButtonCustom(
+                                NSLocalizedString("open settings", comment: ""),
+                                colorStyle: .custom(text: nil, background: nil)
+                            ) { App.appDelegate.showWindowMain() }
+                        )
+                    }
                     MessageBox(self.messageBoxState)
                     PopupHead()
                     PopupBody()
@@ -41,7 +62,10 @@ struct Popup: View {
                 .environmentObject(PopupState(info))
                 .environmentObject(self.messageBoxState)
             } else {
-                self.NotSupportedView()
+                Self.StaticMessage(
+                    NSLocalizedString("Object is not supported", comment: ""),
+                    self.url.path
+                )
             }
         }
         .environment(\.layoutDirection, .leftToRight)
@@ -54,30 +78,14 @@ struct Popup: View {
         }
     }
 
-    @ViewBuilder func NoBookmarkMessageView() -> some View {
-        VStack(alignment: .center, spacing: 0) {
-            Text(NSLocalizedString("Allowed directories not found", comment: ""))
-                .font(.system(size: 14, weight: .bold))
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(13)
-                .frame(maxWidth: .infinity)
-                .foregroundPolyfill(Color.messageBox.text)
-                .background(Color.messageBox.errorTitleBackground)
-            ButtonCustom(
-                NSLocalizedString("open settings", comment: ""),
-                colorStyle: .custom(text: nil, background: nil)
-            ) { App.appDelegate.showWindowMain() }
-            .padding(13)
-            .frame(maxWidth: .infinity)
-            .foregroundPolyfill(Color.messageBox.text)
-            .background(Color.messageBox.errorDescriptionBackground)
-        }
+    @ViewBuilder static func StaticMessage(_ title: String, _ description: String? = nil) -> some View {
+        if let description { Self.StaticMessage(title, Text(description)) }
+        else               { Self.StaticMessage(title, EmptyView()) }
     }
 
-    @ViewBuilder func NotSupportedView() -> some View {
+    @ViewBuilder static func StaticMessage(_ title: String, _ description: some View) -> some View {
         VStack(alignment: .center, spacing: 0) {
-            Text(NSLocalizedString("Object is not supported", comment: ""))
+            Text(title)
                 .font(.system(size: 14, weight: .bold))
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
@@ -85,10 +93,7 @@ struct Popup: View {
                 .frame(maxWidth: .infinity)
                 .foregroundPolyfill(Color.messageBox.text)
                 .background(Color.messageBox.errorTitleBackground)
-            Text(self.url.path)
-                .font(.system(size: 13))
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
+            description
                 .padding(13)
                 .frame(maxWidth: .infinity)
                 .foregroundPolyfill(Color.messageBox.text)
@@ -111,6 +116,19 @@ struct Popup_Previews: PreviewProvider {
             Popup(URL(fileURLWithPath: "/unknown"))     ; Delimiter
             Popup(URL(fileURLWithPath: "/private/etc/")); Delimiter /* directory */
             Popup(URL(fileURLWithPath: "/private/etc/hosts"))       /* file */
+        }.frame(width: Popup.FRAME_WIDTH)
+    }
+}
+
+struct Popup_Messages_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 0) {
+            let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
+            Popup.StaticMessage("Message Title")                        ; Delimiter
+            Popup.StaticMessage("Message Title", "Message Description") ; Delimiter
+            Popup.StaticMessage("Message Title",
+                ButtonCustom("buttom", colorStyle: .custom(text: nil, background: nil))
+            )
         }.frame(width: Popup.FRAME_WIDTH)
     }
 }

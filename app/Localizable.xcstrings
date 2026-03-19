@@ -684,6 +684,22 @@
           }
         }
       }
+    },
+    "you are not the owner of this object" : {
+      "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вы не з'яўляецеся уладальнікам гэтага аб'екта"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вы не являетесь владельцем в этого объекта"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"
