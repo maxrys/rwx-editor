@@ -37,9 +37,9 @@ final class FSEntityInfo: Equatable {
     public let isValidbookmark: Bool
 
     init?(_ url: URL) {
-        
+
         self.url = url
-        
+
         guard let attributes = try? FileManager.default.attributesOfItem(atPath: url.path) else {
             return nil
         }
@@ -58,7 +58,7 @@ final class FSEntityInfo: Equatable {
         }
 
         /* MARK: path/name */
-        
+
         let (path, name) = url.pathAndNamePair
         self.name = name
         self.path = path
