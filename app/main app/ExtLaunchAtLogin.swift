@@ -24,11 +24,7 @@ struct ExtLaunchAtLogin: View {
         }
     }
 
-    @State private var isEnabled: Bool
-
-    init() {
-        self.isEnabled = false
-    }
+    @State private var isEnabled: Bool = false
 
     var body: some View {
         ToggleCustom(
