@@ -103,18 +103,18 @@
         }
       }
     },
-    "Allowed directories not found" : {
+    "allowed directories not found" : {
       "localizations" : {
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Дазволеныя каталогі не знойдзены"
+            "value" : "дазволеныя каталогі не знойдзены"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешенные каталоги не найдены"
+            "value" : "разрешённые каталоги не найдены"
           }
         }
       }
@@ -381,18 +381,18 @@
         }
       }
     },
-    "Object is not supported" : {
+    "object is not supported" : {
       "localizations" : {
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Аб'ект не падтрымліваецца"
+            "value" : "аб'ект не падтрымліваецца"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Объект не поддерживается"
+            "value" : "объект не поддерживается"
           }
         }
       }

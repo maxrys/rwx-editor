@@ -16,10 +16,7 @@ struct Popup: View {
     private let url: URL
 
     var currentUserName: String? {
-        if let pw = getpwuid(getuid()), let name = pw.pointee.pw_name {
-            return String(cString: name)
-        }
-        return nil
+        ProcessInfo.processInfo.environment["USER"] ?? ""
     }
 
     init(_ url: URL) {
@@ -41,20 +38,21 @@ struct Popup: View {
                 VStack(spacing: 0) {
                     if (self.currentUserName != info.owner) {
                         Self.StaticMessage(
-                            NSLocalizedString("you are not the owner of this object", comment: ""),
-                            self.url.path
+                            NSLocalizedString("you are not the owner of this object", comment: "")
                         )
-                    }
-                    if (!info.isValidbookmark) {
+                    } else if (!info.isValidbookmark) {
                         Self.StaticMessage(
-                            NSLocalizedString("Allowed directories not found", comment: ""),
+                            NSLocalizedString("allowed directories not found", comment: ""),
                             ButtonCustom(
                                 NSLocalizedString("open settings", comment: ""),
                                 colorStyle: .custom(text: nil, background: nil)
                             ) { App.appDelegate.showWindowMain() }
                         )
+                    } else {
+                        MessageBox(
+                            self.messageBoxState
+                        )
                     }
-                    MessageBox(self.messageBoxState)
                     PopupHead()
                     PopupBody()
                     PopupFoot()
@@ -63,7 +61,7 @@ struct Popup: View {
                 .environmentObject(self.messageBoxState)
             } else {
                 Self.StaticMessage(
-                    NSLocalizedString("Object is not supported", comment: ""),
+                    NSLocalizedString("object is not supported", comment: ""),
                     self.url.path
                 )
             }
