@@ -153,7 +153,7 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
         Button {
             value.roll()
         } label: {
-            Image(systemName: "arcade.stick")
+            Image("arcade.stick")
                 .foregroundPolyfill(Color.accentColor)
                 .font(.system(size: 10, weight: .regular))
         }
