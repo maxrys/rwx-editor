@@ -60,8 +60,9 @@ import SwiftUI
             _ = NSWindow.makeAndShowFromSwiftUIView(
                 ID: url.path,
                 title: WINDOW_POPUP_TITLE,
-                styleMask: [.titled, .closable],
+                styleMask: [.titled, .closable, .miniaturizable],
                 isVisible: true,
+             // level: .floating,
                 delegate: self,
                 view: Popup(url)
             )
@@ -74,6 +75,9 @@ import SwiftUI
                 if (ID == WINDOW_MAIN_ID) {
                     Logger.customLog("Main Window will hide")
                     NSApplication.hideAppsDock()
+                    if (!NSWindow.customWindows.isEmpty) {
+                        NSApplication.show()
+                    }
                 }
                 if (ID != WINDOW_MAIN_ID) {
                     Logger.customLog("Popup Window will hide | ID = \(ID)")

@@ -29,12 +29,14 @@ class NSApplicationMultiLaunch: NSObject, NSApplicationDelegate {
         if (self.launchType == .urls) { self.launchType = .icon; return }
         self.showLaunchType()
         self.onLaunchViaClickIcon()
+        NSApplication.show()
     }
 
     func application(_ sender: NSApplication, open urls: [URL]) {
         if (self.launchType == .none) { self.launchType = .urls }
         self.showLaunchType()
         self.onLaunchViaReceivedURLs(urls: urls)
+        NSApplication.show()
     }
 
     func applicationShouldHandleReopen(_ app: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
