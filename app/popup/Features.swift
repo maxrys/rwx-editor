@@ -18,12 +18,12 @@ final class Features {
                 " | group = \(state.group)"
             )
 
-            if let bookmark = BookmarkValue(searchValidBy: state.info.url), !bookmark.info.isExpired, bookmark.startAccessing() {
+            if let validBookmark = BookmarkValue(searchValidBy: state.info.url), validBookmark.startAccessing() {
                 try FileManager.default.setAttributes([
                     .posixPermissions     : state.perms,
                     .ownerAccountName     : state.owner,
                     .groupOwnerAccountName: state.group], ofItemAtPath: state.info.url.path)
-                bookmark.stopAccessing()
+                validBookmark.stopAccessing()
                 messageBoxState.insert(
                     type: .ok,
                     title: NSLocalizedString("completed successfully", comment: "")

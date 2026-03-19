@@ -15,10 +15,10 @@ final class PopupState: ObservableObject {
         )
     }
 
-    @Published var isEditable: Bool
     @Published var perms: PermissionsValue
     @Published var owner: String
     @Published var group: String
+    @Published var isEditable: Bool
 
     public let info: FSEntityInfo
     public private(set) var originalPerms: PermissionsValue
@@ -39,7 +39,7 @@ final class PopupState: ObservableObject {
         self.originalPerms = info.perms
         self.originalOwner = info.owner
         self.originalGroup = info.group
-        self.isEditable = info.isValidbookmark
+        self.isEditable = info.editabilityMode == .allowed
     }
 
     public func resetToDefault() {

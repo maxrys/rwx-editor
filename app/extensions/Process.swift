@@ -8,6 +8,10 @@ import Foundation
 
 extension Process {
 
+    static public var currentUserName: String? {
+        ProcessInfo.processInfo.environment["USER"] ?? ""
+    }
+
     enum ShellResult {
         case ok(lines: [String])
         case error(code: Int32, description: String)

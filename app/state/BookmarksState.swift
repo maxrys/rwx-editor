@@ -42,11 +42,13 @@ final class BookmarksState: ObservableObject {
     }
 
     func reload() {
+        /* sanitization */
         let newItems = BookmarksModel.selectAll().reduce(into: [BookmarksFetchItem]()) { result, item in
             if (BookmarkValue(from: item.data).info.isExpired) { self.delete([item.path]) } else {
                 result.append(item)
             }
         }
+        /* update if necessary */
         let newItemsHash = Self.hash(items: newItems)
         let oldItemsHash = Self.hash(items: self.items)
         Logger.customLog("Old Data Hash: \(oldItemsHash)")

@@ -15,6 +15,12 @@ final class FSEntityInfo: Equatable {
         case other
     }
 
+    public enum EditabilityMode {
+        case allowed
+        case noBookmark
+        case notOwner
+    }
+
     static func == (lhs: FSEntityInfo, rhs: FSEntityInfo) -> Bool {
         return Self.equalViaMirror(lhs: lhs, rhs: rhs)
     }
@@ -34,7 +40,8 @@ final class FSEntityInfo: Equatable {
     public let perms: PermissionsValue
     public let owner: String
     public let group: String
-    public let isValidbookmark: Bool
+
+    public var editabilityMode: EditabilityMode
 
     init?(_ url: URL) {
 
@@ -95,9 +102,9 @@ final class FSEntityInfo: Equatable {
             }
         }
 
-        self.isValidbookmark = BookmarkValue(
-            searchValidBy: url
-        )?.info.isExpired == false
+        if (Process.currentUserName != self.owner)         { self.editabilityMode = .notOwner }
+        else if (BookmarkValue(searchValidBy: url) == nil) { self.editabilityMode = .noBookmark }
+        else                                               { self.editabilityMode = .allowed }
 
     }
 

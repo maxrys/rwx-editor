@@ -15,10 +15,6 @@ struct Popup: View {
 
     private let url: URL
 
-    var currentUserName: String? {
-        ProcessInfo.processInfo.environment["USER"] ?? ""
-    }
-
     init(_ url: URL) {
         self.url = url
         Logger.customLog("Popup init with URL.path = \(url.path)")
@@ -36,22 +32,25 @@ struct Popup: View {
         VStack(spacing: 0) {
             if let info = self.info {
                 VStack(spacing: 0) {
-                    if (self.currentUserName != info.owner) {
-                        Self.StaticMessage(
-                            NSLocalizedString("you are not the owner of this object", comment: "")
-                        )
-                    } else if (!info.isValidbookmark) {
-                        Self.StaticMessage(
-                            NSLocalizedString("allowed directories not found", comment: ""),
-                            ButtonCustom(
-                                NSLocalizedString("open settings", comment: ""),
-                                colorStyle: .custom(text: nil, background: nil)
-                            ) { App.appDelegate.showWindowMain() }
-                        )
-                    } else {
-                        MessageBox(
-                            self.messageBoxState
-                        )
+                    Group {
+                        switch info.editabilityMode {
+                            case .notOwner:
+                                Self.StaticMessage(
+                                    NSLocalizedString("you are not the owner of this object", comment: "")
+                                )
+                            case .noBookmark:
+                                Self.StaticMessage(
+                                    NSLocalizedString("allowed directories not found", comment: ""),
+                                    ButtonCustom(
+                                        NSLocalizedString("open settings", comment: ""),
+                                        colorStyle: .custom(text: nil, background: nil)
+                                    ) { App.appDelegate.showWindowMain() }
+                                )
+                            case .allowed:
+                                MessageBox(
+                                    self.messageBoxState
+                                )
+                        }
                     }
                     PopupHead()
                     PopupBody()
