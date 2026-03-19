@@ -48,8 +48,8 @@ import SwiftUI
                 view: MainScene()
             )
         }
-        NSApp.mainMenu = NSMenu.main
         NSApplication.showAppsDock()
+        NSApp.mainMenu = NSMenu.main
     }
 
     func showWindowPopup(_ url: URL) {
@@ -60,7 +60,7 @@ import SwiftUI
             _ = NSWindow.makeAndShowFromSwiftUIView(
                 ID: url.path,
                 title: WINDOW_POPUP_TITLE,
-                styleMask: [.titled, .closable, .miniaturizable],
+                styleMask: [.titled, .closable],
                 isVisible: true,
              // level: .floating,
                 delegate: self,
@@ -75,6 +75,7 @@ import SwiftUI
                 if (ID == WINDOW_MAIN_ID) {
                     Logger.customLog("Main Window will hide")
                     NSApplication.hideAppsDock()
+                    NSApp.mainMenu = nil
                     if (!NSWindow.customWindows.isEmpty) {
                         NSApplication.show()
                     }
