@@ -50,14 +50,14 @@ struct ToggleRwxColored: View {
             self.perms[self.bitPosition].toggle()
         } label: {
             if (self.isOn) {
-                ZStack {
-                    Circle()
-                        .fill(self.background)
-                        .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
-                    Image(systemName: "checkmark")
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundPolyfill(Color.white)
-                }
+                Circle()
+                    .fill(self.background)
+                    .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
+                    .overlayPolyfill {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundPolyfill(Color.white)
+                    }
             } else {
                 Circle()
                     .fill(Color.toggleRWXColored.empty)
