@@ -7,6 +7,7 @@ import SwiftUI
 
 struct PopupHead: View {
 
+    @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
     @State private var rollerForCreated: Date.VisibilityMode = .convenient
@@ -66,59 +67,70 @@ struct PopupHead: View {
         }
     }
 
+    private var tableCells: [AnyView] {
+        var result:[AnyView] = []
+
+        result.append(self.TitleView(NSLocalizedString("Type", comment: "")))
+        result.append(self.ValueView(self.formattedType))
+        result.append(self.TitleView(NSLocalizedString("Name", comment: "")))
+        result.append(self.ValueView(self.formattedName, isSelectable: true))
+        result.append(self.TitleView(NSLocalizedString("Path", comment: "")))
+        result.append(self.ValueView(self.formattedPath, isSelectable: true))
+
+        if let realName = self.info.realName,
+           let realPath = self.info.realPath {
+
+            result.append(self.TitleView(NSLocalizedString("Real Name", comment: "")))
+            result.append(self.ValueView(realName, isSelectable: true))
+            result.append(self.TitleView(NSLocalizedString("Real Path", comment: "")))
+            result.append(self.ValueView(realPath, isSelectable: true))
+        }
+
+        result.append(self.TitleView(NSLocalizedString("Reference Count", comment: "")))
+        result.append(self.ValueView(self.formattedReferences))
+        result.append(self.TitleView(NSLocalizedString("Created", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForCreated))))
+        result.append(self.ValueView(self.formattedCreated, isSelectable: true))
+        result.append(self.TitleView(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated))))
+        result.append(self.ValueView(self.formattedUpdated, isSelectable: true))
+
+        if self.info.size != nil {
+            result.append(self.TitleView(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize))))
+            result.append(self.ValueView(self.formattedSize, isSelectable: true))
+        }
+
+        return result
+    }
+
     public var body: some View {
-        TableCustom(
-            selected: Binding.constant([]),
-            isVisibleHeader: false,
-            isFocusable: false,
-            isScrollable: false,
-            bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
-            head: {
-                TableCustom_HeadCell(
-                    size: .fixed(140),
-                    spacing: 2,
-                    alignment: .trailing
-                ) { EmptyView() }
-                TableCustom_HeadCell(
-                    size: .flexible(),
-                    spacing: 2,
-                    alignment: .leading
-                ) { EmptyView() }
-            },
-            bodyAsArray: {
-                var result:[AnyView] = []
+        VStack(spacing: 0) {
 
-                result.append(self.TitleView(NSLocalizedString("Type", comment: "")))
-                result.append(self.ValueView(self.formattedType))
-                result.append(self.TitleView(NSLocalizedString("Name", comment: "")))
-                result.append(self.ValueView(self.formattedName, isSelectable: true))
-                result.append(self.TitleView(NSLocalizedString("Path", comment: "")))
-                result.append(self.ValueView(self.formattedPath, isSelectable: true))
+            let tableCells = self.tableCells
 
-                if let realName = self.info.realName,
-                   let realPath = self.info.realPath {
+            TableCustom(
+                selected: Binding.constant([]),
+                isVisibleHeader: false,
+                isFocusable: false,
+                isScrollable: false,
+                bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
+                head: {
+                    TableCustom_HeadCell(
+                        size: .fixed(140),
+                        spacing: 2,
+                        alignment: .trailing
+                    ) { EmptyView() }
+                    TableCustom_HeadCell(
+                        size: .flexible(),
+                        spacing: 2,
+                        alignment: .leading
+                    ) { EmptyView() }
+                },
+                bodyAsArray: tableCells
+            ).font(.system(size: 12, weight: .regular))
 
-                    result.append(self.TitleView(NSLocalizedString("Real Name", comment: "")))
-                    result.append(self.ValueView(realName, isSelectable: true))
-                    result.append(self.TitleView(NSLocalizedString("Real Path", comment: "")))
-                    result.append(self.ValueView(realPath, isSelectable: true))
-                }
-
-                result.append(self.TitleView(NSLocalizedString("Reference Count", comment: "")))
-                result.append(self.ValueView(self.formattedReferences))
-                result.append(self.TitleView(NSLocalizedString("Created", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForCreated))))
-                result.append(self.ValueView(self.formattedCreated, isSelectable: true))
-                result.append(self.TitleView(NSLocalizedString("Updated", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForUpdated))))
-                result.append(self.ValueView(self.formattedUpdated, isSelectable: true))
-
-                if self.info.size != nil {
-                    result.append(self.TitleView(NSLocalizedString("Size", comment: ""), controls: AnyView(RollerStick(value: self.$rollerForSize))))
-                    result.append(self.ValueView(self.formattedSize, isSelectable: true))
-                }
-
-                return result
-            }()
-        ).font(.system(size: 12, weight: .regular))
+            if (self.colorScheme == .dark && tableCells.count % 4 == 0) {
+                Color.tableCustom.bodyRowOddBackground.frame(height: 5)
+            }
+        }
     }
 
     private func TitleView(_ text: String, controls: AnyView? = nil) -> AnyView {

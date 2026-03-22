@@ -34,15 +34,17 @@ struct ExtSettings: View {
     }
 
     @ViewBuilder func GroupBackground() -> some View {
-        RoundedRectangle(cornerRadius: 15)
-            .fill(Color.form.group)
-            .shadow(
-                color: self.colorScheme == .dark ?
-                    .black.opacity(1.0) :
-                    .black.opacity(0.4),
-                radius: 2,
-                y: 1
-            )
+        ZStack {
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.form.group)
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(
+                    self.colorScheme == .dark ?
+                        Color.black.opacity(1.0) :
+                        Color.black.opacity(0.3),
+                    lineWidth: 1
+                )
+        }
     }
 
 }

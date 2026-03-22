@@ -25,9 +25,7 @@ struct PopupBody: View {
     ]
 
     public var body: some View {
-        VStack(spacing: 20) {
-
-            self.ShadowTopView()
+        VStack(spacing: 40) {
 
             /* MARK: rules via toggles */
 
@@ -68,6 +66,7 @@ struct PopupBody: View {
             /* MARK: owner picker + group picker */
 
             VStack(alignment: .trailing, spacing: 10) {
+
                 HStack(spacing: 10) {
                     Text(NSLocalizedString("Owner", comment: ""))
                     PickerCustom<String>(
@@ -89,11 +88,13 @@ struct PopupBody: View {
                         flexibility: .size(150)
                     )
                 }
-            }.padding(.top, 10)
 
-            self.ShadowBottomView()
+            }
 
         }
+        .padding(.vertical, 35)
+        .overlayPolyfill(alignment: .top   , content: { self.ShadowTopView() })
+        .overlayPolyfill(alignment: .bottom, content: { self.ShadowBottomView() })
         .onAppear {
             self.ownersReload()
             self.groupsReload()
@@ -125,7 +126,9 @@ struct PopupBody: View {
             .fill(
                 LinearGradient(
                     colors: [
-                        Color.black.opacity(self.colorScheme == .light ? 0.1 : 0.4),
+                        self.colorScheme == .dark ?
+                            Color.black.opacity(0.20) :
+                            Color.black.opacity(0.15),
                         Color.clear ],
                     startPoint: .top,
                     endPoint: .bottom
@@ -139,7 +142,9 @@ struct PopupBody: View {
                 LinearGradient(
                     colors: [
                         Color.clear,
-                        Color.black.opacity(self.colorScheme == .light ? 0.1 : 0.4) ],
+                        self.colorScheme == .dark ?
+                            Color.black.opacity(0.20) :
+                            Color.black.opacity(0.15) ],
                     startPoint: .top,
                     endPoint: .bottom
                 )
