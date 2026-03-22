@@ -13,7 +13,7 @@ let FINDER_EXT_MENU_ITEMS = [
     (
         eventName: "RWXEditorFinderContextMenu",
         titleLocalized: NSLocalizedString("RWX Editor", comment: ""),
-        iconName: "circle.grid.3x3"
+        iconName: "ContextMenuIcon"
     )
 ]
 
@@ -43,7 +43,7 @@ final class FinderSync: FIFinderSync {
                 for (index, item) in FINDER_EXT_MENU_ITEMS.enumerated() {
                     let menuItem = NSMenuItem()
                         menuItem.title = item.titleLocalized
-                        menuItem.image = NSImage(systemSymbolName: item.iconName, accessibilityDescription: "")!
+                        menuItem.image = NSImage(named: item.iconName)!
                         menuItem.action = #selector(onContextMenu(_:))
                         menuItem.tag = index
                         menuItem.target = self

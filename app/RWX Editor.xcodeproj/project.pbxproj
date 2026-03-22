@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -110,6 +110,7 @@
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
 		50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
+		50E380E12F708CF200FD103E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E380E02F708CF200FD103E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +223,7 @@
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
+		50E380E02F708CF200FD103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276B62F39C991005F7475 /* FinderSync.swift */,
+				50E380E02F708CF200FD103E /* Assets.xcassets */,
 				50B276EB2F3A411D005F7475 /* FinderSync.entitlements */,
 				50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */,
 				50B276B82F39C991005F7475 /* Info.plist */,
@@ -613,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D137B72F68BF0C00B9B776 /* Localizable.xcstrings in Resources */,
+				50E380E12F708CF200FD103E /* Assets.xcassets in Resources */,
 				50CEA0AD2F4C58EE001006CF /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

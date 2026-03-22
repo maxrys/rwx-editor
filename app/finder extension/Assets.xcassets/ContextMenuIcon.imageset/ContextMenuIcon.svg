@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="AppIcon-16x16.png" width="16" height="16"/>
+      <bx:file format="png" path="AppIcon-16x16@2x.png" width="32" height="32"/>
+      <bx:file format="png" path="AppIcon-32x32.png" width="32" height="32"/>
+      <bx:file format="png" path="AppIcon-32x32@2x.png" width="64" height="64"/>
+      <bx:file format="png" path="AppIcon-128x128.png" width="128" height="128"/>
+      <bx:file format="png" path="AppIcon-128x128@2x.png" width="256" height="256"/>
+      <bx:file format="png" path="AppIcon-256x256.png" width="256" height="256"/>
+      <bx:file format="png" path="AppIcon-256x256@2x.png" width="512" height="512"/>
+      <bx:file format="png" path="AppIcon-512x512.png" width="512" height="512"/>
+      <bx:file format="png" path="AppIcon-512x512@2x.png" width="1024" height="1024"/>
+    </bx:export>
+    <bx:guide x="0" y="100" angle="90"/>
+    <bx:guide x="0" y="920" angle="90"/>
+    <bx:guide x="100" y="0" angle="0"/>
+    <bx:guide x="920" y="0" angle="0"/>
+  </defs>
+  <g transform="matrix(1.929078, 0, 0, 1.929078, -475.687927, -475.687927)" style="">
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="356.528" cy="356.528" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="512" cy="356.528" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="667.472" cy="356.528" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="356.528" cy="512" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="512" cy="512" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="667.472" cy="512" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="356.528" cy="667.472" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="512" cy="667.472" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke: rgb(0, 0, 0); fill: none; stroke-width: 25.919;" cx="667.472" cy="667.472" rx="51.838" ry="51.838"/>
+  </g>
+</svg>
