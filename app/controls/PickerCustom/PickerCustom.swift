@@ -19,7 +19,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     fileprivate let flexibility: Flexibility
     fileprivate let colorSet: ColorSet
     fileprivate let cornerRadius: CGFloat = 10
-    fileprivate let borderWidth: CGFloat = 0
+    fileprivate let borderWidth: CGFloat = 1
 
     fileprivate var keyToIndex: [Key: Int] = [:]
     fileprivate var indexToKey: [Int: Key] = [:]
