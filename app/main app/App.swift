@@ -62,6 +62,7 @@ import SwiftUI
                 title: WINDOW_POPUP_TITLE,
                 styleMask: [.titled, .closable],
                 isVisible: true,
+                size: CGSize(width: MainScene.FRAME_WIDTH, height: 600),
              // level: .floating,
                 delegate: self,
                 view: Popup(url)
