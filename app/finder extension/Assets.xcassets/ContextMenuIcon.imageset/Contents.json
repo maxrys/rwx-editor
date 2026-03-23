@@ -17,6 +17,7 @@
       "scale" : "1x"
     },
     {
+      "compression-type" : "lossless",
       "filename" : "ContextMenuIcon 1.svg",
       "idiom" : "mac",
       "scale" : "2x"
@@ -36,5 +37,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

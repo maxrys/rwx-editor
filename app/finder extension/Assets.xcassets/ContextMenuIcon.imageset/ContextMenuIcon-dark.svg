@@ -18,14 +18,14 @@
     <bx:guide x="100" y="0" angle="0"/>
     <bx:guide x="920" y="0" angle="0"/>
   </defs>
-  <g transform="matrix(1.929078, 0, 0, 1.929078, -475.687927, -475.687927)" style="">
-    <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="356.528" cy="356.528" rx="51.838" ry="51.838"/>
-    <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="512" cy="356.528" rx="51.838" ry="51.838"/>
-    <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="667.472" cy="356.528" rx="51.838" ry="51.838"/>
-    <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="356.528" cy="512" rx="51.838" ry="51.838"/>
-    <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="512" cy="512" rx="51.838" ry="51.838"/>
+  <g transform="matrix(1.765021, 0, 0, 1.765021, -391.690796, -391.690796)" style="">
+    <ellipse style="filter: none; stroke-width: 25.919; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="356.528" cy="356.528" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke-width: 25.919; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="512" cy="356.528" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke-width: 25.919; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="667.472" cy="356.528" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke-width: 25.919; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="356.528" cy="512" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke-width: 25.919; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="512" cy="512" rx="51.838" ry="51.838"/>
     <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="667.472" cy="512" rx="51.838" ry="51.838"/>
-    <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="356.528" cy="667.472" rx="51.838" ry="51.838"/>
+    <ellipse style="filter: none; stroke-width: 25.919; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" cx="356.528" cy="667.472" rx="51.838" ry="51.838"/>
     <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="512" cy="667.472" rx="51.838" ry="51.838"/>
     <ellipse style="filter: none; fill: none; stroke-width: 25.919; stroke: rgb(255, 255, 255);" cx="667.472" cy="667.472" rx="51.838" ry="51.838"/>
   </g>
