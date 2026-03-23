@@ -196,7 +196,6 @@ struct PickerCustom_Previews1: PreviewProvider {
             }
             .padding(20)
             .frame(width: 200)
-            .background(Color.gray)
         }
     }
     static var previews: some View {
@@ -217,7 +216,6 @@ struct PickerCustom_Previews2: PreviewProvider {
             }
             .padding(20)
             .frame(width: 200)
-            .background(Color.gray)
         }
     }
     static var previews: some View {
