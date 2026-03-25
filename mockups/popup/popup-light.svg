@@ -167,40 +167,38 @@
     <g>
       <g>
         <rect style="fill: rgb(201, 223, 244); stroke-width: 1;" x="304.363" y="940" width="181" height="52" rx="10" ry="10"/>
-        <text style="fill: rgb(1, 1, 1); font-family: &quot;PT Mono&quot;; font-size: 29px; letter-spacing: -1.5px; white-space: pre; stroke-width: 1;" x="321.953" y="974.411">rw-r--r--</text>
+        <text style="fill: rgb(35, 35, 35); font-family: &quot;PT Mono&quot;; font-size: 29px; letter-spacing: -1.5px; white-space: pre; text-anchor: middle;" x="394.863" y="974.411">rw-r--r--</text>
       </g>
       <g>
         <g>
           <rect style="fill: rgba(0, 0, 0, 0.055); stroke-width: 2; stroke: rgba(0, 0, 0, 0.15);" x="525.637" y="940" width="52" height="52" rx="18.307" ry="18.307"/>
-          <text style="font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="542.486" y="975.89">6</text>
+          <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; text-anchor: middle;" x="551.637" y="975.89">6</text>
         </g>
         <g>
           <rect style="fill: rgba(0, 0, 0, 0.05); stroke: rgba(0, 0, 0, 0.15); stroke-width: 2;" x="584.637" y="940" width="52" height="52" rx="18" ry="18"/>
-          <text style="font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="601.726" y="976.567">4</text>
+          <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; text-anchor: middle;" x="610.637" y="976.567">4</text>
         </g>
         <g>
           <rect style="fill: rgba(0, 0, 0, 0.05); stroke: rgba(0, 0, 0, 0.15); stroke-width: 2;" x="643.637" y="940" width="52" height="52" rx="18" ry="18"/>
-          <text style="font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="660.736" y="975.89">4</text>
+          <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; text-anchor: middle;" x="669.637" y="975.89">4</text>
         </g>
       </g>
     </g>
+    <g>
+      <g>
+        <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" transform="matrix(0.998387, 0, 0, 1, 54.268005, 253.898819)" x="325.45" y="855.052">Owner</text>
+        <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(0.998387, 0, 0, 1, -20.457825, 253.990662)" x="326.881" y="926.982">Group</text>
+      </g>
+      <g>
+        <rect style="fill: rgba(0, 0, 0, 0.06); stroke-width: 2; stroke: rgba(0, 0, 0, 0.15);" x="1205.26" y="680.686" width="299.516" height="52" rx="18.307" ry="18.307" transform="matrix(0.999998, -0.00189, 0, 1.000002, -805.388367, 395.156738)"/>
+        <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; text-anchor: middle; white-space: pre;" x="571.009" y="854.923" transform="matrix(0.998387, 0, 0, 1, -20.457825, 253.990662)">test</text>
+      </g>
+      <g>
+        <rect style="fill: rgba(0, 0, 0, 0.06); stroke-width: 2; stroke: rgba(0, 0, 0, 0.15);" x="1205.27" y="680.686" width="299.516" height="52" rx="18.307" ry="18.307" transform="matrix(0.999998, -0.00189, 0, 1.000002, -805.318604, 467.086823)"/>
+        <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; stroke: rgba(0, 0, 0, 0.15); text-anchor: middle; white-space: pre;" x="571.088" y="926.854" transform="matrix(0.998387, 0, 0, 1, -20.457825, 253.990662)">staff</text>
+      </g>
+    </g>
     <rect x="170" y="-1267" width="660" height="13" style="stroke-width: 1; fill: url(&quot;#gradient-3&quot;);" transform="matrix(1, 0, 0, -1, 0, 0)"/>
-  </g>
-  <g transform="matrix(1, 0, 0, 1, 1050.15979, -133.410889)">
-    <g>
-      <text style="fill: rgb(36, 36, 36); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="325.45" y="855.052">Owner</text>
-      <g>
-        <rect style="fill: rgb(255, 255, 255); stroke-width: 1;" x="1207.21" y="680.686" width="300" height="52" rx="18.307" ry="18.307" transform="matrix(0.999998, -0.001887, 0, 1.000002, -786.198669, 141.166092)"/>
-        <text style="font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="526.016" y="854.923">nobody</text>
-      </g>
-    </g>
-    <g>
-      <text style="fill: rgb(36, 36, 36); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="326.881" y="926.982">Group</text>
-      <g>
-        <rect style="fill: rgb(255, 255, 255); stroke-width: 1;" x="1207.22" y="680.686" width="300" height="52" rx="18.307" ry="18.307" transform="matrix(0.999998, -0.001887, 0, 1.000002, -786.128845, 213.096161)"/>
-        <text style="font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre; stroke-width: 1;" x="544.212" y="926.854">staff</text>
-      </g>
-    </g>
   </g>
   <g transform="matrix(1, 0, 0, 1, 1030.793335, -26.469353)" style="filter: url(&quot;#drop-shadow-filter-1&quot;);">
     <path style="stroke-width: 2; filter: none; fill: rgb(225, 225, 225);" d="M 199.117 1001.85 H 799.117 V 1136.85 A 20 20 0 0 1 779.117 1156.85 H 219.117 A 20 20 0 0 1 199.117 1136.85 V 1001.85 Z" bx:shape="rect 199.117 1001.85 600 155 0 0 20 20 1@8d73e263"/>
