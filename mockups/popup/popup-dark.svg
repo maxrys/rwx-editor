@@ -18,11 +18,11 @@
       <bx:file format="png" path="popup-light.png"/>
     </bx:export>
     <linearGradient gradientUnits="userSpaceOnUse" x1="499.617" y1="374" x2="499.617" y2="394" id="gradient-0" gradientTransform="matrix(1.1, 0, 0, 0.65, -49.577511, 274.900513)">
-      <stop offset="0" style="stop-opacity: 0.14;"/>
+      <stop offset="0" style="stop-opacity: 0.2;"/>
       <stop offset="1" style="stop-opacity: 0;"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="499.617" y1="374" x2="499.617" y2="394" id="gradient-3" gradientTransform="matrix(1.1, 0, 0, 0.65, -49.578064, -1510.155762)">
-      <stop offset="0" style="stop-opacity: 0.14;"/>
+      <stop offset="0" style="stop-opacity: 0.2;"/>
       <stop offset="1" style="stop-opacity: 0;"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="623.617" y1="1020" x2="623.617" y2="1076" id="gradient-1" gradientTransform="matrix(1.200875, 0, 0, 0.964286, -401.383194, 323.417629)">
@@ -63,9 +63,6 @@
       <stop offset="0" style="stop-color: rgb(32, 34, 49);"/>
       <stop offset="1" style="stop-color: rgb(21, 23, 35);"/>
     </linearGradient>
-    <mask id="mask-0">
-      <rect x="-170" y="123" width="24" height="69" style="fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, 1, 0, 0)"/>
-    </mask>
     <filter id="outline-filter-0" bx:preset="outline 1 1 #01091c" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
       <feMorphology in="SourceAlpha" result="dilated" operator="dilate" radius="1"/>
       <feFlood flood-color="#01091c" result="flood"/>
@@ -75,17 +72,28 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <mask id="mask-0">
+      <rect x="141" y="119" width="29" height="77" style="fill: rgb(255, 255, 255);"/>
+    </mask>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="500" y1="0" x2="500" y2="1500" id="gradient-5">
+      <stop offset="0" style="stop-color: rgb(27, 14, 166);"/>
+      <stop offset="0.343" style="stop-color: rgb(89, 64, 200);"/>
+      <stop offset="0.653" style="stop-color: rgb(34, 87, 204);"/>
+      <stop offset="1" style="stop-color: rgb(0, 45, 170);"/>
+    </linearGradient>
   </defs>
-  <rect width="1000" height="1500" style="fill: rgb(37, 22, 148);"/>
+  <rect width="1000" height="1500" style="fill: url(&quot;#gradient-5&quot;);"/>
   <g>
     <g style="filter: url(&quot;#outline-filter-0&quot;);">
       <rect style="stroke-width: 2; filter: url(&quot;#drop-shadow-filter-1&quot;); fill: rgb(32, 34, 49); stroke: rgb(76, 76, 88);" x="169" y="76" width="662" height="1326" rx="20" ry="20"/>
-      <path d="M 169 124 L 178 124 L 178 191 L 169 191 C 169 174.25 146 165.408 146 157.5 C 146 149.556 169 140.75 169 124 Z" style="stroke-width: 2; filter: none; fill: url(&quot;#gradient-4&quot;); mask: url(&quot;#mask-0&quot;); stroke: rgb(76, 76, 88);"/>
+      <path d="M 169 124 L 178 124 L 178 191 L 169 191 C 169 174.25 146 165.408 146 157.5 C 146 149.556 169 140.75 169 124 Z" style="stroke-width: 2; filter: none; fill: url(&quot;#gradient-4&quot;); stroke: rgb(76, 76, 88); mask: url(&quot;#mask-0&quot;);"/>
     </g>
     <g>
-      <ellipse style="stroke-width: 1.5; fill: rgb(255, 97, 88); stroke: rgb(226, 65, 56);" cx="202" cy="109" rx="13" ry="13"/>
-      <ellipse style="stroke-width: 1.5; stroke: rgb(225, 159, 38); fill: rgb(254, 188, 46);" cx="248" cy="109" rx="13" ry="13"/>
-      <ellipse style="stroke-width: 1.5; fill: rgb(39, 200, 64); stroke: rgb(29, 171, 39);" cx="294" cy="109" rx="13" ry="13"/>
+      <g style="filter: none;">
+        <ellipse style="stroke-width: 1.5; fill: rgba(255, 255, 255, 0.1); stroke: rgba(255, 255, 255, 0.15);" cx="202" cy="109" rx="13" ry="13"/>
+        <ellipse style="stroke-width: 1.5; fill: rgba(255, 255, 255, 0.1); stroke: rgba(255, 255, 255, 0.15);" cx="248" cy="109" rx="13" ry="13"/>
+        <ellipse style="stroke-width: 1.5; fill: rgba(255, 255, 255, 0.1); stroke: rgba(255, 255, 255, 0.15);" cx="294" cy="109" rx="13" ry="13"/>
+      </g>
       <text style="fill: rgba(255, 255, 255, 0.3); font-family: &quot;SF Pro&quot;; font-size: 27px; font-weight: 700; white-space: pre;" x="338.33" y="118.735">RWX Editor</text>
       <line style="fill: none; stroke-width: 2; stroke: rgb(21, 23, 35);" x1="170" y1="140" x2="830" y2="140.082"/>
     </g>
