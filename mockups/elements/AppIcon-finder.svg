@@ -26,80 +26,51 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="drop-shadow-filter-5" bx:preset="drop-shadow 1 0 4 4 0.33 #000" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-      <feOffset dx="0" dy="4"/>
-      <feComponentTransfer result="offsetblur">
-        <feFuncA id="spread-ctrl-2" type="linear" slope="0.66"/>
-      </feComponentTransfer>
-      <feFlood flood-color="#000"/>
-      <feComposite in2="offsetblur" operator="in"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
     <bx:guide x="0" y="100" angle="90"/>
     <bx:guide x="0" y="920" angle="90"/>
     <bx:guide x="100" y="0" angle="0"/>
     <bx:guide x="920" y="0" angle="0"/>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-0">
+    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-0" gradientTransform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
       <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
       <stop offset="1" style="stop-color: rgb(237, 231, 223);"/>
     </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="1332.5" y1="203" x2="1332.5" y2="818" id="gradient-1">
+    <linearGradient gradientUnits="userSpaceOnUse" x1="1332.5" y1="203" x2="1332.5" y2="818" id="gradient-1" gradientTransform="matrix(0.581626, 0, 0, 0.581626, -159.866638, 318.229919)">
       <stop offset="0" style="stop-color: rgb(28, 209, 254);"/>
       <stop offset="1" style="stop-color: rgb(29, 105, 241);"/>
     </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="1451.537" y1="203" x2="1451.537" y2="818" id="gradient-2">
+    <linearGradient gradientUnits="userSpaceOnUse" x1="1451.537" y1="203" x2="1451.537" y2="818" id="gradient-2" gradientTransform="matrix(0.581626, 0, 0, 0.581626, -159.866638, 318.229919)">
       <stop offset="0" style="stop-color: rgb(241, 241, 242);"/>
       <stop offset="1" style="stop-color: rgb(210, 218, 230);"/>
     </linearGradient>
-    <filter id="drop-shadow-filter-0" bx:preset="drop-shadow 1 0 4 10 0.33 #00000070" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
-      <feOffset dx="0" dy="4"/>
-      <feComponentTransfer result="offsetblur">
-        <feFuncA id="spread-ctrl-3" type="linear" slope="0.66"/>
-      </feComponentTransfer>
-      <feFlood flood-color="#00000070"/>
-      <feComposite in2="offsetblur" operator="in"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <g transform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
-    <rect style="stroke-width: 16px; filter: url(&quot;#drop-shadow-filter-1&quot;); fill: url(&quot;#gradient-0&quot;);" x="203" y="203" width="615" height="615" rx="127.5" ry="127.5"/>
-    <g transform="matrix(0.946429, 0, 0, 0.946429, 300.499908, 300.499908)">
-      <ellipse style="stroke-width: 8; fill: rgb(0, 173, 0); filter: url(&quot;#drop-shadow-filter-5&quot;);" cx="60" cy="60" rx="60" ry="60"/>
-      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 12.3529px" d="M 82.292 39.2 L 54.759 80.8 L 37.709 62.03"/>
+  <g>
+    <rect style="stroke-width: 21.333; filter: url(&quot;#drop-shadow-filter-1&quot;); fill: url(&quot;#gradient-0&quot;);" x="100" y="100" width="820" height="820" rx="127.5" ry="127.5"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="305.714" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 279.467 L 299.101 331.962 L 277.585 308.276"/>
     </g>
-    <g transform="matrix(0.946429, 0, 0, 0.946429, 313.249908, 300.499908)">
-      <ellipse style="stroke-width: 8; filter: url(&quot;#drop-shadow-filter-5&quot;); fill: rgb(230, 110, 0);" cx="210" cy="60" rx="60" ry="60"/>
-      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 12.3529px" d="M 232.292 39.2 L 204.759 80.8 L 187.709 62.03"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 111, 0);" cx="512" cy="305.714" rx="75.714" ry="75.714"/>
+      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 279.467 L 505.386 331.962 L 483.871 308.276"/>
     </g>
-    <g transform="matrix(0.946429, 0, 0, 0.946429, 325.999908, 300.499908)">
-      <ellipse style="stroke-width: 8; filter: url(&quot;#drop-shadow-filter-5&quot;); fill: rgb(213, 31, 0);" cx="360" cy="60" rx="60" ry="60"/>
-      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 12.3529px" d="M 382.292 39.2 L 354.759 80.8 L 337.709 62.03"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(212, 28, 0);" cx="718.286" cy="305.714" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 746.416 279.467 L 711.672 331.962 L 690.157 308.276"/>
     </g>
-    <g transform="matrix(0.946429, 0, 0, 0.946429, 300.499908, 313.249908)">
-      <ellipse style="stroke-width: 8; filter: url(&quot;#drop-shadow-filter-5&quot;); fill: rgb(0, 173, 0);" cx="60" cy="210" rx="60" ry="60"/>
-      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 12.3529px" d="M 82.292 189.2 L 54.759 230.8 L 37.709 212.03"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="512" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 485.752 L 299.101 538.248 L 277.585 514.562"/>
     </g>
-    <g transform="matrix(0.946429, 0, 0, 0.946429, 300.499908, 325.999908)">
-      <ellipse style="stroke-width: 8; filter: url(&quot;#drop-shadow-filter-5&quot;); fill: rgb(0, 173, 0);" cx="60" cy="360" rx="60" ry="60"/>
-      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 12.3529px" d="M 82.292 339.2 L 54.759 380.8 L 37.709 362.03"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="718.286" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 692.038 L 299.101 744.533 L 277.585 720.847"/>
     </g>
-    <g transform="matrix(0.43622, 0, 0, 0.43622, 8.099288, 366.67215)" style="filter: url(&quot;#drop-shadow-filter-0&quot;);">
-      <path d="M 1162.648 203 H 1502.352 A 137.648 137.648 0 0 1 1640 340.648 V 680.352 A 137.648 137.648 0 0 1 1502.352 818 H 1162.648 A 137.648 137.648 0 0 1 1025 680.352 V 340.648 A 137.648 137.648 0 0 1 1162.648 203 Z" style="fill: url(&quot;#gradient-1&quot;);"/>
-      <path d="M 1356.404 561.171 C 1340.509 561.171 1318.214 560.69 1297.568 560.881 C 1285.55 560.992 1274.564 563.223 1267.61 555.465 C 1260.898 547.979 1263.594 534.002 1263.685 526.347 C 1264.08 493.252 1270.322 436.792 1284.236 376.455 C 1295.567 327.323 1312.767 276.568 1327.611 237.386 L 1502.35 237.386 C 1517.777 237.01 1529.064 239.79 1542.534 245.487 C 1555.906 251.143 1565.191 257.454 1575.368 267.631 C 1585.545 277.808 1591.857 287.093 1597.513 300.465 C 1603.21 313.934 1605.99 325.22 1605.614 340.648 L 1605.614 680.352 C 1605.99 695.78 1603.21 707.066 1597.513 720.535 C 1591.857 733.907 1585.545 743.192 1575.368 753.369 C 1565.191 763.546 1555.906 769.857 1542.534 775.513 C 1529.064 781.21 1517.777 783.99 1502.35 783.614 L 1378.965 783.614 C 1361.635 717.432 1348.649 631.235 1356.404 561.171 Z" style="fill: url(&quot;#gradient-2&quot;);"/>
-      <g>
-        <path d="M 1186.238 377.75 H 1186.238 A 12.738 12.738 0 0 1 1198.976 390.488 V 432.512 A 12.738 12.738 0 0 1 1186.238 445.25 H 1186.238 A 12.738 12.738 0 0 1 1173.5 432.512 V 390.488 A 12.738 12.738 0 0 1 1186.238 377.75 Z" style="fill: rgb(70, 70, 70);"/>
-        <path d="M 1458.488 377.75 H 1458.488 A 12.738 12.738 0 0 1 1471.226 390.488 V 432.512 A 12.738 12.738 0 0 1 1458.488 445.25 H 1458.488 A 12.738 12.738 0 0 1 1445.75 432.512 V 390.488 A 12.738 12.738 0 0 1 1458.488 377.75 Z" style="fill: rgb(70, 70, 70);"/>
-        <path d="M 1504.816 607.444 C 1508.811 610.737 1509.38 616.646 1506.087 620.641 C 1458.614 676.998 1390.033 698.54 1319 698.54 C 1283.806 698.54 1246.768 692.213 1214.951 679.763 C 1183.035 667.274 1140.489 625.17 1140.489 625.17 C 1139.55 624.674 1140.489 625.17 1140.489 625.17 C 1137.663 623.415 1136.008 620.268 1136.163 616.945 C 1136.317 613.622 1138.256 610.643 1141.232 609.156 C 1144.208 607.67 1147.755 607.909 1150.505 609.782 C 1150.505 609.782 1150.776 610.075 1150.505 609.782 C 1150.505 609.782 1159.868 621.833 1164.944 626.864 C 1170.026 631.902 1175.34 636.358 1181.375 640.705 C 1193.475 649.421 1206.804 656.44 1221.784 662.302 C 1251.833 674.061 1285.384 679.79 1319 679.79 C 1387.321 679.79 1448.668 662.062 1491.619 608.715 C 1494.912 604.72 1500.821 604.151 1504.816 607.444 Z" style="fill: rgb(70, 70, 70);"/>
-      </g>
-      <path d="M 1162.65 203 L 1502.35 203 C 1578.37 203 1640 264.627 1640 340.648 L 1640 680.352 C 1640 756.373 1578.37 818 1502.35 818 L 1162.65 818 C 1086.63 818 1025 756.373 1025 680.352 L 1025 340.648 C 1025 264.627 1086.63 203 1162.65 203 Z" style="fill: none; stroke-width: 68.7727px;"/>
+    <g>
+      <path d="M 516.36 436.3 L 713.94 436.3 C 758.156 436.3 794 472.144 794 516.36 L 794 713.94 C 794 758.156 758.156 794 713.94 794 L 516.36 794 C 472.144 794 436.3 758.156 436.3 713.94 L 436.3 516.36 C 436.3 472.144 472.144 436.3 516.36 436.3 Z" style="fill: url(&quot;#gradient-1&quot;); stroke-width: 0.582; filter: none;"/>
+      <path d="M 629.053 644.622 C 619.808 644.622 606.841 644.342 594.833 644.453 C 587.843 644.517 581.453 645.815 577.408 641.303 C 573.504 636.949 575.072 628.819 575.125 624.367 C 575.355 605.118 578.986 572.28 587.078 537.186 C 593.669 508.609 603.673 479.089 612.306 456.3 L 713.939 456.3 C 722.912 456.081 729.477 457.698 737.311 461.012 C 745.089 464.301 750.489 467.972 756.408 473.891 C 762.328 479.81 765.999 485.211 769.288 492.988 C 772.602 500.822 774.219 507.386 774 516.36 L 774 713.94 C 774.219 722.914 772.602 729.478 769.288 737.312 C 765.999 745.089 762.328 750.49 756.408 756.409 C 750.489 762.328 745.089 765.999 737.311 769.288 C 729.477 772.602 722.912 774.219 713.939 774 L 642.175 774 C 632.096 735.507 624.543 685.373 629.053 644.622 Z" style="fill: url(&quot;#gradient-2&quot;); stroke-width: 0.582; filter: none;"/>
+      <path d="M 530.08 537.939 C 534.172 537.939 537.489 541.256 537.489 545.348 L 537.489 569.79 C 537.489 573.882 534.172 577.199 530.08 577.199 C 525.988 577.199 522.671 573.882 522.671 569.79 L 522.671 545.348 C 522.671 541.256 525.988 537.939 530.08 537.939 Z" style="fill: rgb(70, 70, 70); stroke-width: 0.582; filter: none;"/>
+      <path d="M 688.428 537.939 C 692.52 537.939 695.837 541.256 695.837 545.348 L 695.837 569.79 C 695.837 573.882 692.52 577.199 688.428 577.199 C 684.336 577.199 681.019 573.882 681.019 569.79 L 681.019 545.348 C 681.019 541.256 684.336 537.939 688.428 537.939 Z" style="fill: rgb(70, 70, 70); stroke-width: 0.582; filter: none;"/>
+      <path d="M 715.373 671.535 C 717.697 673.45 718.028 676.887 716.113 679.211 C 688.501 711.99 648.613 724.519 607.298 724.519 C 586.828 724.519 565.286 720.839 546.78 713.598 C 528.217 706.334 503.471 681.845 503.471 681.845 C 502.925 681.557 503.471 681.845 503.471 681.845 C 501.828 680.824 500.865 678.994 500.955 677.061 C 501.045 675.128 502.173 673.396 503.904 672.531 C 505.634 671.667 507.698 671.806 509.297 672.895 C 509.297 672.895 509.455 673.065 509.297 672.895 C 509.297 672.895 514.743 679.904 517.695 682.83 C 520.651 685.761 523.742 688.352 527.252 690.881 C 534.289 695.95 542.042 700.032 550.755 703.442 C 568.232 710.281 587.746 713.613 607.298 713.613 C 647.035 713.613 682.716 703.302 707.698 672.274 C 709.613 669.951 713.05 669.62 715.373 671.535 Z" style="fill: rgb(70, 70, 70); stroke-width: 0.582; filter: none;"/>
     </g>
   </g>
 </svg>
