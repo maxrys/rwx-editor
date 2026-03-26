@@ -95,23 +95,19 @@
     <text style="fill: rgb(81, 81, 81); font-family: &quot;SF Pro&quot;; font-size: 33.3px; font-weight: 700; text-anchor: middle; white-space: pre;" x="700" y="594.072">Provided access to directories</text>
     <g>
       <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 24.5px; white-space: pre;" x="260.146" y="668.236">Location path</text>
-      <line style="fill: none; stroke-width: 2px; stroke: rgb(205, 205, 205);" x1="241" y1="690" x2="1159" y2="690"/>
-      <g transform="matrix(0.999001, 0, 0, 1, 71.152634, 550.004211)">
-        <g>
-          <rect x="644.549" y="-301.59" width="918.918" height="55" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04); transform-origin: 403.308px -992.618px;" transform="matrix(1, -0.000054, 0, 1, -474.531799, 442.613375)"/>
-          <rect x="644.549" y="-301.6" width="918.918" height="55" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04); transform-origin: 403.308px -1104.63px;" transform="matrix(1, -0.000054, 0, 1, -474.531799, 554.623354)"/>
-          <rect x="644.549" y="-301.6" width="918.918" height="55" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04); transform-origin: 403.308px -1216.63px;" transform="matrix(1, -0.000054, 0, 1, -474.531799, 666.623354)"/>
-          <rect x="644.549" y="-301.6" width="918.918" height="55" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04); transform-origin: 403.308px -1328.63px;" transform="matrix(1, -0.000054, 0, 1, -474.531799, 778.623354)"/>
-        </g>
-        <g>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" transform="matrix(1, -0.000916, 0, 1, -21.717213, -532.882935)" x="206.863" y="710.918">/Users/demo/Pictures</text>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" transform="matrix(1, -0.000916, 0, 1, -21.717211, -476.87265)" x="206.863" y="710.918">/Users/demo/Music</text>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" transform="matrix(1, -0.000916, 0, 1, -21.717201, -420.877075)" x="206.863" y="710.918">/Users/demo/Movies</text>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" transform="matrix(1, -0.000916, 0, 1, -21.717199, -364.754517)" x="206.863" y="710.918">/Users/demo/Library</text>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="185.146" y="401.923">/Users/demo/Downloads</text>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="185.146" y="457.872">/Users/demo/Documents</text>
-          <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="185.146" y="513.821">/Users/demo/Desktop</text>
-        </g>
+      <line style="fill: none; stroke-width: 2px; stroke: rgb(205, 205, 205);" x1="241" y1="689" x2="1159" y2="689"/>
+      <g>
+        <rect x="241" y="690" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
+        <rect x="241" y="802" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
+        <rect x="241" y="914" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
+        <rect x="241" y="1026" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="727.009">/Users/demo/Pictures</text>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="783.009">/Users/demo/Music</text>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="839.009">/Users/demo/Movies</text>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="895.009">/Users/demo/Library</text>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="951.009">/Users/demo/Downloads</text>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="1007.01">/Users/demo/Documents</text>
+        <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="1063.01">/Users/demo/Desktop</text>
       </g>
     </g>
     <g>
