@@ -86,7 +86,7 @@ struct ButtonCustom_Previews: PreviewProvider {
 
             HStack(spacing: 0) {
                 VStack {
-                    Text("style").font(.headline)
+                    Text("light style").font(.headline)
                     ButtonCustom(colorStyle: .accent)
                     ButtonCustom(colorStyle: .danger)
                     ButtonCustom(colorStyle: .custom(text: nil, background: nil))
@@ -97,7 +97,7 @@ struct ButtonCustom_Previews: PreviewProvider {
                 .background(Color.white)
 
                 VStack {
-                    Text("style").font(.headline)
+                    Text("dark style").font(.headline)
                     ButtonCustom(colorStyle: .accent)
                     ButtonCustom(colorStyle: .danger)
                     ButtonCustom(colorStyle: .custom(text: nil, background: nil))
