@@ -72,7 +72,7 @@
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(255, 95, 87); stroke: rgb(226, 74, 65);" cx="232.967" cy="203" rx="12.987" ry="13"/>
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(254, 188, 48); stroke: rgb(231, 163, 33);" cx="278.921" cy="203" rx="12.987" ry="13"/>
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(39, 200, 64); stroke: rgb(32, 180, 44);" cx="324.875" cy="203" rx="12.987" ry="13"/>
-      <text style="fill: rgba(0, 0, 0, 0.3); font-family: &quot;SF Pro&quot;; font-size: 27px; font-weight: 700; white-space: pre; stroke-width: 1;" x="369.33" y="118.735" transform="matrix(0.999001, 0, 0, 1, 0.1998, 94)">RWX Editor | Settings</text>
+      <text style="fill: rgba(0, 0, 0, 0.3); font-family: &quot;SF Pro&quot;; font-size: 27px; font-weight: 700; white-space: pre; stroke-width: 1;" x="369" y="212.781">RWX Editor | Settings</text>
       <line style="fill: none; stroke-width: 1.999; stroke: rgb(230, 230, 230);" x1="200.999" y1="234" x2="1199" y2="234.123"/>
     </g>
     <g>
@@ -113,11 +113,11 @@
     <g>
       <g style="opacity: 0.5;">
         <rect x="241" y="1135" width="247" height="54" style="stroke-width: 1; fill: url(&quot;#gradient-1&quot;); filter: url(&quot;#drop-shadow-filter-2&quot;);" rx="10" ry="10"/>
-        <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; text-anchor: middle; white-space: pre; stroke-width: 1; filter: none;" x="333.623" y="1343.58" transform="matrix(0.999001, 0, 0, 1, 31.210306, -172)">delete</text>
+        <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; text-anchor: middle; white-space: pre; stroke-width: 1; filter: none;" x="364.5" y="1171.62">delete</text>
       </g>
       <g>
         <rect x="612" y="1135" width="547" height="54" style="stroke-width: 1; fill: url(&quot;#gradient-2&quot;); filter: url(&quot;#drop-shadow-filter-0&quot;);" rx="10" ry="10"/>
-        <text style="fill: rgb(255, 255, 255); font-family: &quot;SF Pro&quot;; font-size: 27px; text-anchor: middle; white-space: pre; stroke-width: 1; filter: none;" x="788.774" y="1343.58" transform="matrix(0.999001, 0, 0, 1, 97.514481, -172)">add allowed directories...</text>
+        <text style="fill: rgb(255, 255, 255); font-family: &quot;SF Pro&quot;; font-size: 27px; text-anchor: middle; white-space: pre; stroke-width: 1; filter: none;" x="885.5" y="1171.62">add allowed directories...</text>
       </g>
     </g>
   </g>
