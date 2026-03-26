@@ -50,7 +50,7 @@ struct PopupFoot: View {
 /* ############################################################# */
 
 struct PopupFoot_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         PopupFoot()
             .environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/hosts"))!))
             .frame(width: Popup.FRAME_WIDTH)

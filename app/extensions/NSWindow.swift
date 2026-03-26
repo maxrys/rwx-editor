@@ -7,7 +7,7 @@ import SwiftUI
 
 extension NSWindow {
 
-    static var customWindows: [
+    static public var customWindows: [
         String: NSWindow
     ] = [:]
 

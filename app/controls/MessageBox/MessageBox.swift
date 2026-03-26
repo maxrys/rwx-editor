@@ -115,7 +115,7 @@ fileprivate let PREVIEW_LONG_TITLE       = NSLocalizedString("Long long long lon
 fileprivate let PREVIEW_LONG_DESCRIPTION = NSLocalizedString("Long long long long long long long long long long long long long long long long long long long long long Description", comment: "")
 
 struct MessageBox_Previews1: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         let messageBox = MessageBox()
         messageBox
             .frame(width: 300, height: 700)
@@ -133,7 +133,7 @@ struct MessageBox_Previews1: PreviewProvider {
 }
 
 struct MessageBox_Previews2: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         let state = MessageState()
         MessageBox(state)
             .frame(width: 300, height: 700)

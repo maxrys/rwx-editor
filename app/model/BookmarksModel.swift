@@ -66,7 +66,7 @@ final public class BookmarksModel: NSManagedObject {
         return result
     }()
 
-    static var context: NSManagedObjectContext {
+    static public var context: NSManagedObjectContext {
         Self.container.viewContext
     }
 

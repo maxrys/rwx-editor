@@ -95,7 +95,7 @@ struct ToggleRwxColored_Previews: PreviewProvider {
             }.padding(20)
         }
     }
-    static var previews: some View {
+    static public var previews: some View {
         ViewWithState()
     }
 }

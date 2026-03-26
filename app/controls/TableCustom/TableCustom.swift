@@ -216,7 +216,7 @@ struct TableCustom_Previews1: PreviewProvider {
             .frame(width: 250)
         }
     }
-    static var previews: some View {
+    static public var previews: some View {
         ViewWithState()
     }
 }
@@ -252,7 +252,7 @@ struct TableCustom_Previews2: PreviewProvider {
             .frame(width: 250)
         }
     }
-    static var previews: some View {
+    static public var previews: some View {
         ViewWithState()
     }
 }

@@ -107,7 +107,7 @@ struct Popup: View {
 /* ############################################################# */
 
 struct Popup_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
             Popup(URL(fileURLWithPath: "/unknown"))     ; Delimiter
@@ -118,7 +118,7 @@ struct Popup_Previews: PreviewProvider {
 }
 
 struct Popup_Messages_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
             Popup.StaticMessage("Message Title")                        ; Delimiter

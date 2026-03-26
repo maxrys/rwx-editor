@@ -182,7 +182,7 @@ struct RollerStick<T: CaseIterable & Equatable>: View {
 /* ############################################################# */
 
 struct PopupHead_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
             PopupHead().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/"     ))!)); Delimiter /* directory */

@@ -162,7 +162,7 @@ struct PopupBody: View {
 /* ############################################################# */
 
 struct PopupBody_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
             PopupBody().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/"     ))!)); Delimiter /* directory */

@@ -6,7 +6,7 @@
 import SwiftUI
 
 private struct SizeKey: PreferenceKey {
-    static var defaultValue = CGSize(width: 0, height: 0)
+    static public var defaultValue = CGSize(width: 0, height: 0)
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
         value = nextValue()
     }

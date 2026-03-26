@@ -7,23 +7,23 @@ import AppKit
 
 extension NSEvent {
 
-    static var isPressedCommandButton: Bool {
+    static public var isPressedCommandButton: Bool {
         Self.modifierFlags.contains(.command)
     }
 
-    static var isPressedShiftButton: Bool {
+    static public var isPressedShiftButton: Bool {
         Self.modifierFlags.contains(.shift)
     }
 
-    static var isPressedLeftMouseButton: Bool {
+    static public var isPressedLeftMouseButton: Bool {
         (Self.pressedMouseButtons & 1) != 0
     }
 
-    static var isPressedMiddleMouseButton: Bool {
+    static public var isPressedMiddleMouseButton: Bool {
         (Self.pressedMouseButtons & 4) != 0
     }
 
-    static var isPressedRightMouseButton: Bool {
+    static public var isPressedRightMouseButton: Bool {
         (Self.pressedMouseButtons & 2) != 0
     }
 

@@ -198,7 +198,7 @@ struct PickerCustom_Previews1: PreviewProvider {
             .frame(width: 200)
         }
     }
-    static var previews: some View {
+    static public var previews: some View {
         ViewWithState()
     }
 }
@@ -218,7 +218,7 @@ struct PickerCustom_Previews2: PreviewProvider {
             .frame(width: 200)
         }
     }
-    static var previews: some View {
+    static public var previews: some View {
         ViewWithState()
     }
 }

@@ -8,7 +8,7 @@ import ServiceManagement
 
 struct ExtLaunchAtLogin: View {
 
-    static var launchAtLogin: Bool {
+    static public var launchAtLogin: Bool {
         get {
             if #available(macOS 13.0, *)
                  { return SMAppService.mainApp.status == .enabled }
@@ -44,7 +44,7 @@ struct ExtLaunchAtLogin: View {
 /* ############################################################# */
 
 struct ExtLaunchAtLogin_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         ExtLaunchAtLogin()
             .frame(maxWidth: 300)
             .padding(20)

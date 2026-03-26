@@ -73,7 +73,7 @@ struct ButtonCustom: View {
 /* ############################################################# */
 
 struct ButtonCustom_Previews: PreviewProvider {
-    static var previews: some View {
+    static public var previews: some View {
         VStack(spacing: 20) {
 
             VStack {
