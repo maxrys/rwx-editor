@@ -64,10 +64,19 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="outline-filter-0" bx:preset="outline 1 1 #0d0a1d" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+      <feMorphology in="SourceAlpha" result="dilated" operator="dilate" radius="1"/>
+      <feFlood flood-color="#0d0a1d" result="flood"/>
+      <feComposite in="flood" in2="dilated" operator="in" result="outline"/>
+      <feMerge>
+        <feMergeNode in="outline"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   <rect width="1400" height="1400" style="fill: rgb(227, 228, 229);"/>
   <g>
-    <rect style="stroke-width: 2; stroke: rgb(198, 198, 198); filter: url(&quot;#drop-shadow-filter-1&quot;); fill: rgb(32, 34, 48);" x="200" y="170" width="1000" height="1060" rx="20" ry="20"/>
+    <rect style="stroke-width: 2; fill: rgb(32, 34, 48); filter: url(&quot;#drop-shadow-filter-1&quot;) url(&quot;#outline-filter-0&quot;); stroke: rgb(75, 77, 88);" x="200" y="170" width="1000" height="1060" rx="20" ry="20"/>
     <g>
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(255, 95, 87); stroke: rgb(226, 74, 65);" cx="232.967" cy="203" rx="12.987" ry="13"/>
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(254, 188, 48); stroke: rgb(231, 163, 33);" cx="278.921" cy="203" rx="12.987" ry="13"/>
@@ -97,10 +106,13 @@
       <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 24.5px; white-space: pre;" x="260.146" y="668.236">Location path</text>
       <line style="fill: none; stroke-width: 2px; stroke: rgba(255, 255, 255, 0.15);" x1="241" y1="689" x2="1159" y2="689"/>
       <g>
-        <rect x="241" y="690" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
-        <rect x="241" y="802" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
-        <rect x="241" y="914" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
-        <rect x="241" y="1026" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
+        <rect x="241" y="690" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(255, 255, 255, 0.02);"/>
+        <rect x="241" y="746" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.15);"/>
+        <rect x="241" y="802" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(255, 255, 255, 0.02);"/>
+        <rect x="241" y="858" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.15);"/>
+        <rect x="241" y="914" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(255, 255, 255, 0.02);"/>
+        <rect x="241" y="970" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.15);"/>
+        <rect x="241" y="1026.01" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(255, 255, 255, 0.02);"/>
         <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="255" y="727.009">/Users/demo/Pictures</text>
         <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="255" y="783.009">/Users/demo/Music</text>
         <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="255" y="839.009">/Users/demo/Movies</text>

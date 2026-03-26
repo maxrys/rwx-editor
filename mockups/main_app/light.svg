@@ -97,10 +97,13 @@
       <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 24.5px; white-space: pre;" x="260.146" y="668.236">Location path</text>
       <line style="fill: none; stroke-width: 2px; stroke: rgba(0, 0, 0, 0.15);" x1="241" y1="689" x2="1159" y2="689"/>
       <g>
-        <rect x="241" y="690" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
-        <rect x="241" y="802" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
-        <rect x="241" y="914" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
-        <rect x="241" y="1026" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
+        <rect x="241" y="690" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.05);"/>
+        <rect x="241" y="746" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0);"/>
+        <rect x="241" y="802" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.05);"/>
+        <rect x="241" y="858" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0);"/>
+        <rect x="241" y="914" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.05);"/>
+        <rect x="241" y="970" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0);"/>
+        <rect x="241" y="1026.01" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.05);"/>
         <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="727.009">/Users/demo/Pictures</text>
         <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="783.009">/Users/demo/Music</text>
         <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="255" y="839.009">/Users/demo/Movies</text>
