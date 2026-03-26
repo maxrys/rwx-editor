@@ -26,8 +26,8 @@
       <stop offset="1" style="stop-opacity: 0;"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="623.617" y1="1020" x2="623.617" y2="1076" id="gradient-1" gradientTransform="matrix(1.200875, 0, 0, 0.964286, -401.383194, 323.417629)">
-      <stop offset="0" style="stop-color: rgb(135, 135, 135);"/>
-      <stop offset="1" style="stop-color: rgb(97, 97, 98);"/>
+      <stop offset="0" style="stop-color: rgb(255, 255, 255); stop-opacity: 0.35;"/>
+      <stop offset="1" style="stop-color: rgb(252, 252, 255); stop-opacity: 0.2;"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="623.617" y1="1020" x2="623.617" y2="1076" id="gradient-2" gradientTransform="matrix(1.200875, 0, 0, 0.964286, -96.383438, 323.417629)">
       <stop offset="0" style="stop-color: rgb(46, 157, 255);"/>
