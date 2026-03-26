@@ -31,40 +31,6 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-8" gradientTransform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(237, 231, 223);"/>
-    </linearGradient>
-    <filter id="filter-10" bx:preset="drop-shadow 1 0 10 8 0.53 #00000067" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="0" dy="10"/>
-      <feComponentTransfer result="offsetblur">
-        <feFuncA id="feFuncA-10" type="linear" slope="1.06"/>
-      </feComponentTransfer>
-      <feFlood flood-color="#00000067"/>
-      <feComposite in2="offsetblur" operator="in"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-9" gradientTransform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(237, 231, 223);"/>
-    </linearGradient>
-    <filter id="filter-13" bx:preset="drop-shadow 1 0 10 8 0.53 #00000067" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="0" dy="10"/>
-      <feComponentTransfer result="offsetblur">
-        <feFuncA id="feFuncA-11" type="linear" slope="1.06"/>
-      </feComponentTransfer>
-      <feFlood flood-color="#00000067"/>
-      <feComposite in2="offsetblur" operator="in"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
     <linearGradient gradientUnits="userSpaceOnUse" x1="500" y1="0" x2="500" y2="1500" id="gradient-1" gradientTransform="matrix(1.066666, 0, 0, 1, 1279.996133, -0.000122)">
       <stop offset="0" style="stop-color: rgb(27, 14, 166);"/>
       <stop offset="0.343" style="stop-color: rgb(89, 64, 200);"/>
@@ -209,22 +175,56 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-0" gradientTransform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
+      <stop offset="1" style="stop-color: rgb(237, 231, 223);"/>
+    </linearGradient>
+    <filter id="drop-shadow-filter-1" bx:preset="drop-shadow 1 0 10 8 0.53 #00000067" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl" type="linear" slope="1.06"/>
+      </feComponentTransfer>
+      <feFlood flood-color="#00000067"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-10" gradientTransform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
+      <stop offset="1" style="stop-color: rgb(237, 231, 223);"/>
+    </linearGradient>
+    <filter id="filter-9" bx:preset="drop-shadow 1 0 10 8 0.53 #00000067" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="feFuncA-1" type="linear" slope="1.06"/>
+      </feComponentTransfer>
+      <feFlood flood-color="#00000067"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   <g>
     <rect width="1280" height="1600" style="fill: url(&quot;#gradient-4&quot;);"/>
     <g transform="matrix(1, 0, 0, 1, -6, -208)">
-      <g transform="matrix(0.19878, 0, 0, 0.19878, 132.121994, 325.122009)" style="">
-        <rect style="stroke-width: 21.333; fill: url(&quot;#gradient-8&quot;); filter: url(&quot;#filter-10&quot;);" x="100" y="100" width="820" height="820" rx="127.5" ry="127.5"/>
+      <g transform="matrix(0.19878, 0, 0, 0.19878, 132.121994, 325.122009)">
+        <rect style="stroke-width: 21.333; filter: url(&quot;#drop-shadow-filter-1&quot;); fill: url(&quot;#gradient-0&quot;);" x="100" y="100" width="820" height="820" rx="127.5" ry="127.5"/>
         <g>
           <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="305.714" rx="75.714" ry="75.714"/>
           <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 279.467 L 299.101 331.962 L 277.585 308.276"/>
         </g>
         <g>
-          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 111, 0);" cx="512" cy="305.714" rx="75.714" ry="75.714"/>
+          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 112, 0);" cx="512" cy="305.714" rx="75.714" ry="75.714"/>
           <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 279.467 L 505.386 331.962 L 483.871 308.276"/>
         </g>
         <g>
-          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(212, 28, 0);" cx="718.286" cy="305.714" rx="75.714" ry="75.714"/>
+          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(213, 27, 0);" cx="718.286" cy="305.714" rx="75.714" ry="75.714"/>
           <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 746.416 279.467 L 711.672 331.962 L 690.157 308.276"/>
         </g>
         <g>
@@ -232,7 +232,7 @@
           <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 485.752 L 299.101 538.248 L 277.585 514.562"/>
         </g>
         <g>
-          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 111, 0);" cx="512" cy="512" rx="75.714" ry="75.714"/>
+          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 112, 0);" cx="512" cy="512" rx="75.714" ry="75.714"/>
           <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 485.752 L 505.386 538.248 L 483.871 514.562"/>
         </g>
         <ellipse style="stroke-width: 10.095; filter: none; fill: rgba(0, 0, 0, 0.106);" cx="718.286" cy="512" rx="75.714" ry="75.714"/>
@@ -403,18 +403,18 @@
   <g>
     <rect width="1280" height="1600" style="fill: url(&quot;#gradient-1&quot;); stroke-width: 1;" x="1280"/>
     <g transform="matrix(1, 0, 0, 1, 1274, -207.988525)">
-      <g transform="matrix(0.19878, 0, 0, 0.19878, 132.121994, 325.110535)" style="">
-        <rect style="stroke-width: 21.333; fill: url(&quot;#gradient-9&quot;); filter: url(&quot;#filter-13&quot;);" x="100" y="100" width="820" height="820" rx="127.5" ry="127.5"/>
+      <g transform="matrix(0.19878, 0, 0, 0.19878, 132.121994, 325.110535)">
+        <rect style="stroke-width: 21.333; fill: url(&quot;#gradient-10&quot;); filter: url(&quot;#filter-9&quot;);" x="100" y="100" width="820" height="820" rx="127.5" ry="127.5"/>
         <g>
           <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="305.714" rx="75.714" ry="75.714"/>
           <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 279.467 L 299.101 331.962 L 277.585 308.276"/>
         </g>
         <g>
-          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 111, 0);" cx="512" cy="305.714" rx="75.714" ry="75.714"/>
+          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 112, 0);" cx="512" cy="305.714" rx="75.714" ry="75.714"/>
           <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 279.467 L 505.386 331.962 L 483.871 308.276"/>
         </g>
         <g>
-          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(212, 28, 0);" cx="718.286" cy="305.714" rx="75.714" ry="75.714"/>
+          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(213, 27, 0);" cx="718.286" cy="305.714" rx="75.714" ry="75.714"/>
           <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 746.416 279.467 L 711.672 331.962 L 690.157 308.276"/>
         </g>
         <g>
@@ -422,7 +422,7 @@
           <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 485.752 L 299.101 538.248 L 277.585 514.562"/>
         </g>
         <g>
-          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 111, 0);" cx="512" cy="512" rx="75.714" ry="75.714"/>
+          <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 112, 0);" cx="512" cy="512" rx="75.714" ry="75.714"/>
           <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 485.752 L 505.386 538.248 L 483.871 514.562"/>
         </g>
         <ellipse style="stroke-width: 10.095; filter: none; fill: rgba(0, 0, 0, 0.106);" cx="718.286" cy="512" rx="75.714" ry="75.714"/>
