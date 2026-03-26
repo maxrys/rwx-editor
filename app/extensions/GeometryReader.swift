@@ -30,7 +30,7 @@ struct GeometryReaderPolyfill<Content: View>: View {
         self.content = content
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             Group {
                 if      (self.isIgnoreWidth == true && self.isIgnoreHeight == true) { Color.clear.frame(width: 0, height: 0) }

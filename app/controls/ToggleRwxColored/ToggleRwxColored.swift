@@ -80,7 +80,7 @@ struct ToggleRwxColored: View {
 struct ToggleRwxColored_Previews: PreviewProvider {
     struct ViewWithState: View {
         @State private var perms: UInt = 0o644
-        var body: some View {
+        public var body: some View {
             VStack(spacing: 10) {
                 HStack(spacing: 10) {
                     ToggleRwxColored(subject: .owner, permission: .r, self.$perms)

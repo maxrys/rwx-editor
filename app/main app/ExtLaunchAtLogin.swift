@@ -26,7 +26,7 @@ struct ExtLaunchAtLogin: View {
 
     @State private var isEnabled: Bool = false
 
-    var body: some View {
+    public var body: some View {
         ToggleCustom(
             text: NSLocalizedString("Launch at login", comment: ""),
             isOn: self.$isEnabled

@@ -89,7 +89,7 @@ struct ToggleCustom: View {
 struct ToggleCustom_Previews: PreviewProvider {
     struct ViewWithState: View {
         @State private var isOn: Bool = false
-        var body: some View {
+        public var body: some View {
             VStack(alignment: .trailing) {
                 ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: true)
                 ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: false)

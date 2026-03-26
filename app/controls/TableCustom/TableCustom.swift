@@ -188,7 +188,7 @@ struct TableCustom: View {
 struct TableCustom_Previews1: PreviewProvider {
     struct ViewWithState: View {
         @State private var selected: Set<Int> = [4]
-        var body: some View {
+        public var body: some View {
             TableCustom(
                 selected: self.$selected,
                 isVisibleHeader: true,
@@ -224,7 +224,7 @@ struct TableCustom_Previews1: PreviewProvider {
 struct TableCustom_Previews2: PreviewProvider {
     struct ViewWithState: View {
         @State private var selected: Set<Int> = [4]
-        var body: some View {
+        public var body: some View {
             TableCustom(
                 selected: self.$selected,
                 isVisibleHeader: true,

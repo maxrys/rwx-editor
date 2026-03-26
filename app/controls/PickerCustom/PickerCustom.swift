@@ -172,7 +172,7 @@ struct PickerCustom_Previews1: PreviewProvider {
         @State private var selectedV1: UInt = 0
         @State private var selectedV2: UInt = 0
         @State private var selectedV3: UInt = 0
-        var body: some View {
+        public var body: some View {
             VStack(spacing: 20) {
 
                 VStack {
@@ -206,7 +206,7 @@ struct PickerCustom_Previews1: PreviewProvider {
 struct PickerCustom_Previews2: PreviewProvider {
     struct ViewWithState: View {
         @State private var selected: UInt = 0
-        var body: some View {
+        public var body: some View {
             VStack {
                 Text("Flexibility:").font(.headline)
                 PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10))

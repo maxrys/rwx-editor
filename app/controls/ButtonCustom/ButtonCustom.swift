@@ -38,7 +38,7 @@ struct ButtonCustom: View {
         self.onClick = onClick
     }
 
-    var body: some View {
+    public var body: some View {
         Button { self.onClick() } label: {
             Text(self.text)
                 .lineLimit(1)
@@ -84,16 +84,32 @@ struct ButtonCustom_Previews: PreviewProvider {
                 ButtonCustom(flexibility: .infinity)
             }
 
-            VStack {
-                Text("style").font(.headline)
-                ButtonCustom(colorStyle: .accent)
-                ButtonCustom(colorStyle: .danger)
-                ButtonCustom(colorStyle: .custom(text: nil, background: nil))
-                ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
+            HStack(spacing: 0) {
+                VStack {
+                    Text("style").font(.headline)
+                    ButtonCustom(colorStyle: .accent)
+                    ButtonCustom(colorStyle: .danger)
+                    ButtonCustom(colorStyle: .custom(text: nil, background: nil))
+                    ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
+                }
+                .padding(20)
+                .environment(\.colorScheme, .light)
+                .background(Color.white)
+
+                VStack {
+                    Text("style").font(.headline)
+                    ButtonCustom(colorStyle: .accent)
+                    ButtonCustom(colorStyle: .danger)
+                    ButtonCustom(colorStyle: .custom(text: nil, background: nil))
+                    ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
+                }
+                .padding(20)
+                .environment(\.colorScheme, .dark)
+                .background(Color.black)
             }
 
         }
-        .frame(width: 200)
+        .frame(width: 210)
         .padding(20)
     }
 }
