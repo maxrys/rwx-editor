@@ -109,43 +109,29 @@
         <rect x="454" y="465" width="376" height="53" style="stroke-width: 1; filter: none; fill: rgba(255, 255, 255, 0.04);"/>
       </g>
       <g>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="378.913" y="177.251">Type</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="471.868" y="177.251">file</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre; filter: none;" x="433.609" y="231.191">Name</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="470.323" y="231.191">RWX Editor.icns</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre; filter: none;" x="433.508" y="285.128">Path</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="470.894" y="285.128">/Users/demo/Desktop/</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre; filter: none;" x="433.508" y="339.136">Reference Count</text>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="470.23" y="339.136">1 pcs.</text>
         <g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 172.31427, -533.452515)" x="206.863" y="710.918">Type</text>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 263.367188, -533.461792)" x="206.863" y="710.918">file</text>
+          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre; filter: none;" x="409.141" y="393.111">Created</text>
+          <path d="M 419.521 390.129 C 419.521 388.209 420.871 386.647 422.861 386.011 L 422.861 387.498 C 421.651 387.989 420.871 388.951 420.871 390.129 C 420.871 391.889 422.601 393.229 424.891 393.229 C 427.181 393.229 428.901 391.889 428.901 390.129 C 428.901 388.939 428.121 387.969 426.881 387.465 L 426.881 385.995 C 428.891 386.626 430.261 388.2 430.261 390.129 C 430.261 392.649 427.941 394.58 424.891 394.58 C 421.841 394.58 419.521 392.649 419.521 390.129 Z M 423.921 390.321 L 423.921 382.589 C 422.131 382.168 420.791 380.564 420.791 378.622 C 420.791 376.409 422.621 374.58 424.861 374.58 C 427.091 374.58 428.911 376.392 428.911 378.622 C 428.911 380.54 427.601 382.151 425.821 382.583 L 425.821 390.321 C 425.821 390.669 425.391 390.927 424.861 390.927 C 424.341 390.927 423.921 390.669 423.921 390.321 Z" style="stroke-width: 1; filter: none; fill: rgb(2, 120, 255);"/>
         </g>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="470.23" y="393.514">1 Jan 2026 at 00:00:00</text>
         <g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 226.484314, -479.563995)" x="206.863" y="710.918">Name</text>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 265.005493, -479.454865)" x="206.863" y="710.918">RWX Editor.icns</text>
+          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre; filter: none;" x="409.431" y="447">Updated</text>
+          <path d="M 419.001 444.314 C 419.001 442.394 420.351 440.832 422.341 440.196 L 422.341 441.683 C 421.131 442.174 420.351 443.136 420.351 444.314 C 420.351 446.074 422.081 447.414 424.371 447.414 C 426.661 447.414 428.381 446.074 428.381 444.314 C 428.381 443.124 427.601 442.154 426.361 441.65 L 426.361 440.18 C 428.371 440.811 429.741 442.385 429.741 444.314 C 429.741 446.834 427.421 448.765 424.371 448.765 C 421.321 448.765 419.001 446.834 419.001 444.314 Z M 423.401 444.506 L 423.401 436.774 C 421.611 436.353 420.271 434.749 420.271 432.807 C 420.271 430.594 422.101 428.765 424.341 428.765 C 426.571 428.765 428.391 430.577 428.391 432.807 C 428.391 434.725 427.081 436.336 425.301 436.768 L 425.301 444.506 C 425.301 444.854 424.871 445.112 424.341 445.112 C 423.821 445.112 423.401 444.854 423.401 444.506 Z" style="stroke-width: 1; filter: none; fill: rgb(2, 120, 255);"/>
         </g>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="470.61" y="447">1 Jan 2026 at 00:00:00</text>
         <g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 226.745667, -425.614227)" x="206.863" y="710.918">Path</text>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 263.459595, -425.483612)" x="206.863" y="710.918">/Users/demo/Desktop/</text>
+          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre; filter: none;" x="409.431" y="500.889">Size</text>
+          <path d="M 419.491 498.858 C 419.491 496.938 420.841 495.376 422.831 494.74 L 422.831 496.227 C 421.621 496.718 420.841 497.68 420.841 498.858 C 420.841 500.618 422.571 501.958 424.861 501.958 C 427.151 501.958 428.871 500.618 428.871 498.858 C 428.871 497.668 428.091 496.698 426.851 496.194 L 426.851 494.724 C 428.861 495.355 430.231 496.929 430.231 498.858 C 430.231 501.378 427.911 503.309 424.861 503.309 C 421.811 503.309 419.491 501.378 419.491 498.858 Z M 423.891 499.05 L 423.891 491.318 C 422.101 490.897 420.761 489.293 420.761 487.351 C 420.761 485.138 422.591 483.309 424.831 483.309 C 427.061 483.309 428.881 485.121 428.881 487.351 C 428.881 489.269 427.571 490.88 425.791 491.312 L 425.791 499.05 C 425.791 499.398 425.361 499.656 424.831 499.656 C 424.311 499.656 423.891 499.398 423.891 499.05 Z" style="stroke-width: 1; filter: none; fill: rgb(2, 122, 255);"/>
         </g>
-        <g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 226.644897, -371.679169)" x="206.863" y="710.918">Reference Count</text>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, -0.000916, 0, 1, 264.031189, -371.562592)" x="206.863" y="710.918">1 pcs.</text>
-        </g>
-        <g>
-          <g>
-            <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" x="409.141" y="393.111">Created</text>
-            <path d="M 419.521 390.129 C 419.521 388.209 420.871 386.647 422.861 386.011 L 422.861 387.498 C 421.651 387.989 420.871 388.951 420.871 390.129 C 420.871 391.889 422.601 393.229 424.891 393.229 C 427.181 393.229 428.901 391.889 428.901 390.129 C 428.901 388.939 428.121 387.969 426.881 387.465 L 426.881 385.995 C 428.891 386.626 430.261 388.2 430.261 390.129 C 430.261 392.649 427.941 394.58 424.891 394.58 C 421.841 394.58 419.521 392.649 419.521 390.129 Z M 423.921 390.321 L 423.921 382.589 C 422.131 382.168 420.791 380.564 420.791 378.622 C 420.791 376.409 422.621 374.58 424.861 374.58 C 427.091 374.58 428.911 376.392 428.911 378.622 C 428.911 380.54 427.601 382.151 425.821 382.583 L 425.821 390.321 C 425.821 390.669 425.391 390.927 424.861 390.927 C 424.341 390.927 423.921 390.669 423.921 390.321 Z" style="stroke-width: 1; filter: none; fill: rgb(2, 120, 255);"/>
-          </g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="470.23" y="393.514">1 Jan 2026 at 00:00:00</text>
-        </g>
-        <g>
-          <g>
-            <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" x="409.431" y="447">Updated</text>
-            <path d="M 419.001 444.314 C 419.001 442.394 420.351 440.832 422.341 440.196 L 422.341 441.683 C 421.131 442.174 420.351 443.136 420.351 444.314 C 420.351 446.074 422.081 447.414 424.371 447.414 C 426.661 447.414 428.381 446.074 428.381 444.314 C 428.381 443.124 427.601 442.154 426.361 441.65 L 426.361 440.18 C 428.371 440.811 429.741 442.385 429.741 444.314 C 429.741 446.834 427.421 448.765 424.371 448.765 C 421.321 448.765 419.001 446.834 419.001 444.314 Z M 423.401 444.506 L 423.401 436.774 C 421.611 436.353 420.271 434.749 420.271 432.807 C 420.271 430.594 422.101 428.765 424.341 428.765 C 426.571 428.765 428.391 430.577 428.391 432.807 C 428.391 434.725 427.081 436.336 425.301 436.768 L 425.301 444.506 C 425.301 444.854 424.871 445.112 424.341 445.112 C 423.821 445.112 423.401 444.854 423.401 444.506 Z" style="stroke-width: 1; filter: none; fill: rgb(2, 120, 255);"/>
-          </g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" x="470.61" y="447">1 Jan 2026 at 00:00:00</text>
-        </g>
-        <g>
-          <g>
-            <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; text-anchor: end; white-space: pre;" x="409.431" y="500.889">Size</text>
-            <path d="M 419.491 498.858 C 419.491 496.938 420.841 495.376 422.831 494.74 L 422.831 496.227 C 421.621 496.718 420.841 497.68 420.841 498.858 C 420.841 500.618 422.571 501.958 424.861 501.958 C 427.151 501.958 428.871 500.618 428.871 498.858 C 428.871 497.668 428.091 496.698 426.851 496.194 L 426.851 494.724 C 428.861 495.355 430.231 496.929 430.231 498.858 C 430.231 501.378 427.911 503.309 424.861 503.309 C 421.811 503.309 419.491 501.378 419.491 498.858 Z M 423.891 499.05 L 423.891 491.318 C 422.101 490.897 420.761 489.293 420.761 487.351 C 420.761 485.138 422.591 483.309 424.831 483.309 C 427.061 483.309 428.881 485.121 428.881 487.351 C 428.881 489.269 427.571 490.88 425.791 491.312 L 425.791 499.05 C 425.791 499.398 425.361 499.656 424.831 499.656 C 424.311 499.656 423.891 499.398 423.891 499.05 Z" style="stroke-width: 1; filter: none; fill: rgb(2, 122, 255);"/>
-          </g>
-          <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre;" transform="matrix(1, 0, 0, 1, 120.162964, 328.77652)"><tspan x="350.491" y="172.112">1 234 bytes</tspan><tspan x="350.491" dy="1em">​</tspan></text>
-        </g>
+        <text style="fill: rgb(223, 223, 225); font-family: &quot;SF Pro&quot;; font-size: 25.7px; letter-spacing: 0.3px; white-space: pre; filter: none;" x="470.61" y="500.889">1 234 bytes</text>
       </g>
     </g>
     <rect x="170" y="518" width="660" height="13" style="fill: url(&quot;#gradient-0&quot;); stroke-width: 1;"/>
