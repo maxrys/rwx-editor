@@ -73,11 +73,11 @@
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(254, 188, 48); stroke: rgb(231, 163, 33);" cx="278.921" cy="203" rx="12.987" ry="13"/>
       <ellipse style="stroke-width: 1.499; filter: none; fill: rgb(39, 200, 64); stroke: rgb(32, 180, 44);" cx="324.875" cy="203" rx="12.987" ry="13"/>
       <text style="fill: rgba(0, 0, 0, 0.3); font-family: &quot;SF Pro&quot;; font-size: 27px; font-weight: 700; white-space: pre; stroke-width: 1;" x="369" y="212.781">RWX Editor | Settings</text>
-      <line style="fill: none; stroke-width: 1.999; stroke: rgb(230, 230, 230);" x1="200.999" y1="234" x2="1199" y2="234.123"/>
+      <line style="fill: none; stroke-width: 1.999; stroke: rgba(0, 0, 0, 0.07);" x1="200.999" y1="234" x2="1199" y2="234.123"/>
     </g>
     <g>
-      <rect x="258" y="274" width="884" height="230" style="stroke-width: 2px; stroke: rgb(176, 176, 176); fill: rgb(255, 255, 255);" rx="30" ry="30"/>
-      <path style="stroke-width: 2px; fill: rgb(243, 243, 243);" d="M 259 422 H 1141 A 0 0 0 0 1 1141 422 V 474.077 A 29 29 0 0 1 1112 503.077 H 288 A 29 29 0 0 1 259 474.077 V 422 A 0 0 0 0 1 259 422 Z" bx:shape="rect 259 422 882 81.077 0 0 0 0 0 0 0 29 29 0 29 29 2@0147cd9f"/>
+      <rect x="258" y="274" width="884" height="230" style="stroke-width: 2px; stroke: rgb(176, 176, 176); fill: rgba(255, 255, 255, 0.06);" rx="30" ry="30"/>
+      <path style="stroke-width: 2px; fill: rgba(0, 0, 0, 0.05);" d="M 259 422 H 1141 A 0 0 0 0 1 1141 422 V 474.077 A 29 29 0 0 1 1112 503.077 H 288 A 29 29 0 0 1 259 474.077 V 422 A 0 0 0 0 1 259 422 Z" bx:shape="rect 259 422 882 81.077 0 0 0 0 0 0 0 29 29 0 29 29 2@0147cd9f"/>
       <g>
         <rect x="515" y="304" width="370" height="88" style="stroke-width: 1; fill: rgb(0, 148, 0);" rx="44" ry="44"/>
         <ellipse style="fill: rgba(255, 255, 255, 0.2); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3;" cx="559" cy="348.001" rx="30" ry="30.001"/>
@@ -92,10 +92,10 @@
         </g>
       </g>
     </g>
-    <text style="fill: rgb(81, 81, 81); font-family: &quot;SF Pro&quot;; font-size: 33.3px; font-weight: 700; text-anchor: middle; white-space: pre;" x="700" y="594.072">Provided access to directories</text>
+    <text style="fill: rgba(0, 0, 0, 0.6); font-family: &quot;SF Pro&quot;; font-size: 33.3px; font-weight: 700; text-anchor: middle; white-space: pre;" x="700" y="594.072">Provided access to directories</text>
     <g>
       <text style="fill: rgb(32, 32, 32); font-family: &quot;SF Pro&quot;; font-size: 24.5px; white-space: pre;" x="260.146" y="668.236">Location path</text>
-      <line style="fill: none; stroke-width: 2px; stroke: rgb(205, 205, 205);" x1="241" y1="689" x2="1159" y2="689"/>
+      <line style="fill: none; stroke-width: 2px; stroke: rgba(0, 0, 0, 0.15);" x1="241" y1="689" x2="1159" y2="689"/>
       <g>
         <rect x="241" y="690" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
         <rect x="241" y="802" width="918" height="56" style="stroke-width: 1; filter: none; fill: rgba(0, 0, 0, 0.04);"/>
