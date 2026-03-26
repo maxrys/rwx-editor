@@ -105,7 +105,7 @@ struct ButtonCustom_Previews: PreviewProvider {
                 }
                 .padding(20)
                 .environment(\.colorScheme, .dark)
-                .background(Color.getNS(\.darkGray))
+                .background(Color.NS[\.darkGray])
             }
 
         }

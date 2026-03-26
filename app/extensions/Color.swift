@@ -7,20 +7,26 @@ import SwiftUI
 
 extension Color {
 
-    static func getNS(_ keyPath: KeyPath<NSColor.Type, NSColor>) -> Color {
-        Color(NSColor.self[keyPath: keyPath])
+    struct NSColorSet {
+        subscript(_ keyPath: KeyPath<NSColor.Type, NSColor>) -> Color {
+            Color(NSColor.self[
+                keyPath: keyPath
+            ])
+        }
     }
 
+    static let NS = NSColorSet()
+
     static let label: Color = {
-        Self.getNS(\.labelColor)
+        Self.NS[\.labelColor]
     }()
 
     static let selectedContentBackground: Color = {
-        Self.getNS(\.selectedContentBackgroundColor)
+        Self.NS[\.selectedContentBackgroundColor]
     }()
 
     static let selectedContentUnactiveBackground: Color = {
-        Self.getNS(\.unemphasizedSelectedContentBackgroundColor)
+        Self.NS[\.unemphasizedSelectedContentBackgroundColor]
     }()
 
     struct StatusColorSet {
