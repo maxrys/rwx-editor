@@ -25,11 +25,11 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="drop-shadow-filter-2" bx:preset="drop-shadow 1 0 1 1.5 0.5 #0000004d" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+    <filter id="drop-shadow-filter-2" bx:preset="drop-shadow 1 0 1 1.5 1 #0000004d" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
       <feOffset dx="0" dy="1"/>
       <feComponentTransfer result="offsetblur">
-        <feFuncA id="spread-ctrl-2" type="linear" slope="1"/>
+        <feFuncA id="spread-ctrl-2" type="linear" slope="2"/>
       </feComponentTransfer>
       <feFlood flood-color="#0000004d"/>
       <feComposite in2="offsetblur" operator="in"/>
@@ -38,11 +38,11 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="drop-shadow-filter-0" bx:preset="drop-shadow 1 0 1 1.5 0.5 #0000004d" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+    <filter id="drop-shadow-filter-0" bx:preset="drop-shadow 1 0 1 1.5 1 #0000004d" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
       <feOffset dx="0" dy="1"/>
       <feComponentTransfer result="offsetblur">
-        <feFuncA id="spread-ctrl-3" type="linear" slope="1"/>
+        <feFuncA id="spread-ctrl-3" type="linear" slope="2"/>
       </feComponentTransfer>
       <feFlood flood-color="#0000004d"/>
       <feComposite in2="offsetblur" operator="in"/>
