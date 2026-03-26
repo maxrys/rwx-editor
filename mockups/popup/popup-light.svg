@@ -144,29 +144,29 @@
         <text style="fill: rgb(35, 35, 35); font-family: &quot;SF Pro&quot;; font-size: 27px; letter-spacing: 0.3px; white-space: pre;" x="233.998" y="845.781">Execute</text>
       </g>
       <g>
-        <ellipse style="fill: color(display-p3 0.254 0.572 0.158); stroke-width: 1;" cx="426.562" cy="676.08" rx="25" ry="25"/>
-        <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: color(display-p3 0.254 0.572 0.158);" d="M 416.792 676.939 L 423.992 685.388 L 435.942 666.772"/>
+        <ellipse style="stroke-width: 1; fill: color(display-p3 0.254 0.572 0.158);" cx="426.562" cy="676.08" rx="25" ry="25"/>
+        <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 416.792 676.939 L 423.992 685.388 L 435.942 666.772"/>
       </g>
       <g>
-        <ellipse style="fill: color(display-p3 0.837 0.461 0.047); stroke-width: 1;" cx="571.691" cy="676.08" rx="25" ry="25"/>
+        <ellipse style="stroke-width: 1; fill: color(display-p3 0.836 0.464 0.172);" cx="571.691" cy="676.08" rx="25" ry="25"/>
         <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 561.921 676.939 L 569.121 685.388 L 581.071 666.772"/>
       </g>
       <g>
-        <ellipse style="fill: color(display-p3 0.765 0.201 0.057); stroke-width: 1;" cx="716.821" cy="676.08" rx="25" ry="25"/>
+        <ellipse style="stroke-width: 1; fill: color(display-p3 0.767 0.199 0.113);" cx="716.821" cy="676.08" rx="25" ry="25"/>
         <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 707.051 676.939 L 714.251 685.388 L 726.201 666.772"/>
       </g>
       <g>
-        <ellipse style="fill: color(display-p3 0.254 0.572 0.158); stroke-width: 1;" cx="426.562" cy="756.168" rx="25" ry="25"/>
-        <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: color(display-p3 0.254 0.572 0.158);" d="M 416.792 757.027 L 423.992 765.476 L 435.942 746.86"/>
+        <ellipse style="stroke-width: 1; fill: color(display-p3 0.254 0.572 0.158);" cx="426.562" cy="756.168" rx="25" ry="25"/>
+        <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 416.792 757.027 L 423.992 765.476 L 435.942 746.86"/>
       </g>
       <g>
-        <ellipse style="fill: color(display-p3 0.837 0.461 0.047); stroke-width: 1;" cx="571.691" cy="756.168" rx="25" ry="25"/>
+        <ellipse style="stroke-width: 1; fill: color(display-p3 0.836 0.464 0.172);" cx="571.691" cy="756.168" rx="25" ry="25"/>
         <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 561.922 757.026 L 569.122 765.475 L 581.072 746.859"/>
       </g>
       <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.032 0.032 0.032 / 0.049);" cx="716.821" cy="756.168" rx="25" ry="25"/>
       <g>
-        <ellipse style="fill: color(display-p3 0.254 0.572 0.158); stroke-width: 1;" cx="426.562" cy="836.255" rx="25" ry="25"/>
-        <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: color(display-p3 0.254 0.572 0.158);" d="M 416.792 837.114 L 423.992 845.563 L 435.942 826.947"/>
+        <ellipse style="stroke-width: 1; fill: color(display-p3 0.254 0.572 0.158);" cx="426.562" cy="836.255" rx="25" ry="25"/>
+        <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; stroke: rgb(255, 255, 255); fill: none;" d="M 416.792 837.114 L 423.992 845.563 L 435.942 826.947"/>
       </g>
       <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.032 0.032 0.032 / 0.049);" cx="571.691" cy="836.255" rx="25" ry="25"/>
       <ellipse style="stroke-width: 1; filter: none; fill: color(display-p3 0.032 0.032 0.032 / 0.049);" cx="716.821" cy="836.255" rx="25" ry="25"/>
