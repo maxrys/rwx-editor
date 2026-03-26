@@ -21,8 +21,9 @@ should be used in conjunction with macOS.
 
 Distribution
 ---------------------------------------------------------------------
-The Software is distributed exclusively through the Apple App Store
-by its author and owner.
+This software is distributed through the Apple App Store by its
+author and owner. It is also possible to place the distribution
+in this Git repository.
 
 
 Modification
