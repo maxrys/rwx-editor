@@ -1,1 +1,0 @@
-/Volumes/dev/xcode/rwx_editor/test/Мой файл.txt
