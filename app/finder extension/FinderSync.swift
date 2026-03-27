@@ -7,7 +7,6 @@ import os
 import Cocoa
 import FinderSync
 
-let FINDER_EXT_DIRECTORY_URLS: Set<URL> = [URL(fileURLWithPath: "/")]
 let FINDER_EXT_MENU_TITLE = "RWX Editor Menu"
 let FINDER_EXT_MENU_ITEMS = [
     (
@@ -28,8 +27,22 @@ final class FinderSync: FIFinderSync {
 
     override init() {
         super.init()
-        FIFinderSyncController.default().directoryURLs = FINDER_EXT_DIRECTORY_URLS
+        self.updateWatchedVolumes()
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.updateWatchedVolumes), name: NSWorkspace.didMountNotification  , object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.updateWatchedVolumes), name: NSWorkspace.didUnmountNotification, object: nil)
         Logger.customLog("FinderSync Extension launched from: \(Bundle.main.bundlePath)")
+    }
+
+    @objc func updateWatchedVolumes() {
+        var urls = Set<URL>()
+        urls.insert(URL(fileURLWithPath: "/"))
+        if let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: []) {
+            for volume in volumes {
+                urls.insert(volume)
+            }
+        }
+        FIFinderSyncController.default().directoryURLs = urls
+        Logger.customLog("FinderSync Extension Update volumes: \(urls.map { $0.path })")
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
