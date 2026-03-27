@@ -20,8 +20,8 @@ struct PopupHead: View {
 
     private var formattedName: String { self.info.name.percentDecode }
     private var formattedPath: String { self.info.path.percentDecode }
-    private var formattedRealName: String { if let name = self.info.realName { return name.percentDecode } else { return "" } }
-    private var formattedRealPath: String { if let path = self.info.realPath { return path.percentDecode } else { return "" } }
+    private var formattedRealName: String? { if let realName = self.info.realName { return realName.percentDecode } else { return nil } }
+    private var formattedRealPath: String? { if let realPath = self.info.realPath { return realPath.percentDecode } else { return nil } }
 
     private var formattedReferences: String {
         String(format: NSLocalizedString("%@ pcs.", comment: ""), String(self.info.references))
@@ -77,13 +77,13 @@ struct PopupHead: View {
         result.append(self.TitleView(NSLocalizedString("Path", comment: "")))
         result.append(self.ValueView(self.formattedPath, isSelectable: true))
 
-        if let realName = self.info.realName,
-           let realPath = self.info.realPath {
+        if let formattedRealName = self.formattedRealName,
+           let formattedRealPath = self.formattedRealPath {
 
             result.append(self.TitleView(NSLocalizedString("Real Name", comment: "")))
-            result.append(self.ValueView(realName, isSelectable: true))
+            result.append(self.ValueView(formattedRealName, isSelectable: true))
             result.append(self.TitleView(NSLocalizedString("Real Path", comment: "")))
-            result.append(self.ValueView(realPath, isSelectable: true))
+            result.append(self.ValueView(formattedRealPath, isSelectable: true))
         }
 
         result.append(self.TitleView(NSLocalizedString("Reference Count", comment: "")))
