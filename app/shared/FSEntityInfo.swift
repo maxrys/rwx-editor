@@ -89,15 +89,15 @@ final class FSEntityInfo: Equatable {
 
         /* MARK: realPath/realName */
 
-        if let subtype = try? url.resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
+        if let subtype = try? URL(fileURLWithPath: url.path).resourceValues(forKeys: [.isAliasFileKey, .isSymbolicLinkKey, .isRegularFileKey]) {
             switch (subtype.isRegularFile, subtype.isAliasFile, subtype.isSymbolicLink) {
                 case (true, true, false):
                     self.type = .alias
                 case (false, true, true):
-                let (realPath, realName) = url.resolvingSymlinksInPath().pathAndNamePair
+                    let (realPath, realName) = url.resolvingSymlinksInPath().pathAndNamePair
                     self.realName = realName
                     self.realPath = realPath
-                    self.type     = .link
+                    self.type = .link
                 default: break
             }
         }
