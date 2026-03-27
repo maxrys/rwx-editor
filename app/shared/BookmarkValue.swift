@@ -13,7 +13,7 @@ final class BookmarkValue {
         var isExpired = true
         let url = try? URL(
             resolvingBookmarkData: data,
-            options: [.withSecurityScope],
+            options: [.withoutUI, .withSecurityScope],
             relativeTo: nil,
             bookmarkDataIsStale: &isExpired
         )

@@ -94,11 +94,14 @@ final class FSEntityInfo: Equatable {
             switch (subtype.isRegularFile, subtype.isAliasFile, subtype.isSymbolicLink) {
                 case (true, true, false):
                     self.type = .alias
+                    let (realPath, realName) = Self.aliasInfo(url: urlForSubtype) ?? (nil, nil)
+                    self.realName = realName
+                    self.realPath = realPath
                 case (false, true, true):
+                    self.type = .link
                     let (realPath, realName) = urlForSubtype.resolvingSymlinksInPath().pathAndNamePair
                     self.realName = realName
                     self.realPath = realPath
-                    self.type = .link
                 default: break
             }
         }
@@ -107,6 +110,21 @@ final class FSEntityInfo: Equatable {
         else if (BookmarkValue(searchValidBy: url) == nil) { self.editabilityMode = .noBookmark }
         else                                               { self.editabilityMode = .allowed }
 
+    }
+
+    static public func aliasInfo(url: URL) -> (path: String, name: String)? {
+        if let bookmarkData = try? URL.bookmarkData(withContentsOf: url) {
+            if let validBookmark = BookmarkValue(searchValidBy: url) {
+                if validBookmark.startAccessing() {
+                defer { validBookmark.stopAccessing() }
+                    var isExpired = false
+                    if let resolved = try? URL(resolvingBookmarkData: bookmarkData, options: [.withoutUI, .withoutMounting], relativeTo: nil, bookmarkDataIsStale: &isExpired) {
+                        return resolved.pathAndNamePair
+                    }
+                }
+            }
+        }
+        return nil
     }
 
 }
