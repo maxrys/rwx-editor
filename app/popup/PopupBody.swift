@@ -105,7 +105,6 @@ struct PopupBody: View {
         self.owners.removeAll()
         Process.systemUsers()
             .filter({ $0.first != "_" })
-            .sorted()
             .forEach { value in
                 self.owners[value] = value
             }
@@ -115,7 +114,6 @@ struct PopupBody: View {
         self.groups.removeAll()
         Process.systemGroups()
             .filter({ $0.first != "_" })
-            .sorted()
             .forEach { value in
                 self.groups[value] = value
             }
