@@ -4,6 +4,7 @@
 /* ############################################################# */
 
 import SwiftUI
+import OpenDirectory
 
 struct PopupBody: View {
 
@@ -102,21 +103,25 @@ struct PopupBody: View {
     }
 
     private func ownersReload() {
-        self.owners.removeAll()
-        Process.systemUsers()
-            .filter({ $0.first != "_" })
-            .forEach { value in
-                self.owners[value] = value
+        DispatchQueue.global(qos: .utility).async {
+            let newItems = ODQuery.users().reduce(into: [String: String](), { result, value in
+                result[value.name] = value.name
+            })
+            DispatchQueue.main.async {
+                self.owners = newItems
             }
+        }
     }
 
     private func groupsReload() {
-        self.groups.removeAll()
-        Process.systemGroups()
-            .filter({ $0.first != "_" })
-            .forEach { value in
-                self.groups[value] = value
+        DispatchQueue.global(qos: .utility).async {
+            let newItems = ODQuery.groups().reduce(into: [String: String](), { result, value in
+                result[value.name] = value.name
+            })
+            DispatchQueue.main.async {
+                self.groups = newItems
             }
+        }
     }
 
     @ViewBuilder private func ShadowTopView() -> some View {
