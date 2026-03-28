@@ -6,21 +6,15 @@
 import SwiftUI
 import ServiceManagement
 
-struct ExtLaunchAtLogin: View {
+@available(macOS 13.0, *) struct ExtLaunchAtLogin: View {
 
     static public var launchAtLogin: Bool {
         get {
-            if #available(macOS 13.0, *)
-                 { return SMAppService.mainApp.status == .enabled }
-            else { return false }
+            return SMAppService.mainApp.status == .enabled
         }
         set(isEnabled) {
-            do {
-                if #available(macOS 13.0, *) {
-                    if (isEnabled) { try SMAppService.mainApp.register  () }
-                    else           { try SMAppService.mainApp.unregister() }
-                }
-            } catch {}
+            if (isEnabled) { try? SMAppService.mainApp.register  () }
+            else           { try? SMAppService.mainApp.unregister() }
         }
     }
 
@@ -43,7 +37,7 @@ struct ExtLaunchAtLogin: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-struct ExtLaunchAtLogin_Previews: PreviewProvider {
+@available(macOS 13.0, *) struct ExtLaunchAtLogin_Previews: PreviewProvider {
     static public var previews: some View {
         ExtLaunchAtLogin()
             .frame(maxWidth: 300)
