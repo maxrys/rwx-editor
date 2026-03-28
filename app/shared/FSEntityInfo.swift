@@ -116,11 +116,8 @@ final class FSEntityInfo: Equatable {
         if let validBookmark = BookmarkValue(searchValidBy: url) {
             if validBookmark.startAccessing() {
             defer { validBookmark.stopAccessing() }
-                if let aliasData = try? URL.bookmarkData(withContentsOf: url) {
-                    var isExpired = false
-                    if let aliasURL = try? URL(resolvingBookmarkData: aliasData, options: [.withoutUI, .withoutMounting], relativeTo: nil, bookmarkDataIsStale: &isExpired) {
-                        return aliasURL.pathAndNamePair
-                    }
+                if let realUrl = AliasValue(from: url)?.realUrl {
+                    return realUrl.pathAndNamePair
                 }
             }
         }
