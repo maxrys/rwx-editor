@@ -1,0 +1,6 @@
+drwxr-xr-x my-folder
+lrwxr-xr-x my-folder-link -> my-folder
+-rw-r--r-- my-folder-pseudonym
+-rw-r--r-- my-file.txt
+lrwxr-xr-x my-file-link.txt -> my-file.txt
+-rw-r--r-- my-file-pseudonym.txt

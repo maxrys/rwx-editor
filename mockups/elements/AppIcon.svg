@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="AppIcon-16x16.png" width="16" height="16"/>
+      <bx:file format="png" path="AppIcon-16x16@2x.png" width="32" height="32"/>
+      <bx:file format="png" path="AppIcon-32x32.png" width="32" height="32"/>
+      <bx:file format="png" path="AppIcon-32x32@2x.png" width="64" height="64"/>
+      <bx:file format="png" path="AppIcon-128x128.png" width="128" height="128"/>
+      <bx:file format="png" path="AppIcon-128x128@2x.png" width="256" height="256"/>
+      <bx:file format="png" path="AppIcon-256x256.png" width="256" height="256"/>
+      <bx:file format="png" path="AppIcon-256x256@2x.png" width="512" height="512"/>
+      <bx:file format="png" path="AppIcon-512x512.png" width="512" height="512"/>
+      <bx:file format="png" path="AppIcon-512x512@2x.png" width="1024" height="1024"/>
+    </bx:export>
+    <filter id="drop-shadow-filter-1" bx:preset="drop-shadow 1 0 10 8 0.53 #00000067" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl" type="linear" slope="1.06"/>
+      </feComponentTransfer>
+      <feFlood flood-color="#00000067"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <bx:guide x="0" y="100" angle="90"/>
+    <bx:guide x="0" y="920" angle="90"/>
+    <bx:guide x="100" y="0" angle="0"/>
+    <bx:guide x="920" y="0" angle="0"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="510.5" y1="203" x2="510.5" y2="818" id="gradient-0" gradientTransform="matrix(1.333333, 0, 0, 1.333333, -170.666504, -170.666504)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
+      <stop offset="1" style="stop-color: rgb(237, 231, 223);"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect style="stroke-width: 21.333; filter: url(&quot;#drop-shadow-filter-1&quot;); fill: url(&quot;#gradient-0&quot;);" x="100" y="100" width="820" height="820" rx="127.5" ry="127.5"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="305.714" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 279.467 L 299.101 331.962 L 277.585 308.276"/>
+    </g>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 112, 0);" cx="512" cy="305.714" rx="75.714" ry="75.714"/>
+      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 279.467 L 505.386 331.962 L 483.871 308.276"/>
+    </g>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(213, 27, 0);" cx="718.286" cy="305.714" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 746.416 279.467 L 711.672 331.962 L 690.157 308.276"/>
+    </g>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="512" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 485.752 L 299.101 538.248 L 277.585 514.562"/>
+    </g>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(228, 112, 0);" cx="512" cy="512" rx="75.714" ry="75.714"/>
+      <path style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588;" d="M 540.13 485.752 L 505.386 538.248 L 483.871 514.562"/>
+    </g>
+    <ellipse style="stroke-width: 10.095; filter: none; fill: rgba(0, 0, 0, 0.106);" cx="718.286" cy="512" rx="75.714" ry="75.714"/>
+    <g>
+      <ellipse style="stroke-width: 10.095; filter: none; fill: rgb(0, 148, 0);" cx="305.714" cy="718.286" rx="75.714" ry="75.714"/>
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 15.588; fill: none;" d="M 333.845 692.038 L 299.101 744.533 L 277.585 720.847"/>
+    </g>
+    <ellipse style="stroke-width: 10.095; filter: none; fill: rgba(0, 0, 0, 0.106);" cx="512" cy="718.286" rx="75.714" ry="75.714"/>
+    <ellipse style="stroke-width: 10.095; filter: none; fill: rgba(0, 0, 0, 0.106);" cx="718.286" cy="718.286" rx="75.714" ry="75.714"/>
+  </g>
+</svg>
