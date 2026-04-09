@@ -49,6 +49,7 @@ import SwiftUI
         }
         NSApplication.showAppsDock()
         NSApp.mainMenu = NSMenu.main
+        NSApplication.show() /* menu reactivation */
     }
 
     func showWindowPopup(_ url: URL) {

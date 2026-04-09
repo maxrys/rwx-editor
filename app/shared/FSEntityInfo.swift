@@ -113,14 +113,11 @@ final class FSEntityInfo: Equatable {
     }
 
     static public func aliasInfo(url: URL) -> (path: String, name: String)? {
-        if let bookmarkData = try? URL.bookmarkData(withContentsOf: url) {
-            if let validBookmark = BookmarkValue(searchValidBy: url) {
-                if validBookmark.startAccessing() {
-                defer { validBookmark.stopAccessing() }
-                    var isExpired = false
-                    if let resolved = try? URL(resolvingBookmarkData: bookmarkData, options: [.withoutUI, .withoutMounting], relativeTo: nil, bookmarkDataIsStale: &isExpired) {
-                        return resolved.pathAndNamePair
-                    }
+        if let validBookmark = BookmarkValue(searchValidBy: url) {
+            if validBookmark.startAccessing() {
+            defer { validBookmark.stopAccessing() }
+                if let realUrl = AliasValue(from: url)?.realUrl {
+                    return realUrl.pathAndNamePair
                 }
             }
         }
