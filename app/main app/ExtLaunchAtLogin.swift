@@ -26,8 +26,8 @@ import ServiceManagement
             isOn: self.$isEnabled
         )
         .onChange(of: self.isEnabled) { value in Self.launchAtLogin = value }
-        .onAppear              {           if (            true           ) {  self.isEnabled = Self.launchAtLogin } }
-        .onWinBecomeForeground { window in if (window.ID == WINDOW_MAIN_ID) {  self.isEnabled = Self.launchAtLogin } }
+        .onAppear              {           if (            true           ) { self.isEnabled = Self.launchAtLogin } }
+        .onWinBecomeForeground { window in if (window.ID == WINDOW_MAIN_ID) { self.isEnabled = Self.launchAtLogin } }
     }
 
 }

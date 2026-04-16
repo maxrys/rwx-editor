@@ -49,20 +49,16 @@ struct ToggleRwxColored: View {
         Button {
             self.perms[self.bitPosition].toggle()
         } label: {
-            if (self.isOn) {
-                Circle()
-                    .fill(self.background)
-                    .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
-                    .overlayPolyfill {
+            Circle()
+                .fill(self.isOn ? self.background : Color.toggleRWXColored.empty)
+                .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
+                .overlayPolyfill {
+                    if (self.isOn) {
                         Image(systemName: "checkmark")
                             .font(.system(size: 13, weight: .bold))
                             .foregroundPolyfill(Color.white)
                     }
-            } else {
-                Circle()
-                    .fill(Color.toggleRWXColored.empty)
-                    .frame(width: Self.ICON_SIZE, height: Self.ICON_SIZE)
-            }
+                }.focusEffect(Circle())
         }
         .disabled(self.isDisabled)
         .buttonStyle(.plain)

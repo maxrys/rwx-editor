@@ -41,7 +41,7 @@ import SwiftUI
         } else {
             _ = NSWindow.makeAndShowFromSwiftUIView(
                 ID   : WINDOW_MAIN_ID,
-                title: WINDOW_MAIN_TITLE,
+                title: WINDOW_MAIN_TITLE_LOCALIZED,
                 size: CGSize(width: 700, height: 500),
                 delegate: self,
                 view: MainScene()
@@ -53,13 +53,14 @@ import SwiftUI
     }
 
     func showWindowPopup(_ url: URL) {
-        Logger.customLog("Window \"Popup\" will show | ID: \(url.path)")
-        if let windowPopup = NSWindow.customWindows[url.path] {
+        let ID = "\(WINDOW_POPUP_ID_PREFIX)\(url.path)"
+        Logger.customLog("Window \"Popup\" will show | ID: \(ID)")
+        if let windowPopup = NSWindow.customWindows[ID] {
             windowPopup.show()
         } else {
             _ = NSWindow.makeAndShowFromSwiftUIView(
-                ID: url.path,
-                title: WINDOW_POPUP_TITLE,
+                ID: ID,
+                title: WINDOW_POPUP_TITLE_LOCALIZED,
                 styleMask: [.titled, .closable],
                 size: CGSize(width: MainScene.FRAME_WIDTH, height: 600),
                 delegate: self,
@@ -69,9 +70,9 @@ import SwiftUI
     }
 
     func windowWillClose(_ notification: Notification) {
-        if let window = notification.object as? NSWindow {
-            if let ID = window.ID {
-                if (ID == WINDOW_MAIN_ID) {
+        if let window = notification.object as? NSWindow, let ID = window.ID {
+            switch ID {
+                case WINDOW_MAIN_ID:
                     Logger.customLog("Window \"Main\" will hide")
                     NSApplication.hideAppsDock()
                     NSApp.mainMenu = nil
@@ -79,13 +80,13 @@ import SwiftUI
                     if (!NSWindow.customWindows.isEmpty) {
                         NSApplication.show()
                     }
-                }
-                if (ID != WINDOW_MAIN_ID) {
-                    Logger.customLog("Window \"Popup\" will hide | ID = \(ID)")
-                    window.contentView = nil
-                    window.delegate = nil
-                    NSWindow.customWindows[ID] = nil
-                }
+                default:
+                    if ID.hasPrefix(WINDOW_POPUP_ID_PREFIX) {
+                        Logger.customLog("Window \"Popup\" will hide | ID: \(ID)")
+                        window.contentView = nil
+                        window.delegate = nil
+                        NSWindow.customWindows[ID] = nil
+                    }
             }
         }
     }

@@ -7,16 +7,9 @@ import os
 import Cocoa
 import FinderSync
 
-let FINDER_EXT_MENU_TITLE = "RWX Editor Menu"
-let FINDER_EXT_MENU_ITEMS = [
-    (
-        eventName: "RWXEditorFinderContextMenu",
-        titleLocalized: NSLocalizedString("RWX Editor", comment: ""),
-        iconName: "ContextMenuIcon"
-    )
-]
-
 final class FinderSync: FIFinderSync {
+
+    static let MENU_TITLE_LOCALIZED = NSLocalizedString("RWX Editor Menu", comment: "")
 
     var selectedURLs: [URL] {
         if let urls = FIFinderSyncController.default().selectedItemURLs() {
@@ -50,32 +43,26 @@ final class FinderSync: FIFinderSync {
         guard !selectedURLs.isEmpty else {
             return NSMenu()
         }
-        let menu = NSMenu(title: FINDER_EXT_MENU_TITLE)
-        switch menuKind {
-            case .contextualMenuForItems, .contextualMenuForContainer:
-                for (index, item) in FINDER_EXT_MENU_ITEMS.enumerated() {
-                    let menuItem = NSMenuItem()
-                        menuItem.title = item.titleLocalized
-                        menuItem.image = NSImage(named: item.iconName)!
-                        menuItem.action = #selector(onContextMenu(_:))
-                        menuItem.tag = index
-                        menuItem.target = self
-                    menu.addItem(menuItem)
-                }
-            default: break
+        let menu = NSMenu(title: Self.MENU_TITLE_LOCALIZED)
+        if (menuKind == .contextualMenuForItems || menuKind == .contextualMenuForContainer) {
+            let menuItem = NSMenuItem()
+                menuItem.title = NSLocalizedString("RWX Editor", comment: "")
+                menuItem.image = NSImage(named: "ContextMenuIcon")!
+                menuItem.action = #selector(onContextMenu(_:))
+                menuItem.tag = 0
+                menuItem.target = self
+            menu.addItem(menuItem)
         }
         return menu
     }
 
     @objc func onContextMenu(_ menuItem: NSMenuItem) {
-        for (index, _) in FINDER_EXT_MENU_ITEMS.enumerated() {
-            if (menuItem.tag == index) {
-                for url in self.selectedURLs {
-                    if let resultURL = URL(string: URL.PREFIX_THIS_APP + url.absoluteString.trimPrefix(URL.PREFIX_FILE)) {
-                        NSWorkspace.shared.open(
-                            resultURL
-                        )
-                    }
+        if (menuItem.tag == 0) {
+            for url in self.selectedURLs {
+                if let resultURL = URL(string: URL.PREFIX_THIS_APP + url.absoluteString.trimPrefix(URL.PREFIX_FILE)) {
+                    NSWorkspace.shared.open(
+                        resultURL
+                    )
                 }
             }
         }

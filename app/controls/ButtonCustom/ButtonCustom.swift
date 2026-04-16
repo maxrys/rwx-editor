@@ -9,9 +9,11 @@ struct ButtonCustom: View {
 
     @Environment(\.colorScheme) private var colorScheme
 
-    private let text: String
+    private let text: String?
+    private let icon: Image?
     private let isDisabled: Bool
     private let colorStyle: Color.ButtonCustomStyle
+    private let fixedColorScheme: ColorScheme?
     private let isFlat: Bool
     private let font: Font
     private let padding: EdgeInsets
@@ -19,18 +21,22 @@ struct ButtonCustom: View {
     private let onClick: () -> Void
 
     init(
-        _ text: String = "button",
-        isDisabled: Bool = false,
+        _ text: String? = "button",
+        _ icon: Image? = nil,
         colorStyle: Color.ButtonCustomStyle = .accent,
-        isFlat: Bool = false,
+        fixedColorScheme: ColorScheme? = nil,
         font: Font = .system(size: 12.5, weight: .regular),
         padding: EdgeInsets = .init(top: 6, leading: 12, bottom: 6, trailing: 12),
         flexibility: Flexibility = .none,
+        isFlat: Bool = false,
+        isDisabled: Bool = false,
         onClick: @escaping () -> Void = { }
     ) {
         self.text = text
+        self.icon = icon
         self.isDisabled = isDisabled
         self.colorStyle = colorStyle
+        self.fixedColorScheme = fixedColorScheme
         self.isFlat = isFlat
         self.font = font
         self.padding = padding
@@ -39,29 +45,53 @@ struct ButtonCustom: View {
     }
 
     public var body: some View {
+        if let fixedColorScheme = self.fixedColorScheme
+             { self.MainView().environment(\.colorScheme, fixedColorScheme) }
+        else { self.MainView() }
+    }
+
+    @ViewBuilder private func MainView() -> some View {
         Button { self.onClick() } label: {
-            Text(self.text)
-                .lineLimit(1)
-                .flexibility(self.flexibility)
-                .font(self.font)
-                .foregroundPolyfill(self.colorStyle.text)
-                .padding(self.padding)
-                .background(
-                    (self.isFlat ?
-                        AnyView(RoundedRectangle(cornerRadius: 5).fill                (self.colorStyle.background)) :
-                        AnyView(RoundedRectangle(cornerRadius: 5).fillGradientPolyfill(self.colorStyle.background))
-                    ).shadow(
-                        color: self.colorScheme == .dark ?
-                            .black.opacity(1.0) :
-                            .black.opacity(0.4),
-                        radius: 0.7,
-                        y: 0.3
-                    )
+            HStack(spacing: 5) {
+                self.IconView()
+                self.TextView()
+            }
+            .flexibility(self.flexibility)
+            .foregroundPolyfill(self.colorStyle.text)
+            .padding(self.padding)
+            .background(
+                (self.isFlat ?
+                    AnyView(RoundedRectangle(cornerRadius: 5).fill                (self.colorStyle.background)) :
+                    AnyView(RoundedRectangle(cornerRadius: 5).fillGradientPolyfill(self.colorStyle.background))
                 )
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+            .focusEffect(RoundedRectangle(cornerRadius: 5))
+            .shadow(
+                color: self.colorScheme == .dark ?
+                    .black.opacity(1.0) :
+                    .black.opacity(0.4),
+                radius: 0.7,
+                y: 0.3
+            )
         }
         .buttonStyle(.plain)
         .disabled(self.isDisabled)
         .pointerStyleLinkPolyfill()
+    }
+
+    @ViewBuilder private func TextView() -> some View {
+        if let text = self.text {
+            Text(text)
+                .lineLimit(1)
+                .font(self.font)
+        }
+    }
+
+    @ViewBuilder private func IconView() -> some View {
+        if let icon = self.icon {
+            icon.font(self.font)
+        }
     }
 
 }
@@ -84,12 +114,19 @@ struct ButtonCustom_Previews: PreviewProvider {
                 ButtonCustom(flexibility: .infinity)
             }
 
+            VStack {
+                Text("icon + text").font(.headline)
+                ButtonCustom("text")
+                ButtonCustom(  nil , Image(systemName: "globe"))
+                ButtonCustom("text", Image(systemName: "globe"))
+            }
+
             HStack(spacing: 0) {
                 VStack {
                     Text("light style").font(.headline)
                     ButtonCustom(colorStyle: .accent)
                     ButtonCustom(colorStyle: .danger)
-                    ButtonCustom(colorStyle: .custom(text: nil, background: nil))
+                    ButtonCustom(colorStyle: .common)
                     ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
                 }
                 .padding(20)
@@ -100,7 +137,7 @@ struct ButtonCustom_Previews: PreviewProvider {
                     Text("dark style").font(.headline)
                     ButtonCustom(colorStyle: .accent)
                     ButtonCustom(colorStyle: .danger)
-                    ButtonCustom(colorStyle: .custom(text: nil, background: nil))
+                    ButtonCustom(colorStyle: .common)
                     ButtonCustom(colorStyle: .custom(text: .white, background: .orange))
                 }
                 .padding(20)

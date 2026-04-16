@@ -32,7 +32,7 @@ struct PanelRwxText: View {
             "\(self.isOn(.group, .r) ? symbolR : "-")\(self.isOn(.group, .w) ? symbolW : "-")\(self.isOn(.group, .x) ? symbolX : "-")" +
             "\(self.isOn(.other, .r) ? symbolR : "-")\(self.isOn(.other, .w) ? symbolW : "-")\(self.isOn(.other, .x) ? symbolX : "-")"
         Text(text)
-            .font(.system(size: 13, weight: .regular, design: .monospaced))
+            .font(.system(size: 13, design: .monospaced))
             .padding(.init(top: 4, leading: 9, bottom: 6, trailing: 9))
             .foregroundPolyfill(Color.panelRWXText.text)
             .background(
