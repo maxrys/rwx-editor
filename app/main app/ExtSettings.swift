@@ -33,7 +33,7 @@ struct ExtSettings: View {
         .background(self.GroupBackground())
     }
 
-    @ViewBuilder func GroupBackground() -> some View {
+    @ViewBuilder private func GroupBackground() -> some View {
         RoundedRectangle(cornerRadius: 15)
             .fill(Color.form.group)
             .overlayPolyfill {
