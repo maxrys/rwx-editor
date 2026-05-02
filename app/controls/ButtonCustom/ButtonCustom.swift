@@ -65,7 +65,7 @@ struct ButtonCustom: View {
                     AnyView(RoundedRectangle(cornerRadius: 5).fillGradientPolyfill(self.colorStyle.background))
                 )
             )
-            .clipShape(RoundedRectangle(cornerRadius: 5))
+            .clipShape  (RoundedRectangle(cornerRadius: 5))
             .focusEffect(RoundedRectangle(cornerRadius: 5))
             .shadow(
                 color: self.colorScheme == .dark ?

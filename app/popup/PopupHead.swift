@@ -39,17 +39,17 @@ struct PopupHead: View {
 
     private var formattedCreated: String {
         switch self.rollerForCreated {
-            case .convenient   : return self.info.created.convenient
-            case .iso8601withTZ: return self.info.created.ISO8601withTZ
-            case .iso8601      : return self.info.created.ISO8601
+            case .convenient   : return self.info.created.formatConvenient
+            case .iso8601withTZ: return self.info.created.formatISO8601withTZ
+            case .iso8601      : return self.info.created.formatISO8601
         }
     }
 
     private var formattedUpdated: String {
         switch self.rollerForUpdated {
-            case .convenient   : return self.info.updated.convenient
-            case .iso8601withTZ: return self.info.updated.ISO8601withTZ
-            case .iso8601      : return self.info.updated.ISO8601
+            case .convenient   : return self.info.updated.formatConvenient
+            case .iso8601withTZ: return self.info.updated.formatISO8601withTZ
+            case .iso8601      : return self.info.updated.formatISO8601
         }
     }
 

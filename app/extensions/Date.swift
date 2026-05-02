@@ -20,7 +20,7 @@ extension Date {
         case convenientTime  = "HH:mm:ss"
     }
 
-    var convenient: String {
+    var formatConvenient: String {
         let formatter = DateFormatter()
         formatter.dateFormat = String(
             format: NSLocalizedString("%@ 'at' %@", comment: ""),
@@ -29,14 +29,14 @@ extension Date {
         return formatter.string(from: self)
     }
 
-    var ISO8601withTZ: String {
+    var formatISO8601withTZ: String {
         let formatter = DateFormatter()
         formatter.dateFormat = Self.Format.iso8601Timezone.rawValue
         formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter.string(from: self)
     }
 
-    var ISO8601: String {
+    var formatISO8601: String {
         let formatter = DateFormatter()
         formatter.dateFormat = Self.Format.iso8601Timezone.rawValue
         formatter.locale = Locale(identifier: "en_US_POSIX")

@@ -26,7 +26,7 @@ struct ExtStatus: View {
                     Color.status.ok :
                     Color.status.error
             )
-            .clipShape(Capsule())
+            .clipShape  (Capsule())
             .focusEffect(Capsule())
         }
         .buttonStyle(.plain)

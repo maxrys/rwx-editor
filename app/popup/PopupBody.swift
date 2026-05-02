@@ -30,7 +30,7 @@ struct PopupBody: View {
 
             /* MARK: rules via toggles */
 
-            LazyVGrid(columns: columns, spacing: 15) {
+            LazyVGrid(columns: self.columns, spacing: 15) {
 
                 Color.clear
                 Text(NSLocalizedString("Owner", comment: ""))
