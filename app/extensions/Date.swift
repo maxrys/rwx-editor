@@ -9,8 +9,8 @@ extension Date {
 
     enum VisibilityMode: CaseIterable & Equatable {
         case convenient
-        case iso8601withTZ
-        case iso8601
+        case iso8601tz
+        case iso8601tzUTC
     }
 
     enum Format: String {
@@ -29,14 +29,14 @@ extension Date {
         return formatter.string(from: self)
     }
 
-    var formatISO8601withTZ: String {
+    var formatISO8601tz: String {
         let formatter = DateFormatter()
         formatter.dateFormat = Self.Format.iso8601Timezone.rawValue
         formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter.string(from: self)
     }
 
-    var formatISO8601: String {
+    var formatISO8601tzUTC: String {
         let formatter = DateFormatter()
         formatter.dateFormat = Self.Format.iso8601Timezone.rawValue
         formatter.locale = Locale(identifier: "en_US_POSIX")
