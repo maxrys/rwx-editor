@@ -39,8 +39,8 @@ struct Bookmarks: View {
                     NSLocalizedString("delete", comment: ""),
                     colorStyle: .common,
                     flexibility: .size(100),
-                    isDisabled: self.bookmarksState.selectedRows.isEmpty
-                ) { self.onDeleteBookmark() }
+                    onClick: self.onDeleteBookmark
+                ).disabled(self.bookmarksState.selectedRows.isEmpty)
 
                 Spacer()
 

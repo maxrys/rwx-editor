@@ -18,19 +18,15 @@ struct PopupFoot: View {
                 NSLocalizedString("cancel", comment: ""),
                 colorStyle: .common,
                 flexibility: .infinity,
-                isDisabled: !self.popupState.isChanged || !self.popupState.isEditable
-            ) { self.popupState.resetToDefault() }
+                onClick: self.onClickReset
+            ).disabled(!self.popupState.isChanged || !self.popupState.isEditable)
 
             ButtonCustom(
                 NSLocalizedString("apply", comment: ""),
                 colorStyle: .accent,
                 flexibility: .infinity,
-                isDisabled: !self.popupState.isChanged || !self.popupState.isEditable
-            ) {
-                if (Features.onApply(self.messageBoxState, self.popupState)) {
-                    self.popupState.resetToCurrent()
-                }
-            }
+                onClick: self.onClickApply
+            ).disabled(!self.popupState.isChanged || !self.popupState.isEditable)
 
         }
         .padding(20)
@@ -40,6 +36,16 @@ struct PopupFoot: View {
                 Color.white.opacity(0.03) :
                 Color.black.opacity(0.03)
         )
+    }
+
+    private func onClickReset() {
+        self.popupState.resetToDefault()
+    }
+
+    private func onClickApply() {
+        if (Features.onApply(self.messageBoxState, self.popupState)) {
+            self.popupState.resetToCurrent()
+        }
     }
 
 }

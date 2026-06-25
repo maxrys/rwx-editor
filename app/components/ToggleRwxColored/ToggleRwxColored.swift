@@ -9,9 +9,9 @@ struct ToggleRwxColored: View {
 
     static private let ICON_SIZE: CGFloat = 25
 
+    @Environment(\.isEnabled) private var isEnabled
     @Binding private var perms: PermissionsValue
 
-    private let isDisabled: Bool
     private let subject: PermissionSubject
     private let permission: Permission
 
@@ -28,13 +28,11 @@ struct ToggleRwxColored: View {
     init(
         subject: PermissionSubject,
         permission: Permission,
-        _ perms: Binding<PermissionsValue>,
-        isDisabled: Bool = false
+        _ perms: Binding<PermissionsValue>
     ) {
         self.subject    = subject
         self.permission = permission
         self._perms     = perms
-        self.isDisabled = isDisabled
     }
 
     var background: Color {
@@ -60,9 +58,9 @@ struct ToggleRwxColored: View {
                     }
                 }.focusEffect(Circle())
         }
-        .disabled(self.isDisabled)
+        .disabled(!self.isEnabled)
         .buttonStyle(.plain)
-        .pointerStyleLinkPolyfill()
+        .pointerStyleLinkPolyfill(self.isEnabled)
     }
 
 }
@@ -84,9 +82,9 @@ struct ToggleRwxColored_Previews: PreviewProvider {
                     ToggleRwxColored(subject: .other, permission: .w, self.$perms)
                 }
                 HStack(spacing: 10) {
-                    ToggleRwxColored(subject: .owner, permission: .r, self.$perms, isDisabled: true)
-                    ToggleRwxColored(subject: .group, permission: .x, self.$perms, isDisabled: true)
-                    ToggleRwxColored(subject: .other, permission: .w, self.$perms, isDisabled: true)
+                    ToggleRwxColored(subject: .owner, permission: .r, self.$perms).disabled(true)
+                    ToggleRwxColored(subject: .group, permission: .x, self.$perms).disabled(true)
+                    ToggleRwxColored(subject: .other, permission: .w, self.$perms).disabled(true)
                 }
             }.padding(20)
         }

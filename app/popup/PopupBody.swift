@@ -38,30 +38,27 @@ struct PopupBody: View {
                 Text(NSLocalizedString("Other", comment: ""))
 
                 Text(NSLocalizedString("Read", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .r, self.permsBinding, isDisabled: !self.popupState.isEditable)
-                ToggleRwxColored(subject: .group, permission: .r, self.permsBinding, isDisabled: !self.popupState.isEditable)
-                ToggleRwxColored(subject: .other, permission: .r, self.permsBinding, isDisabled: !self.popupState.isEditable)
+                ToggleRwxColored(subject: .owner, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
+                ToggleRwxColored(subject: .group, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
+                ToggleRwxColored(subject: .other, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
 
                 Text(NSLocalizedString("Write", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .w, self.permsBinding, isDisabled: !self.popupState.isEditable)
-                ToggleRwxColored(subject: .group, permission: .w, self.permsBinding, isDisabled: !self.popupState.isEditable)
-                ToggleRwxColored(subject: .other, permission: .w, self.permsBinding, isDisabled: !self.popupState.isEditable)
+                ToggleRwxColored(subject: .owner, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)
+                ToggleRwxColored(subject: .group, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)
+                ToggleRwxColored(subject: .other, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)
 
                 Text(self.popupState.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .x, self.permsBinding, isDisabled: !self.popupState.isEditable)
-                ToggleRwxColored(subject: .group, permission: .x, self.permsBinding, isDisabled: !self.popupState.isEditable)
-                ToggleRwxColored(subject: .other, permission: .x, self.permsBinding, isDisabled: !self.popupState.isEditable)
+                ToggleRwxColored(subject: .owner, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
+                ToggleRwxColored(subject: .group, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
+                ToggleRwxColored(subject: .other, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
 
             }.padding(.horizontal, 20)
 
             /* MARK: rules via text/numeric */
 
             HStack(spacing: 20) {
-                PanelRwxText(self.permsBinding)
-                ToggleRwxNumeric(
-                    self.permsBinding,
-                    isDisabled: !self.popupState.isEditable
-                )
+                PanelRwxText    (self.permsBinding)
+                ToggleRwxNumeric(self.permsBinding).disabled(!self.popupState.isEditable)
             }
 
             /* MARK: owner picker + group picker */
@@ -74,9 +71,8 @@ struct PopupBody: View {
                         selected: self.ownerBinding,
                         items: self.owners,
                         isPlainListStyle: true,
-                        isDisabled: true /* !self.popupState.isEditable */,
                         flexibility: .size(150)
-                    )
+                    ).disabled(true) /* !self.popupState.isEditable */
                 }
 
                 HStack(spacing: 10) {
@@ -85,9 +81,8 @@ struct PopupBody: View {
                         selected: self.groupBinding,
                         items: self.groups,
                         isPlainListStyle: true,
-                        isDisabled: true /* !self.popupState.isEditable */,
                         flexibility: .size(150)
-                    )
+                    ).disabled(true) /* !self.popupState.isEditable */
                 }
 
             }
