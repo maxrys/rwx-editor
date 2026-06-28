@@ -113,7 +113,7 @@
 		50D137B72F68BF0C00B9B776 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50B277042F3B2D93005F7475 /* Localizable.xcstrings */; };
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
-		50DCD7ED2F434BFE00E067C3 /* GeometryReaderPolyfill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReaderPolyfill.swift */; };
+		50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
 		50E380E12F708CF200FD103E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E380E02F708CF200FD103E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -228,7 +228,7 @@
 		50CEA0AC2F4C58EE001006CF /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		50DCD7EC2F434BFE00E067C3 /* GeometryReaderPolyfill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderPolyfill.swift; sourceTree = "<group>"; };
+		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
 		50E380E02F708CF200FD103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -330,9 +330,9 @@
 			children = (
 				50B276A52F389886005F7475 /* Assets.xcassets */,
 				50B277042F3B2D93005F7475 /* Localizable.xcstrings */,
-				50B276AB2F3899C9005F7475 /* shared */,
+				50B276AB2F3899C9005F7475 /* types */,
 				50B276AC2F3899D1005F7475 /* extensions */,
-				50B277092F3BCFC0005F7475 /* controls */,
+				50B277092F3BCFC0005F7475 /* components */,
 				506421942F5F6CF30020F6C8 /* model */,
 				506421C12F6187760020F6C8 /* state */,
 				50B276AD2F3899DD005F7475 /* main app */,
@@ -353,7 +353,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		50B276AB2F3899C9005F7475 /* shared */ = {
+		50B276AB2F3899C9005F7475 /* types */ = {
 			isa = PBXGroup;
 			children = (
 				50B276C22F39CB73005F7475 /* _const.swift */,
@@ -362,10 +362,9 @@
 				5034F4332F77E57E0028EFAC /* AliasValue.swift */,
 				506421C42F618AAC0020F6C8 /* BookmarkValue.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
-				50DCD7EC2F434BFE00E067C3 /* GeometryReaderPolyfill.swift */,
 				506421742F5EF1550020F6C8 /* ResultBuilder.swift */,
 			);
-			path = shared;
+			path = types;
 			sourceTree = "<group>";
 		};
 		50B276AC2F3899D1005F7475 /* extensions */ = {
@@ -380,6 +379,7 @@
 				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B2772C2F3E37B0005F7475 /* Dictionary.swift */,
 				50309B0B2F5A30C8008CA064 /* Equatable.swift */,
+				50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50309B312F5CA4B8008CA064 /* NSApplicationMultiLaunch.swift */,
@@ -450,7 +450,7 @@
 			path = test;
 			sourceTree = "<group>";
 		};
-		50B277092F3BCFC0005F7475 /* controls */ = {
+		50B277092F3BCFC0005F7475 /* components */ = {
 			isa = PBXGroup;
 			children = (
 				501FA4D32F4F0C05004663D2 /* ButtonCustom */,
@@ -462,7 +462,7 @@
 				50CE9FBD2F4714C9001006CF /* ToggleRwxColored */,
 				5064216D2F5EF0560020F6C8 /* ToggleRwxNumeric */,
 			);
-			path = controls;
+			path = components;
 			sourceTree = "<group>";
 		};
 		50CE9FB72F47147D001006CF /* PanelRwxText */ = {
@@ -690,7 +690,7 @@
 				501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */,
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
-				50DCD7ED2F434BFE00E067C3 /* GeometryReaderPolyfill.swift in Sources */,
+				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				5034F4432F78253D0028EFAC /* OpenDirectory.swift in Sources */,
 				506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,

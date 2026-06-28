@@ -8,8 +8,8 @@ import SwiftUI
 extension Color {
 
     struct PanelRwxTextCustomColorSet {
-        public let text       = Color("color Panel RWX Text Text")
-        public let background = Color("color Panel RWX Text Background")
+        public let text       = Color("color PanelRWXText Text")
+        public let background = Color("color PanelRWXText Background")
     }
 
     static let panelRWXText = PanelRwxTextCustomColorSet()
