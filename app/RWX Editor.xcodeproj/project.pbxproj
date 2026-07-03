@@ -121,6 +121,7 @@
 		50E380E12F708CF200FD103E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E380E02F708CF200FD103E /* Assets.xcassets */; };
 		50E4B10C2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
 		50E4B10D2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
+		50E4B12C2FF510E5008D625B /* ShadowLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B12A2FF510E5008D625B /* ShadowLine.swift */; };
 		50F9787B2FED34B700CC52C8 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9787A2FED34B700CC52C8 /* Previewer.swift */; };
 		50F9787D2FED34B700CC52C8 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9787A2FED34B700CC52C8 /* Previewer.swift */; };
 		50F9787E2FED35EA00CC52C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
@@ -240,6 +241,7 @@
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
 		50E380E02F708CF200FD103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E4B10B2FF2932F008D625B /* HVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVStack.swift; sourceTree = "<group>"; };
+		50E4B12A2FF510E5008D625B /* ShadowLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLine.swift; sourceTree = "<group>"; };
 		50F9787A2FED34B700CC52C8 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -470,6 +472,7 @@
 				5064220F2F6618BC0020F6C8 /* MessageBox */,
 				50CE9FB72F47147D001006CF /* PanelRwxText */,
 				50CE9FBA2F4714A3001006CF /* PickerCustom */,
+				50E4B12B2FF510E5008D625B /* ShadowLine */,
 				506421682F5EF04A0020F6C8 /* TableCustom */,
 				5064217C2F5F4A050020F6C8 /* ToggleCustom */,
 				50CE9FBD2F4714C9001006CF /* ToggleRwxColored */,
@@ -506,6 +509,14 @@
 				50B277172F3C7744005F7475 /* Assets.xcassets */,
 			);
 			path = ToggleRwxColored;
+			sourceTree = "<group>";
+		};
+		50E4B12B2FF510E5008D625B /* ShadowLine */ = {
+			isa = PBXGroup;
+			children = (
+				50E4B12A2FF510E5008D625B /* ShadowLine.swift */,
+			);
+			path = ShadowLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,6 +714,7 @@
 				5003F0CA2F58D5170030B75A /* PopupState.swift in Sources */,
 				50E4B10C2FF2932F008D625B /* HVStack.swift in Sources */,
 				501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */,
+				50E4B12C2FF510E5008D625B /* ShadowLine.swift in Sources */,
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
 				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,

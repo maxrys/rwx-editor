@@ -132,35 +132,20 @@ struct PopupBody: View {
     }
 
     @ViewBuilder private func ShadowTopView() -> some View {
-        Rectangle()
-            .fill(
-                LinearGradient(
-                    colors: [
-                        self.colorScheme == .dark ?
-                            Color.black.opacity(0.20) :
-                            Color.black.opacity(0.15),
-                        Color.clear ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            ).frame(height: 6)
+        ShadowLine(
+            length: 6,
+            opacity: 0.15,
+            opacityDark: 0.20
+        )
     }
 
     @ViewBuilder private func ShadowBottomView() -> some View {
-        Rectangle()
-            .fill(
-                LinearGradient(
-                    colors: [
-                        Color.clear,
-                        self.colorScheme == .dark ?
-                            Color.black.opacity(0.20) :
-                            Color.black.opacity(0.15) ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
-            .frame(height: 6)
-            .padding(.top, 6)
+        ShadowLine(
+            length: 6,
+            angle: .`180_degrees`,
+            opacity: 0.15,
+            opacityDark: 0.20
+        )
     }
 
 }
