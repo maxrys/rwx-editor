@@ -7,11 +7,6 @@ import os
 import AppKit
 import CoreData
 
-enum ExecuteResult {
-    case success(affected: Int)
-    case failure
-}
-
 struct BookmarksFetchItem: Equatable {
     let path: String
     let data: Data
@@ -20,93 +15,51 @@ struct BookmarksFetchItem: Equatable {
 
 final public class BookmarksModel: NSManagedObject {
 
+    typealias SELF = BookmarksModel
+
+    static let stringName = "Bookmarks"
+
     @NSManaged var path: String
     @NSManaged var data: Data
     @NSManaged var createdAt: Int64
 
-    static let storageDirectoryURL: URL = {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    }()
-
-    static let storageURL: URL = {
-        storageDirectoryURL.appendingPathComponent("RWXEditor.sqlite")
-    }()
-
-    static let container: NSPersistentContainer = {
-        let description = NSPersistentStoreDescription()
-        description.url = storageURL
-        description.configuration = "Default"
-        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        description.shouldInferMappingModelAutomatically = true
-        description.shouldMigrateStoreAutomatically = true
-
-        var result = NSPersistentContainer(name: "Model")
-        result.persistentStoreDescriptions = [description]
-        result.viewContext.automaticallyMergesChangesFromParent = true
-        result.loadPersistentStores(completionHandler: { (description, error) in
-            if let error = error as NSError? {
-                let alert = NSAlert()
-                alert.messageText = "The application will be force closed."
-                alert.informativeText =
-                    "Error: \(error.localizedDescription)\n\n" +
-                    "You can:\n\n" +
-                    "Revert to the previous version of the app\n\n" +
-                    "or Try to transfer the data manually\n\n" +
-                    "or Delete the conflicting storage at\n\(storageURL.path)\n" +
-                    "!!! All app data will be lost !!!"
-                alert.alertStyle = .critical
-                alert.addButton(withTitle: "ОК")
-                alert.runModal()
-                NSApp.terminate(nil)
-            } else {
-                Logger.customLog("Storage path: \(storageURL.path)")
-            }
-        })
-        return result
-    }()
-
-    static public var context: NSManagedObjectContext {
-        Self.container.viewContext
-    }
-
-    static func fetchRequest() -> NSFetchRequest<BookmarksModel> {
-        NSFetchRequest<BookmarksModel>(entityName: "Bookmarks")
-    }
-
     convenience init() {
-        self.init(context: Self.context)
+        self.init(context: Storage.context)
     }
 
     static func searchValid(_ url: URL) -> BookmarksFetchItem? {
         do {
-            let fetchRequest = Self.fetchRequest()
-            let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
-            fetchRequest.sortDescriptors = [orderByPath]
-            fetchRequest.predicate = NSPredicate(format: "path IN %@", url.pathParents)
-            return try Self.context.fetch(fetchRequest).reduce(into: Optional<BookmarksFetchItem>.none, { result, modelItem in
-                if (result == nil) {
-                    if (!BookmarkValue(from: modelItem.data).info.isExpired) {
-                        result = BookmarksFetchItem(
-                            path     : modelItem.path,
-                            data     : modelItem.data,
-                            createdAt: modelItem.createdAt
-                        )
-                    }
+            let request = NSFetchRequest<SELF>(entityName: SELF.stringName)
+            request.fetchLimit = Int.max
+            let orderByPath = NSSortDescriptor(key: #keyPath(SELF.path), ascending: false)
+            request.sortDescriptors = [orderByPath]
+            request.predicate = NSPredicate(format: "path IN %@", url.pathParents)
+            for modelItem in try Storage.context.fetch(request) {
+                if (BookmarkValue(from: modelItem.data).info.isExpired == false) {
+                    return BookmarksFetchItem(
+                        path     : modelItem.path,
+                        data     : modelItem.data,
+                        createdAt: modelItem.createdAt
+                    )
                 }
-            })
+            }
+            return nil
         } catch {
-            Logger.customLog("Model BookmarksModel.search() error: \(error).")
+            Logger.customLog("Model \(SELF.stringName).search() error: \(error).")
             return nil
         }
     }
 
-    static func selectAll() -> [BookmarksFetchItem] {
+    static func selectAll(
+        orderBy: String = #keyPath(SELF.path),
+        ascending: Bool = true
+    ) -> [BookmarksFetchItem] {
         do {
-            let fetchRequest = Self.fetchRequest()
-            let orderByPath = NSSortDescriptor(key: #keyPath(BookmarksModel.path), ascending: false)
-            fetchRequest.sortDescriptors = [orderByPath]
-            return try Self.context.fetch(fetchRequest).map { modelItem in
+            let request = NSFetchRequest<SELF>(entityName: SELF.stringName)
+            request.fetchLimit = Int.max
+            let orderByPath = NSSortDescriptor(key: orderBy, ascending: ascending)
+            request.sortDescriptors = [orderByPath]
+            return try Storage.context.fetch(request).map { modelItem in
                 BookmarksFetchItem(
                     path     : modelItem.path,
                     data     : modelItem.data,
@@ -114,37 +67,40 @@ final public class BookmarksModel: NSManagedObject {
                 )
             }
         } catch {
-            Logger.customLog("Model BookmarksModel.selectAll() error: \(error).")
+            Logger.customLog("Model \(SELF.stringName).selectAll() error: \(error).")
             return []
         }
     }
 
     static func insert(path: String, data: Data) -> Bool {
         do {
-            let newObject = BookmarksModel()
+            let newObject = SELF()
                 newObject.path = path
                 newObject.data = data
-                newObject.createdAt = Int64(Date().timeIntervalSince1970)
-            try Self.context.save()
+                newObject.createdAt = Int64(Date.now)
+            try Storage.context.save()
             return true
         } catch {
-            Logger.customLog("Model BookmarksModel.insert() error: \(error).")
+            Logger.customLog("Model \(SELF.stringName).insert() error: \(error).")
             return false
         }
     }
 
     static func delete(_ paths: [String]) -> ExecuteResult {
         do {
-            let fetchRequest = Self.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "path IN %@", paths)
-            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            let request = NSFetchRequest<SELF>(entityName: SELF.stringName)
+            request.fetchLimit = Int.max
+            request.predicate = NSPredicate(format: "path IN %@", paths)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: request as! NSFetchRequest<NSFetchRequestResult>)
             deleteRequest.resultType = .resultTypeCount
-            let result = try Self.context.execute(deleteRequest) as? NSBatchDeleteResult
+            let result = try Storage.context.execute(deleteRequest) as? NSBatchDeleteResult
             let affected = result?.result as? Int ?? 0
-            try Self.context.save()
-            return .success(affected: affected)
+            try Storage.context.save()
+            return .success(
+                affected: affected
+            )
         } catch {
-            Logger.customLog("Model BookmarksModel.delete() error: \(error).")
+            Logger.customLog("Model \(SELF.stringName).delete() error: \(error).")
             return .failure
         }
     }
@@ -155,13 +111,15 @@ final public class BookmarksModel: NSManagedObject {
             if (!items.isEmpty) {
 
                 let rows: [String] = items.reduce(into: []) { result, item in
-                    let formattedPath = item.path.padding(toLength: 60, withPad: " ", startingAt: 0)
-                    result.append(">> - \(formattedPath)")
+                    let formattedPath = item.path
+                    result.append(">> " +
+                        "\(formattedPath.toWidth(60))"
+                    )
                 }
 
                 Logger.customLog("""
 
-                Storage Dump for \"BookmarksModel\":
+                Storage Dump for \"\(SELF.stringName)\":
                 >> ---------------------------------------------------------------------------
                 >> path
                 >> ===========================================================================
@@ -172,7 +130,7 @@ final public class BookmarksModel: NSManagedObject {
             } else {
                 Logger.customLog("""
 
-                Storage Dump for \"BookmarksModel\":
+                Storage Dump for \"\(SELF.stringName)\":
                 >> ---------------------------------------------------------------------------
                 >>                              ... no data ...
                 >> ---------------------------------------------------------------------------

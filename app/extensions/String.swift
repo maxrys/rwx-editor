@@ -7,6 +7,10 @@ import SwiftUI
 
 extension String {
 
+    func toWidth(_ width: UInt) -> String {
+        self.padding(toLength: Int(width), withPad: " ", startingAt: 0)
+    }
+
     func trimPrefix(_ prefix: String) -> String {
         self.hasPrefix(prefix) ? String(self.dropFirst(prefix.count)) : self
     }
