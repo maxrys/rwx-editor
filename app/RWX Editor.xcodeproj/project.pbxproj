@@ -42,6 +42,8 @@
 		5034F4352F77E57E0028EFAC /* AliasValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034F4332F77E57E0028EFAC /* AliasValue.swift */; };
 		5034F4362F77E57E0028EFAC /* AliasValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034F4332F77E57E0028EFAC /* AliasValue.swift */; };
 		5034F4432F78253D0028EFAC /* OpenDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034F4422F78253C0028EFAC /* OpenDirectory.swift */; };
+		505886A33025EA0000AA64CD /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
+		505886A43025EA1400AA64CD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
 		506421692F5EF04A0020F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506421672F5EF04A0020F6C8 /* Assets.xcassets */; };
 		5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421662F5EF04A0020F6C8 /* TableCustomColors.swift */; };
 		5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421642F5EF04A0020F6C8 /* TableCustom.swift */; };
@@ -117,6 +119,11 @@
 		50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
 		50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
 		50E380E12F708CF200FD103E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E380E02F708CF200FD103E /* Assets.xcassets */; };
+		50E4B10C2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
+		50E4B10D2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
+		50F9787B2FED34B700CC52C8 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9787A2FED34B700CC52C8 /* Previewer.swift */; };
+		50F9787D2FED34B700CC52C8 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9787A2FED34B700CC52C8 /* Previewer.swift */; };
+		50F9787E2FED35EA00CC52C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +239,8 @@
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
 		50E380E02F708CF200FD103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50E4B10B2FF2932F008D625B /* HVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVStack.swift; sourceTree = "<group>"; };
+		50F9787A2FED34B700CC52C8 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +373,8 @@
 				5034F4332F77E57E0028EFAC /* AliasValue.swift */,
 				506421C42F618AAC0020F6C8 /* BookmarkValue.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
+				50E4B10B2FF2932F008D625B /* HVStack.swift */,
+				50F9787A2FED34B700CC52C8 /* Previewer.swift */,
 				506421742F5EF1550020F6C8 /* ResultBuilder.swift */,
 			);
 			path = types;
@@ -690,6 +701,7 @@
 				50B277162F3C765C005F7475 /* PanelRwxText.swift in Sources */,
 				501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */,
 				5003F0CA2F58D5170030B75A /* PopupState.swift in Sources */,
+				50E4B10C2FF2932F008D625B /* HVStack.swift in Sources */,
 				501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */,
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
@@ -703,6 +715,7 @@
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
 				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */,
+				50F9787D2FED34B700CC52C8 /* Previewer.swift in Sources */,
 				5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */,
 				506422102F6618BC0020F6C8 /* MessageState.swift in Sources */,
 				506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */,
@@ -721,11 +734,13 @@
 				50BB988E2FFBAEA100C39670 /* Date.swift in Sources */,
 				506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				501FA4D72F4F0E82004663D2 /* _types.swift in Sources */,
+				50E4B10D2FF2932F008D625B /* HVStack.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				501FA4DA2F4F0EEB004663D2 /* String.swift in Sources */,
 				5034F4352F77E57E0028EFAC /* AliasValue.swift in Sources */,
 				501FA4D82F4F0ED7004663D2 /* Logger.swift in Sources */,
 				50309B182F5B22F8008CA064 /* URL.swift in Sources */,
+				50F9787E2FED35EA00CC52C8 /* Color.swift in Sources */,
 				506421C72F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				5032DB302F68864800D7453E /* BookmarksModel.swift in Sources */,
 				50309B302F5C8579008CA064 /* Data.swift in Sources */,
@@ -739,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B276DC2F39DB98005F7475 /* Test.swift in Sources */,
+				505886A33025EA0000AA64CD /* HVStack.swift in Sources */,
 				506421DB2F64C1780020F6C8 /* Data.swift in Sources */,
 				501FA4DD2F4F0FEC004663D2 /* _enums.swift in Sources */,
 				50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */,
@@ -746,9 +762,11 @@
 				5034F4362F77E57E0028EFAC /* AliasValue.swift in Sources */,
 				50BB988F2FFBAEA100C39670 /* Date.swift in Sources */,
 				501FA4D92F4F0EDB004663D2 /* Logger.swift in Sources */,
+				50F9787B2FED34B700CC52C8 /* Previewer.swift in Sources */,
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,
 				501FA4DF2F4F1014004663D2 /* String.swift in Sources */,
+				505886A43025EA1400AA64CD /* Color.swift in Sources */,
 				506421C62F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* _types.swift in Sources */,
 				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
