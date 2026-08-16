@@ -171,7 +171,7 @@ struct PickerCustom_Previews1: PreviewProvider {
         @State private var selectedV2: UInt = 0
         @State private var selectedV3: UInt = 0
         public var body: some View {
-            VStack(spacing: 20) {
+            Previewer(axis: .horizontal, spacing: 20, padding: 20) {
 
                 VStack {
                     Text("No value:").font(.headline)
@@ -192,8 +192,6 @@ struct PickerCustom_Previews1: PreviewProvider {
                 }
 
             }
-            .padding(20)
-            .frame(width: 200)
         }
     }
     static public var previews: some View {
@@ -205,15 +203,13 @@ struct PickerCustom_Previews2: PreviewProvider {
     struct ViewWithState: View {
         @State private var selected: UInt = 0
         public var body: some View {
-            VStack {
+            Previewer(spacing: 10, padding: 20) {
                 Text("Flexibility:").font(.headline)
                 PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10))
                 PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .none)
                 PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .size(100))
                 PickerCustom<UInt>(selected: $selected, items: generatePreviewItems_intKey(count: 10), flexibility: .infinity)
-            }
-            .padding(20)
-            .frame(width: 200)
+            }.frame(width: 200)
         }
     }
     static public var previews: some View {

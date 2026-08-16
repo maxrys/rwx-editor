@@ -33,7 +33,9 @@ struct MainScene: View {
 
 struct MainScene_Previews: PreviewProvider {
     static public var previews: some View {
-        MainScene()
-            .frame(width: 470)
+        Previewer {
+            MainScene()
+                .frame(width: 470)
+        }
     }
 }

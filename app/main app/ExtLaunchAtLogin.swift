@@ -40,8 +40,8 @@ import ServiceManagement
 
 @available(macOS 13.0, *) struct ExtLaunchAtLogin_Previews: PreviewProvider {
     static public var previews: some View {
-        ExtLaunchAtLogin()
-            .frame(maxWidth: 300)
-            .padding(20)
+        Previewer(padding: 20) {
+            ExtLaunchAtLogin()
+        }
     }
 }

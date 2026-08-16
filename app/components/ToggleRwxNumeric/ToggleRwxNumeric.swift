@@ -49,10 +49,10 @@ struct ToggleRwxNumeric_Previews: PreviewProvider {
     struct ViewWithState: View {
         @State private var perms: UInt = 0o644
         public var body: some View {
-            VStack(spacing: 20) {
+            Previewer(spacing: 20, padding: 20) {
                 ToggleRwxNumeric(self.$perms)
                 Text(String(self.perms, radix: 8))
-            }.padding(20)
+            }
         }
     }
     static public var previews: some View {

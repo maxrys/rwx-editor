@@ -57,8 +57,8 @@ struct ExtSettings: View {
 
 struct ExtSettings_Previews: PreviewProvider {
     static public var previews: some View {
-        ExtSettings()
-            .padding(20)
-            .frame(width: 350)
+        Previewer(padding: 20) {
+            ExtSettings()
+        }.frame(width: 350)
     }
 }

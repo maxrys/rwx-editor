@@ -63,6 +63,8 @@ struct ExtStatus: View {
 
 struct ExtStatus_Previews: PreviewProvider {
     static public var previews: some View {
-        ExtStatus().padding(20)
+        Previewer(padding: 20) {
+            ExtStatus()
+        }
     }
 }

@@ -180,7 +180,7 @@ struct Popup_Previews: PreviewProvider {
             Popup("\(ThisApp.WINDOW_POPUP_ID_PREFIX)/unknown"          , URL(fileURLWithPath: "/unknown"))     ; Delimiter
             Popup("\(ThisApp.WINDOW_POPUP_ID_PREFIX)/private/etc/"     , URL(fileURLWithPath: "/private/etc/")); Delimiter /* directory */
             Popup("\(ThisApp.WINDOW_POPUP_ID_PREFIX)/private/etc/hosts", URL(fileURLWithPath: "/private/etc/hosts"))       /* file */
-        }.frame(width: Popup.FRAME_WIDTH * 2)
+        }.frame(width: Popup.FRAME_WIDTH)
     }
 }
 

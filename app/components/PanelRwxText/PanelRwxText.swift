@@ -54,9 +54,11 @@ struct PanelRwxText_Previews: PreviewProvider {
     struct ViewWithState: View {
         @State private var perms: UInt = 0o644
         public var body: some View {
-            HStack {
-                PanelRwxText(self.$perms)
-            }.padding(20)
+            Previewer {
+                HStack {
+                    PanelRwxText(self.$perms)
+                }.padding(20)
+            }
         }
     }
     static public var previews: some View {

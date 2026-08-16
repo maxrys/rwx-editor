@@ -25,7 +25,7 @@ struct Previewer<Content: View>: View {
     }
 
     public var body: some View {
-        HVStack(axis: self.axis) {
+        HVStack(axis: self.axis, spacing: 0) {
             VStack(spacing: self.spacing) { self.content() }
                 .padding(self.padding)
                 .background(Color.NS[\.windowBackgroundColor])

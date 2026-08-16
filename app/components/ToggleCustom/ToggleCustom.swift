@@ -120,13 +120,13 @@ struct ToggleCustom_Previews: PreviewProvider {
     struct ViewWithState: View {
         @State private var isOn: Bool = false
         public var body: some View {
-            VStack(alignment: .trailing) {
-                ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: true)
-                ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: false)
-                ToggleCustom(isOn: self.$isOn)
+            Previewer(padding: 20) {
+                VStack(alignment: .trailing) {
+                    ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: true)
+                    ToggleCustom(text: "Test", isOn: self.$isOn, isFlexible: false)
+                    ToggleCustom(isOn: self.$isOn).disabled(true)
+                }.frame(width: 200)
             }
-            .frame(width: 200)
-            .padding(20)
         }
     }
     static public var previews: some View {
