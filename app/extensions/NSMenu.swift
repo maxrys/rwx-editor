@@ -19,7 +19,7 @@ extension NSMenu {
 
         appMenu.addItem(
             withTitle: String(format: NSLocalizedString("About %@" , comment: ""), NSApplication.appNameLocalized),
-            action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)),
+            action: #selector(ThisApp.appDelegate.showWindowAbout),
             keyEquivalent: ""
         )
 

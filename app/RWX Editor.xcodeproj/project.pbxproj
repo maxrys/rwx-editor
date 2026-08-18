@@ -24,7 +24,6 @@
 		50309B082F59E998008CA064 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
 		50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
 		50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0D2F5AC7C7008CA064 /* Features.swift */; };
-		50309B102F5ACC06008CA064 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 50309B0F2F5ACC06008CA064 /* Credits.html */; };
 		50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
 		50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
 		50309B172F5B22F8008CA064 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B162F5B22F8008CA064 /* URL.swift */; };
@@ -122,6 +121,7 @@
 		50E4B10C2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
 		50E4B10D2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
 		50E4B12C2FF510E5008D625B /* ShadowLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B12A2FF510E5008D625B /* ShadowLine.swift */; };
+		50E4B12E2FF5151D008D625B /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B12D2FF5151D008D625B /* About.swift */; };
 		50F9787B2FED34B700CC52C8 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9787A2FED34B700CC52C8 /* Previewer.swift */; };
 		50F9787D2FED34B700CC52C8 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9787A2FED34B700CC52C8 /* Previewer.swift */; };
 		50F9787E2FED35EA00CC52C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B372F5CC32A008CA064 /* Color.swift */; };
@@ -161,7 +161,6 @@
 		50309B072F59E998008CA064 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		50309B0B2F5A30C8008CA064 /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
 		50309B0D2F5AC7C7008CA064 /* Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features.swift; sourceTree = "<group>"; };
-		50309B0F2F5ACC06008CA064 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		50309B162F5B22F8008CA064 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		50309B312F5CA4B8008CA064 /* NSApplicationMultiLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplicationMultiLaunch.swift; sourceTree = "<group>"; };
 		50309B332F5CBC37008CA064 /* NSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMenu.swift; sourceTree = "<group>"; };
@@ -242,6 +241,7 @@
 		50E380E02F708CF200FD103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E4B10B2FF2932F008D625B /* HVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVStack.swift; sourceTree = "<group>"; };
 		50E4B12A2FF510E5008D625B /* ShadowLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLine.swift; sourceTree = "<group>"; };
+		50E4B12D2FF5151D008D625B /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		50F9787A2FED34B700CC52C8 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -419,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276A72F389886005F7475 /* App.swift */,
+				50E4B12D2FF5151D008D625B /* About.swift */,
 				50B276D12F39CC3E005F7475 /* MainScene.swift */,
 				506421BB2F60764B0020F6C8 /* ExtSettings.swift */,
 				50309B352F5CBF97008CA064 /* ExtStatus.swift */,
@@ -427,7 +428,6 @@
 				50CEA0AA2F4C5881001006CF /* InfoPlist.xcstrings */,
 				50B276EA2F3A40C9005F7475 /* app.entitlements */,
 				50B276C12F39CA05005F7475 /* Info.plist */,
-				50309B0F2F5ACC06008CA064 /* Credits.html */,
 			);
 			path = "main app";
 			sourceTree = "<group>";
@@ -639,7 +639,6 @@
 				50CE9FB92F471491001006CF /* Assets.xcassets in Resources */,
 				501FA4D42F4F0C05004663D2 /* Assets.xcassets in Resources */,
 				50B276A82F389886005F7475 /* Assets.xcassets in Resources */,
-				50309B102F5ACC06008CA064 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +731,7 @@
 				506422102F6618BC0020F6C8 /* MessageState.swift in Sources */,
 				506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */,
 				506422122F6618BC0020F6C8 /* MessageBox.swift in Sources */,
+				50E4B12E2FF5151D008D625B /* About.swift in Sources */,
 				506422132F6618BC0020F6C8 /* Message.swift in Sources */,
 				506422142F6618BC0020F6C8 /* Message_types.swift in Sources */,
 				5064216C2F5EF04A0020F6C8 /* TableCustom_HeadCell.swift in Sources */,
@@ -958,7 +958,7 @@
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Maxim Rysevets. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Maxim Rysevets";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1008,7 +1008,7 @@
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Maxim Rysevets. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Maxim Rysevets";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1054,7 +1054,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "RWX Editor Finder Extension";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Maxim Rysevets. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Maxim Rysevets";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1101,7 +1101,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "RWX Editor Finder Extension";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Maxim Rysevets. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Maxim Rysevets";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

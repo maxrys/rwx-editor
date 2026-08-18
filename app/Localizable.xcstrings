@@ -688,6 +688,22 @@
         }
       }
     },
+    "support" : {
+      "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "падтрымка"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "поддержка"
+          }
+        }
+      }
+    },
     "Terminal command to take ownership:" : {
       "localizations" : {
         "be-BY" : {
@@ -732,6 +748,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Обновлено"
+          }
+        }
+      }
+    },
+    "Version %@ (%@)" : {
+      "localizations" : {
+        "be-BY" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версія %1$@ (%2$@)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %1$@ (%2$@)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия %1$@ (%2$@)"
           }
         }
       }

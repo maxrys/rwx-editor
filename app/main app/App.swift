@@ -11,6 +11,8 @@ import SwiftUI
     static let NOT_APPLICABLE = "—"
     static let WINDOW_MAIN_ID = "main"
     static let WINDOW_MAIN_TITLE_LOCALIZED = NSLocalizedString("RWX Editor | Settings", comment: "")
+    static let WINDOW_ABOUT_ID = "about"
+    static let WINDOW_ABOUT_TITLE_LOCALIZED = String(format: NSLocalizedString("About %@" , comment: ""), NSApplication.appNameLocalized)
     static let WINDOW_POPUP_ID_PREFIX = "popup:"
     static let WINDOW_POPUP_TITLE_LOCALIZED = NSLocalizedString("RWX Editor", comment: "")
 
@@ -56,6 +58,20 @@ import SwiftUI
         }
     }
 
+    @objc func showWindowAbout() {
+        if let windowAbout = NSWindow.customWindows[Self.WINDOW_ABOUT_ID] {
+            windowAbout.show()
+        } else {
+            _ = NSWindow.makeNewOrShowExisting(
+                ID   : Self.WINDOW_ABOUT_ID,
+                title: Self.WINDOW_ABOUT_TITLE_LOCALIZED,
+                size: CGSize(width: 300, height: 100),
+                delegate: self,
+                view: About()
+            )
+        }
+    }
+
     func showWindowPopup(_ url: URL) {
         let ID = "\(Self.WINDOW_POPUP_ID_PREFIX)\(url.path)"
         Logger.customLog("Window \"Popup\" will show | ID: \(ID)")
@@ -78,6 +94,7 @@ import SwiftUI
             switch ID {
                 case Self.WINDOW_MAIN_ID:
                     Logger.customLog("Window \"Main\" will hide")
+                    NSWindow.get(Self.WINDOW_ABOUT_ID)?.hide()
                     NSApplication.hideAppsDock()
                     NSApp.mainMenu = nil
                     /* bring the popup window to the foreground */
