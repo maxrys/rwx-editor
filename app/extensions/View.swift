@@ -74,6 +74,12 @@ extension View {
         }
     }
 
+    @ViewBuilder func ignoresSafeArea(isIgnore: Bool = true, _ regions: SafeAreaRegions = .all, edges: Edge.Set = .all) -> some View {
+        if (isIgnore)
+             { self.ignoresSafeArea(regions, edges: edges) }
+        else { self }
+    }
+
     @ViewBuilder func onKeyPressPolyfill(character: String, action: @escaping () -> Void) -> some View {
         if #available(macOS 14.0, *) {
             self.onKeyPress(phases: .down) { press in
@@ -131,6 +137,60 @@ extension View {
                 }
             }
         )
+    }
+
+}
+
+extension View {
+
+    @ViewBuilder func windowChamelionBackground(
+        windowID                   : String? = nil,
+        backgroundTint             : Color = .NS[\.windowBackgroundColor].opacity(0.7),
+        backgroundTintDark         : Color = .NS[\.windowBackgroundColor].opacity(0.7),
+        backgroundColorFallback    : Color = .NS[\.windowBackgroundColor],
+        backgroundColorDarkFallback: Color = .NS[\.windowBackgroundColor],
+        isIgnoreSafeArea: Bool = true
+    ) -> some View {
+        self.ignoresSafeArea(
+                isIgnore: isIgnoreSafeArea
+            )
+            .background(
+                ChamelionBackground(
+                    backgroundTint             : backgroundTint,
+                    backgroundTintDark         : backgroundTintDark,
+                    backgroundColorFallback    : backgroundColorFallback,
+                    backgroundColorDarkFallback: backgroundColorDarkFallback
+                )
+            )
+            .onAppear {
+                if let windowID, let window = NSWindow.get(windowID) {
+                    window.backgroundColor = .clear
+                    window.alphaValue = 1.0
+                }
+            }
+    }
+
+}
+
+struct ChamelionBackground: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    let backgroundTint: Color
+    let backgroundTintDark: Color
+    let backgroundColorFallback: Color
+    let backgroundColorDarkFallback: Color
+
+    public var body: some View {
+        if #available(macOS 12.0, *) {
+            if (self.colorScheme == .dark)
+                 { Rectangle().fill(.ultraThinMaterial).overlayPolyfill { self.backgroundTintDark } }
+            else { Rectangle().fill(.ultraThinMaterial).overlayPolyfill { self.backgroundTint     } }
+        } else {
+            if (self.colorScheme == .dark)
+                 { self.backgroundColorDarkFallback }
+            else { self.backgroundColorFallback     }
+        }
     }
 
 }

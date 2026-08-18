@@ -7,6 +7,9 @@ import SwiftUI
 
 struct PopupHead: View {
 
+    static let TABLE_1ST_CELL_WIDTH: CGFloat = 280 / 2
+    static let TABLE_CELL_PADDING: EdgeInsets = .init(top: 6, leading: 9, bottom: 6, trailing: 9)
+
     @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
@@ -39,17 +42,17 @@ struct PopupHead: View {
 
     private var formattedCreated: String {
         switch self.rollerForCreated {
-            case .convenient   : return self.info.created.convenient
-            case .iso8601withTZ: return self.info.created.ISO8601withTZ
-            case .iso8601      : return self.info.created.ISO8601
+            case .convenient  : return self.info.created.formatConvenient
+            case .iso8601tz   : return self.info.created.formatISO8601tz
+            case .iso8601tzUTC: return self.info.created.formatISO8601tzUTC
         }
     }
 
     private var formattedUpdated: String {
         switch self.rollerForUpdated {
-            case .convenient   : return self.info.updated.convenient
-            case .iso8601withTZ: return self.info.updated.ISO8601withTZ
-            case .iso8601      : return self.info.updated.ISO8601
+            case .convenient  : return self.info.updated.formatConvenient
+            case .iso8601tz   : return self.info.updated.formatISO8601tz
+            case .iso8601tzUTC: return self.info.updated.formatISO8601tzUTC
         }
     }
 
@@ -111,10 +114,10 @@ struct PopupHead: View {
                 isVisibleHeader: false,
                 isFocusable: false,
                 isScrollable: false,
-                bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
+                bodyCellPadding: Self.TABLE_CELL_PADDING,
                 head: {
                     TableCustom_HeadCell(
-                        size: .fixed(140),
+                        size: .fixed(Self.TABLE_1ST_CELL_WIDTH),
                         spacing: 2,
                         alignment: .trailing
                     ) { EmptyView() }
@@ -187,6 +190,10 @@ struct PopupHead_Previews: PreviewProvider {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
             PopupHead().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/"     ))!)); Delimiter /* directory */
             PopupHead().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/hosts"))!))            /* file */
-        }.frame(width: Popup.FRAME_WIDTH)
+        }
+        .frame(width: Popup.FRAME_WIDTH)
+        .windowChamelionBackground(
+            backgroundTint: .white.opacity(0.9)
+        )
     }
 }

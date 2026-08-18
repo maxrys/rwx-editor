@@ -13,19 +13,22 @@ struct ToggleCustom: View {
     private let isFlexible: Bool
     private let size: CGSize
     private let innerPadding: CGFloat
+    private let font: Font
 
     init(
         text: String? = nil,
         isOn: Binding<Bool>,
         isFlexible: Bool = false,
         size: CGSize = CGSize(width: 40, height: 16),
-        innerPadding: CGFloat = 3
+        innerPadding: CGFloat = 3,
+        font: Font = .headline
     ) {
         self.text = text
         self._isOn = isOn
         self.isFlexible = isFlexible
         self.size = size
         self.innerPadding = innerPadding
+        self.font = font
     }
 
     public var body: some View {
@@ -48,25 +51,52 @@ struct ToggleCustom: View {
 
     @ViewBuilder private func TextView(_ text: String) -> some View {
         Text(text)
-            .font(.system(size: 14))
+            .font(self.font)
     }
 
     @ViewBuilder private func SwitcherView() -> some View {
+        ToggleCustom_Switcher(
+            isOn: self.$isOn,
+            size: self.size,
+            innerPadding: self.innerPadding
+        )
+    }
+
+}
+
+fileprivate struct ToggleCustom_Switcher: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+    @Binding fileprivate var isOn: Bool
+
+    private let size: CGSize
+    private let innerPadding: CGFloat
+
+    init(
+        isOn: Binding<Bool>,
+        size: CGSize = CGSize(width: 40, height: 16),
+        innerPadding: CGFloat = 3
+    ) {
+        self._isOn = isOn
+        self.size = size
+        self.innerPadding = innerPadding
+    }
+
+    public var body: some View {
         Button {
             withAnimation(.easeInOut(duration: 0.1)) {
                 self.isOn.toggle()
             }
         } label: {
             Capsule()
-                .fill(self.isOn ? .green : .black.opacity(0.3))
+                .fill(self.isOn ? .green : .black.opacity(self.colorScheme == .dark ? 0.7 : 0.3))
                 .frame(width: self.size.width, height: self.size.height)
                 .overlayPolyfill(alignment: self.isOn ? .trailing : .leading) {
                     Capsule()
                         .fill(.white)
                         .frame(
                             width: (self.size.height * 1.5) - (self.innerPadding * 2),
-                            height: self.size.height        - (self.innerPadding * 2)
-                        )
+                            height: self.size.height        - (self.innerPadding * 2))
                         .padding(self.innerPadding)
                         .shadow(
                             color: .black.opacity(0.5),

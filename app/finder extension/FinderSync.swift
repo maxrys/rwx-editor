@@ -5,13 +5,15 @@
 
 import os
 import Cocoa
+import Combine
 import FinderSync
 
 final class FinderSync: FIFinderSync {
 
     static let MENU_TITLE_LOCALIZED = NSLocalizedString("RWX Editor Menu", comment: "")
 
-    var selectedURLs: [URL] {
+    private var mountsCancellable: AnyCancellable?
+    private var selectedURLs: [URL] {
         if let urls = FIFinderSyncController.default().selectedItemURLs() {
             return urls
         }
@@ -21,12 +23,20 @@ final class FinderSync: FIFinderSync {
     override init() {
         super.init()
         self.updateWatchedVolumes()
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.updateWatchedVolumes), name: NSWorkspace.didMountNotification  , object: nil)
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.updateWatchedVolumes), name: NSWorkspace.didUnmountNotification, object: nil)
+        let nc = NSWorkspace.shared.notificationCenter
+        self.mountsCancellable = nc.publisher(for: NSWorkspace.didMountNotification)
+            .merge(with: nc.publisher(for: NSWorkspace.didUnmountNotification))
+            .sink { [weak self] _ in
+                self?.updateWatchedVolumes()
+            }
         Logger.customLog("FinderSync Extension launched from: \(Bundle.main.bundlePath)")
     }
 
-    @objc func updateWatchedVolumes() {
+    deinit {
+        mountsCancellable?.cancel()
+    }
+
+    func updateWatchedVolumes() {
         var urls = Set<URL>()
         urls.insert(URL(fileURLWithPath: "/"))
         if let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: []) {
@@ -60,6 +70,7 @@ final class FinderSync: FIFinderSync {
         if (menuItem.tag == 0) {
             for url in self.selectedURLs {
                 if let resultURL = URL(string: URL.PREFIX_THIS_APP + url.absoluteString.trimPrefix(URL.PREFIX_FILE)) {
+                    Logger.customLog("Open URL: \(resultURL)")
                     NSWorkspace.shared.open(
                         resultURL
                     )

@@ -8,6 +8,10 @@ import OpenDirectory
 
 struct PopupBody: View {
 
+    static let TABLE_1ST_CELL_WIDTH: CGFloat = (272 / 2)
+    static let TABLE_2ND_CELL_WIDTH: CGFloat = (110 / 2) * 3
+    static let BLOCKS_SPACING: CGFloat = 40
+
     @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var popupState: PopupState
 
@@ -18,24 +22,34 @@ struct PopupBody: View {
     @State private var owners: [String: String] = [:]
     @State private var groups: [String: String] = [:]
 
-    private let columns = [
-        GridItem(.flexible(), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
+    private let columnsForToggleRwxColored = [
+        GridItem(.fixed(Self.TABLE_1ST_CELL_WIDTH - 5), spacing: 5, alignment: .trailing),
+        GridItem(.fixed(Self.TABLE_2ND_CELL_WIDTH / 3), spacing: 0, alignment: .center),
+        GridItem(.fixed(Self.TABLE_2ND_CELL_WIDTH / 3), spacing: 0, alignment: .center),
+        GridItem(.fixed(Self.TABLE_2ND_CELL_WIDTH / 3), spacing: 0, alignment: .center),
+    ]
+
+    private let columnsForToggleRwxNumeric = [
+        GridItem(.fixed(Self.TABLE_1ST_CELL_WIDTH - 5), spacing: 5, alignment: .trailing),
+        GridItem(.fixed(Self.TABLE_2ND_CELL_WIDTH    ), spacing: 0, alignment: .center),
+    ]
+
+    private let columnsForPickerCustom = [
+        GridItem(.fixed(Self.TABLE_1ST_CELL_WIDTH - 5), spacing: 5, alignment: .trailing),
+        GridItem(.fixed(Self.TABLE_2ND_CELL_WIDTH    ), spacing: 0, alignment: .center),
     ]
 
     public var body: some View {
-        VStack(spacing: 40) {
+        VStack(alignment: .leading, spacing: Self.BLOCKS_SPACING) {
 
             /* MARK: rules via toggles */
 
-            LazyVGrid(columns: columns, spacing: 15) {
+            LazyVGrid(columns: self.columnsForToggleRwxColored, spacing: 15) {
 
                 Color.clear
-                Text(NSLocalizedString("Owner", comment: ""))
-                Text(NSLocalizedString("Group", comment: ""))
-                Text(NSLocalizedString("Other", comment: ""))
+                Text(NSLocalizedString("Owner", comment: "")).lineLimit(1)
+                Text(NSLocalizedString("Group", comment: "")).lineLimit(1)
+                Text(NSLocalizedString("Other", comment: "")).lineLimit(1)
 
                 Text(NSLocalizedString("Read", comment: ""))
                 ToggleRwxColored(subject: .owner, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
@@ -52,45 +66,43 @@ struct PopupBody: View {
                 ToggleRwxColored(subject: .group, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
                 ToggleRwxColored(subject: .other, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
 
-            }.padding(.horizontal, 20)
+            }.frame(width: Self.TABLE_1ST_CELL_WIDTH + Self.TABLE_2ND_CELL_WIDTH)
 
             /* MARK: rules via text/numeric */
 
-            HStack(spacing: 20) {
-                PanelRwxText    (self.permsBinding)
+            LazyVGrid(columns: self.columnsForToggleRwxNumeric, spacing: 0) {
+                PanelRwxText    (self.permsBinding).offset(x: 10)
                 ToggleRwxNumeric(self.permsBinding).disabled(!self.popupState.isEditable)
-            }
+            }.frame(width: Self.TABLE_1ST_CELL_WIDTH + Self.TABLE_2ND_CELL_WIDTH)
 
             /* MARK: owner picker + group picker */
 
-            VStack(alignment: .trailing, spacing: 10) {
+            LazyVGrid(columns: self.columnsForPickerCustom, spacing: 10) {
 
-                HStack(spacing: 10) {
-                    Text(NSLocalizedString("Owner", comment: ""))
-                    PickerCustom<String>(
-                        selected: self.ownerBinding,
-                        items: self.owners,
-                        isPlainListStyle: true,
-                        flexibility: .size(150)
-                    ).disabled(true) /* !self.popupState.isEditable */
-                }
+                Text(NSLocalizedString("Owner", comment: ""))
 
-                HStack(spacing: 10) {
-                    Text(NSLocalizedString("Group", comment: ""))
-                    PickerCustom<String>(
-                        selected: self.groupBinding,
-                        items: self.groups,
-                        isPlainListStyle: true,
-                        flexibility: .size(150)
-                    ).disabled(true) /* !self.popupState.isEditable */
-                }
+                PickerCustom<String>(
+                    selected: self.ownerBinding,
+                    items: self.owners,
+                    isPlainListStyle: true,
+                    flexibility: .size(272 / 2)
+                ).disabled(true) /* !self.popupState.isEditable */
 
-            }
+                Text(NSLocalizedString("Group", comment: ""))
+
+                PickerCustom<String>(
+                    selected: self.groupBinding,
+                    items: self.groups,
+                    isPlainListStyle: true,
+                    flexibility: .size(272 / 2)
+                ).disabled(true) /* !self.popupState.isEditable */
+
+            }.frame(width: Self.TABLE_1ST_CELL_WIDTH + Self.TABLE_2ND_CELL_WIDTH)
 
         }
-        .padding(.vertical, 35)
-        .overlayPolyfill(alignment: .top   , content: { self.ShadowTopView() })
-        .overlayPolyfill(alignment: .bottom, content: { self.ShadowBottomView() })
+        .padding(.vertical, Self.BLOCKS_SPACING)
+        .overlayPolyfill(alignment: .topLeading   , content: { self.ShadowTopView() })
+        .overlayPolyfill(alignment: .bottomLeading, content: { self.ShadowBottomView() })
         .onAppear {
             self.ownersReload()
             self.groupsReload()
@@ -161,10 +173,14 @@ struct PopupBody: View {
 
 struct PopupBody_Previews: PreviewProvider {
     static public var previews: some View {
-        VStack(spacing: 0) {
+        VStack(alignment: .leading, spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
             PopupBody().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/"     ))!)); Delimiter /* directory */
             PopupBody().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/hosts"))!))            /* file */
-        }.frame(width: Popup.FRAME_WIDTH)
+        }
+        .frame(width: MainScene.FRAME_WIDTH)
+        .windowChamelionBackground(
+            backgroundTint: .white.opacity(0.9)
+        )
     }
 }

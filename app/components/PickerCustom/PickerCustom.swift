@@ -83,7 +83,7 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         Button {
             self.isOpened = true
         } label: {
-            Text(self.items[self.selectedKey] ?? NOT_APPLICABLE)
+            Text(self.items[self.selectedKey] ?? ThisApp.NOT_APPLICABLE)
                 .lineLimit(1)
                 .padding(.horizontal, 9)
                 .padding(.vertical  , 5)

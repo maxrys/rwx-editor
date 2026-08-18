@@ -26,13 +26,13 @@ struct ExtStatus: View {
                     Color.status.ok :
                     Color.status.error
             )
-            .clipShape(Capsule())
+            .clipShape  (Capsule())
             .focusEffect(Capsule())
         }
         .buttonStyle(.plain)
         .pointerStyleLinkPolyfill()
-        .onAppear              {           if (            true           ) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
-        .onWinBecomeForeground { window in if (window.ID == WINDOW_MAIN_ID) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
+        .onAppear              {           if (                true               ) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
+        .onWinBecomeForeground { window in if (window.ID == ThisApp.WINDOW_MAIN_ID) { self.isEnabled = FIFinderSyncController.isExtensionEnabled } }
     }
 
     @ViewBuilder private func CheckmarkView() -> some View {

@@ -18,7 +18,7 @@ struct Bookmarks: View {
 
             TableCustom(
                 selected: self.bookmarksState.getBinding(\.selectedRows),
-                windowID: WINDOW_MAIN_ID,
+                windowID: ThisApp.WINDOW_MAIN_ID,
                 bodyCellPadding: .init(top: 6, leading: 8, bottom: 6, trailing: 8),
                 head: {
                     TableCustom_HeadCell(
@@ -57,7 +57,7 @@ struct Bookmarks: View {
             BookmarksModel.dump()
         }
         .onWinBecomeForeground { window in
-            if (window.ID == WINDOW_MAIN_ID) {
+            if (window.ID == ThisApp.WINDOW_MAIN_ID) {
                 self.bookmarksState.reload()
             }
         }

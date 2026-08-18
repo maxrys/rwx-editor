@@ -14,9 +14,11 @@ struct Popup: View {
     @State private var messageBoxState = MessageState()
     @State private var info: FSEntityInfo?
 
+    private let windowID: String
     private let url: URL
 
-    init(_ url: URL) {
+    init(_ windowID: String, _ url: URL) {
+        self.windowID = windowID
         self.url = url
         Logger.customLog("Popup init with URL.path: \(url.path)")
     }
@@ -77,10 +79,14 @@ struct Popup: View {
         .frame(width: Self.FRAME_WIDTH)
         .onAppear { self.refresh() }
         .onWinBecomeForeground { window in
-            if (window.ID == "\(WINDOW_POPUP_ID_PREFIX)\(self.url.path)") {
+            if (window.ID == self.windowID) {
                 self.refresh()
             }
         }
+        .windowChamelionBackground(
+            windowID: self.windowID,
+            backgroundTint: .white.opacity(0.9)
+        )
     }
 
     @ViewBuilder static public func MessageDescriptionIfNotOwner(owner: String, fullPath: String) -> some View {
@@ -133,7 +139,7 @@ struct Popup: View {
             NSLocalizedString("open settings", comment: ""),
             colorStyle: .common,
             fixedColorScheme: .light
-        ) { App.appDelegate.showWindowMain() }
+        ) { ThisApp.appDelegate.showWindowMain() }
     }
 
     @ViewBuilder static public func StaticMessage(_ title: String, _ description: String? = nil) -> some View {
@@ -171,10 +177,10 @@ struct Popup_Previews: PreviewProvider {
     static public var previews: some View {
         VStack(spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-            Popup(URL(fileURLWithPath: "/unknown"))     ; Delimiter
-            Popup(URL(fileURLWithPath: "/private/etc/")); Delimiter /* directory */
-            Popup(URL(fileURLWithPath: "/private/etc/hosts"))       /* file */
-        }.frame(width: Popup.FRAME_WIDTH)
+            Popup("\(ThisApp.WINDOW_POPUP_ID_PREFIX)/unknown"          , URL(fileURLWithPath: "/unknown"))     ; Delimiter
+            Popup("\(ThisApp.WINDOW_POPUP_ID_PREFIX)/private/etc/"     , URL(fileURLWithPath: "/private/etc/")); Delimiter /* directory */
+            Popup("\(ThisApp.WINDOW_POPUP_ID_PREFIX)/private/etc/hosts", URL(fileURLWithPath: "/private/etc/hosts"))       /* file */
+        }.frame(width: Popup.FRAME_WIDTH * 2)
     }
 }
 

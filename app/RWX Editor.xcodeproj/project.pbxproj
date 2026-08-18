@@ -27,7 +27,6 @@
 		50309B102F5ACC06008CA064 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 50309B0F2F5ACC06008CA064 /* Credits.html */; };
 		50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F32F3A4990005F7475 /* FSEntityInfo.swift */; };
 		50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
-		50309B152F5B201A008CA064 /* _const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* _const.swift */; };
 		50309B172F5B22F8008CA064 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B162F5B22F8008CA064 /* URL.swift */; };
 		50309B182F5B22F8008CA064 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B162F5B22F8008CA064 /* URL.swift */; };
 		50309B192F5B22F8008CA064 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B162F5B22F8008CA064 /* URL.swift */; };
@@ -77,8 +76,6 @@
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
 		50B276B72F39C991005F7475 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276B62F39C991005F7475 /* FinderSync.swift */; };
 		50B276BB2F39C991005F7475 /* RWX Editor Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 50B276B42F39C991005F7475 /* RWX Editor Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		50B276C32F39CB7C005F7475 /* _const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* _const.swift */; };
-		50B276C42F39CB7C005F7475 /* _const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C22F39CB73005F7475 /* _const.swift */; };
 		50B276C62F39CBC9005F7475 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C52F39CBC3005F7475 /* Logger.swift */; };
 		50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C82F39CBD1005F7475 /* NSApplication.swift */; };
 		50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CB2F39CBF7005F7475 /* NSWindow.swift */; };
@@ -104,6 +101,8 @@
 		50B277222F3DCEE9005F7475 /* _types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277202F3DCEE6005F7475 /* _types.swift */; };
 		50B277292F3DF227005F7475 /* PickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B277282F3DF227005F7475 /* PickerCustom.swift */; };
 		50B2772D2F3E37B0005F7475 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2772C2F3E37B0005F7475 /* Dictionary.swift */; };
+		50BB988E2FFBAEA100C39670 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F62F3A71B0005F7475 /* Date.swift */; };
+		50BB988F2FFBAEA100C39670 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276F62F3A71B0005F7475 /* Date.swift */; };
 		50CE9FB92F471491001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FB82F471491001006CF /* Assets.xcassets */; };
 		50CE9FBC2F4714AF001006CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CE9FBB2F4714AF001006CF /* Assets.xcassets */; };
 		50CE9FBF2F4715B7001006CF /* PickerCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE9FBE2F4715B7001006CF /* PickerCustomColor.swift */; };
@@ -191,7 +190,6 @@
 		50B276B62F39C991005F7475 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		50B276B82F39C991005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B276C12F39CA05005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50B276C22F39CB73005F7475 /* _const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _const.swift; sourceTree = "<group>"; };
 		50B276C52F39CBC3005F7475 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		50B276C82F39CBD1005F7475 /* NSApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplication.swift; sourceTree = "<group>"; };
 		50B276CB2F39CBF7005F7475 /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
@@ -356,9 +354,8 @@
 		50B276AB2F3899C9005F7475 /* types */ = {
 			isa = PBXGroup;
 			children = (
-				50B276C22F39CB73005F7475 /* _const.swift */,
-				50B277202F3DCEE6005F7475 /* _types.swift */,
 				50B277122F3BD0F2005F7475 /* _enums.swift */,
+				50B277202F3DCEE6005F7475 /* _types.swift */,
 				5034F4332F77E57E0028EFAC /* AliasValue.swift */,
 				506421C42F618AAC0020F6C8 /* BookmarkValue.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
@@ -695,7 +692,6 @@
 				5034F4432F78253D0028EFAC /* OpenDirectory.swift in Sources */,
 				506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */,
-				50B276C32F39CB7C005F7475 /* _const.swift in Sources */,
 				506421712F5EF0990020F6C8 /* NSEvent.swift in Sources */,
 				506421C92F62B22D0020F6C8 /* Bool.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
@@ -716,11 +712,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F9787C2FED34B700CC52C8 /* Previewer.swift in Sources */,
+				50BB988E2FFBAEA100C39670 /* Date.swift in Sources */,
 				506421762F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				501FA4D72F4F0E82004663D2 /* _types.swift in Sources */,
 				50B276B72F39C991005F7475 /* FinderSync.swift in Sources */,
 				501FA4DA2F4F0EEB004663D2 /* String.swift in Sources */,
-				50B276C42F39CB7C005F7475 /* _const.swift in Sources */,
 				5034F4352F77E57E0028EFAC /* AliasValue.swift in Sources */,
 				501FA4D82F4F0ED7004663D2 /* Logger.swift in Sources */,
 				50309B182F5B22F8008CA064 /* URL.swift in Sources */,
@@ -741,6 +738,7 @@
 				50309B142F5B1A3D008CA064 /* Equatable.swift in Sources */,
 				506421752F5EF1550020F6C8 /* ResultBuilder.swift in Sources */,
 				5034F4362F77E57E0028EFAC /* AliasValue.swift in Sources */,
+				50BB988F2FFBAEA100C39670 /* Date.swift in Sources */,
 				501FA4D92F4F0EDB004663D2 /* Logger.swift in Sources */,
 				501FA4DB2F4F0FA6004663D2 /* PermissionsValue.swift in Sources */,
 				50309B192F5B22F8008CA064 /* URL.swift in Sources */,
@@ -748,7 +746,6 @@
 				506421C62F618AB00020F6C8 /* BookmarkValue.swift in Sources */,
 				501FA4DC2F4F0FBD004663D2 /* _types.swift in Sources */,
 				50309B132F5B19F7008CA064 /* FSEntityInfo.swift in Sources */,
-				50309B152F5B201A008CA064 /* _const.swift in Sources */,
 				5032DB312F68866900D7453E /* BookmarksModel.swift in Sources */,
 				506421DA2F64C10E0020F6C8 /* Process.swift in Sources */,
 			);
@@ -921,8 +918,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "main app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "RWX Editor";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Maxim Rysevets. All rights reserved.";
+				INFOPLIST_KEY_LSUIElement = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -969,8 +968,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "main app/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "RWX Editor";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Maxim Rysevets. All rights reserved.";
+				INFOPLIST_KEY_LSUIElement = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

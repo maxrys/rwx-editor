@@ -7,7 +7,7 @@ import SwiftUI
 
 struct MainScene: View {
 
-    static public let FRAME_WIDTH: CGFloat = 350
+    static public let FRAME_WIDTH: CGFloat = 330
 
     public var body: some View {
         VStack(spacing: 30) {
@@ -17,6 +17,10 @@ struct MainScene: View {
         .padding(20)
         .frame(minHeight: Self.FRAME_WIDTH)
         .environment(\.layoutDirection, .leftToRight)
+        .windowChamelionBackground(
+            windowID: ThisApp.WINDOW_MAIN_ID,
+            backgroundTint: .white.opacity(0.8)
+        )
     }
 
 }

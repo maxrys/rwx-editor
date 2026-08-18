@@ -29,7 +29,7 @@ final public class BookmarksModel: NSManagedObject {
     }()
 
     static let storageURL: URL = {
-        storageDirectoryURL.appendingPathComponent(STORAGE_NAME)
+        storageDirectoryURL.appendingPathComponent("RWXEditor.sqlite")
     }()
 
     static let container: NSPersistentContainer = {
