@@ -71,14 +71,15 @@ final public class BookmarksModel: NSManagedObject {
     }
 
     static func insert(path: String, data: Data) -> Bool {
+        let newObject = SELF()
+            newObject.path = path
+            newObject.data = data
+            newObject.createdAt = Int64(Date.now)
         do {
-            let newObject = SELF()
-                newObject.path = path
-                newObject.data = data
-                newObject.createdAt = Int64(Date.now)
             try Storage.context.save()
             return true
         } catch {
+            Storage.context.delete(newObject)
             Logger.customLog("Model \(SELF.stringName).insert() error: \(error).")
             return false
         }
