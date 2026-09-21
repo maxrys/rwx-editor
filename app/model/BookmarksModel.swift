@@ -70,18 +70,18 @@ final public class BookmarksModel: NSManagedObject {
         }
     }
 
-    static func insert(path: String, data: Data) -> Bool {
+    static func insert(path: String, data: Data) -> ExecuteResult {
         let newObject = SELF()
             newObject.path = path
             newObject.data = data
             newObject.createdAt = Int64(Date.timestamp)
         do {
             try Storage.context.save()
-            return true
+            return .success(affected: 1)
         } catch {
             Storage.context.delete(newObject)
             Logger.customLog("Model \(SELF.stringName).insert() error: \(error).")
-            return false
+            return .failure
         }
     }
 
@@ -126,7 +126,13 @@ final public class BookmarksModel: NSManagedObject {
                 >> ---------------------------------------------------------------------------
                 >> path
                 >> ===========================================================================
-                \(rows.joined(separator: "\n"))
+                """)
+
+                for line in rows {
+                    Logger.customLog(line)
+                }
+
+                Logger.customLog("""
                 >> ---------------------------------------------------------------------------
 
                 """)

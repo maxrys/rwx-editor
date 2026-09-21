@@ -63,13 +63,13 @@ final class BookmarksState: ObservableObject {
     func insert(items: [(path: String, data: Data)]) -> Bool {
         defer { self.reload() }
         return items.reduce(into: true) { result, item in
-            if case .success = BookmarksModel.delete([item.path]) {
-                result &= BookmarksModel.insert(
-                    path: item.path,
-                    data: item.data
-                )
-            } else {
-                result = false
+            switch BookmarksModel.delete([item.path]) {
+                case .failure: result = false
+                case .success:
+                    switch BookmarksModel.insert(path: item.path, data: item.data) {
+                        case .failure: result &= false
+                        case .success: result &= true
+                    }
             }
         }
     }
