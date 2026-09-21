@@ -116,7 +116,7 @@
 		50D41E8E3021EF73008F83E3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D41E8B3021EF73008F83E3 /* Storage.swift */; };
 		50DCD7C52F425A8D00E067C3 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C42F425A8D00E067C3 /* Numeric.swift */; };
 		50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7C82F425A9B00E067C3 /* Timer.swift */; };
-		50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */; };
+		50DCD7ED2F434BFE00E067C3 /* GeometryReaderCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD7EC2F434BFE00E067C3 /* GeometryReaderCustom.swift */; };
 		50E380E12F708CF200FD103E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E380E02F708CF200FD103E /* Assets.xcassets */; };
 		50E4B10C2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
 		50E4B10D2FF2932F008D625B /* HVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B10B2FF2932F008D625B /* HVStack.swift */; };
@@ -237,7 +237,7 @@
 		50D41E8B3021EF73008F83E3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		50DCD7C42F425A8D00E067C3 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		50DCD7C82F425A9B00E067C3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
+		50DCD7EC2F434BFE00E067C3 /* GeometryReaderCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderCustom.swift; sourceTree = "<group>"; };
 		50E380E02F708CF200FD103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E4B10B2FF2932F008D625B /* HVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVStack.swift; sourceTree = "<group>"; };
 		50E4B12A2FF510E5008D625B /* ShadowLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLine.swift; sourceTree = "<group>"; };
@@ -394,7 +394,7 @@
 				50B276F62F3A71B0005F7475 /* Date.swift */,
 				50B2772C2F3E37B0005F7475 /* Dictionary.swift */,
 				50309B0B2F5A30C8008CA064 /* Equatable.swift */,
-				50DCD7EC2F434BFE00E067C3 /* GeometryReader.swift */,
+				50DCD7EC2F434BFE00E067C3 /* GeometryReaderCustom.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50309B312F5CA4B8008CA064 /* NSApplicationMultiLaunch.swift */,
@@ -716,7 +716,7 @@
 				50E4B12C2FF510E5008D625B /* ShadowLine.swift in Sources */,
 				50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */,
 				50B2770C2F3BCFCB005F7475 /* ToggleRwxColored.swift in Sources */,
-				50DCD7ED2F434BFE00E067C3 /* GeometryReader.swift in Sources */,
+				50DCD7ED2F434BFE00E067C3 /* GeometryReaderCustom.swift in Sources */,
 				50B276C62F39CBC9005F7475 /* Logger.swift in Sources */,
 				5034F4432F78253D0028EFAC /* OpenDirectory.swift in Sources */,
 				506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
