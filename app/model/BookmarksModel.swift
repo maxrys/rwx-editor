@@ -74,7 +74,7 @@ final public class BookmarksModel: NSManagedObject {
         let newObject = SELF()
             newObject.path = path
             newObject.data = data
-            newObject.createdAt = Int64(Date.now)
+            newObject.createdAt = Int64(Date.timestamp)
         do {
             try Storage.context.save()
             return true
