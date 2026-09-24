@@ -7,13 +7,13 @@ import SwiftUI
 
 extension Color {
 
-    struct ToggleRWXColoredColorSet {
-        let empty = Color("color ToggleRWXColored Empty")
-        let owner = Color("color ToggleRWXColored Owner")
-        let group = Color("color ToggleRWXColored Group")
-        let other = Color("color ToggleRWXColored Other")
+    enum ToggleRWXColoredColorSet {
+        static let empty = Color("color ToggleRWXColored Empty")
+        static let owner = Color("color ToggleRWXColored Owner")
+        static let group = Color("color ToggleRWXColored Group")
+        static let other = Color("color ToggleRWXColored Other")
     }
 
-    static let toggleRWXColored = ToggleRWXColoredColorSet()
+    static let toggleRWXColored = ToggleRWXColoredColorSet.self
 
 }
