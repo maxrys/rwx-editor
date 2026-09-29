@@ -7,7 +7,7 @@ import Foundation
 
 extension URL {
 
-    static let PREFIX_THIS_APP = "rwxEditor://"
+    static let PREFIX_THIS_APP = "\(APP_ID)://"
     static let PREFIX_FILE = "file://"
     static let SUFFIX_DIRRECTORY = "/"
 

@@ -31,8 +31,7 @@ final public class BookmarksModel: NSManagedObject {
         do {
             let request = NSFetchRequest<SELF>(entityName: SELF.stringName)
             request.fetchLimit = Int.max
-            let orderByPath = NSSortDescriptor(key: #keyPath(SELF.path), ascending: false)
-            request.sortDescriptors = [orderByPath]
+            request.sortDescriptors = [ NSSortDescriptor(key: #keyPath(SELF.path), ascending: false) ]
             request.predicate = NSPredicate(format: "path IN %@", url.pathParents)
             for modelItem in try Storage.context.fetch(request) {
                 if (BookmarkValue(from: modelItem.data).info.isExpired == false) {
@@ -57,8 +56,7 @@ final public class BookmarksModel: NSManagedObject {
         do {
             let request = NSFetchRequest<SELF>(entityName: SELF.stringName)
             request.fetchLimit = Int.max
-            let orderByPath = NSSortDescriptor(key: orderBy, ascending: ascending)
-            request.sortDescriptors = [orderByPath]
+            request.sortDescriptors = [ NSSortDescriptor(key: orderBy, ascending: ascending) ]
             return try Storage.context.fetch(request).map { modelItem in
                 BookmarksFetchItem(
                     path     : modelItem.path,
@@ -72,32 +70,37 @@ final public class BookmarksModel: NSManagedObject {
         }
     }
 
-    static func insert(path: String, data: Data) -> Bool {
+    static func insert(path: String, data: Data) -> ExecuteResult {
+        let newObject = SELF()
+            newObject.path = path
+            newObject.data = data
+            newObject.createdAt = Int64(Date.timestamp)
         do {
-            let newObject = SELF()
-                newObject.path = path
-                newObject.data = data
-                newObject.createdAt = Int64(Date.now)
             try Storage.context.save()
-            return true
+            return .success(affected: 1)
         } catch {
+            Storage.context.delete(newObject)
             Logger.customLog("Model \(SELF.stringName).insert() error: \(error).")
-            return false
+            return .failure
         }
     }
 
     static func delete(_ paths: [String]) -> ExecuteResult {
         do {
-            let request = NSFetchRequest<SELF>(entityName: SELF.stringName)
-            request.fetchLimit = Int.max
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: SELF.stringName)
             request.predicate = NSPredicate(format: "path IN %@", paths)
-            let deleteRequest = NSBatchDeleteRequest(fetchRequest: request as! NSFetchRequest<NSFetchRequestResult>)
-            deleteRequest.resultType = .resultTypeCount
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+            deleteRequest.resultType = .resultTypeObjectIDs
             let result = try Storage.context.execute(deleteRequest) as? NSBatchDeleteResult
-            let affected = result?.result as? Int ?? 0
-            try Storage.context.save()
+            let affectedIDs = result?.result as? [NSManagedObjectID] ?? []
+            if (affectedIDs.count > 0) {
+                NSManagedObjectContext.mergeChanges(
+                    fromRemoteContextSave: [NSDeletedObjectsKey: affectedIDs],
+                    into: [Storage.context]
+                )
+            }
             return .success(
-                affected: affected
+                affected: affectedIDs.count
             )
         } catch {
             Logger.customLog("Model \(SELF.stringName).delete() error: \(error).")
@@ -107,7 +110,7 @@ final public class BookmarksModel: NSManagedObject {
 
     static func dump() {
         #if DEBUG
-            let items = Self.selectAll()
+            let items = SELF.selectAll()
             if (!items.isEmpty) {
 
                 let rows: [String] = items.reduce(into: []) { result, item in
@@ -123,7 +126,13 @@ final public class BookmarksModel: NSManagedObject {
                 >> ---------------------------------------------------------------------------
                 >> path
                 >> ===========================================================================
-                \(rows.joined(separator: "\n"))
+                """)
+
+                for line in rows {
+                    Logger.customLog(line)
+                }
+
+                Logger.customLog("""
                 >> ---------------------------------------------------------------------------
 
                 """)

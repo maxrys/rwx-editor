@@ -4,3 +4,5 @@
 /* ############################################################# */
 
 typealias PermissionsValue = UInt
+
+let APP_ID = "RWXEditor"

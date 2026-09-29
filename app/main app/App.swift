@@ -65,6 +65,7 @@ import SwiftUI
             _ = NSWindow.makeNewOrShowExisting(
                 ID   : Self.WINDOW_ABOUT_ID,
                 title: Self.WINDOW_ABOUT_TITLE_LOCALIZED,
+                styleMask: [.titled, .closable, .miniaturizable],
                 size: CGSize(width: 300, height: 100),
                 delegate: self,
                 view: About()

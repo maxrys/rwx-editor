@@ -29,17 +29,17 @@ extension Color {
         Self.NS[\.unemphasizedSelectedContentBackgroundColor]
     }()
 
-    struct StatusColorSet {
-        let ok      = Color("color Status Ok")
-        let warning = Color("color Status Warning")
-        let error   = Color("color Status Error")
+    enum StatusColorSet {
+        static let ok      = Color("color Status Ok")
+        static let warning = Color("color Status Warning")
+        static let error   = Color("color Status Error")
     }
 
-    struct FormColorSet {
-        let group = Color("color Group")
+    enum FormColorSet {
+        static let group = Color("color Group")
     }
 
-    static let status = StatusColorSet()
-    static let form = FormColorSet()
+    static let status = StatusColorSet.self
+    static let form = FormColorSet.self
 
 }
