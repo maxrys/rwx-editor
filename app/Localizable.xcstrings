@@ -378,12 +378,6 @@
         }
       }
     },
-    "Long long long long long long long long long long long long long long long long long long long long long Description" : {
-      "shouldTranslate" : false
-    },
-    "Long long long long long long long long long long long long long long Title" : {
-      "shouldTranslate" : false
-    },
     "Name" : {
       "localizations" : {
         "be-BY" : {

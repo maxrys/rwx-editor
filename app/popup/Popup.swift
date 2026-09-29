@@ -11,32 +11,39 @@ struct Popup: View {
     static let TERMINAL_PATH = "file:///System/Applications/Utilities/Terminal.app/"
     static let FRAME_WIDTH: CGFloat = 330
 
-    @State private var messageBoxState = MessageState()
-    @State private var info: FSEntityInfo?
+    @State private var state: PopupState?
 
     private let windowID: String
     private let url: URL
+    private let messageBox: MessageBox
 
     init(_ windowID: String, _ url: URL) {
+        Logger.customLog("Popup init with URL.path: \(url.path)")
         self.windowID = windowID
         self.url = url
-        Logger.customLog("Popup init with URL.path: \(url.path)")
+        self.messageBox = MessageBox(
+            address: .local(
+                boxID: MessageBoxID(
+                    Checksums.crc32(url.absoluteString)
+                )
+            )
+        )
     }
 
-    func refresh() {
-        let newInfo = FSEntityInfo(self.url)
-        if (newInfo != self.info) {
-            self.info = newInfo
+    func refreshState() {
+        let newState = PopupState(self.url)
+        if (newState != self.state) {
+            self.state = newState
             Logger.customLog("Popup refresh")
         }
     }
 
     public var body: some View {
         VStack(spacing: 0) {
-            if let info = self.info {
+            if let state = self.state {
                 VStack(spacing: 0) {
                     Group {
-                        switch info.editabilityMode {
+                        switch state.info.editabilityMode {
                             case .notOwner:
                                 if let myName = Process.currentUserName {
                                     Self.StaticMessage(
@@ -57,17 +64,13 @@ struct Popup: View {
                                     Self.MessageDescriptionIfNeedOpenSettings()
                                 )
                             case .allowed:
-                                MessageBox(
-                                    self.messageBoxState
-                                )
+                                self.messageBox
                         }
                     }
                     PopupHead()
                     PopupBody()
-                    PopupFoot()
-                }
-                .environmentObject(PopupState(info))
-                .environmentObject(self.messageBoxState)
+                    PopupFoot(popup: self)
+                }.environmentObject(state)
             } else {
                 Self.StaticMessage(
                     NSLocalizedString("object is not supported", comment: ""),
@@ -77,10 +80,10 @@ struct Popup: View {
         }
         .environment(\.layoutDirection, .leftToRight)
         .frame(width: Self.FRAME_WIDTH)
-        .onAppear { self.refresh() }
+        .onAppear { self.refreshState() }
         .onWinBecomeForeground { window in
             if (window.ID == self.windowID) {
-                self.refresh()
+                self.refreshState()
             }
         }
         .windowChamelionBackground(
