@@ -7,8 +7,6 @@ import SwiftUI
 
 struct PickerCustom<Key>: View where Key: Hashable & Comparable {
 
-    typealias ColorSet = Color.PickerColorSet
-
     @Environment(\.isEnabled) private var isEnabled
     @Binding fileprivate var selectedKey: Key
     @State fileprivate var isOpened = false
@@ -17,7 +15,6 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
     fileprivate let sortedBy: Dictionary<Key, String>.OrderBy
     fileprivate let isPlainListStyle: Bool
     fileprivate let flexibility: Flexibility
-    fileprivate let colorSet: ColorSet
     fileprivate let cornerRadius: CGFloat = 10
     fileprivate let borderWidth: CGFloat = 1
 
@@ -30,15 +27,13 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
         items: [Key: String],
         sortedBy: Dictionary<Key, String>.OrderBy = .keyAscending,
         isPlainListStyle: Bool = false,
-        flexibility: Flexibility = .none,
-        colorSet: ColorSet = Color.picker
+        flexibility: Flexibility = .none
     ) {
         self._selectedKey = selected
         self.items = items
         self.sortedBy = sortedBy
         self.isPlainListStyle = isPlainListStyle
         self.flexibility = flexibility
-        self.colorSet = colorSet
         self.itemsSorted = self.items.sorted(order: self.sortedBy)
         self.itemsSorted.enumerated().forEach { index, keyValuePair in
             self.keyToIndex[keyValuePair.key] = index
@@ -88,11 +83,11 @@ struct PickerCustom<Key>: View where Key: Hashable & Comparable {
                 .padding(.horizontal, 9)
                 .padding(.vertical  , 5)
                 .flexibility(self.flexibility)
-                .foregroundPolyfill(self.colorSet.text)
+                .foregroundPolyfill(Color.picker.text)
                 .background(
                     RoundedRectangle(cornerRadius: self.cornerRadius)
-                        .stroke(self.colorSet.border, lineWidth: self.borderWidth)
-                        .background(self.colorSet.background)
+                        .stroke(Color.picker.border, lineWidth: self.borderWidth)
+                        .background(Color.picker.background)
                         .clipShape(RoundedRectangle(cornerRadius: self.cornerRadius)))
                 .contentShape(RoundedRectangle(cornerRadius: self.cornerRadius))
         }
@@ -125,9 +120,9 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
                 self.rootView.isOpened = false
             } label: {
                 let backgroundColor: Color = {
-                    if (self.rootView.selectedKey      == item.key) { return self.rootView.colorSet.itemSelectedBackground }
-                    if (self.hoveredKey                == item.key) { return self.rootView.colorSet.itemHoveringBackground }
-                    if (self.rootView.isPlainListStyle == false   ) { return self.rootView.colorSet.itemBackground }
+                    if (self.rootView.selectedKey      == item.key) { return Color.picker.itemSelectedBackground }
+                    if (self.hoveredKey                == item.key) { return Color.picker.itemHoveringBackground }
+                    if (self.rootView.isPlainListStyle == false   ) { return Color.picker.itemBackground }
                     return Color.clear
                 }()
                 Text(item.value)
@@ -135,7 +130,7 @@ fileprivate struct PickerCustomPopover<Key>: View where Key: Hashable & Comparab
                     .padding(.horizontal, 9)
                     .padding(.vertical  , 5)
                     .frame(maxWidth: .infinity, alignment: self.rootView.isPlainListStyle ? .leading : .center)
-                    .foregroundPolyfill(self.rootView.colorSet.itemText)
+                    .foregroundPolyfill(Color.picker.itemText)
                     .background(
                         RoundedRectangle(cornerRadius: self.rootView.cornerRadius)
                             .fill(backgroundColor))

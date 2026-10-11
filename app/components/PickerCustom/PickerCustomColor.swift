@@ -7,16 +7,16 @@ import SwiftUI
 
 extension Color {
 
-    struct PickerColorSet {
-        let text                   = Color("color PickerCustom Text")
-        let border                 = Color("color PickerCustom Border")
-        let background             = Color("color PickerCustom Background")
-        let itemText               = Color("color PickerCustom Item Text")
-        let itemBackground         = Color("color PickerCustom Item Background")
-        let itemHoveringBackground = Color.accentColor.opacity(0.2)
-        let itemSelectedBackground = Color.accentColor.opacity(0.5)
+    enum PickerColorSet {
+        static let text                   = Color("color PickerCustom Text")
+        static let border                 = Color("color PickerCustom Border")
+        static let background             = Color("color PickerCustom Background")
+        static let itemText               = Color("color PickerCustom Item Text")
+        static let itemBackground         = Color("color PickerCustom Item Background")
+        static let itemHoveringBackground = Color.accentColor.opacity(0.2)
+        static let itemSelectedBackground = Color.accentColor.opacity(0.5)
     }
 
-    static let picker = PickerColorSet()
+    static let picker = PickerColorSet.self
 
 }
