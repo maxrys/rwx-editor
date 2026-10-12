@@ -14,6 +14,9 @@
 		501FA4D52F4F0C05004663D2 /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */; };
 		501FA4D62F4F0C05004663D2 /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FA4D02F4F0C05004663D2 /* ButtonCustom.swift */; };
 		50301005307B8E5600CB9F8D /* GeometryReaderPolyfill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50301004307B8E5600CB9F8D /* GeometryReaderPolyfill.swift */; };
+		50301007307C038300CB9F8D /* Checksums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50301006307C038300CB9F8D /* Checksums.swift */; };
+		50301009307C038F00CB9F8D /* ValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50301008307C038F00CB9F8D /* ValueState.swift */; };
+		5030100B307C03B300CB9F8D /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030100A307C03B300CB9F8D /* NotificationCenter.swift */; };
 		50309B082F59E998008CA064 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B072F59E998008CA064 /* Data.swift */; };
 		50309B0C2F5A30C8008CA064 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0B2F5A30C8008CA064 /* Equatable.swift */; };
 		50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B0D2F5AC7C7008CA064 /* Features.swift */; };
@@ -41,11 +44,8 @@
 		506421C32F61878E0020F6C8 /* BookmarksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C22F61878E0020F6C8 /* BookmarksState.swift */; };
 		506421C52F618AB00020F6C8 /* BookmarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C42F618AAC0020F6C8 /* BookmarkValue.swift */; };
 		506421C92F62B22D0020F6C8 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506421C82F62B22D0020F6C8 /* Bool.swift */; };
-		506422102F6618BC0020F6C8 /* MessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220A2F6618BC0020F6C8 /* MessageState.swift */; };
 		506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220D2F6618BC0020F6C8 /* MessageColors.swift */; };
 		506422122F6618BC0020F6C8 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220C2F6618BC0020F6C8 /* MessageBox.swift */; };
-		506422132F6618BC0020F6C8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064220B2F6618BC0020F6C8 /* Message.swift */; };
-		506422142F6618BC0020F6C8 /* Message_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506422092F6618BC0020F6C8 /* Message_types.swift */; };
 		506422152F6618BC0020F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5064220E2F6618BC0020F6C8 /* Assets.xcassets */; };
 		50888D90306A8167004BB5CF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CE2F39CC00005F7475 /* String.swift */; };
 		50888D91306A8186004BB5CF /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50309B162F5B22F8008CA064 /* URL.swift */; };
@@ -130,6 +130,9 @@
 		501FA4D12F4F0C05004663D2 /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
 		501FA4D22F4F0C05004663D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50301004307B8E5600CB9F8D /* GeometryReaderPolyfill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderPolyfill.swift; sourceTree = "<group>"; };
+		50301006307C038300CB9F8D /* Checksums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksums.swift; sourceTree = "<group>"; };
+		50301008307C038F00CB9F8D /* ValueState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueState.swift; sourceTree = "<group>"; };
+		5030100A307C03B300CB9F8D /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		50309B072F59E998008CA064 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		50309B0B2F5A30C8008CA064 /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
 		50309B0D2F5AC7C7008CA064 /* Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features.swift; sourceTree = "<group>"; };
@@ -158,9 +161,6 @@
 		506421C22F61878E0020F6C8 /* BookmarksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksState.swift; sourceTree = "<group>"; };
 		506421C42F618AAC0020F6C8 /* BookmarkValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkValue.swift; sourceTree = "<group>"; };
 		506421C82F62B22D0020F6C8 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		506422092F6618BC0020F6C8 /* Message_types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message_types.swift; sourceTree = "<group>"; };
-		5064220A2F6618BC0020F6C8 /* MessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageState.swift; sourceTree = "<group>"; };
-		5064220B2F6618BC0020F6C8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5064220C2F6618BC0020F6C8 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
 		5064220D2F6618BC0020F6C8 /* MessageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageColors.swift; sourceTree = "<group>"; };
 		5064220E2F6618BC0020F6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -300,9 +300,6 @@
 		5064220F2F6618BC0020F6C8 /* MessageBox */ = {
 			isa = PBXGroup;
 			children = (
-				506422092F6618BC0020F6C8 /* Message_types.swift */,
-				5064220A2F6618BC0020F6C8 /* MessageState.swift */,
-				5064220B2F6618BC0020F6C8 /* Message.swift */,
 				5064220C2F6618BC0020F6C8 /* MessageBox.swift */,
 				5064220D2F6618BC0020F6C8 /* MessageColors.swift */,
 				5064220E2F6618BC0020F6C8 /* Assets.xcassets */,
@@ -345,10 +342,12 @@
 				50B277122F3BD0F2005F7475 /* _enums.swift */,
 				5034F4332F77E57E0028EFAC /* AliasValue.swift */,
 				506421C42F618AAC0020F6C8 /* BookmarkValue.swift */,
+				50301006307C038300CB9F8D /* Checksums.swift */,
 				50B276F32F3A4990005F7475 /* FSEntityInfo.swift */,
 				50E4B10B2FF2932F008D625B /* HVStack.swift */,
 				50F9787A2FED34B700CC52C8 /* Previewer.swift */,
 				506421742F5EF1550020F6C8 /* ResultBuilder.swift */,
+				50301008307C038F00CB9F8D /* ValueState.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -367,6 +366,7 @@
 				50309B0B2F5A30C8008CA064 /* Equatable.swift */,
 				50301004307B8E5600CB9F8D /* GeometryReaderPolyfill.swift */,
 				50B276C52F39CBC3005F7475 /* Logger.swift */,
+				5030100A307C03B300CB9F8D /* NotificationCenter.swift */,
 				50B276C82F39CBD1005F7475 /* NSApplication.swift */,
 				50309B312F5CA4B8008CA064 /* NSApplicationMultiLaunch.swift */,
 				506421702F5EF0990020F6C8 /* NSEvent.swift */,
@@ -674,8 +674,10 @@
 				50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */,
 				50B2771D2F3C89DC005F7475 /* ToggleRwxNumeric.swift in Sources */,
 				50B276EE2F3A4677005F7475 /* PopupHead.swift in Sources */,
+				5030100B307C03B300CB9F8D /* NotificationCenter.swift in Sources */,
 				50309B0E2F5AC7C7008CA064 /* Features.swift in Sources */,
 				50309B342F5CBC3A008CA064 /* NSMenu.swift in Sources */,
+				50301009307C038F00CB9F8D /* ValueState.swift in Sources */,
 				50B276AA2F389886005F7475 /* App.swift in Sources */,
 				5064216F2F5EF07F0020F6C8 /* Array.swift in Sources */,
 				506421732F5EF0AA0020F6C8 /* Set.swift in Sources */,
@@ -693,18 +695,16 @@
 				506421922F5F6CC80020F6C8 /* Model.xcdatamodeld in Sources */,
 				50DCD7CA2F425A9B00E067C3 /* Timer.swift in Sources */,
 				506421712F5EF0990020F6C8 /* NSEvent.swift in Sources */,
+				50301007307C038300CB9F8D /* Checksums.swift in Sources */,
 				506421C92F62B22D0020F6C8 /* Bool.swift in Sources */,
 				50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */,
 				50B276FA2F3A74D4005F7475 /* ByteCountFormatter.swift in Sources */,
 				5064216A2F5EF04A0020F6C8 /* TableCustomColors.swift in Sources */,
 				50F9787D2FED34B700CC52C8 /* Previewer.swift in Sources */,
 				5064216B2F5EF04A0020F6C8 /* TableCustom.swift in Sources */,
-				506422102F6618BC0020F6C8 /* MessageState.swift in Sources */,
 				506422112F6618BC0020F6C8 /* MessageColors.swift in Sources */,
 				506422122F6618BC0020F6C8 /* MessageBox.swift in Sources */,
 				50E4B12E2FF5151D008D625B /* About.swift in Sources */,
-				506422132F6618BC0020F6C8 /* Message.swift in Sources */,
-				506422142F6618BC0020F6C8 /* Message_types.swift in Sources */,
 				5064216C2F5EF04A0020F6C8 /* TableCustom_HeadCell.swift in Sources */,
 				50B276E32F39DC3F005F7475 /* PermissionsValue.swift in Sources */,
 			);

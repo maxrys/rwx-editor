@@ -8,8 +8,9 @@ import SwiftUI
 struct PopupFoot: View {
 
     @Environment(\.colorScheme) private var colorScheme
-    @EnvironmentObject private var messageBoxState: MessageState
     @EnvironmentObject private var popupState: PopupState
+
+    public var popup: Popup? = nil
 
     public var body: some View {
         HStack(spacing: 15) {
@@ -43,8 +44,8 @@ struct PopupFoot: View {
     }
 
     private func onClickApply() {
-        if (Features.onApply(self.messageBoxState, self.popupState)) {
-            self.popupState.resetToCurrent()
+        if (Features.onApply(self.popupState)) {
+            self.popup?.refreshState()
         }
     }
 
@@ -60,7 +61,7 @@ struct PopupFoot_Previews: PreviewProvider {
     static public var previews: some View {
         Previewer(spacing: 0) {
             PopupFoot()
-                .environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/hosts"))!))
+                .environmentObject(PopupState(URL(fileURLWithPath: "/private/etc/hosts"))!)
                 .frame(width: Popup.FRAME_WIDTH)
         }
     }

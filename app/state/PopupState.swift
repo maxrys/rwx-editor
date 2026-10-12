@@ -6,7 +6,11 @@
 import SwiftUI
 import Combine
 
-final class PopupState: ObservableObject {
+final class PopupState: ObservableObject, Equatable {
+
+    static func == (lhs: PopupState, rhs: PopupState) -> Bool {
+        lhs.info == rhs.info
+    }
 
     public func getBinding<T>(_ propertyName: WritableKeyPath<PopupState, T>) -> Binding<T> {
         var instance = self; return Binding(
@@ -20,38 +24,44 @@ final class PopupState: ObservableObject {
     @Published var group: String
     @Published var isEditable: Bool
 
-    public let info: FSEntityInfo
-    public private(set) var originalPerms: PermissionsValue
-    public private(set) var originalOwner: String
-    public private(set) var originalGroup: String
-
     public var isChanged: Bool {
         self.perms != self.originalPerms ||
         self.owner != self.originalOwner ||
         self.group != self.originalGroup
     }
 
-    init(_ info: FSEntityInfo) {
-        self.info  = info
-        self.perms = info.perms
-        self.owner = info.owner
-        self.group = info.group
-        self.originalPerms = info.perms
-        self.originalOwner = info.owner
-        self.originalGroup = info.group
-        self.isEditable = info.editabilityMode == .allowed
+    public var messageBoxAddress: MessageBoxAddress {
+        .local(
+            boxID: MessageBoxID(
+                Checksums.crc32(self.info.url.absoluteString)
+            )
+        )
+    }
+
+    public let info: FSEntityInfo
+    public let originalPerms: PermissionsValue
+    public let originalOwner: String
+    public let originalGroup: String
+
+    init?(_ url: URL) {
+        if let info = FSEntityInfo(url) {
+            self.info  = info
+            self.perms = info.perms
+            self.owner = info.owner
+            self.group = info.group
+            self.originalPerms = info.perms
+            self.originalOwner = info.owner
+            self.originalGroup = info.group
+            self.isEditable = info.editabilityMode == .allowed
+        } else {
+            return nil
+        }
     }
 
     public func resetToDefault() {
         self.perms = self.originalPerms
         self.owner = self.originalOwner
         self.group = self.originalGroup
-    }
-
-    public func resetToCurrent() {
-        self.originalPerms = self.perms
-        self.originalOwner = self.owner
-        self.originalGroup = self.group
     }
 
 }

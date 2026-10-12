@@ -8,7 +8,7 @@ import AppKit
 
 final class Features {
 
-    static public func onApply(_ messageBoxState: MessageState, _ state: PopupState) -> Bool {
+    static public func onApply(_ state: PopupState) -> Bool {
         do {
 
             Logger.customLog("Popup onApply before" +
@@ -24,10 +24,10 @@ final class Features {
                     .ownerAccountName     : state.owner,
                     .groupOwnerAccountName: state.group], ofItemAtPath: state.info.url.path)
                 validBookmark.stopAccessing()
-                messageBoxState.insert(
+                MessageBox.insert(address: state.messageBoxAddress, .init(
                     type: .ok,
                     title: NSLocalizedString("completed successfully", comment: "")
-                )
+                ))
                 return true
             } else {
                 throw NSError(
@@ -38,11 +38,11 @@ final class Features {
                 )
             }
         } catch let error as NSError {
-            messageBoxState.insert(
+            MessageBox.insert(address: state.messageBoxAddress, .init(
                 type: .error,
                 title: NSLocalizedString("completed unsuccessfully", comment: ""),
                 description: error.localizedDescription
-            )
+            ))
             return false
         }
     }

@@ -160,8 +160,8 @@ struct PopupBody_Previews: PreviewProvider {
     static public var previews: some View {
         VStack(alignment: .leading, spacing: 0) {
             let Delimiter = Rectangle().fill(Color.black).frame(height: 20)
-            PopupBody().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/"     ))!)); Delimiter /* directory */
-            PopupBody().environmentObject(PopupState(FSEntityInfo(URL(fileURLWithPath: "/private/etc/hosts"))!))            /* file */
+            PopupBody().environmentObject(PopupState(URL(fileURLWithPath: "/private/etc/"     ))!); Delimiter /* directory */
+            PopupBody().environmentObject(PopupState(URL(fileURLWithPath: "/private/etc/hosts"))!)            /* file */
         }
         .frame(width: MainScene.FRAME_WIDTH)
         .windowChamelionBackground(
