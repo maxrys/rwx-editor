@@ -96,7 +96,11 @@ extension View {
                     press.characters.contains("a")) { action() }
                 return .handled
             }
-        } else { self }
+        } else {
+            modifier(SelectAllShortcutModifier(
+                action: action
+            ))
+        }
     }
 
     @ViewBuilder func onAppBecomeBackground(_ action: @escaping () -> Void) -> some View {
@@ -141,6 +145,22 @@ extension View {
 
 }
 
+private struct SelectAllShortcutModifier: ViewModifier {
+
+    let action: () -> Void
+
+    func body(content: Content) -> some View {
+        content.overlay (
+            Button(action: action) { Text("Select All") }
+                .keyboardShortcut("a", modifiers: .command)
+                .hidden()
+                .accessibilityHidden(true)
+                .frame(width: 0, height: 0)
+        )
+    }
+
+}
+
 extension View {
 
     @ViewBuilder func windowChamelionBackground(
@@ -163,7 +183,7 @@ extension View {
                 )
             )
             .onAppear {
-                if let windowID, let window = NSWindow.get(windowID) {
+                if let windowID = windowID, let window = NSWindow.get(windowID) {
                     window.backgroundColor = .clear
                     window.alphaValue = 1.0
                 }

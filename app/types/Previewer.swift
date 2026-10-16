@@ -45,10 +45,14 @@ struct Previewer<Content: View>: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    Previewer(axis: .vertical, spacing: 5, padding: 20) {
-        Text("Previewer element 1")
-        Text("Previewer element 2")
-        Text("Previewer element 3")
+struct Previewer_Previews: PreviewProvider {
+
+    static var previews: some View {
+        Previewer(axis: .vertical, spacing: 5, padding: 20) {
+            Text("Previewer element 1")
+            Text("Previewer element 2")
+            Text("Previewer element 3")
+        }
     }
+
 }

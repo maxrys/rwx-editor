@@ -142,7 +142,7 @@ struct PopupBody: View {
     @ViewBuilder private func ShadowBottomView() -> some View {
         ShadowLine(
             length: 6,
-            angle: .`180_degrees`,
+            angle: .degrees_180,
             opacity: 0.15,
             opacityDark: 0.20
         )

@@ -43,7 +43,7 @@ struct About: View {
     @ViewBuilder private func ShadowLineView(_ height: CGFloat) -> some View {
         ShadowLine(
             length: 10,
-            angle: .`270_degrees`,
+            angle: .degrees_270,
             opacity: 0.6,
             opacityDark: 0.5
         ).frame(height: height)
@@ -82,6 +82,7 @@ struct About: View {
                     font: .system(size: 14, weight: .regular),
                     padding: .init(top: 3, leading: 20, bottom: 5, trailing: 20),
                     flexibility: .none,
+                    isTextTrimming: false,
                     isFlat: false,
                     onClick: {
                         if let url = URL(string: pageSupport) {
@@ -139,11 +140,15 @@ struct About: View {
 /* ########################## PREVIEW ########################## */
 /* ############################################################# */
 
-#Preview {
-    Previewer(spacing: 0) {
-        About()
-            .padding(1)
-            .background(Color.blue)
-            .frame(width: 600)
+struct About_Previews: PreviewProvider {
+
+    static var previews: some View {
+        Previewer(spacing: 0) {
+            About()
+                .padding(1)
+                .background(Color.blue)
+                .frame(width: 600)
+        }
     }
+
 }
