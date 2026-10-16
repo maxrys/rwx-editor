@@ -78,7 +78,7 @@ struct About: View {
             if let pageSupport = NSApplication.pageSupport {
                 ButtonCustom(
                     NSLocalizedString("support", comment: ""),
-                    colorStyle: self.colorScheme == .dark ? .custom(text: nil, background: Color.NS[\.windowBackgroundColor]) : .common,
+                    colorStyle: self.colorScheme == .dark ? .custom(text: nil, background: Color.NS[.windowBackgroundColor]) : .common,
                     font: .system(size: 14, weight: .regular),
                     padding: .init(top: 3, leading: 20, bottom: 5, trailing: 20),
                     flexibility: .none,
@@ -116,7 +116,7 @@ struct About: View {
                 Button { self.openURL(url) } label: {
                     Text(value)
                         .underline()
-                        .foregroundPolyfill(Color.NS[\.linkColor])
+                        .foregroundPolyfill(Color.NS[.linkColor])
                         .focusEffect(RoundedRectangle(cornerRadius: 5))
                 }
                 .buttonStyle(.plain)

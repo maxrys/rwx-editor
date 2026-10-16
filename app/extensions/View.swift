@@ -145,10 +145,10 @@ extension View {
 
     @ViewBuilder func windowChamelionBackground(
         windowID                   : String? = nil,
-        backgroundTint             : Color = .NS[\.windowBackgroundColor].opacity(0.7),
-        backgroundTintDark         : Color = .NS[\.windowBackgroundColor].opacity(0.7),
-        backgroundColorFallback    : Color = .NS[\.windowBackgroundColor],
-        backgroundColorDarkFallback: Color = .NS[\.windowBackgroundColor],
+        backgroundTint             : Color = .NS[.windowBackgroundColor].opacity(0.7),
+        backgroundTintDark         : Color = .NS[.windowBackgroundColor].opacity(0.7),
+        backgroundColorFallback    : Color = .NS[.windowBackgroundColor],
+        backgroundColorDarkFallback: Color = .NS[.windowBackgroundColor],
         isIgnoreSafeArea: Bool = true
     ) -> some View {
         self.ignoresSafeArea(

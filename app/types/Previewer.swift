@@ -28,11 +28,11 @@ struct Previewer<Content: View>: View {
         HVStack(axis: self.axis, spacing: 0) {
             VStack(spacing: self.spacing) { self.content() }
                 .padding(self.padding)
-                .background(Color.NS[\.windowBackgroundColor])
+                .background(Color.NS[.windowBackgroundColor])
                 .environment(\.colorScheme, .light)
             VStack(spacing: self.spacing) { self.content() }
                 .padding(self.padding)
-                .background(Color.NS[\.windowBackgroundColor])
+                .background(Color.NS[.windowBackgroundColor])
                 .environment(\.colorScheme, .dark)
         }
     }
