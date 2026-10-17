@@ -1,4 +1,10 @@
 
+
+## Version 1.4
+
+Codebase has been improved.  
+Translations has been improved.
+
 ## Version 1.3
 
 Codebase has been improved.
