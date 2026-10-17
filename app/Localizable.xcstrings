@@ -23,6 +23,12 @@
             "state" : "translated",
             "value" : "%1$@ 'в' %2$@"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ 'у' %2$@"
+          }
         }
       }
     },
@@ -38,6 +44,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ шт."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ од."
           }
         }
       }
@@ -55,6 +67,12 @@
             "state" : "translated",
             "value" : "О приложении %@"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про додаток %@"
+          }
         }
       }
     },
@@ -67,6 +85,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступ"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Доступ"
@@ -87,6 +111,12 @@
             "state" : "translated",
             "value" : "добавить разрешённые каталоги…"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "додати дозволені каталоги…"
+          }
         }
       }
     },
@@ -102,6 +132,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "псевдоним"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "псевдонім"
           }
         }
       }
@@ -119,6 +155,12 @@
             "state" : "translated",
             "value" : "разрешённые каталоги не найдены"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "дозволені каталоги не знайдено"
+          }
         }
       }
     },
@@ -135,6 +177,12 @@
             "state" : "translated",
             "value" : "применить"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "застосувати"
+          }
         }
       }
     },
@@ -143,13 +191,19 @@
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "адмяніць"
+            "value" : "скасаваць"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "отменить"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "скасувати"
           }
         }
       }
@@ -167,6 +221,12 @@
             "state" : "translated",
             "value" : "выполнено успешно"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "виконано успішно"
+          }
         }
       }
     },
@@ -182,6 +242,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "выполнено неудачно"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "виконано невдало"
           }
         }
       }
@@ -199,6 +265,12 @@
             "state" : "translated",
             "value" : "скопировать команду"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "скопіювати команду"
+          }
         }
       }
     },
@@ -214,6 +286,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Создано"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створено"
           }
         }
       }
@@ -231,6 +309,12 @@
             "state" : "translated",
             "value" : "удалить"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "видалити"
+          }
         }
       }
     },
@@ -243,6 +327,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "каталог"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "каталог"
@@ -263,6 +353,12 @@
             "state" : "translated",
             "value" : "Запуск"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск"
+          }
         }
       }
     },
@@ -278,6 +374,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "расширение выключено"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "розширення вимкнено"
           }
         }
       }
@@ -295,6 +397,12 @@
             "state" : "translated",
             "value" : "расширение включено"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "розширення увімкнено"
+          }
         }
       }
     },
@@ -307,6 +415,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "файл"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "файл"
@@ -327,6 +441,12 @@
             "state" : "translated",
             "value" : "Группа"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Група"
+          }
         }
       }
     },
@@ -342,6 +462,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Запуск при входе в систему"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск при вході до системи"
           }
         }
       }
@@ -359,6 +485,12 @@
             "state" : "translated",
             "value" : "ссылка"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "посилання"
+          }
         }
       }
     },
@@ -374,6 +506,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Путь расположения"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шлях розташування"
           }
         }
       }
@@ -391,6 +529,12 @@
             "state" : "translated",
             "value" : "Название"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
+          }
         }
       }
     },
@@ -406,6 +550,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "объект не поддерживается"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "об'єкт не підтримується"
           }
         }
       }
@@ -423,6 +573,12 @@
             "state" : "translated",
             "value" : "открыть настройки"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "відкрити налаштування"
+          }
         }
       }
     },
@@ -438,6 +594,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "открыть Терминал"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "відкрити Термінал"
           }
         }
       }
@@ -455,6 +617,12 @@
             "state" : "translated",
             "value" : "Другие"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інші"
+          }
         }
       }
     },
@@ -470,6 +638,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Владелец"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Власник"
           }
         }
       }
@@ -487,6 +661,12 @@
             "state" : "translated",
             "value" : "Путь"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шлях"
+          }
         }
       }
     },
@@ -502,6 +682,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Предоставленный доступ к каталогам"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наданий доступ до каталогів"
           }
         }
       }
@@ -519,6 +705,12 @@
             "state" : "translated",
             "value" : "Завершить %@"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завершити %@"
+          }
         }
       }
     },
@@ -534,6 +726,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Чтение"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Читання"
           }
         }
       }
@@ -551,6 +749,12 @@
             "state" : "translated",
             "value" : "Реальное название"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Реальна назва"
+          }
         }
       }
     },
@@ -566,6 +770,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Реальный путь"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Реальний шлях"
           }
         }
       }
@@ -583,6 +793,12 @@
             "state" : "translated",
             "value" : "Количество ссылок"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кількість посилань"
+          }
         }
       }
     },
@@ -595,6 +811,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Редактор"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "RWX Редактор"
@@ -615,6 +837,12 @@
             "state" : "translated",
             "value" : "RWX Редактор | Установки"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Редактор | Установки"
+          }
         }
       }
     },
@@ -627,6 +855,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Редактор | Меню"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "RWX Редактор | Меню"
@@ -647,6 +881,12 @@
             "state" : "translated",
             "value" : "закладка безопасности для каталога не действительная"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "закладка безпеки для каталогу не дійсна"
+          }
         }
       }
     },
@@ -662,6 +902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "выбрать каталоги для доступа"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вибрати каталоги для доступу"
           }
         }
       }
@@ -682,6 +928,12 @@
             "state" : "translated",
             "value" : "Размер"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розмір"
+          }
         }
       }
     },
@@ -698,6 +950,12 @@
             "state" : "translated",
             "value" : "поддержка"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "підтримка"
+          }
         }
       }
     },
@@ -706,13 +964,19 @@
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Каманда тэрмінала для атрымання правоў уласнасці:"
+            "value" : "Каманда Тэрмінала для атрымання правоў уласнасці:"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Команда терминала для получения прав собственности:"
+            "value" : "Команда Терминала для получения прав собственности:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Команда Терміналу для отримання прав власності:"
           }
         }
       }
@@ -726,6 +990,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Тип"
@@ -745,6 +1015,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Обновлено"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оновлено"
           }
         }
       }
@@ -768,6 +1044,12 @@
             "state" : "translated",
             "value" : "Версия %1$@ (%2$@)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версія %1$@ (%2$@)"
+          }
         }
       }
     },
@@ -784,6 +1066,12 @@
             "state" : "translated",
             "value" : "Запись"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пишіть"
+          }
         }
       }
     },
@@ -799,6 +1087,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "вы не являетесь владельцем этого объекта"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ви не є власником цього об'єкту"
           }
         }
       }

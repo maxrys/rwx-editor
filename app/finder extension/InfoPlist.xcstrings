@@ -22,6 +22,12 @@
             "state" : "translated",
             "value" : "RWX Редактор | Расширение Finder"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Редактор | Розширення Finder"
+          }
         }
       }
     },
@@ -32,19 +38,25 @@
         "be-BY" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Рэдактар RWX | Пашырэнне"
+            "value" : "Рэдактар RWX | Пашырэнне Finder"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "RWX Editor Extension"
+            "value" : "RWX Editor Finder Extension"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RWX Редактор | Расширение"
+            "value" : "RWX Редактор | Расширение Finder"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RWX Редактор | Розширення Finder"
           }
         }
       }
@@ -69,6 +81,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "© 2026 Рысевец Максим Владимирович"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2026 Рисівець Максим Володимирович"
           }
         }
       }
