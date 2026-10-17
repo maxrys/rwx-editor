@@ -55,7 +55,7 @@
 		50B276A82F389886005F7475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B276A52F389886005F7475 /* Assets.xcassets */; };
 		50B276AA2F389886005F7475 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276A72F389886005F7475 /* App.swift */; };
 		50B276B72F39C991005F7475 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276B62F39C991005F7475 /* FinderSync.swift */; };
-		50B276BB2F39C991005F7475 /* RWX Editor Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 50B276B42F39C991005F7475 /* RWX Editor Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50B276BB2F39C991005F7475 /* RWX Editor Finder Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50B276C62F39CBC9005F7475 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C52F39CBC3005F7475 /* Logger.swift */; };
 		50B276CA2F39CBD1005F7475 /* NSApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276C82F39CBD1005F7475 /* NSApplication.swift */; };
 		50B276CD2F39CBF7005F7475 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B276CB2F39CBF7005F7475 /* NSWindow.swift */; };
@@ -115,7 +115,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				50B276BB2F39C991005F7475 /* RWX Editor Extension.appex in Embed Foundation Extensions */,
+				50B276BB2F39C991005F7475 /* RWX Editor Finder Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,7 @@
 		50B276972F389876005F7475 /* RWX Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWX Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276A52F389886005F7475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B276A72F389886005F7475 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		50B276B42F39C991005F7475 /* RWX Editor Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWX Editor Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWX Editor Finder Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B276B62F39C991005F7475 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		50B276B82F39C991005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B276C12F39CA05005F7475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				50B276972F389876005F7475 /* RWX Editor.app */,
-				50B276B42F39C991005F7475 /* RWX Editor Extension.appex */,
+				50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */,
 				50B276D92F39DB98005F7475 /* RWX Editor Test.xctest */,
 			);
 			name = Products;
@@ -514,9 +514,9 @@
 			productReference = 50B276972F389876005F7475 /* RWX Editor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		50B276B32F39C991005F7475 /* RWX Editor Extension */ = {
+		50B276B32F39C991005F7475 /* RWX Editor Finder Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50B276C02F39C991005F7475 /* Build configuration list for PBXNativeTarget "RWX Editor Extension" */;
+			buildConfigurationList = 50B276C02F39C991005F7475 /* Build configuration list for PBXNativeTarget "RWX Editor Finder Extension" */;
 			buildPhases = (
 				50B276B02F39C991005F7475 /* Sources */,
 				50B276B12F39C991005F7475 /* Frameworks */,
@@ -526,11 +526,11 @@
 			);
 			dependencies = (
 			);
-			name = "RWX Editor Extension";
+			name = "RWX Editor Finder Extension";
 			packageProductDependencies = (
 			);
 			productName = "RWX Editor Finder Extension";
-			productReference = 50B276B42F39C991005F7475 /* RWX Editor Extension.appex */;
+			productReference = 50B276B42F39C991005F7475 /* RWX Editor Finder Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		50B276D82F39DB98005F7475 /* RWX Editor Test */ = {
@@ -582,6 +582,7 @@
 				Base,
 				ru,
 				"be-BY",
+				uk,
 			);
 			mainGroup = 50B2768E2F389876005F7475;
 			minimizedProjectReferenceProxies = 1;
@@ -590,7 +591,7 @@
 			projectRoot = "";
 			targets = (
 				50B276962F389876005F7475 /* RWX Editor */,
-				50B276B32F39C991005F7475 /* RWX Editor Extension */,
+				50B276B32F39C991005F7475 /* RWX Editor Finder Extension */,
 				50B276D82F39DB98005F7475 /* RWX Editor Test */,
 			);
 		};
@@ -735,7 +736,7 @@
 /* Begin PBXTargetDependency section */
 		50B276BA2F39C991005F7475 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 50B276B32F39C991005F7475 /* RWX Editor Extension */;
+			target = 50B276B32F39C991005F7475 /* RWX Editor Finder Extension */;
 			targetProxy = 50B276B92F39C991005F7475 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1124,7 +1125,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50B276C02F39C991005F7475 /* Build configuration list for PBXNativeTarget "RWX Editor Extension" */ = {
+		50B276C02F39C991005F7475 /* Build configuration list for PBXNativeTarget "RWX Editor Finder Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50B276BD2F39C991005F7475 /* Debug */,
