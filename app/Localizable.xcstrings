@@ -666,6 +666,9 @@
         }
       }
     },
+    "Select All" : {
+      "shouldTranslate" : false
+    },
     "Size" : {
       "localizations" : {
         "be-BY" : {
