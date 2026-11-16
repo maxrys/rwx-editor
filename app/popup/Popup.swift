@@ -142,7 +142,11 @@ struct Popup: View {
             NSLocalizedString("open settings", comment: ""),
             colorStyle: .common,
             fixedColorScheme: .light
-        ) { ThisApp.appDelegate.showWindowMain() }
+        ) {
+            Task { @MainActor in
+                ThisApp.appDelegate.showWindowMain()
+            }
+        }
     }
 
     @ViewBuilder static public func StaticMessage(_ title: String, _ description: String? = nil) -> some View {

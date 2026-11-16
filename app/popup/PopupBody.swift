@@ -44,28 +44,32 @@ struct PopupBody: View {
 
             /* MARK: rules via toggles */
 
+            let cells: [AnyView] = [
+                AnyView(Color.clear),
+                AnyView(Text(NSLocalizedString("Owner", comment: "")).lineLimit(1)),
+                AnyView(Text(NSLocalizedString("Group", comment: "")).lineLimit(1)),
+                AnyView(Text(NSLocalizedString("Other", comment: "")).lineLimit(1)),
+
+                AnyView(Text(NSLocalizedString("Read", comment: ""))),
+                AnyView(ToggleRwxColored(subject: .owner, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)),
+                AnyView(ToggleRwxColored(subject: .group, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)),
+                AnyView(ToggleRwxColored(subject: .other, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)),
+
+                AnyView(Text(NSLocalizedString("Write", comment: ""))),
+                AnyView(ToggleRwxColored(subject: .owner, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)),
+                AnyView(ToggleRwxColored(subject: .group, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)),
+                AnyView(ToggleRwxColored(subject: .other, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)),
+
+                AnyView(Text(self.popupState.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))),
+                AnyView(ToggleRwxColored(subject: .owner, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)),
+                AnyView(ToggleRwxColored(subject: .group, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)),
+                AnyView(ToggleRwxColored(subject: .other, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable))
+            ]
+            
             LazyVGrid(columns: self.columnsForToggleRwxColored, spacing: 15) {
-
-                Color.clear
-                Text(NSLocalizedString("Owner", comment: "")).lineLimit(1)
-                Text(NSLocalizedString("Group", comment: "")).lineLimit(1)
-                Text(NSLocalizedString("Other", comment: "")).lineLimit(1)
-
-                Text(NSLocalizedString("Read", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
-                ToggleRwxColored(subject: .group, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
-                ToggleRwxColored(subject: .other, permission: .r, self.permsBinding).disabled(!self.popupState.isEditable)
-
-                Text(NSLocalizedString("Write", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)
-                ToggleRwxColored(subject: .group, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)
-                ToggleRwxColored(subject: .other, permission: .w, self.permsBinding).disabled(!self.popupState.isEditable)
-
-                Text(self.popupState.info.type == .file ? NSLocalizedString("Execute", comment: "") : NSLocalizedString("Access", comment: ""))
-                ToggleRwxColored(subject: .owner, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
-                ToggleRwxColored(subject: .group, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
-                ToggleRwxColored(subject: .other, permission: .x, self.permsBinding).disabled(!self.popupState.isEditable)
-
+                ForEach(cells.indices, id: \.self) { index in
+                    cells[index]
+                }
             }.frame(width: Self.TABLE_1ST_CELL_WIDTH + Self.TABLE_2ND_CELL_WIDTH)
 
             /* MARK: rules via text/numeric */
@@ -142,7 +146,7 @@ struct PopupBody: View {
     @ViewBuilder private func ShadowBottomView() -> some View {
         ShadowLine(
             length: 6,
-            angle: .`180_degrees`,
+            angle: .degrees_180,
             opacity: 0.15,
             opacityDark: 0.20
         )

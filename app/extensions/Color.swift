@@ -8,25 +8,23 @@ import SwiftUI
 extension Color {
 
     struct NSColorSet {
-        subscript(_ keyPath: KeyPath<NSColor.Type, NSColor>) -> Color {
-            Color(NSColor.self[
-                keyPath: keyPath
-            ])
+        subscript(_ color: NSColor) -> Color {
+            Color(color)
         }
     }
 
     static let NS = NSColorSet()
 
     static let label: Color = {
-        Self.NS[\.labelColor]
+        Self.NS[.labelColor]
     }()
 
     static let selectedContentBackground: Color = {
-        Self.NS[\.selectedContentBackgroundColor]
+        Self.NS[.selectedContentBackgroundColor]
     }()
 
     static let selectedContentUnactiveBackground: Color = {
-        Self.NS[\.unemphasizedSelectedContentBackgroundColor]
+        Self.NS[.unemphasizedSelectedContentBackgroundColor]
     }()
 
     enum StatusColorSet {
